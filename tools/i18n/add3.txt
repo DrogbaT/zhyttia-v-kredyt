@@ -1,0 +1,48 @@
+en|0§Updating is optional: your current version keeps working, including without internet.
+en|1§Skip this version
+en|2§I'll only remind you about the next version
+en|3§Auto-check is off — check manually when you have internet.
+en|4§Check for updates at launch
+en|5§Turn off if internet is rare — the game works without it.
+de|0§Das Update ist freiwillig: die aktuelle Version läuft weiter, auch ohne Internet.
+de|1§Diese Version überspringen
+de|2§Ich erinnere dich erst an die nächste Version
+de|3§Automatische Prüfung aus — prüfe manuell, wenn du Internet hast.
+de|4§Beim Start nach Updates suchen
+de|5§Ausschalten, wenn selten Internet da ist — das Spiel läuft auch ohne.
+pl|0§Aktualizacja nie jest obowiązkowa: obecna wersja działa dalej, także bez internetu.
+pl|1§Pomiń tę wersję
+pl|2§Przypomnę dopiero o następnej wersji
+pl|3§Automatyczne sprawdzanie wyłączone — sprawdź ręcznie, gdy będzie internet.
+pl|4§Sprawdzaj aktualizacje przy starcie
+pl|5§Wyłącz, jeśli internet bywa rzadko — gra działa i bez niego.
+es|0§Actualizar es opcional: tu versión actual sigue funcionando, también sin internet.
+es|1§Omitir esta versión
+es|2§Solo te avisaré de la próxima versión
+es|3§Comprobación automática desactivada — comprueba a mano cuando tengas internet.
+es|4§Buscar actualizaciones al iniciar
+es|5§Desactívalo si casi no tienes internet — el juego funciona sin él.
+fr|0§La mise à jour est facultative : ta version actuelle continue de marcher, même sans internet.
+fr|1§Ignorer cette version
+fr|2§Je ne te rappellerai que la prochaine version
+fr|3§Vérification auto désactivée — vérifie à la main quand tu as internet.
+fr|4§Vérifier les mises à jour au démarrage
+fr|5§Désactive-la si internet est rare — le jeu marche sans.
+it|0§L'aggiornamento è facoltativo: la versione attuale continua a funzionare, anche senza internet.
+it|1§Salta questa versione
+it|2§Ti avviserò solo della prossima versione
+it|3§Controllo automatico disattivato — controlla a mano quando hai internet.
+it|4§Controlla gli aggiornamenti all'avvio
+it|5§Disattivalo se internet c'è di rado — il gioco funziona anche senza.
+pt|0§Atualizar é opcional: a tua versão atual continua a funcionar, também sem internet.
+pt|1§Saltar esta versão
+pt|2§Só te lembro da próxima versão
+pt|3§Verificação automática desligada — verifica à mão quando tiveres internet.
+pt|4§Procurar atualizações ao arrancar
+pt|5§Desliga se a internet for rara — o jogo funciona sem ela.
+tr|0§Güncelleme zorunlu değil: mevcut sürüm internetsiz de çalışmaya devam eder.
+tr|1§Bu sürümü atla
+tr|2§Sadece bir sonraki sürümü hatırlatırım
+tr|3§Otomatik denetim kapalı — internet olduğunda elle denetle.
+tr|4§Açılışta güncellemeleri denetle
+tr|5§İnternet nadiren varsa kapat — oyun onsuz da çalışır.

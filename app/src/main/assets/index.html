@@ -575,7 +575,7 @@ function freshGame(seats,online,mode){
 
 /* ---------- settings ---------- */
 const SETKEY='zhyttia_v_kredyt_settings';
-let SET={hints:true,orient:'auto',waitOk:true};
+let SET={hints:true,orient:'auto',waitOk:true,autoUpd:true,skipBuild:0};
 try{Object.assign(SET,JSON.parse(localStorage.getItem(SETKEY)||'{}'))}catch(e){}
 function saveSet(){try{localStorage.setItem(SETKEY,JSON.stringify(SET))}catch(e){}}
 const hasBridge=()=>!!(window.AndroidApp&&window.AndroidApp.setOrientation);
@@ -599,7 +599,7 @@ async function checkUpdate(manual){
     for(const rel of await r.json()){
       const a=(rel.assets||[]).find(x=>want.test(x.name));if(!a)continue;
       const b=parseInt(String(rel.tag_name).replace(/\D/g,''),10)||0;
-      if(b>BUILD)UPD={build:b,url:a.browser_download_url,size:a.size||0};
+      if(b>BUILD&&(manual||b>(SET.skipBuild|0)))UPD={build:b,url:a.browser_download_url,size:a.size||0};
       break;
     }
     updChecked=true;
@@ -611,8 +611,9 @@ async function checkUpdate(manual){
 async function openUpdate(){
   if(!UPD)return;
   const mb=UPD.size?` (${(UPD.size/1048576).toFixed(1)} MB)`:'';
-  const v=await sheet({title:T('⬆ Нова версія · збірка {0}',UPD.build),body:`<p>${PLATFORM==='android'?T('Завантажиться APK{0}. Відкрий його й натисни «Встановити» — гра оновиться, профіль і збереження залишаться.',mb):T('Завантажиться інсталятор{0}. Запусти його — він оновить гру, профіль і збереження залишаться.',mb)}</p><p class="hint">${T('Твоя збірка: {0}',BUILD)}</p>`,
-    buttons:[{l:T('Завантажити'),v:1,pri:1},{l:T('Пізніше'),v:0}],now:1});
+  const v=await sheet({title:T('⬆ Нова версія · збірка {0}',UPD.build),body:`<p>${PLATFORM==='android'?T('Завантажиться APK{0}. Відкрий його й натисни «Встановити» — гра оновиться, профіль і збереження залишаться.',mb):T('Завантажиться інсталятор{0}. Запусти його — він оновить гру, профіль і збереження залишаться.',mb)}</p><p class="hint">${T('Твоя збірка: {0}',BUILD)}</p><p class="tip">${T('Оновлення не обов’язкове: поточна версія працює й далі, зокрема без інтернету.')}</p>`,
+    buttons:[{l:T('Завантажити'),v:1,pri:1},{l:T('Пізніше'),v:0},{l:T('Пропустити цю версію'),v:'skip'}],now:1});
+  if(v==='skip'){SET.skipBuild=UPD.build;saveSet();UPD=null;toast(T('Нагадаю лише про наступну версію'));if(!G)renderMenu();return}
   if(!v)return;
   if(window.AndroidApp&&window.AndroidApp.openUrl)window.AndroidApp.openUrl(UPD.url);
   else window.open(UPD.url,'_blank');
@@ -773,12 +774,15 @@ function viewSettings(){
     <p class="hint">${hasBridge()?T("«Авто» — гра повертається разом із телефоном."):T("Поверни телефон — поле стане зліва, а гравці й журнал справа. Фіксація орієнтації працює в застосунку.")}</p>
   </div>
   ${PLATFORM?`<div class="panel"><div class="label">${T("Оновлення")}</div>
-    <div class="switch"><div class="t"><b>${UPD?T('Доступна збірка {0}',UPD.build):T('Збірка {0}',BUILD||'—')}</b><small>${UPD?T('Натисни, щоб завантажити нову версію.'):T('Гра сама перевіряє оновлення при запуску.')}</small></div>
-      <button class="btn ${UPD?'pri':''}" id="updBtn" style="flex:none">${UPD?T('Оновити'):T('Перевірити')}</button></div></div>`:''}
+    <div class="switch"><div class="t"><b>${UPD?T('Доступна збірка {0}',UPD.build):T('Збірка {0}',BUILD||'—')}</b><small>${UPD?T('Натисни, щоб завантажити нову версію.'):SET.autoUpd===false?T('Автоперевірку вимкнено — перевір вручну, коли буде інтернет.'):T('Гра сама перевіряє оновлення при запуску.')}</small></div>
+      <button class="btn ${UPD?'pri':''}" id="updBtn" style="flex:none">${UPD?T('Оновити'):T('Перевірити')}</button></div>
+    <div class="switch"><div class="t"><b>${T('Перевіряти оновлення при запуску')}</b><small>${T('Вимкни, якщо інтернет рідко буває — гра працює й без нього.')}</small></div>
+      <button class="toggle" id="tgUpd" role="switch" aria-checked="${SET.autoUpd!==false}" aria-label="${T('Перевіряти оновлення при запуску')}"></button></div></div>`:''}
   <div class="panel"><div class="label">${T("Збереження")}</div>
     <button class="btn" id="wipe" ${loadSaved()?'':'disabled'}>${T("Видалити збережену гру")}</button>
   </div>`;
   wireLang();
+  if($('#tgUpd'))$('#tgUpd').onclick=()=>{SET.autoUpd=SET.autoUpd===false;saveSet();renderMenu()};
   if($('#updBtn'))$('#updBtn').onclick=async()=>{if(UPD)return openUpdate();const b=$('#updBtn');b.disabled=true;await checkUpdate(true);renderMenu()};
   $('#tgHints').onclick=()=>{SET.hints=!SET.hints;saveSet();renderMenu()};
   $('#tg3d').onclick=()=>{SET.board3d=SET.board3d===false;saveSet();if(SET.board3d!==false)load3DLibs();renderMenu()};
@@ -1956,5 +1960,5 @@ if(SET.orient!=='auto'||hasBridge())applyOrient();
 renderSetup();
 if(SET.board3d!==false)load3DLibs();
 document.title=T('Життя в кредит');
-if(PLATFORM)setTimeout(()=>checkUpdate(false),2000);
+if(PLATFORM&&SET.autoUpd!==false&&navigator.onLine!==false)setTimeout(()=>checkUpdate(false),2000);
 </script>
