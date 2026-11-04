@@ -405,6 +405,7 @@ const FATE=[
 {t:'Податкова перевірка',d:'−10% готівки.',f:p=>{if(p.money>0)p.money-=Math.round(p.money*.1)}},
 {t:'Розбив телефон',d:'−2000 ₴, −5 щастя.',f:p=>{p.money-=2000;joy(p,-5)}},
 {t:'Підробіток на вихідних',d:'+2000 ₴, −5 здоров’я.',f:p=>{p.money+=2000;hurt(p,5)}},
+{t:'Поставив сигналізацію',d:'Наступна пакість проти твого майна провалиться, а пакосника спіймають.',f:p=>{p.ef.alarm=(p.ef.alarm||0)+1}},
 {t:'Офшорна схованка',d:'Можеш сховати одне своє майно — суперники не бачитимуть його ні в списку, ні на полі.',f:p=>{p.ef.hide=(p.ef.hide||0)+1;return '@hide'}},
 {t:'Записав на тещу',d:'Ще одна схованка: сховай будь-яке своє майно, коли захочеш.',f:p=>{p.ef.hide=(p.ef.hide||0)+1;return '@hide'}},
 {t:'Податкова розвідка',d:'Усі сховані майна суперників розкрито.',f:p=>{let n=0;G.players.forEach(q=>{if(q!==p)q.owned.forEach(o=>{if(o.hidden){o.hidden=false;n++}})});return n?`Розкрито схованок: ${n}.`:'Нічого схованого не знайшли.'}},
@@ -442,7 +443,7 @@ const nm=p=>`<b style="color:${p.color}">${esc(p.name)}</b>`;
 function worth(p){return p.money+p.owned.reduce((s,o)=>s+(o.cell>=0?CELLS[o.cell].price*.8:0)-o.left,0)}
 function score(p){return Math.round(worth(p)+p.happy*100+p.hp*50)}
 function payments(p){return p.owned.reduce((s,o)=>s+(o.left>0?Math.min(o.pay,o.left):0),0)}
-function makePlayer(s,i,job){return {name:s.name,av:s.av||null,dream:s.dream||null,bot:!!s.bot,ctrl:s.ctrl||'local',color:COLORS[i],pos:0,money:START_MONEY,hp:100,happy:50,job:{...job},owned:[],ef:{skip:0,shield:0,ins:0,burn:0,extra:0,hide:0},out:false,laps:0}}
+function makePlayer(s,i,job){return {name:s.name,av:s.av||null,dream:s.dream||null,bot:!!s.bot,ctrl:s.ctrl||'local',color:COLORS[i],pos:0,money:START_MONEY,hp:100,happy:50,job:{...job},owned:[],ef:{skip:0,shield:0,ins:0,burn:0,extra:0,hide:0,alarm:0},out:false,laps:0}}
 function freshGame(seats,online){
   const jobs=[...JOBS.slice(0,5)].sort(()=>Math.random()-.5);
   G={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),round:1,cur:0,owners:{},log:[],over:false,winner:null,online:!!online,players:seats.map((s,i)=>makePlayer(s,i,jobs[i%jobs.length]))};
@@ -587,6 +588,11 @@ function viewRules(){
       <div class="mini fate"><b>Банк підняв ставку</b>борги +10%</div>
       <div class="mini fate"><b>День народження</b>кожен дарує 500 ₴</div>
     </div></div>
+  <div class="panel rules-sec"><h3>😈 Чуже майно: пакості й добрі справи</h3>
+    <p>Заплатив оренду — далі вибираєш. <b>Пошкодити</b> (затопити квартиру, подряпати машину, поганий відгук): власник платить 12% ціни за ремонт; ризик 25%, що спіймають і оштрафують тебе. <b>Пограбувати</b>: забираєш до 15% його готівки (макс. 2500 ₴); ризик 35% — штраф 2000 ₴ і пропуск ходу. <b>Податкова</b>: власник платить 10% готівки; 25% — штраф тобі за наклеп. <b>Добра справа</b>: +8 щастя тобі, +10 власнику, бізнесу ще й +1000 ₴.</p>
+    <p>Картка <b>«Сигналізація»</b> захищає: наступна пакість проти тебе провалюється, а пакосника ловлять.</p></div>
+  <div class="panel rules-sec"><h3>🕶 Схованки</h3>
+    <p>Гроші, зарплату і здоров’я суперників не видно — лише їхнє майно. Картки «Офшорна схованка», «Записав на тещу», «Конфіденційність лікаря» дають схованку: сховай будь-яке своє майно. Хто стане на сховане — платить оренду і розкриває його. «Податкова розвідка» розкриває всі схованки суперників.</p></div>
   <div class="panel rules-sec"><h3>💀 Як вибувають</h3>
     <p>Якщо гроші пішли в мінус — банк сам продає твоє майно (60% ціни мінус борг). Не вистачило — <b>банкрутство</b>. Здоров’я впало до 0 — теж вибуваєш. Щастя на нулі щоразу забирає 10 здоров’я.</p>
     <p>Своє майно можна продати й самостійно: натисни на свою картку гравця під час свого ходу.</p></div>
@@ -595,7 +601,7 @@ function viewRules(){
 }
 
 /* ---------- hints ---------- */
-const TIPS=['Натисни на будь-яку клітинку — побачиш ціну, платіж і оренду.','Натисни на картку гравця — побачиш його майно і борги.','Тримай суму платежів нижче за зарплату, інакше кредити з’їдять усе.','Готівкою вигідніше: без 15% переплати і з бонусом до щастя.','Дешеве майно окупається орендою швидше, ніж здається.','Медстраховка з колоди здоров’я рятує від рахунків за лікування.','Щастя на нулі щоколу забирає здоров’я — інколи вечірка корисна.','Біржа праці може дати кращу зарплату — але й гіршу. Читай пропозицію.','Банк дає 5000 ₴ швидко, але повертати доведеться 6600.','Сідаєш на мілину? Продай майно сам — поки банк не забрав його дешевше.'];
+const TIPS=['Натисни на будь-яку клітинку — побачиш ціну, платіж і оренду.','Натисни на картку гравця — побачиш його майно і борги.','Тримай суму платежів нижче за зарплату, інакше кредити з’їдять усе.','Готівкою вигідніше: без 15% переплати і з бонусом до щастя.','Дешеве майно окупається орендою швидше, ніж здається.','Медстраховка з колоди здоров’я рятує від рахунків за лікування.','Щастя на нулі щоколу забирає здоров’я — інколи вечірка корисна.','Біржа праці може дати кращу зарплату — але й гіршу. Читай пропозицію.','Банк дає 5000 ₴ швидко, але повертати доведеться 6600.','Сідаєш на мілину? Продай майно сам — поки банк не забрав його дешевше.','На чужому майні можна напакостити — але ризик бути спійманим реальний.','Сигналізація з колоди долі ловить наступного пакосника.','Добра справа на чужому майні піднімає щастя і тобі.','Сховане майно не видно суперникам, доки хтось на нього не стане.'];
 function contextHint(p){
   if(!isMine(p))return null;
   if(p.hp<35)return 'Здоров’я низьке: лікарня (+40) або спортзал (+15). Нижче 30 — зарплата менша.';
@@ -914,6 +920,7 @@ function meBar(){
   if(q.ef.shield)ef.push(`<span class="chip good">імунітет</span>`);
   if(q.ef.ins)ef.push(`<span class="chip good">страховка ×${q.ef.ins}</span>`);
   if(q.ef.hide)ef.push(`<span class="chip good">🕶 схованка ×${q.ef.hide}</span>`);
+  if(q.ef.alarm)ef.push(`<span class="chip good">🚨 сигналізація</span>`);
   const pay=payments(q);
   return `<div class="mebar ${turn?'turn':''}">
     <div class="me-top"><span class="ava">${q.av||'🙂'}</span><div class="nm2"><b>${esc(q.name)}${NET?'':' · твій екран'}</b><small>${esc(q.job.n)} · 📍 ${loc.ic} ${esc(loc.name)}</small></div>
@@ -1069,6 +1076,48 @@ function playerInfo(i){
     });
   }
 }
+/* ---------- on someone else's property: prank or good deed ---------- */
+const VISIT={
+  home:{dmg:'💧 Затопити квартиру',dmgLog:'затопив квартиру',rob:'🔓 Обнести, поки нікого нема',good:'🎁 Подарувати на новосілля'},
+  car:{dmg:'🔨 Подряпати машину',dmgLog:'подряпав машину',rob:'🛞 Зняти колеса і продати',good:'🧽 Помити машину'},
+  biz:{dmg:'⭐ Залишити поганий відгук',dmgLog:'залишив поганий відгук на',rob:'💸 Пограбувати касу',good:'📣 Порекомендувати друзям'}
+};
+async function visitAction(p,o,c){
+  const V=VISIT[c.g];
+  const dmgCost=Math.round(c.price*.12/50)*50, fineDmg=Math.round(c.price*.1/50)*50+500;
+  const botPick=(()=>{const r=Math.random();if(r<.45)return 0;if(r<.6)return 'good';if(r<.75)return 'dmg';if(r<.88)return 'rob';return 'tax'})();
+  const body=`<p>Ти на майні <b style="color:${o.color}">${esc(o.name)}</b>. Можна зіпсувати йому життя — або зробити добру справу.</p>
+    ${SET.hints?`<p class="tip">Пакості ризиковані: можуть спіймати і оштрафувати. Добра справа піднімає щастя обом.</p>`:''}`;
+  const v=await ask(p,{title:`${c.ic} Що робимо?`,body,
+    buttons:[{l:V.dmg+' · ризик 25%',v:'dmg'},{l:V.rob+' · ризик 35%',v:'rob'},{l:'🧾 Поскаржитись у податкову',v:'tax'},{l:V.good,v:'good'},{l:'Пройти мимо',v:0,pri:1}]},botPick);
+  if(!v)return;
+  const alarm=(v!=='good'&&o.ef.alarm>0);
+  if(alarm)o.ef.alarm--;
+  const caught=chance=>alarm||Math.random()<chance;
+  let res='',pub='',ownerMsg='';
+  if(v==='dmg'){
+    if(caught(.25)){p.money-=fineDmg;joy(p,-5);res=`Тебе спіймали${alarm?' — спрацювала сигналізація':''}! Штраф ${fmt(fineDmg)}, −5 щастя.`;pub=`${nm(p)} хотів напакостити ${nm(o)}, але його спіймали${alarm?' (сигналізація)':''}.`;ownerMsg=`${p.name} хотів зіпсувати «${c.name}», але його спіймали`}
+    else{o.money-=dmgCost;joy(o,-8);res=`Вийшло. ${esc(o.name)} платить за ремонт ${fmt(dmgCost)} і втрачає 8 щастя.`;pub=`${nm(p)} ${V.dmgLog} «${esc(c.name)}» гравця ${nm(o)}!`;ownerMsg=`${p.name} ${V.dmgLog} «${c.name}»: −${fmt(dmgCost)}`}
+  }
+  if(v==='rob'){
+    if(caught(.35)){p.money-=2000;p.ef.skip+=1;joy(p,-5);res=`Спіймали${alarm?' — спрацювала сигналізація':''}! Штраф 2000 ₴ і пропуск ходу.`;pub=`${nm(p)} намагався пограбувати ${nm(o)}, але попався${alarm?' (сигналізація)':''}.`;ownerMsg=`${p.name} намагався тебе пограбувати — спіймали`}
+    else{const take=Math.min(2500,Math.max(0,Math.round(o.money*.15/50)*50));o.money-=take;p.money+=take;joy(o,-10);
+      res=take?`Здобич: ${fmt(take)}. Ніхто не бачив.`:'Взяти нічого — у власника порожньо.';pub=take?`${nm(p)} пограбував ${nm(o)}!`:`${nm(p)} поліз до ${nm(o)}, але нічого не знайшов.`;ownerMsg=take?`${p.name} пограбував тебе: −${fmt(take)}`:''}
+  }
+  if(v==='tax'){
+    if(Math.random()<.25&&!alarm){p.money-=1000;res='Перевірка нічого не знайшла. Тебе оштрафували за наклеп: −1000 ₴.';pub=`${nm(p)} поскаржився на ${nm(o)} у податкову — і отримав штраф за наклеп.`}
+    else{const t=Math.max(500,Math.round(Math.max(o.money,0)*.1/50)*50);o.money-=t;joy(o,-5);res=`Податкова прийшла до ${esc(o.name)} і виписала штраф.`;pub=`${nm(p)} наслав податкову на ${nm(o)}.`;ownerMsg=`${p.name} поскаржився в податкову: −${fmt(t)}`}
+  }
+  if(v==='good'){
+    joy(p,8);joy(o,10);
+    if(c.g==='home'){const g=Math.min(500,Math.max(0,p.money));p.money-=g;o.money+=g;res=`Подарунок вручено (${fmt(g)}). +8 щастя тобі, +10 власнику.`}
+    else if(c.g==='biz'){o.money+=1000;res='Друзі прийшли — у власника +1000 ₴ виручки. +8 щастя тобі, +10 власнику.'}
+    else{res='Машина сяє. +8 щастя тобі, +10 власнику.'}
+    pub=`${nm(p)} робить добру справу для ${nm(o)}: ${V.good.slice(2).toLowerCase()}.`;ownerMsg=`${p.name}: ${V.good.slice(2).toLowerCase()} 💛`;
+  }
+  log(pub);if(ownerMsg)sayTo(o,ownerMsg);renderGame();
+  await ask(p,{title:v==='good'?'💛 Добра справа':'😈 Результат',body:`<p>${res}</p>`,pub:`<p>${pub}</p>`});
+}
 function hideAsset(p,k){
   const o=p.owned[k];if(!o||o.cell<0||o.hidden||!(p.ef.hide>0))return false;
   o.hidden=true;p.ef.hide--;
@@ -1183,6 +1232,7 @@ async function landAsset(p,i){
   p.money-=c.rent;o.money+=c.rent;
   log(`${nm(p)} платить ${nm(o)} оренду ${fmt(c.rent)}.${wasHidden?' Схованку розкрито!':''}`);renderGame();
   await ask(p,{title:`${c.ic} ${esc(c.name)}`,body:`${wasHidden?'<p class="pick">Сюрприз: це майно було сховане!</p>':''}<p>Це майно належить ${esc(o.name)}. Оренда: ${fmt(c.rent)}.</p>`});
+  if(!o.out&&!p.out)await visitAction(p,o,c);
 }
 async function drawCard(p,kind){
   const deck=kind==='health'?HEALTH:FATE;const card=rnd(deck);
