@@ -1,0 +1,784 @@
+0§Mortgage
+1§Car loan
+2§Business loan
+3§Olya
+4§Max
+5§Iryna
+6§Taras
+7§Solya
+8§Denys
+9§Courier
+10§Call-centre operator
+11§Waiter
+12§Sysadmin
+13§Shop assistant
+14§Programmer
+15§Sales manager
+16§Taxi driver
+17§Unemployed
+18§Payday
+19§Shawarma kiosk
+20§Health
+21§Used Lanos
+22§Tax office
+23§Room in a shared flat
+24§Fate
+25§Scooter rental
+26§Hospital
+27§Smart flat
+28§Coffee shop
+29§Courses
+30§Garage
+31§Toyota on credit
+32§Party
+33§Studio flat
+34§Barbershop
+35§Gym
+36§Two-room new build
+37§Car wash
+38§Job centre
+39§Electric car
+40§Casino
+41§Townhouse
+42§Country house
+43§Bank
+44§Night raid
+45§You can rob a business you land on: 60% — +1500 ₴ (from the owner's till or the bank), otherwise a 1500 ₴ fine and a missed turn. Once every 3 rounds.
+46§Doctor friend
+47§Hospital costs 750 ₴ instead of 1500 and heals 50.
+48§Good credit history
+49§Loan down payment is 10% instead of 20%.
+50§Subsidised mortgage
+51§Housing overpayment is 5% instead of 15%.
+52§Business acumen
+53§Rent from your businesses +25%.
+54§Dividends
+55§On “Payday” +150 ₴ for each property you own.
+56§Security
+57§Pranksters and robbers of your property get caught 25% more often.
+58§Starting capital
+59§You start every game with +5000 ₴.
+60§Schemes
+61§You start every game with a hideout and an alarm.
+62§Hero
+63§Coin
+64§Flag
+65§Brick
+66§Motorbike
+67§Yellow truck
+68§Red truck
+69§Green truck
+70§Purple truck
+71§Little cloud
+72§Coin block
+73§Fountain
+74§Professional courses: −2000 ₴, and your salary grows by 15%.
+75§You can bet 1000 or 3000 ₴: 45% — you win double, otherwise the bet is lost.
+76§Pass or land here — you get your salary and pay all your loans.
+77§Draw a health card: an illness or a buff.
+78§Draw a fate card: bonuses, fines, love, layoffs.
+79§You pay 10% of your cash (at least 500 ₴).
+80§You can get treatment: −1500 ₴, +40 health.
+81§You can go: −1000 ₴, +20 happiness, −5 health.
+82§Membership: −1200 ₴, +15 health, +5 happiness.
+83§You're offered a new job. Accept or not — your call.
+84§Consumer loan or early repayment.
+85§ The insurance paid the bill.
+86§Cold
+87§−10 health, you miss 1 turn.
+88§Flu
+89§−20 health, medicine −800 ₴.
+90§Broke a leg on the ice
+91§−30 health, cast −3000 ₴, you miss 2 turns.
+92§Toothache
+93§Dentist −2500 ₴, −5 health.
+94§Burnout
+95§−15 health, −20 happiness, your next 2 salaries are halved.
+96§Insomnia
+97§−10 health, −10 happiness.
+98§Food poisoning from shawarma
+99§−15 health, you miss 1 turn.
+100§Office-chair back
+101§Massage therapist −1500 ₴, −10 health.
+102§Spring allergy
+103§−5 health, pills −400 ₴.
+104§Blood pressure spikes
+105§−20 health, cardiologist −1200 ₴.
+106§Iron immunity
+107§The next illness won't affect you.
+108§Doctor confidentiality
+109§You get a hideout: hide one of your properties from rivals.
+110§Health insurance
+111§Insurance pays your next 3 medical bills.
+112§Finally slept well
+113§+15 health.
+114§Morning yoga
+115§+10 health, +10 happiness.
+116§Vitamins D and C
+117§+10 health.
+118§Burst of energy
+119§Take another turn right away.
+120§Migraine
+121§−10 health, −5 happiness.
+122§Sprained at the gym
+123§−15 health, emergency room −700 ₴.
+124§Broke your glasses
+125§New lenses −1100 ₴.
+126§Massage from a friend
+127§+10 health, +5 happiness.
+128§Meditation
+129§+15 happiness.
+130§A week of good sleep
+131§+20 health.
+132§Check-up with no surprises
+133§+5 health, +5 happiness.
+134§Bonus
+135§Grandma's inheritance
+136§+4000 ₴ and a little sadness: −5 happiness.
+137§Loan holiday
+138§No loan payments are taken on your next “Payday”.
+139§Debt collectors calling
+140§−10 happiness, −500 ₴ to “settle the matter”.
+141§Found a wallet and returned it
+142§The owner thanked you: +800 ₴, +8 happiness.
+143§Neighbours are renovating
+144§Drilling in the morning: −10 happiness, −5 health.
+145§Bank account hacked
+146§Yearly cashback
+147§Friend's wedding
+148§Gift −1500 ₴, +20 happiness.
+149§Traffic fine
+150§Flooded the neighbours
+151§You pay for their repairs: −2500 ₴.
+152§Lottery
+153§You won 5000 ₴.
+154§A friend paid back a debt
+155§Trip to the Carpathians
+156§−3500 ₴, +25 happiness.
+157§Break-up
+158§−20 happiness.
+159§Fell in love
+160§+25 happiness.
+161§Promotion
+162§Salary +20%.
+163§Layoff
+164§You've been fired. You're unemployed now.
+165§Cashback
+166§Bank raised the rate
+167§The balance of each of your loans +10%.
+168§Inflation
+169§All players lose 1000 ₴ each.
+170§Birthday
+171§Every player gives you 500 ₴.
+172§Ambulance took you to hospital
+173§Move to the “Hospital” cell.
+174§Tax audit
+175§−10% of your cash.
+176§Smashed your phone
+177§−2000 ₴, −5 happiness.
+178§Weekend side job
+179§+2000 ₴, −5 health.
+180§Installed an alarm
+181§The next prank against your property will fail and the prankster will be caught.
+182§Offshore hideout
+183§You can hide one of your properties — rivals won't see it in the list or on the board.
+184§Registered it to the mother-in-law
+185§Another hideout: hide any of your properties whenever you like.
+186§Tax intelligence
+187§All rivals' hidden properties are revealed.
+188§Hideouts revealed: {0}.
+189§Nothing hidden was found.
+190§🎨 Creative
+191§Set everything up yourself: rounds, goal, elimination or return, tax, events.
+192§🏁 Classic
+193§Goal: {0} of capital, or be the last one standing, or the best score after 25 rounds.
+194§💀 Elimination
+195§No goal and no round limit. The cost of living grows every round (250 ₴ × round number), and from round 13 fatigue hits your health. The last survivor wins.
+196§♾ Endless
+197§The game never ends. If you go bankrupt or burn out, you start life from scratch. Leave any time.
+198§The game has started. Everyone gets
+199§ and a job.
+200§Player
+201§← Menu
+202§<b>Continue game</b>
+203§round {0} · {1}
+204§current game log and
+205§Life<em>on credit</em>
+206§beta 3.1
+207§A board game about adult life: mortgages instead of houses, car loans instead of streets, and from the deck — a cold or a bonus.
+208§<b>One phone</b>
+209§2–4 players and bots
+210§<b>Online</b>
+211§room by code
+212§<b>Rules</b>
+213§cells, cards, loans
+214§<b>Settings</b>
+215§hints, screen
+216§<b>Game journal</b>
+217§{0}recent finished games
+218§Number of rounds
+219§∞ no limit
+220§Capital goal
+221§no goal
+222§k ₴
+223§Who lost
+224§is out
+225§comes back
+226§restarts at once
+227§Comes back after
+228§ rounds
+229§Returns per player
+230§ times
+231§Tax
+232§none
+233§Starting money
+234§Salaries
+235§Rising cost of living
+236§250 ₴ × round number on every payday, fatigue from round 13
+237§Health cards
+238§Fate cards
+239§Pranks and good deeds
+240§Property hideouts
+241§Level perks
+242§be the first to reach {0}
+243§be the last one standing (losers come back after {0} rounds, up to {1} times)
+244§be the last one standing
+245§or the best score after {0} rounds
+246§an endless game — play as long as you like.
+247§Less
+248§More
+249§<p class="tip" style="border-color:var(--hp)">With no round limit, goal or cost of living the game can last very long. Turn one of them on so there's a finish.</p>
+250§Creative mode settings
+251§{0} In creative mode XP and coins are halved.
+252§Mode
+253§Player {0} name
+254§Human
+255§Bot
+256§Game on one phone
+257§Players (2–4)
+258§Start game
+259§XP goes to the player with your nickname ({0}). Humans take turns passing the phone. Bots move on their own — handy for practice.
+260§The host runs the game — if they leave, the game ends for everyone. If another player disconnects, a bot finishes for them.
+261§Online play needs the internet. Check your connection and open the game again.
+262§Online with friends
+263§Create room
+264§You'll be the host: you get a code and friends enter it. Free seats can go to bots.
+265§Join by code
+266§CODE
+267§Room code
+268§Join
+269§The code has 5 characters
+270§This device doesn't support 3D — a flat board is shown.
+271§A 3D board with houses and cars. Turn it off on a weak phone.
+272§“Auto” — the game rotates with your phone.
+273§Turn your phone — the board goes left, players and log go right. Locking orientation works in the app.
+274§Settings
+275§Language
+276§<b>Hints</b><small>Tips under the board and in decisions: what pays off and what to watch out for.</small>
+277§Hints
+278§<b>Event windows wait for OK</b><small>What bots and rivals did — one by one, oldest first. The game keeps going meanwhile.</small>
+279§Event windows wait for OK
+280§<b>3D board</b><small>{0}</small>
+281§3D board
+282§Screen orientation
+283§Auto
+284§Portrait
+285§Landscape
+286§Saves
+287§Delete saved game
+288§Delete saved game?
+289§<p>You won't be able to continue it.</p>
+290§Delete
+291§Cancel
+292§Save deleted
+293§{0} <b>Level {1}: {2}.</b> {3}
+294§Rules
+295§🏁 Goal
+296§In classic mode — be the first to reach <b>{0} of capital</b> — that's financial freedom. Or be the last one standing. If nobody makes it in {1} rounds, the best score wins: capital + happiness×100 + health×50.
+297§Start: <b>{0}</b> (in creative — whatever you set), 100 health, 50 happiness and a random job.
+298§⭐ Levels, perks and figures
+299§Each game gives XP and coins: 1st place — 100 🪙, 2nd — 60, 3rd — 30, 4th — nothing. Coins buy figures (4 basic ones are free).
+300§🎮 Modes
+301§In creative you can change: number of rounds or ∞, capital goal, what happens to whoever loses (out / comes back after N rounds / restarts at once), tax 0–40%, starting money, salary multiplier, cost of living, and turn cards, pranks, hideouts, perks, casino and courses on or off.
+302§No XP in endless mode. “Elimination” gives +15 XP to the game bonus.
+303§🎲 Turn
+304§Roll two dice and move around a loop of 32 cells. Each time you pass <b>“Payday”</b> you get your salary and automatically pay all loans. Happiness drops a little each time — life is draining.
+305§🏠 Property and loans
+306§You take property <b>on credit</b>: 20% down now, the rest (+15% overpayment) in six payments on “Payday”. Or pay cash — no overpayment and a happiness bonus. Whoever lands on your property pays you rent.
+307§Property
+308§Price
+309§Down
+310§Payment
+311§Rent
+312§🗺 Cells
+313§🩺 Health cards
+314§A deck of illnesses and buffs. Illnesses hit your health and wallet and can take turns away. Buffs protect and heal.
+315§<b>Cold</b>−10 health, miss a turn
+316§<b>Burnout</b>salary ×0.5 for 2 rounds
+317§<b>Immunity</b>the next illness has no effect
+318§<b>Insurance</b>3 medical bills for free
+319§🎴 Fate cards
+320§<b>Promotion</b>salary +20%
+321§<b>Layoff</b>you become unemployed
+322§<b>Bank raised the rate</b>debts +10%
+323§<b>Birthday</b>everyone gives 500 ₴
+324§😈 Other people's property: pranks and good deeds
+325§Paid the rent — now you choose. <b>Damage</b> (flood the flat, scratch the car, bad review): the owner pays 12% of the price for repairs; 25% risk you get caught and fined. <b>Rob</b>: take up to 15% of their cash (max 2500 ₴); 35% risk — a 2000 ₴ fine and a missed turn. <b>Tax office</b>: the owner pays 10% of cash; 25% — you get fined for slander. <b>Good deed</b>: +8 happiness for you, +10 for the owner, and a business also gets +1000 ₴.
+326§The <b>“Alarm”</b> card protects you: the next prank against you fails and the prankster gets caught.
+327§🕶 Hideouts
+328§You can't see rivals' money, salary or health — only their property. The cards “Offshore hideout”, “Registered it to the mother-in-law”, “Doctor confidentiality” give a hideout: hide any of your properties. Whoever lands on a hidden one pays rent and reveals it. “Tax intelligence” reveals all rivals' hideouts.
+329§💀 How you're eliminated
+330§If your money goes negative, the bank sells your property itself (60% of the price minus the debt). Not enough — <b>bankruptcy</b>. Health drops to 0 — you're out too. Zero happiness takes 10 health every time.
+331§You can also sell your property yourself: tap your player card during your turn.
+332§🌐 Online
+333§The host creates a room and shares a 5-character code. Everyone plays on their own phone. If a player disconnects, a bot finishes for them.
+334§Tap any cell to see its price, payment and rent.
+335§Tap a player card to see their property and debts.
+336§Keep total payments below your salary, or loans will eat everything.
+337§Cash is better: no 15% overpayment and a happiness bonus.
+338§Cheap property pays back through rent faster than you'd think.
+339§Health insurance from the health deck saves you from medical bills.
+340§Zero happiness drains health every round — sometimes a party helps.
+341§The job centre can give a better salary — or a worse one. Read the offer.
+342§The bank gives 5000 ₴ fast, but you'll have to pay back 6600.
+343§Running low? Sell property yourself — before the bank takes it cheaper.
+344§You can prank on someone else's property — but the risk of getting caught is real.
+345§An alarm from the fate deck catches the next prankster.
+346§A good deed on someone else's property raises your happiness too.
+347§Hidden property isn't visible to rivals until someone lands on it.
+348§Low health: hospital (+40) or gym (+15). Below 30 your salary is lower.
+349§Happiness is almost zero. A party, a trip or your own property will cheer you up.
+350§Low on money: on “Payday” payments of
+351§ will be taken. If you go negative, the bank sells your property.
+352§Payments (
+353§) are higher than your salary (
+354§). Careful with new loans.
+355§Land on a coloured cell — you can take property on credit for 20% down.
+356§a tip for you
+357§tap — another tip
+358§Player
+359§Student
+360§Intern
+361§Employee
+362§Borrower
+363§Mortgagor
+364§Entrepreneur
+365§Investor
+366§Rentier
+367§Millionaire
+368§Financially free
+369§Own home
+370§+5 happiness for each home
+371§Own car
+372§+5 happiness for each car
+373§Own business
+374§+5 happiness for each business
+375§· to level {0}: {1} XP
+376§· new level {0}: {1}!
+377§New perk: {0} <b>{1}</b> — {2}
+378§New avatar unlocked: {0}
+379§+{0} XP · place {1}{2}{3}
+380§, unlocks at level
+381§lvl {0}
+382§Avatar {0}{1}
+383§Create a profile — every game gives XP, you level up and unlock new avatars.
+384§Nickname
+385§2 to 14 characters
+386§Avatar
+387§Your dream
+388§Your dream gives a happiness bonus when you get that kind of property.
+389§Create profile
+390§Nickname — at least 2 characters
+391§Welcome, {0}!
+392§selected
+393§select
+394§← Profile
+395§Figures
+396§<b>🪙 {0} coins</b><small>Earn them for 1st–3rd place. A figure is your token on the 3D board.</small>
+397§Models: Kenney (kenney.nl), CC0 licence. This is a beta — bugs are possible.
+398§{0} — your figure
+399§You need {0} more coins
+400§Buy “{0}”?
+401§Price: 🪙 {0}. Left after: {1}.
+402§Buy
+403§Bought: {0}
+404§· {1} XP more to level {0}
+405§ · max level
+406§<b>{0} <small>· level {1}</small></b><small>{2}</small>
+407§Level {0} · {1}
+408§<b>🪙 Wallet: {0}</b><small>Coins for places: 1st — 100, 2nd — 60, 3rd — 30, 4th — nothing.</small>
+409§Your figure:
+410§games
+411§wins
+412§win rate
+413§<b>{0}k ₴</b>
+414§capital record
+415§online games
+416§dream
+417§Save
+418§Dream
+419§Level 1 gives nothing. Each next level unlocks a power — they stack. They work in any game you play with your profile.
+420§How to get XP
+421§Each game +40 XP · win +120 · second place +60 · +1 XP per 1000 ₴ of capital (up to 60) · online +20.
+422§Saved
+423§Couldn't connect
+424§No connection to the game server.
+425§The game server is unavailable. Check the internet and try again.
+426§{0} joined the room
+427§{0} left
+428§{0} disconnected — a bot plays for them.
+429§The room isn't responding. Check the code and the internet.
+430§Room with code
+431§ not found. Check the code.
+432§The room is full or the game has already started.
+433§🏆 Victory!
+434§Place {0}
+435§Game over
+436§<p>The host closed the room or lost connection.</p>
+437§Your room
+438§Room
+439§Creating room…
+440§Connecting to room
+441§Copy code
+442§Friends open the game → “Online with friends” → enter this code.
+443§lvl {0}</small>
+444§bot
+445§host
+446§ · you
+447§Remove {0}
+448§free seat
+449§<p class="hint">You need at least 2 players. Wait for friends or add a bot.</p>
+450§+ Bot
+451§Waiting for the host to start the game…
+452§Mode: {0} — {1}
+453§Players · {0} of 4
+454§Close room
+455§Leave
+456§Code copied
+457§Select and copy the code
+458§k
+459§Bot is thinking…
+460§Turn in progress…
+461§Your turn
+462§Waiting for {0}…
+463§ of
+464§ · goal
+465§room
+466§one phone
+467§To menu
+468§New game
+469§📜 Game log
+470§Roll the dice
+471§{0}k
+472§<b>Round {0}{1}{2}</b>
+473§Where everyone is
+474§Where everyone is
+475§Settings
+476§Housing · mortgage
+477§Business
+478§What's happening
+479§{0}<small>tap — another tip</small>
+480§miss ×{0}
+481§burnout ×{0}
+482§immunity
+483§insurance ×{0}
+484§🕶 hideout ×{0}
+485§🚨 alarm
+486§⭐ perks: {0}
+487§💰 raid in {0}
+488§ · your screen
+489§{0}<small>+{1}{2} per round</small>
+490§🏠 My property · {0}
+491§💰 Capital {0}
+492§ · bot
+493§out
+494§<span class="secret">no visible property</span>
+495§Rivals
+496§ · moving
+497§ · out
+498§you
+499§nearby
+500§ cells ahead
+501§📍 Where everyone is
+502§<p class="hint" style="margin-top:8px">Player tokens are also visible on the board. Distance is counted in the direction of play.</p>
+503§Close
+504§on
+505§off
+506§💡 Hints: {0}
+507§wait for OK
+508§close by themselves
+509§🪟 Event windows: {0}
+510§auto
+511§portrait
+512§landscape
+513§🔄 Screen: {0}
+514§📖 Rules
+515§🚪 Leave online game
+516§🚪 Back to menu
+517§Back to the game
+518§⚙ Settings
+519§<p class="hint">Settings are saved on this phone.</p>
+520§📖 Rules in short
+521§<b>Goal:</b> {0}
+522§<b>“Payday”:</b> you get your salary and pay all loans.
+523§<b>Property:</b> 20% down + 6 payments, or cash. Someone else's property — you pay rent.
+524§<b>Hidden:</b> rivals' money, salary and health aren't visible, only their property.
+525§<b>Hideouts</b> from cards let you hide your property. Whoever lands on it pays rent and reveals the hideout. “Tax intelligence” reveals them all.
+526§<b>Elimination:</b> debts with no property or 0 health.
+527§Back
+528§Leave the online game?
+529§Back to menu?
+530§<p>You're the host — the game will end for everyone.</p>
+531§<p>A bot will play for you from now on.</p>
+532§<p>The game will be saved — you can continue it later.</p>
+533§Stay
+534§burnout
+535§property: {0}
+536§OK
+537§event
+538§events
+539§events
+540§{0} more {1}
+541§Skip all events ({0})
+542§Bot chooses: {0}
+543§<p class="hint">Nothing here yet.</p>
+544§Round {0}
+545§ · others' amounts hidden
+546§{0} events · from the start until now{1}
+547§Current game
+548§<b>{0} · round {1}</b><small>{2}</small>
+549§log
+550§ wins
+551§Nobody survived
+552§ · online
+553§<b>{0}</b><small>{1} · {2}{3} · {4} rounds</small>
+554§<p class="hint">Your last 5 finished games with full logs will appear here.</p>
+555§Game journal
+556§Finished games
+557§📜 Current game · round {0}
+558§{0} events · others' amounts hidden
+559§Continue game
+560§ pts
+561§{0} · {1} rounds · {2} events
+562§bank
+563§Type
+564§Down payment 20%
+565§Payment per round
+566§Overpayment
+567§Rent for others
+568§Happiness on purchase
+569§Owner
+570§{0} {1}<small>{2} · rent {3}</small>
+571§<p class="hint">No visible property.</p>
+572§Rivals' money, salary and health are hidden. Some property may be hidden too.
+573§💳 Consumer loan
+574§ <span class="achip hid">hidden</span>
+575§debt left
+576§ · payment
+577§fully paid off
+578§Sell {0}
+579§<p style="color:var(--muted)">No property or loans yet.</p>
+580§Hideouts
+581§<p style="color:var(--muted);font-size:13px">Selling: the bank pays 60% of the price minus the remaining loan.
+582§ 🕶 — hide from rivals.
+583§Where
+584§Job
+585§Cash
+586§Payments per round
+587§Capital
+588§Property hidden
+589§💧 Flood the flat
+590§flooded the flat
+591§🔓 Burgle while nobody's home
+592§🎁 Give a housewarming gift
+593§🔨 Scratch the car
+594§scratched the car
+595§🛞 Take the wheels and sell them
+596§🧽 Wash the car
+597§⭐ Leave a bad review
+598§left a bad review on
+599§💸 Rob the till
+600§📣 Recommend to friends
+601§Pranks are risky: you can get caught and fined. A good deed raises happiness for both.
+602§You're on the property of
+603§{0}</b>. You can ruin their life — or do a good deed.
+604§{0} What do we do?
+605§ · 25% risk
+606§ · 35% risk
+607§🧾 Complain to the tax office
+608§Walk past
+609§ — the alarm went off
+610§You got caught{0}! Fine {1}, −5 happiness.
+611§ (alarm)
+612§{0} tried to prank {1} but got caught{2}.
+613§{0} tried to damage “{1}” but got caught
+614§It worked. {0} pays {1} for repairs and loses 8 happiness.
+615§{0} {1} “{2}” of player {3}!
+616§Caught{0}! A 2000 ₴ fine and a missed turn.
+617§{0} tried to rob {1} but got caught{2}.
+618§{0} tried to rob you — caught
+619§Loot: {0}. Nobody saw.
+620§Nothing to take — the owner is broke.
+621§{0} robbed {1}!
+622§{0} broke into {1}'s place but found nothing.
+623§{0} robbed you: −{1}
+624§The audit found nothing. You were fined for slander: −1000 ₴.
+625§{0} reported {1} to the tax office — and got fined for slander.
+626§The tax office visited {0} and issued a fine.
+627§{0} set the tax office on {1}.
+628§{0} reported you to the tax office: −{1}
+629§Gift delivered ({0}). +8 happiness for you, +10 for the owner.
+630§Friends came — the owner gets +1000 ₴ in sales. +8 happiness for you, +10 for the owner.
+631§The car is shining. +8 happiness for you, +10 for the owner.
+632§{0} does a good deed for {1}: {2}.
+633§💛 Good deed
+634§😈 Result
+635§{0} hides “{1}”.
+636§{0} is hiding something offshore…
+637§{0} saves the hideout for later.
+638§🕶 Hide property
+639§<p>Choose what to hide from rivals. Hidden property isn't visible in the list or on the board until someone lands on it.</p>
+640§{0} is deciding what to hide…
+641§Later
+642§{0} sold “{1}” to the bank: {2}.
+643§{0} sold “{1}” to the bank.
+644§{0} misses a turn (sick).
+645§{0} misses a turn
+646§{0} rolls {1}+{2}.
+647§{0} moves again.
+648§sick leave
+649§loan holiday
+650§dividends +
+651§, loans −{0}
+652§, living −{0}
+653§{0}: salary +{1}{2}{3}{4}.
+654§ and pays loans
+655§{0} gets paid{1}.
+656§ · loans −
+657§ · living −
+658§Salary +{0}{1}{2}
+659§{0}: a quiet day.
+660§{0}: nothing happened.
+661§{0} visits the tax office — there are no taxes.
+662§{0} pays {1} in tax.
+663§{0} pays tax.
+664§🧾 Tax office
+665§Tax: {0} ({1}% of cash).
+666§Tax is {0}% of cash. Only the payer knows how much exactly.
+667§🎉 Party at friends'
+668§<p>Go: −1000 ₴, +20 happiness, −5 health.</p>
+669§Go
+670§Stay home
+671§{0} is partying.
+672§🏋️ Gym
+673§<p>Membership −1200 ₴: +15 health, +5 happiness.</p>
+674§Buy membership
+675§Walk past
+676§{0} buys a gym membership.
+677§📋 Job centre
+678§Offer: <b>{0}</b>, {1} per round.
+679§Now: {0}, {1}.
+680§<p>Got a job offer.</p>
+681§Accept
+682§Decline
+683§{0} is now a {1}.
+684§{0} changes jobs.
+685§💰 Night raid
+686§ from {0}'s till
+687§Level 2 perk: you can rob “{0}”. 60% — +1500 ₴{1}, 40% — a 1500 ₴ fine and a missed turn.
+688§<p>Up to something…</p>
+689§Rob
+690§Don't risk it
+691§{0} tried to rob “{1}” and got caught.
+692§🚔 Caught
+693§<p>A 1500 ₴ fine and a missed turn.</p>
+694§{0} robbed your “{1}”: −{2}
+695§{0} robbed “{1}”!
+696§💰 Success
+697§Loot: {0}. Next raid — in 3 rounds.
+698§{0} walks past the courses.
+699§🎓 Courses
+700§Professional courses: −2000 ₴, salary +15% ({0} → {1}).
+701§<p>Professional courses.</p>
+702§Sign up · 2000 ₴
+703§Not now
+704§{0} finished courses: salary {1}.
+705§{0} finished courses.
+706§{0} walks past the casino.
+707§🎰 Casino
+708§<p>45% — the bet doubles, 55% — it's lost. A win gives +3 happiness, a loss −5.</p>
+709§Bet 1000 ₴
+710§Bet 3000 ₴
+711§{0} wins at the casino!
+712§{0} loses at the casino.
+713§🎰 Win!
+714§🎰 No luck
+715§wins
+716§loses
+717§{0} {1} at the casino.
+718§🏥 Hospital
+719§free with insurance
+720§ <span class="pick">🩺 doctor friend</span>
+721§Get treatment: {0}, +{1} health.{2}
+722§Get treated
+723§No, thanks
+724§{0} gets treated.{1}
+725§🏦 Bank
+726§<p>Consumer loan or early repayment — only the player sees the decision.</p>
+727§consumer loan
+728§Or repay early: “{0}” — {1}.
+729§Consumer loan: you get 5000 ₴ and pay back 6600 ₴ in six payments.
+730§Take 5000 ₴
+731§Repay
+732§Do nothing
+733§{0} takes a 5000 ₴ consumer loan.
+734§{0} goes to the bank.
+735§{0} pays off a loan early.
+736§ +5 dream
+737§Careful: with this loan your payments (
+738§) will exceed your salary (
+739§Payments after purchase:
+740§ per round with a salary of
+741§. Pays back through rent in ~
+742§ visits.
+743§{0}: down payment
+744§Rent from others
+745§Happiness
+746§{0} · down {1}
+747§Cash {0}
+748§Don't take
+749§{0} takes out a {1} for “{2}”.
+750§{0} buys “{1}” in cash.
+751§{0} relaxes at their own place: +3 happiness.
+752§ Hideout revealed!
+753§{0} pays {1} rent of {2}.{3}
+754§<p class="pick">Surprise: this property was hidden!</p>
+755§This property belongs to {0}. Rent: {1}.
+756§Immunity protected you — the illness had no effect.
+757§{0} draws “{1}”.{2}
+758§Health card
+759§Fate card
+760§ · buff
+761§ · illness
+762§The bank takes “{1}” from {0} for debts.
+763§Bankruptcy
+764§Bankruptcy: debts and nothing left to sell.
+765§Zero health
+766§Zero health — intensive care and a long sick leave.
+767§{0}: {1} — life starts from scratch (time {2}).
+768§♾ Life from scratch
+769§{0}. The bank took your property, but you start again: {1}, full health.
+770§Comes back in round {0}.
+771§{0} is out. {1}{2}
+772§is out for a while
+773§Back in {0} rounds — from scratch. Returns left: {1}.
+774§{0} is back in the game from scratch!
+775§{0} is back in the game
+776§Capital {0} — financial freedom!
+777§Last one standing.
+778§Best score after {0} rounds.
+779§{0} wins! {1}
+780§Everyone is out.
+781§Victory: {0}
+782§Score = capital + happiness×100 + health×50.
+783§View the board

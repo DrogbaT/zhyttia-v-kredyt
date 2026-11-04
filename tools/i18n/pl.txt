@@ -1,0 +1,784 @@
+0§Kredyt hipoteczny
+1§Kredyt samochodowy
+2§Kredyt firmowy
+3§Ola
+4§Maks
+5§Iryna
+6§Taras
+7§Sola
+8§Denys
+9§Kurier
+10§Konsultant call center
+11§Kelner
+12§Administrator IT
+13§Sprzedawca
+14§Programista
+15§Menedżer sprzedaży
+16§Taksówkarz
+17§Bezrobotny
+18§Wypłata
+19§Budka z kebabem
+20§Zdrowie
+21§Używany Lanos
+22§Urząd skarbowy
+23§Pokój we wspólnym mieszkaniu
+24§Los
+25§Wypożyczalnia hulajnóg
+26§Szpital
+27§Smart-mieszkanie
+28§Kawiarnia
+29§Kursy
+30§Garaż
+31§Toyota na kredyt
+32§Impreza
+33§Kawalerka
+34§Barbershop
+35§Siłownia
+36§Dwupokojowe w nowym bloku
+37§Myjnia samochodowa
+38§Urząd pracy
+39§Samochód elektryczny
+40§Kasyno
+41§Szeregowiec
+42§Dom za miastem
+43§Bank
+44§Nocny skok
+45§Możesz obrabować biznes, na który stajesz: 60% — +1500 ₴ (z kasy właściciela lub banku), w przeciwnym razie 1500 ₴ kary i utrata kolejki. Raz na 3 rundy.
+46§Znajomy lekarz
+47§Szpital kosztuje 750 ₴ zamiast 1500 i leczy o 50.
+48§Dobra historia kredytowa
+49§Wkład własny to 10% zamiast 20%.
+50§Preferencyjna hipoteka
+51§Nadpłata za mieszkanie 5% zamiast 15%.
+52§Smykałka do biznesu
+53§Czynsz z twoich biznesów +25%.
+54§Dywidendy
+55§Na „Wypłacie” +150 ₴ za każdą twoją nieruchomość.
+56§Ochrona
+57§Psotników i złodziei twojego majątku łapią o 25% częściej.
+58§Kapitał startowy
+59§Każdą grę zaczynasz z +5000 ₴.
+60§Kombinacje
+61§Każdą grę zaczynasz ze skrytką i alarmem.
+62§Bohater
+63§Moneta
+64§Flaga
+65§Cegła
+66§Motocykl
+67§Żółta ciężarówka
+68§Czerwona ciężarówka
+69§Zielona ciężarówka
+70§Fioletowa ciężarówka
+71§Chmurka
+72§Blok z monetą
+73§Fontanna
+74§Kursy doszkalające: −2000 ₴, a pensja rośnie o 15%.
+75§Możesz postawić 1000 lub 3000 ₴: 45% — wygrana podwójna, inaczej stawka przepada.
+76§Przechodzisz lub stajesz tu — dostajesz pensję i spłacasz wszystkie kredyty.
+77§Ciągniesz kartę zdrowia: chorobę lub buff.
+78§Ciągniesz kartę losu: premie, kary, miłość, zwolnienia.
+79§Oddajesz 10% gotówki (minimum 500 ₴).
+80§Możesz się leczyć: −1500 ₴, +40 zdrowia.
+81§Możesz pójść: −1000 ₴, +20 szczęścia, −5 zdrowia.
+82§Karnet: −1200 ₴, +15 zdrowia, +5 szczęścia.
+83§Proponują ci nową pracę. Zgodzić się czy nie — decydujesz ty.
+84§Kredyt konsumpcyjny lub wcześniejsza spłata.
+85§ Rachunek opłaciło ubezpieczenie.
+86§Przeziębienie
+87§−10 zdrowia, tracisz 1 kolejkę.
+88§Grypa
+89§−20 zdrowia, leki −800 ₴.
+90§Złamana noga na gołoledzi
+91§−30 zdrowia, gips −3000 ₴, tracisz 2 kolejki.
+92§Ból zęba
+93§Dentysta −2500 ₴, −5 zdrowia.
+94§Wypalenie
+95§−15 zdrowia, −20 szczęścia, 2 kolejne pensje o połowę mniejsze.
+96§Bezsenność
+97§−10 zdrowia, −10 szczęścia.
+98§Zatrucie kebabem
+99§−15 zdrowia, tracisz 1 kolejkę.
+100§Plecy od biurowego krzesła
+101§Masażysta −1500 ₴, −10 zdrowia.
+102§Wiosenna alergia
+103§−5 zdrowia, tabletki −400 ₴.
+104§Skoki ciśnienia
+105§−20 zdrowia, kardiolog −1200 ₴.
+106§Żelazna odporność
+107§Następna choroba cię nie dotknie.
+108§Tajemnica lekarska
+109§Dostajesz skrytkę: ukryj jedną swoją nieruchomość przed rywalami.
+110§Ubezpieczenie zdrowotne
+111§Ubezpieczenie płaci 3 kolejne rachunki za leczenie.
+112§Wreszcie się wyspałeś
+113§+15 zdrowia.
+114§Poranna joga
+115§+10 zdrowia, +10 szczęścia.
+116§Witaminy D i C
+117§+10 zdrowia.
+118§Przypływ energii
+119§Od razu ruszasz się jeszcze raz.
+120§Migrena
+121§−10 zdrowia, −5 szczęścia.
+122§Naciągnięte więzadła na siłowni
+123§−15 zdrowia, izba przyjęć −700 ₴.
+124§Zbite okulary
+125§Nowe soczewki −1100 ₴.
+126§Masaż od przyjaciela
+127§+10 zdrowia, +5 szczęścia.
+128§Medytacja
+129§+15 szczęścia.
+130§Tydzień zdrowego snu
+131§+20 zdrowia.
+132§Badania bez niespodzianek
+133§+5 zdrowia, +5 szczęścia.
+134§Premia
+135§Spadek po babci
+136§+4000 ₴ i trochę smutku: −5 szczęścia.
+137§Wakacje kredytowe
+138§Na najbliższej „Wypłacie” raty nie są pobierane.
+139§Dzwonią windykatorzy
+140§−10 szczęścia, −500 ₴ na „załatwienie sprawy”.
+141§Znalazłeś portfel i oddałeś
+142§Właściciel się odwdzięczył: +800 ₴, +8 szczęścia.
+143§Sąsiedzi robią remont
+144§Wiertarka od rana: −10 szczęścia, −5 zdrowia.
+145§Włamanie na konto bankowe
+146§Roczny cashback
+147§Wesele przyjaciela
+148§Prezent −1500 ₴, +20 szczęścia.
+149§Mandat drogowy
+150§Zalałeś sąsiadów
+151§Płacisz za ich remont: −2500 ₴.
+152§Loteria
+153§Wygrałeś 5000 ₴.
+154§Przyjaciel oddał dług
+155§Wyjazd w Karpaty
+156§−3500 ₴, +25 szczęścia.
+157§Rozstanie
+158§−20 szczęścia.
+159§Zakochałeś się
+160§+25 szczęścia.
+161§Awans
+162§Pensja +20%.
+163§Zwolnienie
+164§Zwolnili cię. Teraz jesteś bezrobotny.
+165§Cashback
+166§Bank podniósł stopę
+167§Pozostały dług każdego kredytu +10%.
+168§Inflacja
+169§Wszyscy gracze tracą po 1000 ₴.
+170§Urodziny
+171§Każdy gracz daje ci 500 ₴.
+172§Karetka zabrała cię do szpitala
+173§Przechodzisz na pole „Szpital”.
+174§Kontrola skarbowa
+175§−10% gotówki.
+176§Rozbity telefon
+177§−2000 ₴, −5 szczęścia.
+178§Fucha w weekend
+179§+2000 ₴, −5 zdrowia.
+180§Założyłeś alarm
+181§Następna psota przeciw twojemu majątkowi się nie uda, a psotnika złapią.
+182§Skrytka offshore
+183§Możesz ukryć jedną nieruchomość — rywale nie zobaczą jej ani na liście, ani na planszy.
+184§Zapisane na teściową
+185§Kolejna skrytka: ukryj dowolną nieruchomość, kiedy zechcesz.
+186§Wywiad skarbowy
+187§Wszystkie ukryte nieruchomości rywali zostały ujawnione.
+188§Ujawniono skrytek: {0}.
+189§Nie znaleziono nic ukrytego.
+190§🎨 Kreatywny
+191§Ustaw wszystko sam: rundy, cel, odpadanie lub powrót, podatek, zdarzenia.
+192§🏁 Klasyczny
+193§Cel: {0} kapitału, albo zostać ostatnim w grze, albo najlepszy wynik po 25 rundach.
+194§💀 Eliminacje
+195§Bez celu i limitu rund. Koszty życia rosną co rundę (250 ₴ × numer rundy), a od 13. rundy zmęczenie uderza w zdrowie. Wygrywa ostatni, kto przetrwa.
+196§♾ Bez końca
+197§Gra się nie kończy. Bankrut lub wyczerpany zaczyna życie od zera. Wyjść można w każdej chwili.
+198§Gra się zaczęła. Każdy ma po
+199§ i pracę.
+200§Gracz
+201§← Menu
+202§<b>Kontynuuj grę</b>
+203§runda {0} · {1}
+204§dziennik bieżącej gry i
+205§Życie<em>na kredyt</em>
+206§beta 3.1
+207§Gra planszowa o dorosłym życiu: hipoteka zamiast domów, kredyt na auto zamiast ulic, a z talii — przeziębienie albo premia.
+208§<b>Jeden telefon</b>
+209§2–4 graczy i boty
+210§<b>Online</b>
+211§pokój na kod
+212§<b>Zasady</b>
+213§pola, karty, kredyty
+214§<b>Ustawienia</b>
+215§podpowiedzi, ekran
+216§<b>Dziennik gier</b>
+217§{0}ostatnie zakończone gry
+218§Liczba rund
+219§∞ bez limitu
+220§Cel kapitału
+221§bez celu
+222§tys. ₴
+223§Kto przegrał
+224§odpada
+225§wraca
+226§od razu od zera
+227§Powrót po
+228§ rundach
+229§Powrotów na gracza
+230§ razy
+231§Podatek
+232§brak
+233§Pieniądze na start
+234§Pensje
+235§Rosnące koszty życia
+236§250 ₴ × numer rundy przy każdej wypłacie, od 13. rundy — zmęczenie
+237§Karty zdrowia
+238§Karty losu
+239§Psoty i dobre uczynki
+240§Skrytki majątku
+241§Perki poziomów
+242§pierwszy zdobyć {0}
+243§zostać ostatnim (przegrani wracają po {0} rundach, do {1} razy)
+244§zostać ostatnim
+245§albo najlepszy wynik po {0} rundach
+246§gra bez końca — graj, ile chcesz.
+247§Mniej
+248§Więcej
+249§<p class="tip" style="border-color:var(--hp)">Bez limitu rund, celu i kosztów życia gra może trwać bardzo długo. Włącz coś z tego, żeby był finał.</p>
+250§Ustawienia trybu kreatywnego
+251§{0} W trybie kreatywnym doświadczenie i monety są o połowę mniejsze.
+252§Tryb
+253§Imię gracza {0}
+254§Człowiek
+255§Bot
+256§Gra na jednym telefonie
+257§Gracze (2–4)
+258§Zacznij grę
+259§Doświadczenie do profilu dostaje gracz z twoim nickiem ({0}). Ludzie grają po kolei, podając sobie telefon. Boty grają same — wygodne do treningu.
+260§Host prowadzi grę — jeśli wyjdzie, gra kończy się dla wszystkich. Jeśli rozłączy się inny gracz, dogra za niego bot.
+261§Do gry online potrzebny jest internet. Sprawdź połączenie i otwórz grę ponownie.
+262§Online ze znajomymi
+263§Utwórz pokój
+264§Zostaniesz hostem: dostaniesz kod, znajomi go wpiszą. Wolne miejsca możesz oddać botom.
+265§Dołącz po kodzie
+266§KOD
+267§Kod pokoju
+268§Dołącz
+269§Kod ma 5 znaków
+270§To urządzenie nie obsługuje 3D — pokazywana jest płaska plansza.
+271§Trójwymiarowa plansza z domami i autami. Wyłącz na słabym telefonie.
+272§„Auto” — gra obraca się razem z telefonem.
+273§Obróć telefon — plansza będzie po lewej, a gracze i dziennik po prawej. Blokada orientacji działa w aplikacji.
+274§Ustawienia
+275§Język
+276§<b>Podpowiedzi</b><small>Porady pod planszą i przy decyzjach: co się opłaca, czego unikać.</small>
+277§Podpowiedzi
+278§<b>Okna zdarzeń czekają na OK</b><small>Co zrobiły boty i rywale — po kolei, od najstarszego. Gra w tym czasie toczy się dalej.</small>
+279§Okna zdarzeń czekają na OK
+280§<b>Plansza 3D</b><small>{0}</small>
+281§Plansza 3D
+282§Orientacja ekranu
+283§Auto
+284§Pionowo
+285§Poziomo
+286§Zapis
+287§Usuń zapisaną grę
+288§Usunąć zapisaną grę?
+289§<p>Nie będzie można jej kontynuować.</p>
+290§Usuń
+291§Anuluj
+292§Zapis usunięty
+293§{0} <b>Poziom {1}: {2}.</b> {3}
+294§Zasady
+295§🏁 Cel
+296§W trybie klasycznym — jako pierwszy zdobyć <b>{0} kapitału</b> — to wolność finansowa. Albo zostać ostatnim w grze. Jeśli w {1} rundach nikt nie dojdzie — wygrywa najlepszy wynik: kapitał + szczęście×100 + zdrowie×50.
+297§Start: <b>{0}</b> (w kreatywnym — ile ustawisz), 100 zdrowia, 50 szczęścia i losowa praca.
+298§⭐ Poziomy, perki i figurki
+299§Za grę dostajesz doświadczenie i monety: 1. miejsce — 100 🪙, 2. — 60, 3. — 30, 4. — nic. Za monety kupujesz figurki (4 podstawowe są darmowe).
+300§🎮 Tryby
+301§W kreatywnym możesz zmienić: liczbę rund lub ∞, cel kapitału, co dzieje się z przegranym (odpada / wraca po N rundach / od razu od zera), podatek 0–40%, pieniądze na start, mnożnik pensji, koszty życia oraz włączać i wyłączać karty, psoty, skrytki, perki, kasyno i kursy.
+302§W trybie bez końca doświadczenie nie jest naliczane. Za tryb „Eliminacje” — +15 XP do bonusu za grę.
+303§🎲 Ruch
+304§Rzucasz dwiema kośćmi i idziesz po kole z 32 pól. Za każdym razem, gdy mijasz <b>„Wypłatę”</b>, dostajesz pensję i automatycznie spłacasz wszystkie kredyty. Szczęście przy tym trochę spada — życie męczy.
+305§🏠 Majątek i kredyty
+306§Majątek bierzesz <b>na kredyt</b>: 20% wkładu teraz, reszta (+15% nadpłaty) w sześciu ratach na „Wypłacie”. Można też gotówką — bez nadpłaty i z bonusem do szczęścia. Kto stanie na twoim majątku — płaci ci czynsz.
+307§Majątek
+308§Cena
+309§Wkład
+310§Rata
+311§Czynsz
+312§🗺 Pola
+313§🩺 Karty zdrowia
+314§Talia z chorobami i buffami. Choroby uderzają w zdrowie, portfel i mogą zabrać kolejki. Buffy chronią i leczą.
+315§<b>Przeziębienie</b>−10 zdrowia, utrata kolejki
+316§<b>Wypalenie</b>pensja ×0,5 przez 2 rundy
+317§<b>Odporność</b>następna choroba nie działa
+318§<b>Ubezpieczenie</b>3 rachunki za leczenie za darmo
+319§🎴 Karty losu
+320§<b>Awans</b>pensja +20%
+321§<b>Zwolnienie</b>zostajesz bezrobotny
+322§<b>Bank podniósł stopę</b>długi +10%
+323§<b>Urodziny</b>każdy daje 500 ₴
+324§😈 Cudzy majątek: psoty i dobre uczynki
+325§Zapłaciłeś czynsz — teraz wybierasz. <b>Uszkodzić</b> (zalać mieszkanie, porysować auto, zła opinia): właściciel płaci 12% ceny za naprawę; 25% ryzyka, że cię złapią i ukarzą. <b>Obrabować</b>: zabierasz do 15% jego gotówki (maks. 2500 ₴); 35% ryzyka — 2000 ₴ kary i utrata kolejki. <b>Skarbówka</b>: właściciel płaci 10% gotówki; 25% — kara dla ciebie za pomówienie. <b>Dobry uczynek</b>: +8 szczęścia dla ciebie, +10 dla właściciela, a biznes dostaje jeszcze +1000 ₴.
+326§Karta <b>„Alarm”</b> chroni: następna psota przeciw tobie się nie udaje, a psotnika łapią.
+327§🕶 Skrytki
+328§Pieniędzy, pensji i zdrowia rywali nie widać — tylko ich majątek. Karty „Skrytka offshore”, „Zapisane na teściową”, „Tajemnica lekarska” dają skrytkę: ukryj dowolną swoją nieruchomość. Kto stanie na ukrytej — płaci czynsz i ją ujawnia. „Wywiad skarbowy” ujawnia wszystkie skrytki rywali.
+329§💀 Jak się odpada
+330§Jeśli pieniądze spadną poniżej zera — bank sam sprzedaje twój majątek (60% ceny minus dług). Nie wystarczy — <b>bankructwo</b>. Zdrowie spadło do 0 — też odpadasz. Zerowe szczęście za każdym razem zabiera 10 zdrowia.
+331§Majątek możesz sprzedać też sam: dotknij swojej karty gracza w swojej kolejce.
+332§🌐 Online
+333§Host tworzy pokój i podaje 5-znakowy kod. Każdy gra na swoim telefonie. Gracz się rozłączył — dogra za niego bot.
+334§Dotknij dowolnego pola — zobaczysz cenę, ratę i czynsz.
+335§Dotknij karty gracza — zobaczysz jego majątek i długi.
+336§Trzymaj sumę rat poniżej pensji, inaczej kredyty zjedzą wszystko.
+337§Gotówką bardziej się opłaca: bez 15% nadpłaty i z bonusem do szczęścia.
+338§Tani majątek zwraca się z czynszu szybciej, niż się wydaje.
+339§Ubezpieczenie z talii zdrowia ratuje przed rachunkami za leczenie.
+340§Zerowe szczęście co rundę zabiera zdrowie — czasem impreza się przydaje.
+341§Urząd pracy może dać lepszą pensję — ale i gorszą. Czytaj ofertę.
+342§Bank daje 5000 ₴ szybko, ale oddać trzeba 6600.
+343§Kończą się pieniądze? Sprzedaj majątek sam — zanim bank weźmie go taniej.
+344§Na cudzym majątku można napsocić — ale ryzyko wpadki jest realne.
+345§Alarm z talii losu łapie następnego psotnika.
+346§Dobry uczynek na cudzym majątku podnosi szczęście także tobie.
+347§Ukrytego majątku rywale nie widzą, dopóki ktoś na niego nie stanie.
+348§Niskie zdrowie: szpital (+40) lub siłownia (+15). Poniżej 30 — pensja mniejsza.
+349§Szczęście prawie na zerze. Impreza, wyjazd albo własny majątek poprawią nastrój.
+350§Mało pieniędzy: na „Wypłacie” zostaną pobrane raty
+351§. Jeśli zejdziesz poniżej zera — bank sprzeda majątek.
+352§Raty (
+353§) są wyższe niż pensja (
+354§). Ostrożnie z nowymi kredytami.
+355§Stań na kolorowym polu — weźmiesz majątek na kredyt za 20% wkładu.
+356§porada dla ciebie
+357§dotknij — kolejna porada
+358§Gracz
+359§Student
+360§Stażysta
+361§Pracownik etatowy
+362§Kredytobiorca
+363§Hipotecznik
+364§Przedsiębiorca
+365§Inwestor
+366§Rentier
+367§Milioner
+368§Niezależny finansowo
+369§Własne mieszkanie
+370§+5 szczęścia za każde mieszkanie
+371§Własne auto
+372§+5 szczęścia za każde auto
+373§Własny biznes
+374§+5 szczęścia za każdy biznes
+375§· do poziomu {0}: {1} XP
+376§· nowy poziom {0}: {1}!
+377§Nowy perk: {0} <b>{1}</b> — {2}
+378§Odblokowano nowy awatar: {0}
+379§+{0} XP · {1}. miejsce{2}{3}
+380§, odblokowuje się na poziomie
+381§poz. {0}
+382§Awatar {0}{1}
+383§Utwórz profil — za każdą grę dostajesz doświadczenie, podnosisz poziom i odblokowujesz nowe awatary.
+384§Nick
+385§Od 2 do 14 znaków
+386§Awatar
+387§Twoje marzenie
+388§Marzenie daje bonus do szczęścia, gdy bierzesz taki majątek.
+389§Utwórz profil
+390§Nick — co najmniej 2 znaki
+391§Witaj, {0}!
+392§wybrano
+393§wybierz
+394§← Profil
+395§Figurki
+396§<b>🪙 {0} monet</b><small>Zarabiaj za miejsca 1–3. Figurka to twój pionek na planszy 3D.</small>
+397§Modele: Kenney (kenney.nl), licencja CC0. To wersja beta — możliwe błędy.
+398§{0} — twoja figurka
+399§Brakuje {0} monet
+400§Kupić „{0}”?
+401§Cena: 🪙 {0}. Zostanie: {1}.
+402§Kup
+403§Kupiono: {0}
+404§· do poziomu {0} jeszcze {1} XP
+405§ · maksymalny poziom
+406§<b>{0} <small>· poziom {1}</small></b><small>{2}</small>
+407§Poziom {0} · {1}
+408§<b>🪙 Portfel: {0}</b><small>Monety za miejsca: 1. — 100, 2. — 60, 3. — 30, 4. — nic.</small>
+409§Twoja figurka:
+410§gier
+411§zwycięstw
+412§wygranych
+413§<b>{0} tys. ₴</b>
+414§rekord kapitału
+415§gier online
+416§marzenie
+417§Zapisz
+418§Marzenie
+419§1. poziom nic nie daje. Każdy kolejny odblokowuje moc — sumują się. Działają w każdej grze, w której grasz na swoim profilu.
+420§Jak zdobyć doświadczenie
+421§Każda gra +40 XP · zwycięstwo +120 · drugie miejsce +60 · +1 XP za każde 1000 ₴ kapitału (do 60) · online +20.
+422§Zapisano
+423§Nie udało się połączyć
+424§Brak połączenia z serwerem gry.
+425§Serwer gry jest niedostępny. Sprawdź internet i spróbuj ponownie.
+426§{0} w pokoju
+427§{0} wyszedł
+428§{0} się rozłączył — gra za niego bot.
+429§Pokój nie odpowiada. Sprawdź kod i internet.
+430§Pokoju z kodem
+431§ nie znaleziono. Sprawdź kod.
+432§Pokój jest pełny lub gra już się zaczęła.
+433§🏆 Zwycięstwo!
+434§{0}. miejsce
+435§Gra zakończona
+436§<p>Host zamknął pokój lub stracił połączenie.</p>
+437§Twój pokój
+438§Pokój
+439§Tworzę pokój…
+440§Łączę z pokojem
+441§Skopiuj kod
+442§Znajomi otwierają grę → „Online ze znajomymi” → wpisują ten kod.
+443§poz. {0}</small>
+444§bot
+445§host
+446§ · ty
+447§Usuń {0}
+448§wolne miejsce
+449§<p class="hint">Potrzeba co najmniej 2 graczy. Czekaj na znajomych lub dodaj bota.</p>
+450§+ Bot
+451§Czekamy, aż host zacznie grę…
+452§Tryb: {0} — {1}
+453§Gracze · {0} z 4
+454§Zamknij pokój
+455§Wyjdź
+456§Kod skopiowany
+457§Zaznacz i skopiuj kod
+458§tys.
+459§Bot myśli…
+460§Ruch trwa…
+461§Twój ruch
+462§Czekamy na {0}…
+463§ z
+464§ · cel
+465§pokój
+466§jeden telefon
+467§Do menu
+468§Nowa gra
+469§📜 Dziennik gry
+470§Rzuć kośćmi
+471§{0} tys.
+472§<b>Runda {0}{1}{2}</b>
+473§Gdzie są wszyscy gracze
+474§Gdzie wszyscy
+475§Parametry
+476§Mieszkania · hipoteka
+477§Biznes
+478§Co się dzieje
+479§{0}<small>dotknij — kolejna porada</small>
+480§utrata kolejki ×{0}
+481§wypalenie ×{0}
+482§odporność
+483§ubezpieczenie ×{0}
+484§🕶 skrytka ×{0}
+485§🚨 alarm
+486§⭐ perków: {0}
+487§💰 skok za {0}
+488§ · twój ekran
+489§{0}<small>+{1}{2} na rundę</small>
+490§🏠 Mój majątek · {0}
+491§💰 Kapitał {0}
+492§ · bot
+493§odpadł
+494§<span class="secret">majątku nie widać</span>
+495§Rywale
+496§ · rusza się
+497§ · odpadł
+498§ty
+499§obok
+500§ pól przed tobą
+501§📍 Gdzie wszyscy
+502§<p class="hint" style="margin-top:8px">Pionki graczy widać też na planszy. Odległość liczy się w kierunku gry.</p>
+503§Zamknij
+504§włączone
+505§wyłączone
+506§💡 Podpowiedzi: {0}
+507§czekać na OK
+508§zamykają się same
+509§🪟 Okna zdarzeń: {0}
+510§auto
+511§pionowo
+512§poziomo
+513§🔄 Ekran: {0}
+514§📖 Zasady
+515§🚪 Wyjdź z gry online
+516§🚪 Wyjdź do menu
+517§Wróć do gry
+518§⚙ Parametry
+519§<p class="hint">Ustawienia zapisują się na tym telefonie.</p>
+520§📖 Zasady w skrócie
+521§<b>Cel:</b> {0}
+522§<b>„Wypłata”:</b> dostajesz pensję i spłacasz wszystkie kredyty.
+523§<b>Majątek:</b> 20% wkładu + 6 rat albo gotówką. Cudzy majątek — płacisz czynsz.
+524§<b>Ukryte:</b> pieniędzy, pensji i zdrowia rywali nie widać, tylko ich majątek.
+525§<b>Skrytki</b> z kart pozwalają ukryć twój majątek. Kto na niego stanie — płaci czynsz i ujawnia skrytkę. „Wywiad skarbowy” ujawnia wszystkie.
+526§<b>Odpadanie:</b> długi bez majątku lub zdrowie 0.
+527§Wstecz
+528§Wyjść z gry online?
+529§Wyjść do menu?
+530§<p>Jesteś hostem — gra skończy się dla wszystkich.</p>
+531§<p>Dalej będzie grał za ciebie bot.</p>
+532§<p>Gra zostanie zapisana — będzie można ją kontynuować.</p>
+533§Zostań
+534§wypalenie
+535§majątek: {0}
+536§OK
+537§zdarzenie
+538§zdarzenia
+539§zdarzeń
+540§jeszcze {0} {1}
+541§Pomiń wszystkie zdarzenia ({0})
+542§Bot wybiera: {0}
+543§<p class="hint">Na razie pusto.</p>
+544§Runda {0}
+545§ · cudze kwoty ukryte
+546§{0} zdarzeń · od początku do teraz{1}
+547§Bieżąca gra
+548§<b>{0} · runda {1}</b><small>{2}</small>
+549§dziennik
+550§ wygrywa
+551§Nikt nie przetrwał
+552§ · online
+553§<b>{0}</b><small>{1} · {2}{3} · {4} rund</small>
+554§<p class="hint">Tu pojawi się 5 ostatnich zakończonych gier z pełnym dziennikiem.</p>
+555§Dziennik gier
+556§Zakończone gry
+557§📜 Bieżąca gra · runda {0}
+558§{0} zdarzeń · cudze kwoty ukryte
+559§Kontynuuj grę
+560§ pkt
+561§{0} · {1} rund · {2} zdarzeń
+562§bank
+563§Typ
+564§Wkład własny 20%
+565§Rata na rundę
+566§Nadpłata
+567§Czynsz dla innych
+568§Szczęście przy zakupie
+569§Właściciel
+570§{0} {1}<small>{2} · czynsz {3}</small>
+571§<p class="hint">Majątku nie widać.</p>
+572§Pieniądze, pensja i zdrowie rywali są ukryte. Część majątku też mogą ukrywać.
+573§💳 Kredyt konsumpcyjny
+574§ <span class="achip hid">ukryte</span>
+575§pozostały dług
+576§ · rata
+577§spłacone w całości
+578§Sprzedaj {0}
+579§<p style="color:var(--muted)">Na razie brak majątku i kredytów.</p>
+580§Skrytki
+581§<p style="color:var(--muted);font-size:13px">Sprzedaż: bank daje 60% ceny minus pozostały kredyt.
+582§ 🕶 — ukryj przed rywalami.
+583§Gdzie
+584§Praca
+585§Gotówka
+586§Raty na rundę
+587§Kapitał
+588§Majątek ukryty
+589§💧 Zalać mieszkanie
+590§zalał mieszkanie
+591§🔓 Okraść, gdy nikogo nie ma
+592§🎁 Dać prezent na parapetówkę
+593§🔨 Porysować auto
+594§porysował auto
+595§🛞 Zdjąć koła i sprzedać
+596§🧽 Umyć auto
+597§⭐ Wystawić złą opinię
+598§wystawił złą opinię:
+599§💸 Obrabować kasę
+600§📣 Polecić znajomym
+601§Psoty są ryzykowne: mogą cię złapać i ukarać. Dobry uczynek podnosi szczęście obojgu.
+602§Jesteś na majątku gracza
+603§{0}</b>. Możesz mu uprzykrzyć życie — albo zrobić dobry uczynek.
+604§{0} Co robimy?
+605§ · ryzyko 25%
+606§ · ryzyko 35%
+607§🧾 Donieść do skarbówki
+608§Przejdź obok
+609§ — zadziałał alarm
+610§Złapali cię{0}! Kara {1}, −5 szczęścia.
+611§ (alarm)
+612§{0} chciał napsocić graczowi {1}, ale go złapali{2}.
+613§{0} chciał zniszczyć „{1}”, ale go złapali
+614§Udało się. {0} płaci za naprawę {1} i traci 8 szczęścia.
+615§{0} {1} „{2}” gracza {3}!
+616§Złapali{0}! 2000 ₴ kary i utrata kolejki.
+617§{0} próbował obrabować gracza {1}, ale wpadł{2}.
+618§{0} próbował cię obrabować — złapali
+619§Łup: {0}. Nikt nie widział.
+620§Nie ma czego wziąć — właściciel jest spłukany.
+621§{0} obrabował gracza {1}!
+622§{0} włamał się do gracza {1}, ale nic nie znalazł.
+623§{0} cię obrabował: −{1}
+624§Kontrola nic nie znalazła. Ukarano cię za pomówienie: −1000 ₴.
+625§{0} doniósł na gracza {1} do skarbówki — i dostał karę za pomówienie.
+626§Skarbówka przyszła do gracza {0} i wystawiła karę.
+627§{0} nasłał skarbówkę na gracza {1}.
+628§{0} doniósł na ciebie do skarbówki: −{1}
+629§Prezent wręczony ({0}). +8 szczęścia dla ciebie, +10 dla właściciela.
+630§Przyszli znajomi — właściciel ma +1000 ₴ utargu. +8 szczęścia dla ciebie, +10 dla właściciela.
+631§Auto lśni. +8 szczęścia dla ciebie, +10 dla właściciela.
+632§{0} robi dobry uczynek dla gracza {1}: {2}.
+633§💛 Dobry uczynek
+634§😈 Wynik
+635§{0} ukrywa „{1}”.
+636§{0} coś chowa w raju podatkowym…
+637§{0} odkłada skrytkę na później.
+638§🕶 Ukryj majątek
+639§<p>Wybierz, co ukryć przed rywalami. Ukrytego nie widać na liście ani na planszy, dopóki ktoś na nim nie stanie.</p>
+640§{0} decyduje, co ukryć…
+641§Później
+642§{0} sprzedał „{1}” bankowi: {2}.
+643§{0} sprzedał „{1}” bankowi.
+644§{0} traci kolejkę (choruje).
+645§{0} traci kolejkę
+646§{0} rzuca {1}+{2}.
+647§{0} rusza się jeszcze raz.
+648§zwolnienie lekarskie
+649§wakacje kredytowe
+650§dywidendy +
+651§, kredyty −{0}
+652§, życie −{0}
+653§{0}: pensja +{1}{2}{3}{4}.
+654§ i spłaca kredyty
+655§{0} dostaje pensję{1}.
+656§ · kredyty −
+657§ · życie −
+658§Pensja +{0}{1}{2}
+659§{0}: spokojny dzień.
+660§{0}: nic się nie stało.
+661§{0} zagląda do skarbówki — podatków nie ma.
+662§{0} płaci podatek {1}.
+663§{0} płaci podatek.
+664§🧾 Urząd skarbowy
+665§Podatek: {0} ({1}% gotówki).
+666§Podatek to {0}% gotówki. Ile dokładnie, wie tylko płacący.
+667§🎉 Impreza u znajomych
+668§<p>Pójść: −1000 ₴, +20 szczęścia, −5 zdrowia.</p>
+669§Pójść
+670§Zostać w domu
+671§{0} bawi się na imprezie.
+672§🏋️ Siłownia
+673§<p>Karnet −1200 ₴: +15 zdrowia, +5 szczęścia.</p>
+674§Kup karnet
+675§Przejdź obok
+676§{0} kupuje karnet na siłownię.
+677§📋 Urząd pracy
+678§Oferta: <b>{0}</b>, {1} na rundę.
+679§Teraz: {0}, {1}.
+680§<p>Dostał ofertę pracy.</p>
+681§Zgódź się
+682§Odmów
+683§{0} jest teraz: {1}.
+684§{0} zmienia pracę.
+685§💰 Nocny skok
+686§ z kasy gracza {0}
+687§Perk 2. poziomu: możesz obrabować „{0}”. 60% — +1500 ₴{1}, 40% — 1500 ₴ kary i utrata kolejki.
+688§<p>Coś knuje…</p>
+689§Obrabuj
+690§Nie ryzykuj
+691§{0} rabował „{1}” i wpadł.
+692§🚔 Wpadka
+693§<p>1500 ₴ kary i utrata kolejki.</p>
+694§{0} obrabował twój „{1}”: −{2}
+695§{0} obrabował „{1}”!
+696§💰 Udało się
+697§Łup: {0}. Następny skok — za 3 rundy.
+698§{0} mija kursy.
+699§🎓 Kursy
+700§Kursy doszkalające: −2000 ₴, pensja +15% ({0} → {1}).
+701§<p>Kursy doszkalające.</p>
+702§Zapisz się · 2000 ₴
+703§Nie teraz
+704§{0} skończył kursy: pensja {1}.
+705§{0} skończył kursy.
+706§{0} mija kasyno.
+707§🎰 Kasyno
+708§<p>45% — stawka się podwaja, 55% — przepada. Wygrana +3 szczęścia, przegrana −5.</p>
+709§Postaw 1000 ₴
+710§Postaw 3000 ₴
+711§{0} wygrywa w kasynie!
+712§{0} przegrywa w kasynie.
+713§🎰 Wygrana!
+714§🎰 Nie poszczęściło się
+715§wygrywa
+716§przegrywa
+717§{0} {1} w kasynie.
+718§🏥 Szpital
+719§za darmo z ubezpieczenia
+720§ <span class="pick">🩺 znajomy lekarz</span>
+721§Leczenie: {0}, +{1} zdrowia.{2}
+722§Lecz się
+723§Nie, dziękuję
+724§{0} się leczy.{1}
+725§🏦 Bank
+726§<p>Kredyt konsumpcyjny lub wcześniejsza spłata — decyzję widzi tylko gracz.</p>
+727§kredyt konsumpcyjny
+728§Albo spłać wcześniej: „{0}” — {1}.
+729§Kredyt konsumpcyjny: dostajesz 5000 ₴, oddajesz 6600 ₴ w sześciu ratach.
+730§Weź 5000 ₴
+731§Spłać
+732§Nic nie rób
+733§{0} bierze kredyt konsumpcyjny 5000 ₴.
+734§{0} idzie do banku.
+735§{0} spłaca kredyt przed terminem.
+736§ +5 marzenie
+737§Uwaga: z tym kredytem raty (
+738§) będą wyższe niż pensja (
+739§Raty po zakupie:
+740§ na rundę przy pensji
+741§. Zwróci się z czynszu po ~
+742§ wizytach.
+743§{0}: wkład
+744§Czynsz od innych
+745§Szczęście
+746§{0} · wkład {1}
+747§Gotówką {0}
+748§Nie bierz
+749§{0} bierze: {1} na „{2}”.
+750§{0} kupuje „{1}” za gotówkę.
+751§{0} odpoczywa u siebie: +3 szczęścia.
+752§ Skrytka ujawniona!
+753§{0} płaci graczowi {1} czynsz {2}.{3}
+754§<p class="pick">Niespodzianka: ten majątek był ukryty!</p>
+755§Ten majątek należy do gracza {0}. Czynsz: {1}.
+756§Odporność ochroniła — choroba nie zadziałała.
+757§{0} ciągnie „{1}”.{2}
+758§Karta zdrowia
+759§Karta losu
+760§ · buff
+761§ · choroba
+762§Bank zabiera graczowi {0} „{1}” za długi.
+763§Bankructwo
+764§Bankructwo: długi, a sprzedać już nie ma czego.
+765§Zdrowie na zerze
+766§Zdrowie na zerze — OIOM i długie zwolnienie.
+767§{0}: {1} — życie zaczyna się od zera ({2}. raz).
+768§♾ Życie od zera
+769§{0}. Bank zabrał majątek, ale zaczynasz od nowa: {1}, pełne zdrowie.
+770§Wróci w {0}. rundzie.
+771§{0} odpada. {1}{2}
+772§odpada na jakiś czas
+773§Powrót za {0} rund — od zera. Pozostało powrotów: {1}.
+774§{0} wraca do gry od zera!
+775§{0} wraca do gry
+776§Kapitał {0} — wolność finansowa!
+777§Został ostatni w grze.
+778§Najlepszy wynik po {0} rundach.
+779§{0} wygrywa! {1}
+780§Wszyscy odpadli.
+781§Zwycięstwo: {0}
+782§Punkty = kapitał + szczęście×100 + zdrowie×50.
+783§Zobacz planszę

@@ -1,0 +1,784 @@
+0§Hypothek
+1§Autokredit
+2§Geschäftskredit
+3§Olja
+4§Max
+5§Iryna
+6§Taras
+7§Solja
+8§Denys
+9§Kurier
+10§Callcenter-Agent
+11§Kellner
+12§Sysadmin
+13§Verkäufer
+14§Programmierer
+15§Vertriebsmanager
+16§Taxifahrer
+17§Arbeitslos
+18§Zahltag
+19§Döner-Kiosk
+20§Gesundheit
+21§Gebrauchter Lanos
+22§Finanzamt
+23§Zimmer in einer WG
+24§Schicksal
+25§Rollerverleih
+26§Krankenhaus
+27§Smart-Wohnung
+28§Café
+29§Kurse
+30§Garage
+31§Toyota auf Kredit
+32§Party
+33§Einzimmerwohnung
+34§Barbershop
+35§Fitnessstudio
+36§Zweizimmer-Neubau
+37§Autowaschanlage
+38§Arbeitsamt
+39§E-Auto
+40§Casino
+41§Reihenhaus
+42§Landhaus
+43§Bank
+44§Nachtraub
+45§Du kannst ein Geschäft ausrauben, auf dem du landest: 60% — +1500 ₴ (aus der Kasse des Besitzers oder der Bank), sonst 1500 ₴ Strafe und ein ausgesetzter Zug. Einmal alle 3 Runden.
+46§Arzt-Freund
+47§Das Krankenhaus kostet 750 ₴ statt 1500 und heilt um 50.
+48§Gute Kreditwürdigkeit
+49§Die Anzahlung beträgt 10% statt 20%.
+50§Geförderte Hypothek
+51§Aufschlag fürs Wohnen 5% statt 15%.
+52§Geschäftssinn
+53§Miete aus deinen Geschäften +25%.
+54§Dividenden
+55§Am „Zahltag“ +150 ₴ für jede deiner Immobilien.
+56§Wachschutz
+57§Störenfriede und Räuber deines Eigentums werden 25% öfter erwischt.
+58§Startkapital
+59§Du beginnst jedes Spiel mit +5000 ₴.
+60§Tricks
+61§Du beginnst jedes Spiel mit einem Versteck und einer Alarmanlage.
+62§Held
+63§Münze
+64§Fähnchen
+65§Ziegel
+66§Motorrad
+67§Gelber Laster
+68§Roter Laster
+69§Grüner Laster
+70§Lila Laster
+71§Wölkchen
+72§Münzblock
+73§Brunnen
+74§Weiterbildung: −2000 ₴, dein Gehalt steigt um 15%.
+75§Du kannst 1000 oder 3000 ₴ setzen: 45% — doppelter Gewinn, sonst ist der Einsatz weg.
+76§Überquerst du dieses Feld oder landest hier, bekommst du Gehalt und zahlst alle Kredite.
+77§Ziehe eine Gesundheitskarte: Krankheit oder Buff.
+78§Ziehe eine Schicksalskarte: Prämien, Strafen, Liebe, Kündigungen.
+79§Du zahlst 10% deines Bargelds (mindestens 500 ₴).
+80§Du kannst dich behandeln lassen: −1500 ₴, +40 Gesundheit.
+81§Du kannst hingehen: −1000 ₴, +20 Glück, −5 Gesundheit.
+82§Mitgliedschaft: −1200 ₴, +15 Gesundheit, +5 Glück.
+83§Dir wird ein neuer Job angeboten. Annehmen oder nicht — du entscheidest.
+84§Konsumkredit oder vorzeitige Rückzahlung.
+85§ Die Versicherung hat die Rechnung bezahlt.
+86§Erkältung
+87§−10 Gesundheit, du setzt 1 Zug aus.
+88§Grippe
+89§−20 Gesundheit, Medikamente −800 ₴.
+90§Bein auf Glatteis gebrochen
+91§−30 Gesundheit, Gips −3000 ₴, du setzt 2 Züge aus.
+92§Zahnschmerzen
+93§Zahnarzt −2500 ₴, −5 Gesundheit.
+94§Burn-out
+95§−15 Gesundheit, −20 Glück, die nächsten 2 Gehälter halbiert.
+96§Schlaflosigkeit
+97§−10 Gesundheit, −10 Glück.
+98§Lebensmittelvergiftung vom Döner
+99§−15 Gesundheit, du setzt 1 Zug aus.
+100§Rücken vom Bürostuhl
+101§Masseur −1500 ₴, −10 Gesundheit.
+102§Frühjahrsallergie
+103§−5 Gesundheit, Tabletten −400 ₴.
+104§Blutdruck spielt verrückt
+105§−20 Gesundheit, Kardiologe −1200 ₴.
+106§Eiserne Abwehr
+107§Die nächste Krankheit trifft dich nicht.
+108§Ärztliche Schweigepflicht
+109§Du bekommst ein Versteck: verstecke eine deiner Immobilien vor den Gegnern.
+110§Krankenversicherung
+111§Die Versicherung zahlt deine nächsten 3 Arztrechnungen.
+112§Endlich ausgeschlafen
+113§+15 Gesundheit.
+114§Morgen-Yoga
+115§+10 Gesundheit, +10 Glück.
+116§Vitamine D und C
+117§+10 Gesundheit.
+118§Energieschub
+119§Du ziehst sofort noch einmal.
+120§Migräne
+121§−10 Gesundheit, −5 Glück.
+122§Zerrung im Fitnessstudio
+123§−15 Gesundheit, Notaufnahme −700 ₴.
+124§Brille kaputt
+125§Neue Gläser −1100 ₴.
+126§Massage von einem Freund
+127§+10 Gesundheit, +5 Glück.
+128§Meditation
+129§+15 Glück.
+130§Eine Woche guter Schlaf
+131§+20 Gesundheit.
+132§Check-up ohne Überraschungen
+133§+5 Gesundheit, +5 Glück.
+134§Prämie
+135§Erbe von Oma
+136§+4000 ₴ und etwas Trauer: −5 Glück.
+137§Kreditpause
+138§Am nächsten „Zahltag“ werden keine Raten abgebucht.
+139§Inkasso ruft an
+140§−10 Glück, −500 ₴ zur „Klärung der Sache“.
+141§Geldbörse gefunden und zurückgegeben
+142§Der Besitzer bedankt sich: +800 ₴, +8 Glück.
+143§Nachbarn renovieren
+144§Bohrmaschine am Morgen: −10 Glück, −5 Gesundheit.
+145§Bankkonto gehackt
+146§Jahres-Cashback
+147§Hochzeit eines Freundes
+148§Geschenk −1500 ₴, +20 Glück.
+149§Strafzettel
+150§Nachbarn überflutet
+151§Du zahlst ihre Reparatur: −2500 ₴.
+152§Lotto
+153§Du hast 5000 ₴ gewonnen.
+154§Ein Freund zahlt Schulden zurück
+155§Reise in die Karpaten
+156§−3500 ₴, +25 Glück.
+157§Trennung
+158§−20 Glück.
+159§Verliebt
+160§+25 Glück.
+161§Beförderung
+162§Gehalt +20%.
+163§Kündigung
+164§Du wurdest entlassen. Jetzt bist du arbeitslos.
+165§Cashback
+166§Bank erhöht den Zins
+167§Restschuld jedes deiner Kredite +10%.
+168§Inflation
+169§Alle Spieler verlieren je 1000 ₴.
+170§Geburtstag
+171§Jeder Spieler schenkt dir 500 ₴.
+172§Krankenwagen bringt dich ins Krankenhaus
+173§Gehe auf das Feld „Krankenhaus“.
+174§Steuerprüfung
+175§−10% des Bargelds.
+176§Handy kaputt
+177§−2000 ₴, −5 Glück.
+178§Wochenendjob
+179§+2000 ₴, −5 Gesundheit.
+180§Alarmanlage eingebaut
+181§Der nächste Streich gegen dein Eigentum scheitert und der Täter wird erwischt.
+182§Offshore-Versteck
+183§Du kannst eine Immobilie verstecken — Gegner sehen sie weder in der Liste noch auf dem Brett.
+184§Auf die Schwiegermutter eingetragen
+185§Noch ein Versteck: verstecke eine beliebige Immobilie, wann du willst.
+186§Steuerfahndung
+187§Alle versteckten Immobilien der Gegner sind aufgedeckt.
+188§Aufgedeckte Verstecke: {0}.
+189§Nichts Verstecktes gefunden.
+190§🎨 Kreativ
+191§Stelle alles selbst ein: Runden, Ziel, Ausscheiden oder Rückkehr, Steuer, Ereignisse.
+192§🏁 Klassisch
+193§Ziel: {0} Kapital, oder als Letzter übrig bleiben, oder die beste Punktzahl nach 25 Runden.
+194§💀 K.-o.-Modus
+195§Ohne Ziel und Rundenlimit. Die Lebenshaltungskosten steigen jede Runde (250 ₴ × Rundennummer), ab Runde 13 schadet die Erschöpfung der Gesundheit. Wer zuletzt übrig ist, gewinnt.
+196§♾ Endlos
+197§Das Spiel endet nie. Wer pleite oder ausgebrannt ist, beginnt das Leben neu. Aufhören jederzeit möglich.
+198§Das Spiel hat begonnen. Jeder bekommt
+199§ und einen Job.
+200§Spieler
+201§← Menü
+202§<b>Spiel fortsetzen</b>
+203§Runde {0} · {1}
+204§Protokoll des aktuellen Spiels und
+205§Leben<em>auf Kredit</em>
+206§Beta 3.1
+207§Ein Brettspiel über das Erwachsenenleben: Hypotheken statt Häuser, Autokredite statt Straßen, und aus dem Stapel — eine Erkältung oder eine Prämie.
+208§<b>Ein Handy</b>
+209§2–4 Spieler und Bots
+210§<b>Online</b>
+211§Raum per Code
+212§<b>Regeln</b>
+213§Felder, Karten, Kredite
+214§<b>Einstellungen</b>
+215§Tipps, Bildschirm
+216§<b>Spieljournal</b>
+217§{0}zuletzt beendete Spiele
+218§Anzahl der Runden
+219§∞ ohne Limit
+220§Kapitalziel
+221§kein Ziel
+222§Tsd. ₴
+223§Wer verliert
+224§scheidet aus
+225§kehrt zurück
+226§beginnt sofort neu
+227§Rückkehr nach
+228§ Runden
+229§Rückkehren pro Spieler
+230§ Mal
+231§Steuer
+232§keine
+233§Startgeld
+234§Gehälter
+235§Steigende Lebenskosten
+236§250 ₴ × Rundennummer an jedem Zahltag, ab Runde 13 Erschöpfung
+237§Gesundheitskarten
+238§Schicksalskarten
+239§Streiche und gute Taten
+240§Verstecke für Eigentum
+241§Level-Perks
+242§als Erster {0} erreichen
+243§als Letzter übrig bleiben (Verlierer kehren nach {0} Runden zurück, bis zu {1} Mal)
+244§als Letzter übrig bleiben
+245§oder die beste Punktzahl nach {0} Runden
+246§ein Spiel ohne Ende — spiel so lange du willst.
+247§Weniger
+248§Mehr
+249§<p class="tip" style="border-color:var(--hp)">Ohne Rundenlimit, Ziel und Lebenskosten kann das Spiel sehr lange dauern. Schalte etwas davon ein, damit es ein Ende gibt.</p>
+250§Einstellungen des Kreativmodus
+251§{0} Im Kreativmodus gibt es nur die Hälfte an XP und Münzen.
+252§Modus
+253§Name von Spieler {0}
+254§Mensch
+255§Bot
+256§Spiel auf einem Handy
+257§Spieler (2–4)
+258§Spiel starten
+259§XP bekommt der Spieler mit deinem Nickname ({0}). Menschen ziehen abwechselnd und reichen das Handy weiter. Bots ziehen selbst — praktisch zum Üben.
+260§Der Host hält das Spiel — verlässt er es, endet es für alle. Trennt sich ein anderer Spieler, spielt ein Bot für ihn weiter.
+261§Für das Online-Spiel brauchst du Internet. Prüfe die Verbindung und öffne das Spiel erneut.
+262§Online mit Freunden
+263§Raum erstellen
+264§Du wirst Host: du bekommst einen Code, Freunde geben ihn ein. Freie Plätze kannst du an Bots vergeben.
+265§Mit Code beitreten
+266§CODE
+267§Raumcode
+268§Beitreten
+269§Der Code hat 5 Zeichen
+270§Dieses Gerät unterstützt kein 3D — es wird ein flaches Brett gezeigt.
+271§3D-Brett mit Häusern und Autos. Auf schwachen Handys ausschalten.
+272§„Auto“ — das Spiel dreht sich mit dem Handy.
+273§Dreh das Handy — das Brett geht nach links, Spieler und Protokoll nach rechts. Das Fixieren der Ausrichtung funktioniert in der App.
+274§Einstellungen
+275§Sprache
+276§<b>Tipps</b><small>Hinweise unter dem Brett und bei Entscheidungen: was sich lohnt und worauf du achten solltest.</small>
+277§Tipps
+278§<b>Ereignisfenster warten auf OK</b><small>Was Bots und Gegner getan haben — nacheinander, das Älteste zuerst. Das Spiel läuft weiter.</small>
+279§Ereignisfenster warten auf OK
+280§<b>3D-Brett</b><small>{0}</small>
+281§3D-Brett
+282§Bildschirmausrichtung
+283§Auto
+284§Hochformat
+285§Querformat
+286§Spielstand
+287§Gespeichertes Spiel löschen
+288§Gespeichertes Spiel löschen?
+289§<p>Du kannst es danach nicht fortsetzen.</p>
+290§Löschen
+291§Abbrechen
+292§Spielstand gelöscht
+293§{0} <b>Level {1}: {2}.</b> {3}
+294§Regeln
+295§🏁 Ziel
+296§Im klassischen Modus — als Erster <b>{0} Kapital</b> erreichen — das ist finanzielle Freiheit. Oder als Letzter übrig bleiben. Schafft es niemand in {1} Runden, gewinnt die beste Punktzahl: Kapital + Glück×100 + Gesundheit×50.
+297§Start: <b>{0}</b> (im Kreativmodus — so viel du einstellst), 100 Gesundheit, 50 Glück und ein zufälliger Job.
+298§⭐ Level, Perks und Figuren
+299§Für ein Spiel bekommst du XP und Münzen: 1. Platz — 100 🪙, 2. — 60, 3. — 30, 4. — nichts. Mit Münzen kaufst du Figuren (4 Basisfiguren sind gratis).
+300§🎮 Modi
+301§Im Kreativmodus kannst du ändern: Rundenzahl oder ∞, Kapitalziel, was mit Verlierern passiert (scheidet aus / kehrt nach N Runden zurück / beginnt sofort neu), Steuer 0–40%, Startgeld, Gehaltsmultiplikator, Lebenskosten, sowie Karten, Streiche, Verstecke, Perks, Casino und Kurse ein- oder ausschalten.
+302§Im Endlosmodus gibt es keine XP. Der „K.-o.-Modus“ gibt +15 XP zum Spielbonus.
+303§🎲 Zug
+304§Würfle mit zwei Würfeln und zieh über einen Kreis aus 32 Feldern. Jedes Mal, wenn du den <b>„Zahltag“</b> überquerst, bekommst du Gehalt und zahlst automatisch alle Kredite. Das Glück sinkt dabei etwas — das Leben zehrt.
+305§🏠 Eigentum und Kredite
+306§Eigentum nimmst du <b>auf Kredit</b>: 20% Anzahlung jetzt, der Rest (+15% Aufschlag) in sechs Raten am „Zahltag“. Oder bar — ohne Aufschlag und mit Glücksbonus. Wer auf deinem Eigentum landet, zahlt dir Miete.
+307§Eigentum
+308§Preis
+309§Anzahlung
+310§Rate
+311§Miete
+312§🗺 Felder
+313§🩺 Gesundheitskarten
+314§Ein Stapel mit Krankheiten und Buffs. Krankheiten treffen Gesundheit und Geldbeutel und können Züge kosten. Buffs schützen und heilen.
+315§<b>Erkältung</b>−10 Gesundheit, Zug aussetzen
+316§<b>Burn-out</b>Gehalt ×0,5 für 2 Runden
+317§<b>Abwehr</b>die nächste Krankheit wirkt nicht
+318§<b>Versicherung</b>3 Arztrechnungen gratis
+319§🎴 Schicksalskarten
+320§<b>Beförderung</b>Gehalt +20%
+321§<b>Kündigung</b>du wirst arbeitslos
+322§<b>Bank erhöht den Zins</b>Schulden +10%
+323§<b>Geburtstag</b>jeder schenkt 500 ₴
+324§😈 Fremdes Eigentum: Streiche und gute Taten
+325§Miete bezahlt — jetzt wählst du. <b>Beschädigen</b> (Wohnung fluten, Auto zerkratzen, schlechte Bewertung): der Besitzer zahlt 12% des Preises für die Reparatur; 25% Risiko, dass du erwischt und bestraft wirst. <b>Ausrauben</b>: du nimmst bis zu 15% seines Bargelds (max. 2500 ₴); 35% Risiko — 2000 ₴ Strafe und ein ausgesetzter Zug. <b>Finanzamt</b>: der Besitzer zahlt 10% seines Bargelds; 25% — du wirst wegen Verleumdung bestraft. <b>Gute Tat</b>: +8 Glück für dich, +10 für den Besitzer, ein Geschäft bekommt zusätzlich +1000 ₴.
+326§Die Karte <b>„Alarmanlage“</b> schützt: der nächste Streich gegen dich scheitert und der Täter wird erwischt.
+327§🕶 Verstecke
+328§Geld, Gehalt und Gesundheit der Gegner sind unsichtbar — nur ihr Eigentum. Die Karten „Offshore-Versteck“, „Auf die Schwiegermutter eingetragen“, „Ärztliche Schweigepflicht“ geben ein Versteck: verstecke eine beliebige Immobilie. Wer auf einer versteckten landet, zahlt Miete und deckt sie auf. „Steuerfahndung“ deckt alle Verstecke der Gegner auf.
+329§💀 Wie man ausscheidet
+330§Geht dein Geld ins Minus, verkauft die Bank dein Eigentum selbst (60% des Preises minus Schulden). Reicht es nicht — <b>Bankrott</b>. Sinkt die Gesundheit auf 0, scheidest du auch aus. Null Glück kostet jedes Mal 10 Gesundheit.
+331§Du kannst dein Eigentum auch selbst verkaufen: tippe in deinem Zug auf deine Spielerkarte.
+332§🌐 Online
+333§Der Host erstellt einen Raum und nennt einen 5-stelligen Code. Jeder spielt auf seinem Handy. Trennt sich ein Spieler, spielt ein Bot für ihn weiter.
+334§Tippe auf ein Feld — du siehst Preis, Rate und Miete.
+335§Tippe auf eine Spielerkarte — du siehst Eigentum und Schulden.
+336§Halte die Raten unter deinem Gehalt, sonst fressen die Kredite alles auf.
+337§Bar ist günstiger: kein 15%-Aufschlag und ein Glücksbonus.
+338§Billiges Eigentum zahlt sich durch Miete schneller aus, als man denkt.
+339§Eine Krankenversicherung aus dem Gesundheitsstapel rettet vor Arztrechnungen.
+340§Null Glück kostet jede Runde Gesundheit — manchmal hilft eine Party.
+341§Das Arbeitsamt kann ein besseres Gehalt bringen — oder ein schlechteres. Lies das Angebot.
+342§Die Bank gibt schnell 5000 ₴, aber zurückzahlen musst du 6600.
+343§Knapp bei Kasse? Verkauf selbst — bevor die Bank es billiger nimmt.
+344§Auf fremdem Eigentum kannst du Streiche spielen — aber das Risiko, erwischt zu werden, ist real.
+345§Eine Alarmanlage aus dem Schicksalsstapel fängt den nächsten Störenfried.
+346§Eine gute Tat auf fremdem Eigentum hebt auch dein Glück.
+347§Verstecktes Eigentum sehen Gegner nicht, bis jemand darauf landet.
+348§Wenig Gesundheit: Krankenhaus (+40) oder Fitnessstudio (+15). Unter 30 sinkt das Gehalt.
+349§Glück fast bei null. Party, Reise oder eigenes Eigentum heben die Stimmung.
+350§Wenig Geld: am „Zahltag“ werden Raten von
+351§ abgebucht. Geht es ins Minus, verkauft die Bank dein Eigentum.
+352§Raten (
+353§) sind höher als dein Gehalt (
+354§). Vorsicht mit neuen Krediten.
+355§Lande auf einem farbigen Feld — du kannst Eigentum für 20% Anzahlung auf Kredit nehmen.
+356§ein Tipp für dich
+357§tippen — noch ein Tipp
+358§Spieler
+359§Student
+360§Praktikant
+361§Angestellter
+362§Kreditnehmer
+363§Hypothekar
+364§Unternehmer
+365§Investor
+366§Rentier
+367§Millionär
+368§Finanziell frei
+369§Eigenes Zuhause
+370§+5 Glück für jedes Zuhause
+371§Eigenes Auto
+372§+5 Glück für jedes Auto
+373§Eigenes Geschäft
+374§+5 Glück für jedes Geschäft
+375§· bis Level {0}: {1} XP
+376§· neues Level {0}: {1}!
+377§Neuer Perk: {0} <b>{1}</b> — {2}
+378§Neuer Avatar freigeschaltet: {0}
+379§+{0} XP · Platz {1}{2}{3}
+380§, freigeschaltet ab Level
+381§Lvl {0}
+382§Avatar {0}{1}
+383§Erstelle ein Profil — für jedes Spiel bekommst du XP, steigst im Level auf und schaltest neue Avatare frei.
+384§Nickname
+385§2 bis 14 Zeichen
+386§Avatar
+387§Dein Traum
+388§Dein Traum gibt einen Glücksbonus, wenn du solches Eigentum nimmst.
+389§Profil erstellen
+390§Nickname — mindestens 2 Zeichen
+391§Willkommen, {0}!
+392§gewählt
+393§wählen
+394§← Profil
+395§Figuren
+396§<b>🪙 {0} Münzen</b><small>Verdiene sie mit Platz 1–3. Die Figur ist deine Spielfigur auf dem 3D-Brett.</small>
+397§Modelle: Kenney (kenney.nl), Lizenz CC0. Dies ist eine Beta — Fehler sind möglich.
+398§{0} — deine Figur
+399§Dir fehlen {0} Münzen
+400§„{0}“ kaufen?
+401§Preis: 🪙 {0}. Danach übrig: {1}.
+402§Kaufen
+403§Gekauft: {0}
+404§· noch {1} XP bis Level {0}
+405§ · maximales Level
+406§<b>{0} <small>· Level {1}</small></b><small>{2}</small>
+407§Level {0} · {1}
+408§<b>🪙 Geldbörse: {0}</b><small>Münzen für Plätze: 1. — 100, 2. — 60, 3. — 30, 4. — nichts.</small>
+409§Deine Figur:
+410§Spiele
+411§Siege
+412§Siegquote
+413§<b>{0} Tsd. ₴</b>
+414§Kapitalrekord
+415§Online-Spiele
+416§Traum
+417§Speichern
+418§Traum
+419§Level 1 bringt nichts. Jedes weitere Level schaltet eine Fähigkeit frei — sie addieren sich. Sie wirken in jedem Spiel mit deinem Profil.
+420§So bekommst du XP
+421§Jedes Spiel +40 XP · Sieg +120 · zweiter Platz +60 · +1 XP pro 1000 ₴ Kapital (bis 60) · online +20.
+422§Gespeichert
+423§Verbindung fehlgeschlagen
+424§Keine Verbindung zum Spielserver.
+425§Der Spielserver ist nicht erreichbar. Prüfe das Internet und versuche es erneut.
+426§{0} ist im Raum
+427§{0} ist gegangen
+428§{0} hat die Verbindung verloren — ein Bot spielt für ihn.
+429§Der Raum antwortet nicht. Prüfe Code und Internet.
+430§Raum mit Code
+431§ nicht gefunden. Prüfe den Code.
+432§Der Raum ist voll oder das Spiel hat schon begonnen.
+433§🏆 Sieg!
+434§Platz {0}
+435§Spiel beendet
+436§<p>Der Host hat den Raum geschlossen oder die Verbindung verloren.</p>
+437§Dein Raum
+438§Raum
+439§Raum wird erstellt…
+440§Verbinde mit Raum
+441§Code kopieren
+442§Freunde öffnen das Spiel → „Online mit Freunden“ → geben diesen Code ein.
+443§Lvl {0}</small>
+444§Bot
+445§Host
+446§ · du
+447§{0} entfernen
+448§freier Platz
+449§<p class="hint">Es braucht mindestens 2 Spieler. Warte auf Freunde oder füge einen Bot hinzu.</p>
+450§+ Bot
+451§Warten, bis der Host das Spiel startet…
+452§Modus: {0} — {1}
+453§Spieler · {0} von 4
+454§Raum schließen
+455§Verlassen
+456§Code kopiert
+457§Markiere und kopiere den Code
+458§Tsd.
+459§Bot denkt nach…
+460§Zug läuft…
+461§Du bist dran
+462§Warten auf {0}…
+463§ von
+464§ · Ziel
+465§Raum
+466§ein Handy
+467§Zum Menü
+468§Neues Spiel
+469§📜 Spielprotokoll
+470§Würfeln
+471§{0} Tsd.
+472§<b>Runde {0}{1}{2}</b>
+473§Wo alle Spieler sind
+474§Wo alle sind
+475§Einstellungen
+476§Wohnen · Hypothek
+477§Geschäft
+478§Was passiert
+479§{0}<small>tippen — noch ein Tipp</small>
+480§aussetzen ×{0}
+481§Burn-out ×{0}
+482§Abwehr
+483§Versicherung ×{0}
+484§🕶 Versteck ×{0}
+485§🚨 Alarmanlage
+486§⭐ Perks: {0}
+487§💰 Raub in {0}
+488§ · dein Bildschirm
+489§{0}<small>+{1}{2} pro Runde</small>
+490§🏠 Mein Eigentum · {0}
+491§💰 Kapital {0}
+492§ · Bot
+493§ausgeschieden
+494§<span class="secret">kein Eigentum sichtbar</span>
+495§Gegner
+496§ · am Zug
+497§ · ausgeschieden
+498§du
+499§daneben
+500§ Felder voraus
+501§📍 Wo alle sind
+502§<p class="hint" style="margin-top:8px">Die Spielfiguren sind auch auf dem Brett zu sehen. Die Entfernung zählt in Spielrichtung.</p>
+503§Schließen
+504§an
+505§aus
+506§💡 Tipps: {0}
+507§auf OK warten
+508§schließen sich selbst
+509§🪟 Ereignisfenster: {0}
+510§auto
+511§hochkant
+512§quer
+513§🔄 Bildschirm: {0}
+514§📖 Regeln
+515§🚪 Online-Spiel verlassen
+516§🚪 Zum Menü
+517§Zurück zum Spiel
+518§⚙ Einstellungen
+519§<p class="hint">Einstellungen werden auf diesem Handy gespeichert.</p>
+520§📖 Regeln kurz
+521§<b>Ziel:</b> {0}
+522§<b>„Zahltag“:</b> du bekommst Gehalt und zahlst alle Kredite.
+523§<b>Eigentum:</b> 20% Anzahlung + 6 Raten, oder bar. Fremdes Eigentum — du zahlst Miete.
+524§<b>Verborgen:</b> Geld, Gehalt und Gesundheit der Gegner sind unsichtbar, nur ihr Eigentum.
+525§<b>Verstecke</b> aus Karten lassen dich Eigentum verstecken. Wer darauf landet, zahlt Miete und deckt das Versteck auf. „Steuerfahndung“ deckt alle auf.
+526§<b>Ausscheiden:</b> Schulden ohne Eigentum oder 0 Gesundheit.
+527§Zurück
+528§Online-Spiel verlassen?
+529§Zum Menü?
+530§<p>Du bist Host — das Spiel endet für alle.</p>
+531§<p>Ab jetzt spielt ein Bot für dich.</p>
+532§<p>Das Spiel wird gespeichert — du kannst es später fortsetzen.</p>
+533§Bleiben
+534§Burn-out
+535§Eigentum: {0}
+536§OK
+537§Ereignis
+538§Ereignisse
+539§Ereignisse
+540§noch {0} {1}
+541§Alle Ereignisse überspringen ({0})
+542§Bot wählt: {0}
+543§<p class="hint">Noch leer.</p>
+544§Runde {0}
+545§ · fremde Beträge verborgen
+546§{0} Ereignisse · vom Anfang bis jetzt{1}
+547§Aktuelles Spiel
+548§<b>{0} · Runde {1}</b><small>{2}</small>
+549§Protokoll
+550§ gewinnt
+551§Niemand hat überlebt
+552§ · online
+553§<b>{0}</b><small>{1} · {2}{3} · {4} Runden</small>
+554§<p class="hint">Hier erscheinen deine letzten 5 beendeten Spiele mit vollem Protokoll.</p>
+555§Spieljournal
+556§Beendete Spiele
+557§📜 Aktuelles Spiel · Runde {0}
+558§{0} Ereignisse · fremde Beträge verborgen
+559§Spiel fortsetzen
+560§ Pkt.
+561§{0} · {1} Runden · {2} Ereignisse
+562§Bank
+563§Typ
+564§Anzahlung 20%
+565§Rate pro Runde
+566§Aufschlag
+567§Miete für andere
+568§Glück beim Kauf
+569§Besitzer
+570§{0} {1}<small>{2} · Miete {3}</small>
+571§<p class="hint">Kein Eigentum sichtbar.</p>
+572§Geld, Gehalt und Gesundheit der Gegner sind verborgen. Auch ein Teil des Eigentums kann versteckt sein.
+573§💳 Konsumkredit
+574§ <span class="achip hid">versteckt</span>
+575§Restschuld
+576§ · Rate
+577§vollständig abbezahlt
+578§Verkaufen {0}
+579§<p style="color:var(--muted)">Noch kein Eigentum und keine Kredite.</p>
+580§Verstecke
+581§<p style="color:var(--muted);font-size:13px">Verkauf: die Bank zahlt 60% des Preises minus Restkredit.
+582§ 🕶 — vor Gegnern verstecken.
+583§Wo
+584§Job
+585§Bargeld
+586§Raten pro Runde
+587§Kapital
+588§Eigentum versteckt
+589§💧 Wohnung fluten
+590§hat die Wohnung geflutet
+591§🔓 Einbrechen, solange keiner da ist
+592§🎁 Einweihungsgeschenk machen
+593§🔨 Auto zerkratzen
+594§hat das Auto zerkratzt
+595§🛞 Räder abmontieren und verkaufen
+596§🧽 Auto waschen
+597§⭐ Schlechte Bewertung schreiben
+598§hat eine schlechte Bewertung geschrieben für
+599§💸 Kasse ausrauben
+600§📣 Freunden empfehlen
+601§Streiche sind riskant: du kannst erwischt und bestraft werden. Eine gute Tat hebt das Glück von beiden.
+602§Du bist auf dem Eigentum von
+603§{0}</b>. Du kannst ihm das Leben schwer machen — oder eine gute Tat tun.
+604§{0} Was tun wir?
+605§ · 25% Risiko
+606§ · 35% Risiko
+607§🧾 Beim Finanzamt anzeigen
+608§Vorbeigehen
+609§ — die Alarmanlage ging los
+610§Du wurdest erwischt{0}! Strafe {1}, −5 Glück.
+611§ (Alarmanlage)
+612§{0} wollte {1} einen Streich spielen, wurde aber erwischt{2}.
+613§{0} wollte „{1}“ beschädigen, wurde aber erwischt
+614§Geklappt. {0} zahlt {1} für die Reparatur und verliert 8 Glück.
+615§{0} {1} „{2}“ von Spieler {3}!
+616§Erwischt{0}! 2000 ₴ Strafe und ein ausgesetzter Zug.
+617§{0} wollte {1} ausrauben, wurde aber erwischt{2}.
+618§{0} wollte dich ausrauben — erwischt
+619§Beute: {0}. Niemand hat es gesehen.
+620§Nichts zu holen — der Besitzer ist blank.
+621§{0} hat {1} ausgeraubt!
+622§{0} ist bei {1} eingestiegen, hat aber nichts gefunden.
+623§{0} hat dich ausgeraubt: −{1}
+624§Die Prüfung fand nichts. Du wurdest wegen Verleumdung bestraft: −1000 ₴.
+625§{0} hat {1} beim Finanzamt angezeigt — und wurde wegen Verleumdung bestraft.
+626§Das Finanzamt kam zu {0} und verhängte eine Strafe.
+627§{0} hat {1} das Finanzamt auf den Hals gehetzt.
+628§{0} hat dich beim Finanzamt angezeigt: −{1}
+629§Geschenk überreicht ({0}). +8 Glück für dich, +10 für den Besitzer.
+630§Freunde kamen — der Besitzer hat +1000 ₴ Umsatz. +8 Glück für dich, +10 für den Besitzer.
+631§Das Auto glänzt. +8 Glück für dich, +10 für den Besitzer.
+632§{0} tut {1} etwas Gutes: {2}.
+633§💛 Gute Tat
+634§😈 Ergebnis
+635§{0} versteckt „{1}“.
+636§{0} versteckt etwas im Offshore…
+637§{0} hebt das Versteck für später auf.
+638§🕶 Eigentum verstecken
+639§<p>Wähle, was du vor Gegnern versteckst. Verstecktes ist weder in der Liste noch auf dem Brett zu sehen, bis jemand darauf landet.</p>
+640§{0} überlegt, was er versteckt…
+641§Später
+642§{0} hat „{1}“ an die Bank verkauft: {2}.
+643§{0} hat „{1}“ an die Bank verkauft.
+644§{0} setzt einen Zug aus (krank).
+645§{0} setzt einen Zug aus
+646§{0} würfelt {1}+{2}.
+647§{0} zieht noch einmal.
+648§Krankschreibung
+649§Kreditpause
+650§Dividenden +
+651§, Kredite −{0}
+652§, Lebenskosten −{0}
+653§{0}: Gehalt +{1}{2}{3}{4}.
+654§ und zahlt Kredite
+655§{0} bekommt Gehalt{1}.
+656§ · Kredite −
+657§ · Lebenskosten −
+658§Gehalt +{0}{1}{2}
+659§{0}: ein ruhiger Tag.
+660§{0}: nichts passiert.
+661§{0} geht zum Finanzamt — es gibt keine Steuern.
+662§{0} zahlt {1} Steuern.
+663§{0} zahlt Steuern.
+664§🧾 Finanzamt
+665§Steuer: {0} ({1}% des Bargelds).
+666§Die Steuer beträgt {0}% des Bargelds. Wie viel genau, weiß nur der Zahler.
+667§🎉 Party bei Freunden
+668§<p>Hingehen: −1000 ₴, +20 Glück, −5 Gesundheit.</p>
+669§Hingehen
+670§Zu Hause bleiben
+671§{0} feiert auf einer Party.
+672§🏋️ Fitnessstudio
+673§<p>Mitgliedschaft −1200 ₴: +15 Gesundheit, +5 Glück.</p>
+674§Mitgliedschaft kaufen
+675§Vorbeigehen
+676§{0} kauft eine Studio-Mitgliedschaft.
+677§📋 Arbeitsamt
+678§Angebot: <b>{0}</b>, {1} pro Runde.
+679§Aktuell: {0}, {1}.
+680§<p>Hat ein Jobangebot bekommen.</p>
+681§Annehmen
+682§Ablehnen
+683§{0} ist jetzt {1}.
+684§{0} wechselt den Job.
+685§💰 Nachtraub
+686§ aus der Kasse von {0}
+687§Perk von Level 2: du kannst „{0}“ ausrauben. 60% — +1500 ₴{1}, 40% — 1500 ₴ Strafe und ein ausgesetzter Zug.
+688§<p>Plant etwas…</p>
+689§Ausrauben
+690§Nicht riskieren
+691§{0} hat „{1}“ ausgeraubt und wurde erwischt.
+692§🚔 Erwischt
+693§<p>1500 ₴ Strafe und ein ausgesetzter Zug.</p>
+694§{0} hat dein „{1}“ ausgeraubt: −{2}
+695§{0} hat „{1}“ ausgeraubt!
+696§💰 Geschafft
+697§Beute: {0}. Nächster Raub — in 3 Runden.
+698§{0} geht an den Kursen vorbei.
+699§🎓 Kurse
+700§Weiterbildung: −2000 ₴, Gehalt +15% ({0} → {1}).
+701§<p>Weiterbildung.</p>
+702§Anmelden · 2000 ₴
+703§Nicht jetzt
+704§{0} hat die Kurse abgeschlossen: Gehalt {1}.
+705§{0} hat die Kurse abgeschlossen.
+706§{0} geht am Casino vorbei.
+707§🎰 Casino
+708§<p>45% — der Einsatz verdoppelt sich, 55% — er ist weg. Gewinn +3 Glück, Verlust −5.</p>
+709§1000 ₴ setzen
+710§3000 ₴ setzen
+711§{0} gewinnt im Casino!
+712§{0} verliert im Casino.
+713§🎰 Gewonnen!
+714§🎰 Kein Glück
+715§gewinnt
+716§verliert
+717§{0} {1} im Casino.
+718§🏥 Krankenhaus
+719§gratis über die Versicherung
+720§ <span class="pick">🩺 Arzt-Freund</span>
+721§Behandlung: {0}, +{1} Gesundheit.{2}
+722§Behandeln lassen
+723§Nein, danke
+724§{0} lässt sich behandeln.{1}
+725§🏦 Bank
+726§<p>Konsumkredit oder vorzeitige Rückzahlung — die Entscheidung sieht nur der Spieler.</p>
+727§Konsumkredit
+728§Oder vorzeitig tilgen: „{0}“ — {1}.
+729§Konsumkredit: du bekommst 5000 ₴ und zahlst 6600 ₴ in sechs Raten zurück.
+730§5000 ₴ nehmen
+731§Tilgen
+732§Nichts tun
+733§{0} nimmt einen Konsumkredit über 5000 ₴.
+734§{0} geht zur Bank.
+735§{0} tilgt einen Kredit vorzeitig.
+736§ +5 Traum
+737§Vorsicht: mit diesem Kredit sind deine Raten (
+738§) höher als dein Gehalt (
+739§Raten nach dem Kauf:
+740§ pro Runde bei einem Gehalt von
+741§. Amortisiert sich durch Miete in ~
+742§ Besuchen.
+743§{0}: Anzahlung
+744§Miete von anderen
+745§Glück
+746§{0} · Anzahlung {1}
+747§Bar {0}
+748§Nicht nehmen
+749§{0} nimmt eine {1} für „{2}“ auf.
+750§{0} kauft „{1}“ bar.
+751§{0} erholt sich im Eigenen: +3 Glück.
+752§ Versteck aufgedeckt!
+753§{0} zahlt {1} Miete von {2}.{3}
+754§<p class="pick">Überraschung: dieses Eigentum war versteckt!</p>
+755§Dieses Eigentum gehört {0}. Miete: {1}.
+756§Die Abwehr hat dich geschützt — die Krankheit wirkte nicht.
+757§{0} zieht „{1}“.{2}
+758§Gesundheitskarte
+759§Schicksalskarte
+760§ · Buff
+761§ · Krankheit
+762§Die Bank nimmt {0} „{1}“ wegen Schulden weg.
+763§Bankrott
+764§Bankrott: Schulden, und nichts mehr zu verkaufen.
+765§Gesundheit bei null
+766§Gesundheit bei null — Intensivstation und lange Krankschreibung.
+767§{0}: {1} — das Leben beginnt neu ({2}. Mal).
+768§♾ Leben von vorn
+769§{0}. Die Bank hat dein Eigentum genommen, aber du beginnst neu: {1}, volle Gesundheit.
+770§Kehrt in Runde {0} zurück.
+771§{0} scheidet aus. {1}{2}
+772§scheidet vorübergehend aus
+773§Rückkehr in {0} Runden — von vorn. Verbleibende Rückkehren: {1}.
+774§{0} kehrt von vorn ins Spiel zurück!
+775§{0} kehrt ins Spiel zurück
+776§Kapital {0} — finanzielle Freiheit!
+777§Als Letzter übrig geblieben.
+778§Beste Punktzahl nach {0} Runden.
+779§{0} gewinnt! {1}
+780§Alle sind ausgeschieden.
+781§Sieg: {0}
+782§Punkte = Kapital + Glück×100 + Gesundheit×50.
+783§Brett ansehen

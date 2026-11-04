@@ -1,0 +1,784 @@
+0§Crédito habitação
+1§Crédito automóvel
+2§Crédito empresarial
+3§Olia
+4§Max
+5§Iryna
+6§Taras
+7§Solia
+8§Denys
+9§Estafeta
+10§Operador de call center
+11§Empregado de mesa
+12§Administrador de sistemas
+13§Vendedor
+14§Programador
+15§Gestor de vendas
+16§Taxista
+17§Desempregado
+18§Dia de pagamento
+19§Quiosque de shawarma
+20§Saúde
+21§Lanos usado
+22§Finanças
+23§Quarto em casa partilhada
+24§Destino
+25§Aluguer de trotinetes
+26§Hospital
+27§Apartamento inteligente
+28§Café
+29§Cursos
+30§Garagem
+31§Toyota a crédito
+32§Festa
+33§Estúdio
+34§Barbearia
+35§Ginásio
+36§T2 em prédio novo
+37§Lavagem de carros
+38§Centro de emprego
+39§Carro elétrico
+40§Casino
+41§Moradia em banda
+42§Casa no campo
+43§Banco
+44§Assalto noturno
+45§Podes assaltar o negócio onde cais: 60% — +1500 ₴ (da caixa do dono ou do banco), senão multa de 1500 ₴ e perdes uma vez. Uma vez a cada 3 rondas.
+46§Médico amigo
+47§O hospital custa 750 ₴ em vez de 1500 e cura 50.
+48§Bom historial de crédito
+49§A entrada do crédito é 10% em vez de 20%.
+50§Crédito habitação bonificado
+51§Sobrecusto da habitação 5% em vez de 15%.
+52§Faro para negócios
+53§Renda dos teus negócios +25%.
+54§Dividendos
+55§No «Dia de pagamento» +150 ₴ por cada propriedade tua.
+56§Segurança
+57§Quem faz partidas ou rouba as tuas propriedades é apanhado 25% mais vezes.
+58§Capital inicial
+59§Começas cada jogo com +5000 ₴.
+60§Esquemas
+61§Começas cada jogo com um esconderijo e um alarme.
+62§Herói
+63§Moeda
+64§Bandeirinha
+65§Tijolo
+66§Mota
+67§Camião amarelo
+68§Camião vermelho
+69§Camião verde
+70§Camião roxo
+71§Nuvenzinha
+72§Bloco de moeda
+73§Fonte
+74§Cursos de formação: −2000 ₴, e o salário sobe 15%.
+75§Podes apostar 1000 ou 3000 ₴: 45% — ganhas o dobro, senão perdes a aposta.
+76§Ao passar ou parar aqui recebes o salário e pagas todos os créditos.
+77§Tiras uma carta de saúde: uma doença ou um bónus.
+78§Tiras uma carta de destino: prémios, multas, amor, despedimentos.
+79§Pagas 10% do teu dinheiro (mínimo 500 ₴).
+80§Podes tratar-te: −1500 ₴, +40 de saúde.
+81§Podes ir: −1000 ₴, +20 de felicidade, −5 de saúde.
+82§Mensalidade: −1200 ₴, +15 de saúde, +5 de felicidade.
+83§Oferecem-te um emprego novo. Aceitar ou não — decides tu.
+84§Crédito ao consumo ou amortização antecipada.
+85§ O seguro pagou a conta.
+86§Constipação
+87§−10 de saúde, perdes 1 vez.
+88§Gripe
+89§−20 de saúde, medicamentos −800 ₴.
+90§Perna partida no gelo
+91§−30 de saúde, gesso −3000 ₴, perdes 2 vezes.
+92§Dor de dentes
+93§Dentista −2500 ₴, −5 de saúde.
+94§Esgotamento
+95§−15 de saúde, −20 de felicidade, os próximos 2 salários a metade.
+96§Insónia
+97§−10 de saúde, −10 de felicidade.
+98§Intoxicação com shawarma
+99§−15 de saúde, perdes 1 vez.
+100§Costas da cadeira do escritório
+101§Massagista −1500 ₴, −10 de saúde.
+102§Alergia primaveril
+103§−5 de saúde, comprimidos −400 ₴.
+104§Tensão aos saltos
+105§−20 de saúde, cardiologista −1200 ₴.
+106§Imunidade de ferro
+107§A próxima doença não te afeta.
+108§Sigilo médico
+109§Recebes um esconderijo: esconde uma propriedade tua dos rivais.
+110§Seguro de saúde
+111§O seguro paga as tuas próximas 3 contas médicas.
+112§Finalmente dormiste bem
+113§+15 de saúde.
+114§Ioga matinal
+115§+10 de saúde, +10 de felicidade.
+116§Vitaminas D e C
+117§+10 de saúde.
+118§Pico de energia
+119§Jogas outra vez de imediato.
+120§Enxaqueca
+121§−10 de saúde, −5 de felicidade.
+122§Entorse no ginásio
+123§−15 de saúde, urgências −700 ₴.
+124§Óculos partidos
+125§Lentes novas −1100 ₴.
+126§Massagem de um amigo
+127§+10 de saúde, +5 de felicidade.
+128§Meditação
+129§+15 de felicidade.
+130§Uma semana de bom sono
+131§+20 de saúde.
+132§Check-up sem surpresas
+133§+5 de saúde, +5 de felicidade.
+134§Prémio
+135§Herança da avó
+136§+4000 ₴ e alguma tristeza: −5 de felicidade.
+137§Pausa no crédito
+138§No próximo «Dia de pagamento» as prestações não são cobradas.
+139§Os cobradores ligam
+140§−10 de felicidade, −500 ₴ para «resolver o assunto».
+141§Encontraste uma carteira e devolveste-a
+142§O dono agradeceu: +800 ₴, +8 de felicidade.
+143§Os vizinhos estão em obras
+144§Berbequim de manhã: −10 de felicidade, −5 de saúde.
+145§Conta bancária pirateada
+146§Cashback anual
+147§Casamento de um amigo
+148§Presente −1500 ₴, +20 de felicidade.
+149§Multa de trânsito
+150§Inundaste os vizinhos
+151§Pagas a reparação deles: −2500 ₴.
+152§Lotaria
+153§Ganhaste 5000 ₴.
+154§Um amigo pagou uma dívida
+155§Viagem aos Cárpatos
+156§−3500 ₴, +25 de felicidade.
+157§Separação
+158§−20 de felicidade.
+159§Apaixonaste-te
+160§+25 de felicidade.
+161§Promoção
+162§Salário +20%.
+163§Despedimento
+164§Foste despedido. Agora estás desempregado.
+165§Cashback
+166§O banco subiu a taxa
+167§O saldo de cada crédito teu +10%.
+168§Inflação
+169§Todos os jogadores perdem 1000 ₴ cada.
+170§Aniversário
+171§Cada jogador dá-te 500 ₴.
+172§A ambulância levou-te ao hospital
+173§Vais para a casa «Hospital».
+174§Inspeção das Finanças
+175§−10% do dinheiro.
+176§Telemóvel partido
+177§−2000 ₴, −5 de felicidade.
+178§Biscate ao fim de semana
+179§+2000 ₴, −5 de saúde.
+180§Instalaste um alarme
+181§A próxima partida contra a tua propriedade falha e o culpado é apanhado.
+182§Esconderijo offshore
+183§Podes esconder uma propriedade — os rivais não a verão nem na lista nem no tabuleiro.
+184§Pus em nome da sogra
+185§Mais um esconderijo: esconde qualquer propriedade quando quiseres.
+186§Inteligência fiscal
+187§Todas as propriedades escondidas dos rivais foram reveladas.
+188§Esconderijos revelados: {0}.
+189§Nada escondido foi encontrado.
+190§🎨 Criativo
+191§Define tudo tu: rondas, objetivo, eliminação ou regresso, imposto, eventos.
+192§🏁 Clássico
+193§Objetivo: {0} de capital, ou ser o último em jogo, ou a melhor pontuação após 25 rondas.
+194§💀 Eliminação
+195§Sem objetivo nem limite de rondas. O custo de vida sobe a cada ronda (250 ₴ × número da ronda) e a partir da ronda 13 o cansaço afeta a saúde. Ganha o último sobrevivente.
+196§♾ Infinito
+197§O jogo nunca acaba. Quem vai à falência ou se esgota recomeça a vida do zero. Podes sair quando quiseres.
+198§O jogo começou. Cada um tem
+199§ e um emprego.
+200§Jogador
+201§← Menu
+202§<b>Continuar jogo</b>
+203§ronda {0} · {1}
+204§registo do jogo atual e
+205§A vida<em>a crédito</em>
+206§beta 3.1
+207§Um jogo de tabuleiro sobre a vida adulta: créditos à habitação em vez de casas, créditos auto em vez de ruas, e do baralho — uma constipação ou um prémio.
+208§<b>Um telemóvel</b>
+209§2–4 jogadores e bots
+210§<b>Online</b>
+211§sala por código
+212§<b>Regras</b>
+213§casas, cartas, créditos
+214§<b>Definições</b>
+215§dicas, ecrã
+216§<b>Diário de jogos</b>
+217§{0}últimos jogos terminados
+218§Número de rondas
+219§∞ sem limite
+220§Objetivo de capital
+221§sem objetivo
+222§mil ₴
+223§Quem perde
+224§é eliminado
+225§regressa
+226§recomeça logo
+227§Regresso após
+228§ rondas
+229§Regressos por jogador
+230§ vezes
+231§Imposto
+232§nenhum
+233§Dinheiro inicial
+234§Salários
+235§Custo de vida a subir
+236§250 ₴ × número da ronda em cada pagamento, a partir da ronda 13 — cansaço
+237§Cartas de saúde
+238§Cartas de destino
+239§Partidas e boas ações
+240§Esconderijos de propriedades
+241§Vantagens de nível
+242§ser o primeiro a chegar a {0}
+243§ser o último em jogo (quem perde regressa após {0} rondas, até {1} vezes)
+244§ser o último em jogo
+245§ou a melhor pontuação após {0} rondas
+246§um jogo sem fim — joga quanto quiseres.
+247§Menos
+248§Mais
+249§<p class="tip" style="border-color:var(--hp)">Sem limite de rondas, objetivo nem custo de vida o jogo pode durar muitíssimo. Ativa algo disto para haver final.</p>
+250§Definições do modo criativo
+251§{0} No modo criativo a experiência e as moedas são reduzidas a metade.
+252§Modo
+253§Nome do jogador {0}
+254§Humano
+255§Bot
+256§Jogo num telemóvel
+257§Jogadores (2–4)
+258§Começar jogo
+259§A experiência vai para o jogador com a tua alcunha ({0}). As pessoas jogam à vez, passando o telemóvel. Os bots jogam sozinhos — útil para treinar.
+260§O anfitrião mantém o jogo — se sair, acaba para todos. Se outro jogador se desligar, um bot termina por ele.
+261§Para jogar online precisas de internet. Verifica a ligação e abre o jogo outra vez.
+262§Online com amigos
+263§Criar sala
+264§Serás o anfitrião: recebes um código e os amigos introduzem-no. Os lugares livres podem ir para bots.
+265§Entrar com código
+266§CÓDIGO
+267§Código da sala
+268§Entrar
+269§O código tem 5 caracteres
+270§Este dispositivo não suporta 3D — é mostrado um tabuleiro plano.
+271§Tabuleiro 3D com casas e carros. Desliga num telemóvel fraco.
+272§«Auto» — o jogo roda com o telemóvel.
+273§Roda o telemóvel — o tabuleiro fica à esquerda e os jogadores e o registo à direita. Bloquear a orientação funciona na app.
+274§Definições
+275§Idioma
+276§<b>Dicas</b><small>Conselhos debaixo do tabuleiro e nas decisões: o que compensa e com o que ter cuidado.</small>
+277§Dicas
+278§<b>As janelas de eventos esperam pelo OK</b><small>O que os bots e rivais fizeram — uma a uma, da mais antiga. O jogo continua entretanto.</small>
+279§As janelas de eventos esperam pelo OK
+280§<b>Tabuleiro 3D</b><small>{0}</small>
+281§Tabuleiro 3D
+282§Orientação do ecrã
+283§Auto
+284§Vertical
+285§Horizontal
+286§Gravação
+287§Apagar jogo gravado
+288§Apagar o jogo gravado?
+289§<p>Não o poderás continuar.</p>
+290§Apagar
+291§Cancelar
+292§Gravação apagada
+293§{0} <b>Nível {1}: {2}.</b> {3}
+294§Regras
+295§🏁 Objetivo
+296§No modo clássico — ser o primeiro a juntar <b>{0} de capital</b> — é a liberdade financeira. Ou ser o último em jogo. Se ninguém conseguir em {1} rondas, ganha a melhor pontuação: capital + felicidade×100 + saúde×50.
+297§Início: <b>{0}</b> (no criativo — o que definires), 100 de saúde, 50 de felicidade e um emprego ao acaso.
+298§⭐ Níveis, vantagens e figuras
+299§Cada jogo dá experiência e moedas: 1.º lugar — 100 🪙, 2.º — 60, 3.º — 30, 4.º — nada. Com as moedas compras figuras (as 4 básicas são grátis).
+300§🎮 Modos
+301§No criativo podes mudar: número de rondas ou ∞, objetivo de capital, o que acontece a quem perde (eliminado / regressa após N rondas / recomeça logo), imposto 0–40%, dinheiro inicial, multiplicador de salários, custo de vida, e ligar ou desligar cartas, partidas, esconderijos, vantagens, casino e cursos.
+302§No modo infinito não há experiência. O modo «Eliminação» dá +15 XP ao bónus do jogo.
+303§🎲 Jogada
+304§Lanças dois dados e andas num circuito de 32 casas. Sempre que passas pelo <b>«Dia de pagamento»</b> recebes o salário e pagas automaticamente todos os créditos. A felicidade desce um pouco — a vida desgasta.
+305§🏠 Propriedades e créditos
+306§As propriedades compram-se <b>a crédito</b>: 20% de entrada agora, o resto (+15% de sobrecusto) em seis prestações no «Dia de pagamento». Ou a pronto — sem sobrecusto e com bónus de felicidade. Quem cair na tua propriedade paga-te renda.
+307§Propriedade
+308§Preço
+309§Entrada
+310§Prestação
+311§Renda
+312§🗺 Casas
+313§🩺 Cartas de saúde
+314§Um baralho de doenças e bónus. As doenças atingem a saúde e a carteira e podem tirar-te jogadas. Os bónus protegem e curam.
+315§<b>Constipação</b>−10 de saúde, perdes uma vez
+316§<b>Esgotamento</b>salário ×0,5 durante 2 rondas
+317§<b>Imunidade</b>a próxima doença não tem efeito
+318§<b>Seguro</b>3 contas médicas grátis
+319§🎴 Cartas de destino
+320§<b>Promoção</b>salário +20%
+321§<b>Despedimento</b>ficas desempregado
+322§<b>O banco subiu a taxa</b>dívidas +10%
+323§<b>Aniversário</b>cada um dá 500 ₴
+324§😈 Propriedade alheia: partidas e boas ações
+325§Pagaste a renda — agora escolhes. <b>Danificar</b> (inundar o apartamento, riscar o carro, má avaliação): o dono paga 12% do preço em reparações; 25% de risco de seres apanhado e multado. <b>Roubar</b>: levas até 15% do dinheiro dele (máx. 2500 ₴); 35% de risco — multa de 2000 ₴ e perdes uma vez. <b>Finanças</b>: o dono paga 10% do dinheiro; 25% — és tu multado por difamação. <b>Boa ação</b>: +8 de felicidade para ti, +10 para o dono, e um negócio recebe ainda +1000 ₴.
+326§A carta <b>«Alarme»</b> protege: a próxima partida contra ti falha e o culpado é apanhado.
+327§🕶 Esconderijos
+328§Não vês o dinheiro, o salário nem a saúde dos rivais — só as propriedades. As cartas «Esconderijo offshore», «Pus em nome da sogra», «Sigilo médico» dão um esconderijo: esconde qualquer propriedade tua. Quem cair numa escondida paga renda e revela-a. «Inteligência fiscal» revela todos os esconderijos dos rivais.
+329§💀 Como se é eliminado
+330§Se o teu dinheiro ficar negativo, o banco vende as tuas propriedades (60% do preço menos a dívida). Se não chegar — <b>falência</b>. Saúde a 0 — também és eliminado. Felicidade a zero tira 10 de saúde de cada vez.
+331§Também podes vender as tuas propriedades: toca no teu cartão de jogador durante a tua vez.
+332§🌐 Online
+333§O anfitrião cria uma sala e dita um código de 5 caracteres. Cada um joga no seu telemóvel. Se um jogador se desligar, um bot termina por ele.
+334§Toca numa casa qualquer — vês o preço, a prestação e a renda.
+335§Toca no cartão de um jogador — vês as propriedades e dívidas dele.
+336§Mantém as prestações abaixo do salário, senão os créditos comem tudo.
+337§A pronto compensa: sem os 15% de sobrecusto e com bónus de felicidade.
+338§Propriedades baratas pagam-se com a renda mais depressa do que parece.
+339§O seguro de saúde do baralho de saúde salva-te das contas médicas.
+340§Felicidade a zero tira saúde a cada ronda — às vezes uma festa ajuda.
+341§O centro de emprego pode dar um salário melhor — ou pior. Lê a oferta.
+342§O banco dá 5000 ₴ depressa, mas terás de devolver 6600.
+343§Falta dinheiro? Vende tu — antes que o banco a leve mais barato.
+344§Em propriedade alheia podes fazer partidas — mas o risco de seres apanhado é real.
+345§O alarme do baralho de destino apanha o próximo engraçadinho.
+346§Uma boa ação em propriedade alheia também te dá felicidade.
+347§Os rivais não veem uma propriedade escondida até alguém cair nela.
+348§Saúde baixa: hospital (+40) ou ginásio (+15). Abaixo de 30 o salário desce.
+349§Felicidade quase a zero. Uma festa, uma viagem ou uma propriedade tua vão animar-te.
+350§Pouco dinheiro: no «Dia de pagamento» serão cobradas prestações de
+351§. Se ficares negativo, o banco vende as tuas propriedades.
+352§As prestações (
+353§) são mais altas que o salário (
+354§). Cuidado com novos créditos.
+355§Para numa casa colorida — podes comprar a crédito com 20% de entrada.
+356§uma dica para ti
+357§toca — outra dica
+358§Jogador
+359§Estudante
+360§Estagiário
+361§Assalariado
+362§Devedor
+363§Com crédito habitação
+364§Empreendedor
+365§Investidor
+366§Rentista
+367§Milionário
+368§Livre financeiramente
+369§Casa própria
+370§+5 de felicidade por cada casa
+371§Carro próprio
+372§+5 de felicidade por cada carro
+373§Negócio próprio
+374§+5 de felicidade por cada negócio
+375§· até ao nível {0}: {1} XP
+376§· novo nível {0}: {1}!
+377§Nova vantagem: {0} <b>{1}</b> — {2}
+378§Novo avatar desbloqueado: {0}
+379§+{0} XP · {1}.º lugar{2}{3}
+380§, desbloqueia no nível
+381§nív. {0}
+382§Avatar {0}{1}
+383§Cria um perfil — cada jogo dá experiência, sobes de nível e desbloqueias novos avatares.
+384§Alcunha
+385§De 2 a 14 caracteres
+386§Avatar
+387§O teu sonho
+388§O sonho dá um bónus de felicidade quando ficas com esse tipo de propriedade.
+389§Criar perfil
+390§Alcunha — pelo menos 2 caracteres
+391§Bem-vindo, {0}!
+392§escolhida
+393§escolher
+394§← Perfil
+395§Figuras
+396§<b>🪙 {0} moedas</b><small>Ganha-as nos lugares 1–3. A figura é o teu peão no tabuleiro 3D.</small>
+397§Modelos: Kenney (kenney.nl), licença CC0. Isto é uma beta — podem existir erros.
+398§{0} — a tua figura
+399§Faltam-te {0} moedas
+400§Comprar «{0}»?
+401§Preço: 🪙 {0}. Ficas com: {1}.
+402§Comprar
+403§Comprado: {0}
+404§· faltam {1} XP para o nível {0}
+405§ · nível máximo
+406§<b>{0} <small>· nível {1}</small></b><small>{2}</small>
+407§Nível {0} · {1}
+408§<b>🪙 Carteira: {0}</b><small>Moedas por lugar: 1.º — 100, 2.º — 60, 3.º — 30, 4.º — nada.</small>
+409§A tua figura:
+410§jogos
+411§vitórias
+412§% de vitórias
+413§<b>{0} mil ₴</b>
+414§recorde de capital
+415§jogos online
+416§sonho
+417§Guardar
+418§Sonho
+419§O nível 1 não dá nada. Cada nível seguinte desbloqueia um poder — acumulam. Funcionam em qualquer jogo com o teu perfil.
+420§Como ganhar experiência
+421§Cada jogo +40 XP · vitória +120 · segundo lugar +60 · +1 XP por cada 1000 ₴ de capital (até 60) · online +20.
+422§Guardado
+423§Não foi possível ligar
+424§Sem ligação ao servidor do jogo.
+425§O servidor do jogo não está disponível. Verifica a internet e tenta de novo.
+426§{0} entrou na sala
+427§{0} saiu
+428§{0} desligou-se — um bot joga por ele.
+429§A sala não responde. Verifica o código e a internet.
+430§Sala com o código
+431§ não encontrada. Verifica o código.
+432§A sala está cheia ou o jogo já começou.
+433§🏆 Vitória!
+434§{0}.º lugar
+435§Jogo terminado
+436§<p>O anfitrião fechou a sala ou perdeu a ligação.</p>
+437§A tua sala
+438§Sala
+439§A criar a sala…
+440§A ligar à sala
+441§Copiar código
+442§Os amigos abrem o jogo → «Online com amigos» → introduzem este código.
+443§nív. {0}</small>
+444§bot
+445§anfitrião
+446§ · tu
+447§Remover {0}
+448§lugar livre
+449§<p class="hint">São precisos pelo menos 2 jogadores. Espera pelos amigos ou adiciona um bot.</p>
+450§+ Bot
+451§À espera que o anfitrião comece o jogo…
+452§Modo: {0} — {1}
+453§Jogadores · {0} de 4
+454§Fechar sala
+455§Sair
+456§Código copiado
+457§Seleciona e copia o código
+458§mil
+459§O bot está a pensar…
+460§Jogada em curso…
+461§É a tua vez
+462§À espera de {0}…
+463§ de
+464§ · objetivo
+465§sala
+466§um telemóvel
+467§Ao menu
+468§Novo jogo
+469§📜 Registo do jogo
+470§Lançar os dados
+471§{0} mil
+472§<b>Ronda {0}{1}{2}</b>
+473§Onde estão todos os jogadores
+474§Onde estão
+475§Definições
+476§Habitação · crédito
+477§Negócio
+478§O que se passa
+479§{0}<small>toca — outra dica</small>
+480§perde vez ×{0}
+481§esgotamento ×{0}
+482§imunidade
+483§seguro ×{0}
+484§🕶 esconderijo ×{0}
+485§🚨 alarme
+486§⭐ vantagens: {0}
+487§💰 assalto em {0}
+488§ · o teu ecrã
+489§{0}<small>+{1}{2} por ronda</small>
+490§🏠 As minhas propriedades · {0}
+491§💰 Capital {0}
+492§ · bot
+493§eliminado
+494§<span class="secret">sem propriedades visíveis</span>
+495§Rivais
+496§ · a jogar
+497§ · eliminado
+498§tu
+499§ao lado
+500§ casas à frente
+501§📍 Onde estão
+502§<p class="hint" style="margin-top:8px">Os peões dos jogadores também se veem no tabuleiro. A distância conta no sentido do jogo.</p>
+503§Fechar
+504§ligadas
+505§desligadas
+506§💡 Dicas: {0}
+507§esperar pelo OK
+508§fecham sozinhas
+509§🪟 Janelas de eventos: {0}
+510§auto
+511§vertical
+512§horizontal
+513§🔄 Ecrã: {0}
+514§📖 Regras
+515§🚪 Sair do jogo online
+516§🚪 Voltar ao menu
+517§Voltar ao jogo
+518§⚙ Definições
+519§<p class="hint">As definições são guardadas neste telemóvel.</p>
+520§📖 Regras resumidas
+521§<b>Objetivo:</b> {0}
+522§<b>«Dia de pagamento»:</b> recebes o salário e pagas todos os créditos.
+523§<b>Propriedades:</b> 20% de entrada + 6 prestações, ou a pronto. Propriedade alheia — pagas renda.
+524§<b>Oculto:</b> o dinheiro, o salário e a saúde dos rivais não se veem, só as propriedades.
+525§Os <b>esconderijos</b> das cartas deixam-te esconder propriedades. Quem cair nelas paga renda e revela o esconderijo. «Inteligência fiscal» revela todos.
+526§<b>Eliminação:</b> dívidas sem propriedades ou saúde 0.
+527§Voltar
+528§Sair do jogo online?
+529§Voltar ao menu?
+530§<p>És o anfitrião — o jogo acaba para todos.</p>
+531§<p>A partir de agora um bot joga por ti.</p>
+532§<p>O jogo será guardado — podes continuá-lo depois.</p>
+533§Ficar
+534§esgotamento
+535§propriedades: {0}
+536§OK
+537§evento
+538§eventos
+539§eventos
+540§mais {0} {1}
+541§Saltar todos os eventos ({0})
+542§O bot escolhe: {0}
+543§<p class="hint">Ainda vazio.</p>
+544§Ronda {0}
+545§ · valores alheios ocultos
+546§{0} eventos · do início até agora{1}
+547§Jogo atual
+548§<b>{0} · ronda {1}</b><small>{2}</small>
+549§registo
+550§ ganha
+551§Ninguém sobreviveu
+552§ · online
+553§<b>{0}</b><small>{1} · {2}{3} · {4} rondas</small>
+554§<p class="hint">Aqui vão aparecer os teus últimos 5 jogos terminados com o registo completo.</p>
+555§Diário de jogos
+556§Jogos terminados
+557§📜 Jogo atual · ronda {0}
+558§{0} eventos · valores alheios ocultos
+559§Continuar jogo
+560§ pts
+561§{0} · {1} rondas · {2} eventos
+562§banco
+563§Tipo
+564§Entrada de 20%
+565§Prestação por ronda
+566§Sobrecusto
+567§Renda para os outros
+568§Felicidade na compra
+569§Dono
+570§{0} {1}<small>{2} · renda {3}</small>
+571§<p class="hint">Sem propriedades visíveis.</p>
+572§O dinheiro, o salário e a saúde dos rivais estão ocultos. Parte das propriedades também pode estar escondida.
+573§💳 Crédito ao consumo
+574§ <span class="achip hid">escondida</span>
+575§dívida restante
+576§ · prestação
+577§totalmente paga
+578§Vender {0}
+579§<p style="color:var(--muted)">Ainda sem propriedades nem créditos.</p>
+580§Esconderijos
+581§<p style="color:var(--muted);font-size:13px">Venda: o banco paga 60% do preço menos o crédito restante.
+582§ 🕶 — esconder dos rivais.
+583§Onde
+584§Emprego
+585§Dinheiro
+586§Prestações por ronda
+587§Capital
+588§Propriedade escondida
+589§💧 Inundar o apartamento
+590§inundou o apartamento
+591§🔓 Assaltar enquanto não está ninguém
+592§🎁 Dar presente de casa nova
+593§🔨 Riscar o carro
+594§riscou o carro
+595§🛞 Tirar as rodas e vendê-las
+596§🧽 Lavar o carro
+597§⭐ Deixar uma má avaliação
+598§deixou uma má avaliação a
+599§💸 Roubar a caixa
+600§📣 Recomendar aos amigos
+601§As partidas são arriscadas: podem apanhar-te e multar-te. Uma boa ação aumenta a felicidade dos dois.
+602§Estás na propriedade de
+603§{0}</b>. Podes estragar-lhe a vida — ou fazer uma boa ação.
+604§{0} O que fazemos?
+605§ · risco 25%
+606§ · risco 35%
+607§🧾 Denunciar às Finanças
+608§Seguir em frente
+609§ — o alarme disparou
+610§Foste apanhado{0}! Multa de {1}, −5 de felicidade.
+611§ (alarme)
+612§{0} quis pregar uma partida a {1}, mas foi apanhado{2}.
+613§{0} quis danificar «{1}», mas foi apanhado
+614§Resultou. {0} paga {1} de reparação e perde 8 de felicidade.
+615§{0} {1} «{2}» do jogador {3}!
+616§Apanhado{0}! Multa de 2000 ₴ e perdes uma vez.
+617§{0} tentou roubar {1}, mas foi apanhado{2}.
+618§{0} tentou roubar-te — apanhado
+619§Saque: {0}. Ninguém viu.
+620§Nada para levar — o dono está teso.
+621§{0} roubou {1}!
+622§{0} entrou em casa de {1}, mas não encontrou nada.
+623§{0} roubou-te: −{1}
+624§A inspeção não encontrou nada. Foste multado por difamação: −1000 ₴.
+625§{0} denunciou {1} às Finanças — e foi multado por difamação.
+626§As Finanças foram a casa de {0} e passaram uma multa.
+627§{0} mandou as Finanças a {1}.
+628§{0} denunciou-te às Finanças: −{1}
+629§Presente entregue ({0}). +8 de felicidade para ti, +10 para o dono.
+630§Vieram os amigos — o dono faz +1000 ₴. +8 de felicidade para ti, +10 para o dono.
+631§O carro brilha. +8 de felicidade para ti, +10 para o dono.
+632§{0} faz uma boa ação por {1}: {2}.
+633§💛 Boa ação
+634§😈 Resultado
+635§{0} esconde «{1}».
+636§{0} esconde algo num paraíso fiscal…
+637§{0} guarda o esconderijo para depois.
+638§🕶 Esconder propriedade
+639§<p>Escolhe o que esconder dos rivais. O que estiver escondido não aparece na lista nem no tabuleiro até alguém cair nele.</p>
+640§{0} decide o que esconder…
+641§Mais tarde
+642§{0} vendeu «{1}» ao banco: {2}.
+643§{0} vendeu «{1}» ao banco.
+644§{0} perde a vez (está doente).
+645§{0} perde a vez
+646§{0} lança {1}+{2}.
+647§{0} joga outra vez.
+648§baixa médica
+649§pausa no crédito
+650§dividendos +
+651§, créditos −{0}
+652§, vida −{0}
+653§{0}: salário +{1}{2}{3}{4}.
+654§ e paga os créditos
+655§{0} recebe o salário{1}.
+656§ · créditos −
+657§ · vida −
+658§Salário +{0}{1}{2}
+659§{0}: um dia tranquilo.
+660§{0}: não aconteceu nada.
+661§{0} passa pelas Finanças — não há impostos.
+662§{0} paga {1} de imposto.
+663§{0} paga imposto.
+664§🧾 Finanças
+665§Imposto: {0} ({1}% do dinheiro).
+666§O imposto é {0}% do dinheiro. Quanto exatamente, só quem paga sabe.
+667§🎉 Festa em casa de amigos
+668§<p>Ir: −1000 ₴, +20 de felicidade, −5 de saúde.</p>
+669§Ir
+670§Ficar em casa
+671§{0} está na festa.
+672§🏋️ Ginásio
+673§<p>Mensalidade −1200 ₴: +15 de saúde, +5 de felicidade.</p>
+674§Comprar mensalidade
+675§Seguir em frente
+676§{0} compra uma mensalidade do ginásio.
+677§📋 Centro de emprego
+678§Oferta: <b>{0}</b>, {1} por ronda.
+679§Agora: {0}, {1}.
+680§<p>Recebeu uma oferta de emprego.</p>
+681§Aceitar
+682§Recusar
+683§{0} agora é {1}.
+684§{0} muda de emprego.
+685§💰 Assalto noturno
+686§ da caixa de {0}
+687§Vantagem de nível 2: podes assaltar «{0}». 60% — +1500 ₴{1}, 40% — multa de 1500 ₴ e perdes uma vez.
+688§<p>Está a tramar alguma…</p>
+689§Assaltar
+690§Não arriscar
+691§{0} assaltou «{1}» e foi apanhado.
+692§🚔 Apanhado
+693§<p>Multa de 1500 ₴ e perdes uma vez.</p>
+694§{0} assaltou o teu «{1}»: −{2}
+695§{0} assaltou «{1}»!
+696§💰 Conseguiste
+697§Saque: {0}. Próximo assalto — daqui a 3 rondas.
+698§{0} passa pelos cursos.
+699§🎓 Cursos
+700§Cursos de formação: −2000 ₴, salário +15% ({0} → {1}).
+701§<p>Cursos de formação.</p>
+702§Inscrever-me · 2000 ₴
+703§Agora não
+704§{0} acabou os cursos: salário {1}.
+705§{0} acabou os cursos.
+706§{0} passa pelo casino.
+707§🎰 Casino
+708§<p>45% — a aposta duplica, 55% — perde-se. Ganhar dá +3 de felicidade, perder −5.</p>
+709§Apostar 1000 ₴
+710§Apostar 3000 ₴
+711§{0} ganha no casino!
+712§{0} perde no casino.
+713§🎰 Ganhaste!
+714§🎰 Sem sorte
+715§ganha
+716§perde
+717§{0} {1} no casino.
+718§🏥 Hospital
+719§grátis com o seguro
+720§ <span class="pick">🩺 médico amigo</span>
+721§Tratamento: {0}, +{1} de saúde.{2}
+722§Tratar-me
+723§Não, obrigado
+724§{0} trata-se.{1}
+725§🏦 Banco
+726§<p>Crédito ao consumo ou amortização antecipada — a decisão só o jogador vê.</p>
+727§crédito ao consumo
+728§Ou amortizar antes: «{0}» — {1}.
+729§Crédito ao consumo: recebes 5000 ₴ e devolves 6600 ₴ em seis prestações.
+730§Pedir 5000 ₴
+731§Amortizar
+732§Não fazer nada
+733§{0} pede um crédito ao consumo de 5000 ₴.
+734§{0} vai ao banco.
+735§{0} amortiza um crédito antes do prazo.
+736§ +5 sonho
+737§Cuidado: com este crédito as prestações (
+738§) serão maiores que o salário (
+739§Prestações após a compra:
+740§ por ronda com um salário de
+741§. Paga-se com a renda em ~
+742§ visitas.
+743§{0}: entrada
+744§Renda dos outros
+745§Felicidade
+746§{0} · entrada {1}
+747§A pronto {0}
+748§Não comprar
+749§{0} faz um {1} para «{2}».
+750§{0} compra «{1}» a pronto.
+751§{0} descansa no que é seu: +3 de felicidade.
+752§ Esconderijo revelado!
+753§{0} paga a {1} uma renda de {2}.{3}
+754§<p class="pick">Surpresa: esta propriedade estava escondida!</p>
+755§Esta propriedade é de {0}. Renda: {1}.
+756§A imunidade protegeu-te — a doença não teve efeito.
+757§{0} tira «{1}».{2}
+758§Carta de saúde
+759§Carta de destino
+760§ · bónus
+761§ · doença
+762§O banco tira a {0} «{1}» por dívidas.
+763§Falência
+764§Falência: dívidas e nada mais para vender.
+765§Saúde a zero
+766§Saúde a zero — cuidados intensivos e longa baixa.
+767§{0}: {1} — a vida recomeça do zero ({2}.ª vez).
+768§♾ Vida do zero
+769§{0}. O banco levou as tuas propriedades, mas recomeças: {1}, saúde completa.
+770§Regressa na ronda {0}.
+771§{0} é eliminado. {1}{2}
+772§é eliminado por algum tempo
+773§Regresso daqui a {0} rondas — do zero. Regressos restantes: {1}.
+774§{0} volta ao jogo do zero!
+775§{0} volta ao jogo
+776§Capital {0} — liberdade financeira!
+777§Último em jogo.
+778§Melhor pontuação após {0} rondas.
+779§{0} ganha! {1}
+780§Todos foram eliminados.
+781§Vitória: {0}
+782§Pontos = capital + felicidade×100 + saúde×50.
+783§Ver o tabuleiro

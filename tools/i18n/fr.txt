@@ -1,0 +1,784 @@
+0§Prêt immobilier
+1§Prêt auto
+2§Prêt professionnel
+3§Olia
+4§Max
+5§Iryna
+6§Taras
+7§Solia
+8§Denys
+9§Livreur
+10§Téléconseiller
+11§Serveur
+12§Admin système
+13§Vendeur
+14§Développeur
+15§Commercial
+16§Chauffeur de taxi
+17§Chômeur
+18§Jour de paie
+19§Kiosque à chawarma
+20§Santé
+21§Lanos d'occasion
+22§Impôts
+23§Chambre en colocation
+24§Destin
+25§Location de trottinettes
+26§Hôpital
+27§Appartement connecté
+28§Café
+29§Formation
+30§Garage
+31§Toyota à crédit
+32§Fête
+33§Studio
+34§Barbier
+35§Salle de sport
+36§Deux-pièces neuf
+37§Station de lavage
+38§Pôle emploi
+39§Voiture électrique
+40§Casino
+41§Maison de ville
+42§Maison de campagne
+43§Banque
+44§Casse nocturne
+45§Tu peux braquer le commerce sur lequel tu tombes : 60 % — +1500 ₴ (caisse du propriétaire ou de la banque), sinon 1500 ₴ d'amende et un tour passé. Une fois tous les 3 tours.
+46§Ami médecin
+47§L'hôpital coûte 750 ₴ au lieu de 1500 et soigne de 50.
+48§Bon historique de crédit
+49§L'apport pour un prêt est de 10 % au lieu de 20 %.
+50§Prêt immobilier aidé
+51§Surcoût du logement 5 % au lieu de 15 %.
+52§Sens des affaires
+53§Loyer de tes commerces +25 %.
+54§Dividendes
+55§Au « Jour de paie » +150 ₴ pour chacun de tes biens.
+56§Gardiennage
+57§Les farceurs et voleurs de tes biens se font prendre 25 % plus souvent.
+58§Capital de départ
+59§Tu commences chaque partie avec +5000 ₴.
+60§Combines
+61§Tu commences chaque partie avec une planque et une alarme.
+62§Héros
+63§Pièce
+64§Fanion
+65§Brique
+66§Moto
+67§Camion jaune
+68§Camion rouge
+69§Camion vert
+70§Camion violet
+71§Petit nuage
+72§Bloc pièce
+73§Fontaine
+74§Formation professionnelle : −2000 ₴, et ton salaire augmente de 15 %.
+75§Tu peux miser 1000 ou 3000 ₴ : 45 % — tu gagnes le double, sinon la mise est perdue.
+76§Passe ou arrête-toi ici — tu touches ton salaire et rembourses tous tes prêts.
+77§Tu tires une carte santé : une maladie ou un bonus.
+78§Tu tires une carte destin : primes, amendes, amour, licenciements.
+79§Tu paies 10 % de ton argent liquide (500 ₴ minimum).
+80§Tu peux te soigner : −1500 ₴, +40 de santé.
+81§Tu peux y aller : −1000 ₴, +20 de bonheur, −5 de santé.
+82§Abonnement : −1200 ₴, +15 de santé, +5 de bonheur.
+83§On te propose un nouvel emploi. Accepter ou non — à toi de voir.
+84§Crédit à la consommation ou remboursement anticipé.
+85§ L'assurance a payé la facture.
+86§Rhume
+87§−10 de santé, tu passes 1 tour.
+88§Grippe
+89§−20 de santé, médicaments −800 ₴.
+90§Jambe cassée sur le verglas
+91§−30 de santé, plâtre −3000 ₴, tu passes 2 tours.
+92§Rage de dents
+93§Dentiste −2500 ₴, −5 de santé.
+94§Burn-out
+95§−15 de santé, −20 de bonheur, tes 2 prochains salaires divisés par deux.
+96§Insomnie
+97§−10 de santé, −10 de bonheur.
+98§Intoxication au chawarma
+99§−15 de santé, tu passes 1 tour.
+100§Mal de dos de bureau
+101§Masseur −1500 ₴, −10 de santé.
+102§Allergie printanière
+103§−5 de santé, comprimés −400 ₴.
+104§Tension qui grimpe
+105§−20 de santé, cardiologue −1200 ₴.
+106§Immunité de fer
+107§La prochaine maladie ne t'atteindra pas.
+108§Secret médical
+109§Tu obtiens une planque : cache un de tes biens aux adversaires.
+110§Assurance santé
+111§L'assurance paie tes 3 prochaines factures médicales.
+112§Enfin une bonne nuit
+113§+15 de santé.
+114§Yoga matinal
+115§+10 de santé, +10 de bonheur.
+116§Vitamines D et C
+117§+10 de santé.
+118§Regain d'énergie
+119§Tu rejoues tout de suite.
+120§Migraine
+121§−10 de santé, −5 de bonheur.
+122§Entorse à la salle de sport
+123§−15 de santé, urgences −700 ₴.
+124§Lunettes cassées
+125§Nouveaux verres −1100 ₴.
+126§Massage d'un ami
+127§+10 de santé, +5 de bonheur.
+128§Méditation
+129§+15 de bonheur.
+130§Une semaine de bon sommeil
+131§+20 de santé.
+132§Bilan de santé sans surprise
+133§+5 de santé, +5 de bonheur.
+134§Prime
+135§Héritage de grand-mère
+136§+4000 ₴ et un peu de tristesse : −5 de bonheur.
+137§Pause de remboursement
+138§Au prochain « Jour de paie », aucune mensualité n'est prélevée.
+139§Les recouvreurs appellent
+140§−10 de bonheur, −500 ₴ pour « régler l'affaire ».
+141§Portefeuille trouvé et rendu
+142§Le propriétaire t'a remercié : +800 ₴, +8 de bonheur.
+143§Les voisins font des travaux
+144§Perceuse dès le matin : −10 de bonheur, −5 de santé.
+145§Compte bancaire piraté
+146§Cashback annuel
+147§Mariage d'un ami
+148§Cadeau −1500 ₴, +20 de bonheur.
+149§Amende routière
+150§Dégât des eaux chez les voisins
+151§Tu paies leurs réparations : −2500 ₴.
+152§Loterie
+153§Tu as gagné 5000 ₴.
+154§Un ami a remboursé sa dette
+155§Voyage dans les Carpates
+156§−3500 ₴, +25 de bonheur.
+157§Rupture
+158§−20 de bonheur.
+159§Coup de foudre
+160§+25 de bonheur.
+161§Promotion
+162§Salaire +20 %.
+163§Licenciement
+164§Tu as été licencié. Tu es maintenant au chômage.
+165§Cashback
+166§La banque a relevé son taux
+167§Le reste dû de chacun de tes prêts +10 %.
+168§Inflation
+169§Tous les joueurs perdent 1000 ₴ chacun.
+170§Anniversaire
+171§Chaque joueur t'offre 500 ₴.
+172§L'ambulance t'a emmené à l'hôpital
+173§Va sur la case « Hôpital ».
+174§Contrôle fiscal
+175§−10 % de ton argent liquide.
+176§Téléphone cassé
+177§−2000 ₴, −5 de bonheur.
+178§Petit boulot le week-end
+179§+2000 ₴, −5 de santé.
+180§Alarme installée
+181§La prochaine farce contre ton bien échouera et le farceur sera pris.
+182§Planque offshore
+183§Tu peux cacher un bien — les adversaires ne le verront ni dans la liste ni sur le plateau.
+184§Mis au nom de la belle-mère
+185§Encore une planque : cache n'importe quel bien quand tu veux.
+186§Renseignement fiscal
+187§Tous les biens cachés des adversaires sont révélés.
+188§Planques révélées : {0}.
+189§Rien de caché n'a été trouvé.
+190§🎨 Créatif
+191§Règle tout toi-même : tours, objectif, élimination ou retour, impôt, événements.
+192§🏁 Classique
+193§Objectif : {0} de capital, ou être le dernier en jeu, ou le meilleur score après 25 tours.
+194§💀 Élimination
+195§Sans objectif ni limite de tours. Le coût de la vie augmente à chaque tour (250 ₴ × numéro du tour), et dès le tour 13 la fatigue frappe la santé. Le dernier survivant gagne.
+196§♾ Sans fin
+197§La partie ne finit jamais. Le ruiné ou l'épuisé recommence sa vie à zéro. Tu peux quitter quand tu veux.
+198§La partie commence. Chacun reçoit
+199§ et un emploi.
+200§Joueur
+201§← Menu
+202§<b>Reprendre la partie</b>
+203§tour {0} · {1}
+204§journal de la partie en cours et
+205§La vie<em>à crédit</em>
+206§bêta 3.1
+207§Un jeu de plateau sur la vie d'adulte : des prêts immobiliers au lieu des maisons, des prêts auto au lieu des rues, et dans la pioche — un rhume ou une prime.
+208§<b>Un téléphone</b>
+209§2–4 joueurs et des bots
+210§<b>En ligne</b>
+211§salon par code
+212§<b>Règles</b>
+213§cases, cartes, prêts
+214§<b>Paramètres</b>
+215§astuces, écran
+216§<b>Journal des parties</b>
+217§{0}dernières parties terminées
+218§Nombre de tours
+219§∞ sans limite
+220§Objectif de capital
+221§sans objectif
+222§k ₴
+223§Qui perd
+224§est éliminé
+225§revient
+226§recommence aussitôt
+227§Retour après
+228§ tours
+229§Retours par joueur
+230§ fois
+231§Impôt
+232§aucun
+233§Argent de départ
+234§Salaires
+235§Coût de la vie croissant
+236§250 ₴ × numéro du tour à chaque paie, fatigue dès le tour 13
+237§Cartes santé
+238§Cartes destin
+239§Farces et bonnes actions
+240§Planques de biens
+241§Atouts de niveau
+242§être le premier à atteindre {0}
+243§être le dernier en jeu (les perdants reviennent après {0} tours, jusqu'à {1} fois)
+244§être le dernier en jeu
+245§ou le meilleur score après {0} tours
+246§une partie sans fin — joue autant que tu veux.
+247§Moins
+248§Plus
+249§<p class="tip" style="border-color:var(--hp)">Sans limite de tours, objectif ni coût de la vie, la partie peut durer très longtemps. Active l'un d'eux pour avoir une fin.</p>
+250§Paramètres du mode créatif
+251§{0} En mode créatif, l'expérience et les pièces sont divisées par deux.
+252§Mode
+253§Nom du joueur {0}
+254§Humain
+255§Bot
+256§Partie sur un téléphone
+257§Joueurs (2–4)
+258§Lancer la partie
+259§L'expérience va au joueur qui a ton pseudo ({0}). Les humains jouent à tour de rôle en se passant le téléphone. Les bots jouent seuls — pratique pour s'entraîner.
+260§L'hôte fait tourner la partie — s'il quitte, elle se termine pour tous. Si un autre joueur se déconnecte, un bot finit à sa place.
+261§Le jeu en ligne nécessite internet. Vérifie ta connexion et rouvre le jeu.
+262§En ligne avec des amis
+263§Créer un salon
+264§Tu seras l'hôte : tu reçois un code et tes amis le saisissent. Les places libres peuvent aller aux bots.
+265§Rejoindre avec un code
+266§CODE
+267§Code du salon
+268§Rejoindre
+269§Le code fait 5 caractères
+270§Cet appareil ne gère pas la 3D — un plateau plat est affiché.
+271§Plateau en 3D avec maisons et voitures. Désactive-le sur un téléphone peu puissant.
+272§« Auto » — le jeu pivote avec le téléphone.
+273§Tourne le téléphone — le plateau passe à gauche, les joueurs et le journal à droite. Le verrouillage de l'orientation fonctionne dans l'appli.
+274§Paramètres
+275§Langue
+276§<b>Astuces</b><small>Conseils sous le plateau et lors des choix : ce qui rapporte et ce dont il faut se méfier.</small>
+277§Astuces
+278§<b>Les fenêtres d'événements attendent OK</b><small>Ce qu'ont fait les bots et adversaires — une par une, de la plus ancienne. La partie continue pendant ce temps.</small>
+279§Les fenêtres d'événements attendent OK
+280§<b>Plateau 3D</b><small>{0}</small>
+281§Plateau 3D
+282§Orientation de l'écran
+283§Auto
+284§Portrait
+285§Paysage
+286§Sauvegarde
+287§Supprimer la partie sauvegardée
+288§Supprimer la partie sauvegardée ?
+289§<p>Tu ne pourras plus la reprendre.</p>
+290§Supprimer
+291§Annuler
+292§Sauvegarde supprimée
+293§{0} <b>Niveau {1} : {2}.</b> {3}
+294§Règles
+295§🏁 Objectif
+296§En mode classique — être le premier à réunir <b>{0} de capital</b> — c'est la liberté financière. Ou être le dernier en jeu. Si personne n'y arrive en {1} tours, le meilleur score gagne : capital + bonheur×100 + santé×50.
+297§Départ : <b>{0}</b> (en créatif — ce que tu règles), 100 de santé, 50 de bonheur et un emploi au hasard.
+298§⭐ Niveaux, atouts et figurines
+299§Chaque partie rapporte de l'expérience et des pièces : 1re place — 100 🪙, 2e — 60, 3e — 30, 4e — rien. Les pièces achètent des figurines (les 4 de base sont gratuites).
+300§🎮 Modes
+301§En créatif, tu peux changer : le nombre de tours ou ∞, l'objectif de capital, ce qui arrive au perdant (éliminé / revient après N tours / recommence aussitôt), l'impôt 0–40 %, l'argent de départ, le multiplicateur de salaire, le coût de la vie, et activer ou couper les cartes, farces, planques, atouts, casino et formation.
+302§Pas d'expérience en mode sans fin. Le mode « Élimination » donne +15 XP au bonus de partie.
+303§🎲 Tour
+304§Lance deux dés et avance sur un circuit de 32 cases. Chaque fois que tu passes le <b>« Jour de paie »</b>, tu touches ton salaire et rembourses automatiquement tous tes prêts. Le bonheur baisse un peu — la vie use.
+305§🏠 Biens et prêts
+306§Les biens s'achètent <b>à crédit</b> : 20 % d'apport maintenant, le reste (+15 % de surcoût) en six mensualités au « Jour de paie ». Ou comptant — sans surcoût et avec un bonus de bonheur. Qui tombe sur ton bien te paie un loyer.
+307§Bien
+308§Prix
+309§Apport
+310§Mensualité
+311§Loyer
+312§🗺 Cases
+313§🩺 Cartes santé
+314§Une pioche de maladies et de bonus. Les maladies frappent la santé et le portefeuille et peuvent faire passer des tours. Les bonus protègent et soignent.
+315§<b>Rhume</b>−10 de santé, un tour passé
+316§<b>Burn-out</b>salaire ×0,5 pendant 2 tours
+317§<b>Immunité</b>la prochaine maladie n'a pas d'effet
+318§<b>Assurance</b>3 factures médicales gratuites
+319§🎴 Cartes destin
+320§<b>Promotion</b>salaire +20 %
+321§<b>Licenciement</b>tu deviens chômeur
+322§<b>La banque a relevé son taux</b>dettes +10 %
+323§<b>Anniversaire</b>chacun offre 500 ₴
+324§😈 Le bien des autres : farces et bonnes actions
+325§Loyer payé — à toi de choisir. <b>Abîmer</b> (inonder l'appartement, rayer la voiture, mauvais avis) : le propriétaire paie 12 % du prix en réparations ; 25 % de risque d'être pris et mis à l'amende. <b>Voler</b> : tu prends jusqu'à 15 % de son argent (max. 2500 ₴) ; 35 % de risque — 2000 ₴ d'amende et un tour passé. <b>Impôts</b> : le propriétaire paie 10 % de son argent ; 25 % — c'est toi qui es puni pour diffamation. <b>Bonne action</b> : +8 de bonheur pour toi, +10 pour le propriétaire, et un commerce gagne en plus +1000 ₴.
+326§La carte <b>« Alarme »</b> protège : la prochaine farce contre toi échoue et le farceur est pris.
+327§🕶 Planques
+328§On ne voit pas l'argent, le salaire ni la santé des adversaires — seulement leurs biens. Les cartes « Planque offshore », « Mis au nom de la belle-mère », « Secret médical » donnent une planque : cache n'importe lequel de tes biens. Qui tombe sur un bien caché paie le loyer et le révèle. « Renseignement fiscal » révèle toutes les planques adverses.
+329§💀 Comment on est éliminé
+330§Si ton argent passe sous zéro, la banque vend tes biens elle-même (60 % du prix moins la dette). Pas assez — <b>faillite</b>. Santé à 0 — tu es aussi éliminé. Un bonheur à zéro retire 10 de santé à chaque fois.
+331§Tu peux aussi vendre tes biens toi-même : touche ta carte de joueur pendant ton tour.
+332§🌐 En ligne
+333§L'hôte crée un salon et donne un code de 5 caractères. Chacun joue sur son téléphone. Si un joueur se déconnecte, un bot finit à sa place.
+334§Touche une case — tu verras son prix, sa mensualité et son loyer.
+335§Touche la carte d'un joueur — tu verras ses biens et ses dettes.
+336§Garde tes mensualités sous ton salaire, sinon les prêts mangeront tout.
+337§Payer comptant est plus avantageux : pas de 15 % de surcoût et un bonus de bonheur.
+338§Un bien bon marché se rembourse par le loyer plus vite qu'on ne croit.
+339§L'assurance santé de la pioche santé t'évite les factures médicales.
+340§Un bonheur à zéro retire de la santé à chaque tour — une fête aide parfois.
+341§Pôle emploi peut offrir un meilleur salaire — ou un pire. Lis l'offre.
+342§La banque prête 5000 ₴ vite, mais il faudra rendre 6600.
+343§À sec ? Vends toi-même — avant que la banque ne prenne ton bien moins cher.
+344§Sur le bien d'un autre, tu peux faire une farce — mais le risque d'être pris est réel.
+345§Une alarme de la pioche destin attrape le prochain farceur.
+346§Une bonne action sur le bien d'un autre augmente aussi ton bonheur.
+347§Les adversaires ne voient pas un bien caché tant que personne ne tombe dessus.
+348§Santé basse : hôpital (+40) ou salle de sport (+15). Sous 30, le salaire baisse.
+349§Bonheur presque à zéro. Une fête, un voyage ou un bien à toi te remonteront le moral.
+350§Peu d'argent : au « Jour de paie », des mensualités de
+351§ seront prélevées. Si tu passes sous zéro, la banque vendra tes biens.
+352§Les mensualités (
+353§) dépassent ton salaire (
+354§). Attention aux nouveaux prêts.
+355§Arrête-toi sur une case de couleur — tu pourras acheter à crédit avec 20 % d'apport.
+356§un conseil pour toi
+357§touche — une autre astuce
+358§Joueur
+359§Étudiant
+360§Stagiaire
+361§Salarié
+362§Emprunteur
+363§Endetté immobilier
+364§Entrepreneur
+365§Investisseur
+366§Rentier
+367§Millionnaire
+368§Libre financièrement
+369§Son logement
+370§+5 de bonheur pour chaque logement
+371§Sa voiture
+372§+5 de bonheur pour chaque voiture
+373§Son commerce
+374§+5 de bonheur pour chaque commerce
+375§· jusqu'au niveau {0} : {1} XP
+376§· nouveau niveau {0} : {1} !
+377§Nouvel atout : {0} <b>{1}</b> — {2}
+378§Nouvel avatar débloqué : {0}
+379§+{0} XP · {1}e place{2}{3}
+380§, débloqué au niveau
+381§niv. {0}
+382§Avatar {0}{1}
+383§Crée un profil — chaque partie te rapporte de l'expérience, tu montes de niveau et débloques de nouveaux avatars.
+384§Pseudo
+385§De 2 à 14 caractères
+386§Avatar
+387§Ton rêve
+388§Ton rêve donne un bonus de bonheur quand tu acquiers ce type de bien.
+389§Créer le profil
+390§Pseudo — au moins 2 caractères
+391§Bienvenue, {0} !
+392§choisie
+393§choisir
+394§← Profil
+395§Figurines
+396§<b>🪙 {0} pièces</b><small>Gagne-les avec les places 1 à 3. La figurine est ton pion sur le plateau 3D.</small>
+397§Modèles : Kenney (kenney.nl), licence CC0. Ceci est une bêta — des bugs sont possibles.
+398§{0} — ta figurine
+399§Il te manque {0} pièces
+400§Acheter « {0} » ?
+401§Prix : 🪙 {0}. Il te restera : {1}.
+402§Acheter
+403§Acheté : {0}
+404§· encore {1} XP jusqu'au niveau {0}
+405§ · niveau maximum
+406§<b>{0} <small>· niveau {1}</small></b><small>{2}</small>
+407§Niveau {0} · {1}
+408§<b>🪙 Porte-monnaie : {0}</b><small>Pièces par place : 1re — 100, 2e — 60, 3e — 30, 4e — rien.</small>
+409§Ta figurine :
+410§parties
+411§victoires
+412§% de victoires
+413§<b>{0} k ₴</b>
+414§record de capital
+415§parties en ligne
+416§rêve
+417§Enregistrer
+418§Rêve
+419§Le niveau 1 ne donne rien. Chaque niveau suivant débloque un pouvoir — ils se cumulent. Ils marchent dans toute partie jouée avec ton profil.
+420§Comment gagner de l'expérience
+421§Chaque partie +40 XP · victoire +120 · deuxième place +60 · +1 XP par tranche de 1000 ₴ de capital (jusqu'à 60) · en ligne +20.
+422§Enregistré
+423§Connexion impossible
+424§Pas de connexion au serveur de jeu.
+425§Le serveur de jeu est indisponible. Vérifie internet et réessaie.
+426§{0} a rejoint le salon
+427§{0} est parti
+428§{0} s'est déconnecté — un bot joue à sa place.
+429§Le salon ne répond pas. Vérifie le code et internet.
+430§Salon au code
+431§ introuvable. Vérifie le code.
+432§Le salon est complet ou la partie a déjà commencé.
+433§🏆 Victoire !
+434§{0}e place
+435§Partie terminée
+436§<p>L'hôte a fermé le salon ou perdu la connexion.</p>
+437§Ton salon
+438§Salon
+439§Création du salon…
+440§Connexion au salon
+441§Copier le code
+442§Tes amis ouvrent le jeu → « En ligne avec des amis » → saisissent ce code.
+443§niv. {0}</small>
+444§bot
+445§hôte
+446§ · toi
+447§Retirer {0}
+448§place libre
+449§<p class="hint">Il faut au moins 2 joueurs. Attends tes amis ou ajoute un bot.</p>
+450§+ Bot
+451§En attente du lancement par l'hôte…
+452§Mode : {0} — {1}
+453§Joueurs · {0} sur 4
+454§Fermer le salon
+455§Quitter
+456§Code copié
+457§Sélectionne et copie le code
+458§k
+459§Le bot réfléchit…
+460§Tour en cours…
+461§À toi de jouer
+462§On attend {0}…
+463§ sur
+464§ · objectif
+465§salon
+466§un téléphone
+467§Au menu
+468§Nouvelle partie
+469§📜 Journal de partie
+470§Lancer les dés
+471§{0} k
+472§<b>Tour {0}{1}{2}</b>
+473§Où sont tous les joueurs
+474§Où sont-ils
+475§Paramètres
+476§Logement · prêt immo
+477§Commerce
+478§Ce qui se passe
+479§{0}<small>touche — une autre astuce</small>
+480§tour passé ×{0}
+481§burn-out ×{0}
+482§immunité
+483§assurance ×{0}
+484§🕶 planque ×{0}
+485§🚨 alarme
+486§⭐ atouts : {0}
+487§💰 casse dans {0}
+488§ · ton écran
+489§{0}<small>+{1}{2} par tour</small>
+490§🏠 Mes biens · {0}
+491§💰 Capital {0}
+492§ · bot
+493§éliminé
+494§<span class="secret">aucun bien visible</span>
+495§Adversaires
+496§ · joue
+497§ · éliminé
+498§toi
+499§à côté
+500§ cases devant
+501§📍 Où sont-ils
+502§<p class="hint" style="margin-top:8px">Les pions des joueurs sont aussi visibles sur le plateau. La distance se compte dans le sens du jeu.</p>
+503§Fermer
+504§activées
+505§désactivées
+506§💡 Astuces : {0}
+507§attendre OK
+508§se ferment seules
+509§🪟 Fenêtres d'événements : {0}
+510§auto
+511§portrait
+512§paysage
+513§🔄 Écran : {0}
+514§📖 Règles
+515§🚪 Quitter la partie en ligne
+516§🚪 Retour au menu
+517§Retour au jeu
+518§⚙ Paramètres
+519§<p class="hint">Les paramètres sont enregistrés sur ce téléphone.</p>
+520§📖 Règles en bref
+521§<b>Objectif :</b> {0}
+522§<b>« Jour de paie » :</b> tu touches ton salaire et rembourses tous tes prêts.
+523§<b>Biens :</b> 20 % d'apport + 6 mensualités, ou comptant. Le bien d'un autre — tu paies un loyer.
+524§<b>Caché :</b> l'argent, le salaire et la santé des adversaires ne sont pas visibles, seulement leurs biens.
+525§Les <b>planques</b> des cartes permettent de cacher tes biens. Qui tombe dessus paie le loyer et révèle la planque. « Renseignement fiscal » les révèle toutes.
+526§<b>Élimination :</b> dettes sans biens ou santé à 0.
+527§Retour
+528§Quitter la partie en ligne ?
+529§Retour au menu ?
+530§<p>Tu es l'hôte — la partie s'arrêtera pour tous.</p>
+531§<p>Un bot jouera désormais à ta place.</p>
+532§<p>La partie sera sauvegardée — tu pourras la reprendre.</p>
+533§Rester
+534§burn-out
+535§biens : {0}
+536§OK
+537§événement
+538§événements
+539§événements
+540§encore {0} {1}
+541§Passer tous les événements ({0})
+542§Le bot choisit : {0}
+543§<p class="hint">C'est encore vide.</p>
+544§Tour {0}
+545§ · montants des autres masqués
+546§{0} événements · du début à maintenant{1}
+547§Partie en cours
+548§<b>{0} · tour {1}</b><small>{2}</small>
+549§journal
+550§ gagne
+551§Personne n'a survécu
+552§ · en ligne
+553§<b>{0}</b><small>{1} · {2}{3} · {4} tours</small>
+554§<p class="hint">Tes 5 dernières parties terminées apparaîtront ici avec le journal complet.</p>
+555§Journal des parties
+556§Parties terminées
+557§📜 Partie en cours · tour {0}
+558§{0} événements · montants des autres masqués
+559§Reprendre la partie
+560§ pts
+561§{0} · {1} tours · {2} événements
+562§banque
+563§Type
+564§Apport 20 %
+565§Mensualité par tour
+566§Surcoût
+567§Loyer pour les autres
+568§Bonheur à l'achat
+569§Propriétaire
+570§{0} {1}<small>{2} · loyer {3}</small>
+571§<p class="hint">Aucun bien visible.</p>
+572§L'argent, le salaire et la santé des adversaires sont cachés. Une partie de leurs biens peut l'être aussi.
+573§💳 Crédit à la consommation
+574§ <span class="achip hid">caché</span>
+575§reste dû
+576§ · mensualité
+577§entièrement remboursé
+578§Vendre {0}
+579§<p style="color:var(--muted)">Pas encore de biens ni de prêts.</p>
+580§Planques
+581§<p style="color:var(--muted);font-size:13px">Vente : la banque paie 60 % du prix moins le prêt restant.
+582§ 🕶 — cacher aux adversaires.
+583§Où
+584§Emploi
+585§Liquide
+586§Mensualités par tour
+587§Capital
+588§Bien caché
+589§💧 Inonder l'appartement
+590§a inondé l'appartement
+591§🔓 Cambrioler pendant leur absence
+592§🎁 Offrir un cadeau de pendaison de crémaillère
+593§🔨 Rayer la voiture
+594§a rayé la voiture
+595§🛞 Démonter les roues et les revendre
+596§🧽 Laver la voiture
+597§⭐ Laisser un mauvais avis
+598§a laissé un mauvais avis sur
+599§💸 Braquer la caisse
+600§📣 Recommander aux amis
+601§Les farces sont risquées : tu peux être pris et mis à l'amende. Une bonne action augmente le bonheur des deux.
+602§Tu es sur le bien de
+603§{0}</b>. Tu peux lui pourrir la vie — ou faire une bonne action.
+604§{0} On fait quoi ?
+605§ · risque 25 %
+606§ · risque 35 %
+607§🧾 Dénoncer aux impôts
+608§Passer son chemin
+609§ — l'alarme s'est déclenchée
+610§Tu t'es fait prendre{0} ! Amende {1}, −5 de bonheur.
+611§ (alarme)
+612§{0} a voulu jouer un tour à {1}, mais s'est fait prendre{2}.
+613§{0} a voulu abîmer « {1} », mais s'est fait prendre
+614§Réussi. {0} paie {1} de réparations et perd 8 de bonheur.
+615§{0} {1} « {2} » du joueur {3} !
+616§Pris{0} ! 2000 ₴ d'amende et un tour passé.
+617§{0} a tenté de voler {1}, mais s'est fait prendre{2}.
+618§{0} a tenté de te voler — pris
+619§Butin : {0}. Personne n'a rien vu.
+620§Rien à prendre — le propriétaire est fauché.
+621§{0} a volé {1} !
+622§{0} s'est introduit chez {1}, mais n'a rien trouvé.
+623§{0} t'a volé : −{1}
+624§Le contrôle n'a rien trouvé. Tu es puni pour diffamation : −1000 ₴.
+625§{0} a dénoncé {1} aux impôts — et a été puni pour diffamation.
+626§Les impôts sont passés chez {0} et ont infligé une amende.
+627§{0} a lâché les impôts sur {1}.
+628§{0} t'a dénoncé aux impôts : −{1}
+629§Cadeau remis ({0}). +8 de bonheur pour toi, +10 pour le propriétaire.
+630§Les amis sont venus — le propriétaire gagne +1000 ₴. +8 de bonheur pour toi, +10 pour le propriétaire.
+631§La voiture brille. +8 de bonheur pour toi, +10 pour le propriétaire.
+632§{0} fait une bonne action pour {1} : {2}.
+633§💛 Bonne action
+634§😈 Résultat
+635§{0} cache « {1} ».
+636§{0} cache quelque chose dans un paradis fiscal…
+637§{0} garde la planque pour plus tard.
+638§🕶 Cacher un bien
+639§<p>Choisis ce que tu caches aux adversaires. Ce qui est caché n'apparaît ni dans la liste ni sur le plateau tant que personne ne tombe dessus.</p>
+640§{0} choisit quoi cacher…
+641§Plus tard
+642§{0} a vendu « {1} » à la banque : {2}.
+643§{0} a vendu « {1} » à la banque.
+644§{0} passe son tour (malade).
+645§{0} passe son tour
+646§{0} lance {1}+{2}.
+647§{0} rejoue.
+648§arrêt maladie
+649§pause de remboursement
+650§dividendes +
+651§, prêts −{0}
+652§, coût de la vie −{0}
+653§{0} : salaire +{1}{2}{3}{4}.
+654§ et rembourse ses prêts
+655§{0} touche son salaire{1}.
+656§ · prêts −
+657§ · vie −
+658§Salaire +{0}{1}{2}
+659§{0} : une journée tranquille.
+660§{0} : rien ne s'est passé.
+661§{0} passe aux impôts — il n'y a pas d'impôts.
+662§{0} paie {1} d'impôts.
+663§{0} paie ses impôts.
+664§🧾 Impôts
+665§Impôt : {0} ({1} % du liquide).
+666§L'impôt est de {0} % du liquide. Combien exactement, seul le payeur le sait.
+667§🎉 Fête chez des amis
+668§<p>Y aller : −1000 ₴, +20 de bonheur, −5 de santé.</p>
+669§Y aller
+670§Rester à la maison
+671§{0} fait la fête.
+672§🏋️ Salle de sport
+673§<p>Abonnement −1200 ₴ : +15 de santé, +5 de bonheur.</p>
+674§Prendre l'abonnement
+675§Passer son chemin
+676§{0} prend un abonnement à la salle.
+677§📋 Pôle emploi
+678§Offre : <b>{0}</b>, {1} par tour.
+679§Actuellement : {0}, {1}.
+680§<p>A reçu une offre d'emploi.</p>
+681§Accepter
+682§Refuser
+683§{0} est maintenant {1}.
+684§{0} change d'emploi.
+685§💰 Casse nocturne
+686§ dans la caisse de {0}
+687§Atout de niveau 2 : tu peux braquer « {0} ». 60 % — +1500 ₴{1}, 40 % — 1500 ₴ d'amende et un tour passé.
+688§<p>Prépare un coup…</p>
+689§Braquer
+690§Ne pas risquer
+691§{0} a braqué « {1} » et s'est fait prendre.
+692§🚔 Pris
+693§<p>1500 ₴ d'amende et un tour passé.</p>
+694§{0} a braqué ton « {1} » : −{2}
+695§{0} a braqué « {1} » !
+696§💰 Réussi
+697§Butin : {0}. Prochain casse — dans 3 tours.
+698§{0} passe devant la formation.
+699§🎓 Formation
+700§Formation professionnelle : −2000 ₴, salaire +15 % ({0} → {1}).
+701§<p>Formation professionnelle.</p>
+702§S'inscrire · 2000 ₴
+703§Pas maintenant
+704§{0} a fini sa formation : salaire {1}.
+705§{0} a fini sa formation.
+706§{0} passe devant le casino.
+707§🎰 Casino
+708§<p>45 % — la mise double, 55 % — elle est perdue. Gagner +3 de bonheur, perdre −5.</p>
+709§Miser 1000 ₴
+710§Miser 3000 ₴
+711§{0} gagne au casino !
+712§{0} perd au casino.
+713§🎰 Gagné !
+714§🎰 Pas de chance
+715§gagne
+716§perd
+717§{0} {1} au casino.
+718§🏥 Hôpital
+719§gratuit grâce à l'assurance
+720§ <span class="pick">🩺 ami médecin</span>
+721§Se soigner : {0}, +{1} de santé.{2}
+722§Se soigner
+723§Non, merci
+724§{0} se soigne.{1}
+725§🏦 Banque
+726§<p>Crédit à la consommation ou remboursement anticipé — seul le joueur voit la décision.</p>
+727§crédit à la consommation
+728§Ou rembourser par anticipation : « {0} » — {1}.
+729§Crédit à la consommation : tu reçois 5000 ₴ et rends 6600 ₴ en six mensualités.
+730§Prendre 5000 ₴
+731§Rembourser
+732§Ne rien faire
+733§{0} prend un crédit à la consommation de 5000 ₴.
+734§{0} va à la banque.
+735§{0} rembourse un prêt par anticipation.
+736§ +5 rêve
+737§Attention : avec ce prêt, tes mensualités (
+738§) dépasseront ton salaire (
+739§Mensualités après l'achat :
+740§ par tour pour un salaire de
+741§. Remboursé par le loyer en ~
+742§ visites.
+743§{0} : apport
+744§Loyer des autres
+745§Bonheur
+746§{0} · apport {1}
+747§Comptant {0}
+748§Ne pas prendre
+749§{0} souscrit un {1} pour « {2} ».
+750§{0} achète « {1} » comptant.
+751§{0} se repose chez lui : +3 de bonheur.
+752§ Planque révélée !
+753§{0} paie à {1} un loyer de {2}.{3}
+754§<p class="pick">Surprise : ce bien était caché !</p>
+755§Ce bien appartient à {0}. Loyer : {1}.
+756§L'immunité t'a protégé — la maladie n'a eu aucun effet.
+757§{0} tire « {1} ».{2}
+758§Carte santé
+759§Carte destin
+760§ · bonus
+761§ · maladie
+762§La banque prend « {1} » à {0} pour dettes.
+763§Faillite
+764§Faillite : des dettes et plus rien à vendre.
+765§Santé à zéro
+766§Santé à zéro — réanimation et long arrêt maladie.
+767§{0} : {1} — la vie recommence à zéro ({2}e fois).
+768§♾ La vie à zéro
+769§{0}. La banque a pris tes biens, mais tu recommences : {1}, santé pleine.
+770§Revient au tour {0}.
+771§{0} est éliminé. {1}{2}
+772§est éliminé pour un temps
+773§Retour dans {0} tours — à zéro. Retours restants : {1}.
+774§{0} revient dans la partie à zéro !
+775§{0} revient dans la partie
+776§Capital {0} — la liberté financière !
+777§Dernier en jeu.
+778§Meilleur score après {0} tours.
+779§{0} gagne ! {1}
+780§Tout le monde est éliminé.
+781§Victoire : {0}
+782§Points = capital + bonheur×100 + santé×50.
+783§Voir le plateau

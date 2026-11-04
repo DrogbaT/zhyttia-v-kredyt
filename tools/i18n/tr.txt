@@ -1,0 +1,784 @@
+0§Konut kredisi
+1§Taşıt kredisi
+2§İşletme kredisi
+3§Olya
+4§Maks
+5§İryna
+6§Taras
+7§Solya
+8§Denis
+9§Kurye
+10§Çağrı merkezi operatörü
+11§Garson
+12§Sistem yöneticisi
+13§Satış elemanı
+14§Programcı
+15§Satış müdürü
+16§Taksici
+17§İşsiz
+18§Maaş günü
+19§Döner büfesi
+20§Sağlık
+21§İkinci el Lanos
+22§Vergi dairesi
+23§Paylaşımlı evde oda
+24§Kader
+25§Scooter kiralama
+26§Hastane
+27§Akıllı daire
+28§Kafe
+29§Kurslar
+30§Garaj
+31§Krediyle Toyota
+32§Parti
+33§Stüdyo daire
+34§Berber
+35§Spor salonu
+36§Yeni binada 2+1
+37§Oto yıkama
+38§İş ve işçi bulma kurumu
+39§Elektrikli araba
+40§Kumarhane
+41§Sıra ev
+42§Kır evi
+43§Banka
+44§Gece soygunu
+45§Durduğun işletmeyi soyabilirsin: %60 — +1500 ₴ (sahibinin kasasından ya da bankadan), yoksa 1500 ₴ ceza ve bir tur bekleme. Her 3 turda bir.
+46§Doktor arkadaş
+47§Hastane 1500 yerine 750 ₴ ve 50 iyileştirir.
+48§İyi kredi geçmişi
+49§Kredi peşinatı %20 yerine %10.
+50§Teşvikli konut kredisi
+51§Konut için fazla ödeme %15 yerine %5.
+52§Ticari zekâ
+53§İşletmelerinden gelen kira +%25.
+54§Temettü
+55§«Maaş günü»nde her mülkün için +150 ₴.
+56§Güvenlik
+57§Mülküne kötülük yapanlar ve hırsızlar %25 daha sık yakalanır.
+58§Başlangıç sermayesi
+59§Her oyuna +5000 ₴ ile başlarsın.
+60§Dolaplar
+61§Her oyuna bir saklama yeri ve alarmla başlarsın.
+62§Kahraman
+63§Madeni para
+64§Bayrak
+65§Tuğla
+66§Motosiklet
+67§Sarı kamyon
+68§Kırmızı kamyon
+69§Yeşil kamyon
+70§Mor kamyon
+71§Bulutçuk
+72§Para bloğu
+73§Çeşme
+74§Mesleki kurslar: −2000 ₴, maaşın %15 artar.
+75§1000 ya da 3000 ₴ yatırabilirsin: %45 — iki katı kazanırsın, yoksa bahis yanar.
+76§Buradan geçince ya da durunca maaşını alır ve tüm kredilerini ödersin.
+77§Sağlık kartı çekersin: hastalık ya da güçlendirme.
+78§Kader kartı çekersin: prim, ceza, aşk, işten çıkarma.
+79§Nakdinin %10'unu ödersin (en az 500 ₴).
+80§Tedavi olabilirsin: −1500 ₴, +40 sağlık.
+81§Gidebilirsin: −1000 ₴, +20 mutluluk, −5 sağlık.
+82§Üyelik: −1200 ₴, +15 sağlık, +5 mutluluk.
+83§Sana yeni bir iş teklif ediliyor. Kabul edip etmemek — senin kararın.
+84§Tüketici kredisi ya da erken ödeme.
+85§ Faturayı sigorta ödedi.
+86§Soğuk algınlığı
+87§−10 sağlık, 1 tur beklersin.
+88§Grip
+89§−20 sağlık, ilaçlar −800 ₴.
+90§Buzda bacak kırıldı
+91§−30 sağlık, alçı −3000 ₴, 2 tur beklersin.
+92§Diş ağrısı
+93§Dişçi −2500 ₴, −5 sağlık.
+94§Tükenmişlik
+95§−15 sağlık, −20 mutluluk, sonraki 2 maaş yarıya düşer.
+96§Uykusuzluk
+97§−10 sağlık, −10 mutluluk.
+98§Dönerden zehirlenme
+99§−15 sağlık, 1 tur beklersin.
+100§Ofis sandalyesinden bel ağrısı
+101§Masör −1500 ₴, −10 sağlık.
+102§Bahar alerjisi
+103§−5 sağlık, ilaç −400 ₴.
+104§Tansiyon fırladı
+105§−20 sağlık, kardiyolog −1200 ₴.
+106§Demir bağışıklık
+107§Bir sonraki hastalık sana dokunmaz.
+108§Hekim gizliliği
+109§Bir saklama yeri kazanırsın: bir mülkünü rakiplerden sakla.
+110§Sağlık sigortası
+111§Sonraki 3 tedavi faturanı sigorta öder.
+112§Sonunda uyudun
+113§+15 sağlık.
+114§Sabah yogası
+115§+10 sağlık, +10 mutluluk.
+116§D ve C vitamini
+117§+10 sağlık.
+118§Enerji patlaması
+119§Hemen bir tur daha oynarsın.
+120§Migren
+121§−10 sağlık, −5 mutluluk.
+122§Spor salonunda burkulma
+123§−15 sağlık, acil servis −700 ₴.
+124§Gözlük kırıldı
+125§Yeni camlar −1100 ₴.
+126§Arkadaştan masaj
+127§+10 sağlık, +5 mutluluk.
+128§Meditasyon
+129§+15 mutluluk.
+130§Bir hafta iyi uyku
+131§+20 sağlık.
+132§Sürprizsiz check-up
+133§+5 sağlık, +5 mutluluk.
+134§Prim
+135§Babaanneden miras
+136§+4000 ₴ ve biraz hüzün: −5 mutluluk.
+137§Kredi tatili
+138§Bir sonraki «Maaş günü»nde taksitler kesilmez.
+139§Tahsilatçılar arıyor
+140§−10 mutluluk, «işi halletmek» için −500 ₴.
+141§Cüzdan buldun ve geri verdin
+142§Sahibi teşekkür etti: +800 ₴, +8 mutluluk.
+143§Komşular tadilat yapıyor
+144§Sabah sabah matkap: −10 mutluluk, −5 sağlık.
+145§Banka hesabın hacklendi
+146§Yıllık nakit iade
+147§Arkadaşın düğünü
+148§Hediye −1500 ₴, +20 mutluluk.
+149§Trafik cezası
+150§Komşuları su bastı
+151§Onların tamiratı senden: −2500 ₴.
+152§Piyango
+153§5000 ₴ kazandın.
+154§Bir arkadaş borcunu ödedi
+155§Karpatlara gezi
+156§−3500 ₴, +25 mutluluk.
+157§Ayrılık
+158§−20 mutluluk.
+159§Aşık oldun
+160§+25 mutluluk.
+161§Terfi
+162§Maaş +%20.
+163§İşten çıkarma
+164§Kovuldun. Artık işsizsin.
+165§Nakit iade
+166§Banka faizi yükseltti
+167§Her kredinin kalan borcu +%10.
+168§Enflasyon
+169§Tüm oyuncular 1000'er ₴ kaybeder.
+170§Doğum günü
+171§Her oyuncu sana 500 ₴ verir.
+172§Ambulans seni hastaneye götürdü
+173§«Hastane» karesine git.
+174§Vergi denetimi
+175§Nakdin −%10.
+176§Telefonu kırdın
+177§−2000 ₴, −5 mutluluk.
+178§Hafta sonu ek iş
+179§+2000 ₴, −5 sağlık.
+180§Alarm taktırdın
+181§Mülküne yapılacak bir sonraki kötülük başarısız olur ve fail yakalanır.
+182§Offshore saklama yeri
+183§Bir mülkünü saklayabilirsin — rakipler onu ne listede ne de tahtada görür.
+184§Kaynanamın üstüne yaptım
+185§Bir saklama yeri daha: istediğin zaman herhangi bir mülkünü sakla.
+186§Vergi istihbaratı
+187§Rakiplerin tüm saklanan mülkleri ortaya çıktı.
+188§Ortaya çıkan saklama yeri: {0}.
+189§Saklanan bir şey bulunamadı.
+190§🎨 Yaratıcı
+191§Her şeyi kendin ayarla: turlar, hedef, eleme ya da geri dönüş, vergi, olaylar.
+192§🏁 Klasik
+193§Hedef: {0} sermaye, ya da oyunda son kalan olmak, ya da 25 tur sonunda en yüksek puan.
+194§💀 Eleme
+195§Hedef ve tur sınırı yok. Yaşam maliyeti her tur artar (250 ₴ × tur numarası), 13. turdan itibaren yorgunluk sağlığa vurur. Son hayatta kalan kazanır.
+196§♾ Sonsuz
+197§Oyun bitmez. İflas eden ya da tükenen hayata sıfırdan başlar. İstediğin zaman çıkabilirsin.
+198§Oyun başladı. Herkesin
+199§ ve bir işi var.
+200§Oyuncu
+201§← Menü
+202§<b>Oyuna devam et</b>
+203§tur {0} · {1}
+204§mevcut oyunun günlüğü ve
+205§Hayat<em>kredili</em>
+206§beta 3.1
+207§Yetişkin hayatı üzerine bir masa oyunu: evler yerine konut kredisi, sokaklar yerine taşıt kredisi, desteden de — bir soğuk algınlığı ya da bir prim.
+208§<b>Tek telefon</b>
+209§2–4 oyuncu ve botlar
+210§<b>Çevrimiçi</b>
+211§kodla oda
+212§<b>Kurallar</b>
+213§kareler, kartlar, krediler
+214§<b>Ayarlar</b>
+215§ipuçları, ekran
+216§<b>Oyun günlüğü</b>
+217§{0}son biten oyunlar
+218§Tur sayısı
+219§∞ sınırsız
+220§Sermaye hedefi
+221§hedef yok
+222§bin ₴
+223§Kaybeden
+224§elenir
+225§geri döner
+226§hemen sıfırdan başlar
+227§Geri dönüş
+228§ tur sonra
+229§Oyuncu başına geri dönüş
+230§ kez
+231§Vergi
+232§yok
+233§Başlangıç parası
+234§Maaşlar
+235§Artan yaşam maliyeti
+236§Her maaş gününde 250 ₴ × tur numarası, 13. turdan itibaren yorgunluk
+237§Sağlık kartları
+238§Kader kartları
+239§Kötülükler ve iyilikler
+240§Mülk saklama yerleri
+241§Seviye avantajları
+242§{0} tutarına ilk ulaşan olmak
+243§son kalan olmak (kaybedenler {0} tur sonra döner, en fazla {1} kez)
+244§son kalan olmak
+245§ya da {0} tur sonunda en yüksek puan
+246§sonu olmayan bir oyun — istediğin kadar oyna.
+247§Azalt
+248§Artır
+249§<p class="tip" style="border-color:var(--hp)">Tur sınırı, hedef ve yaşam maliyeti olmadan oyun çok uzun sürebilir. Bir sonu olması için bunlardan birini aç.</p>
+250§Yaratıcı mod ayarları
+251§{0} Yaratıcı modda deneyim ve paralar yarıya düşer.
+252§Mod
+253§{0}. oyuncunun adı
+254§İnsan
+255§Bot
+256§Tek telefonda oyun
+257§Oyuncular (2–4)
+258§Oyunu başlat
+259§Deneyimi senin takma adınla ({0}) oynayan oyuncu alır. İnsanlar telefonu birbirine vererek sırayla oynar. Botlar kendi oynar — antrenman için kullanışlı.
+260§Oyunu ev sahibi yürütür — çıkarsa oyun herkes için biter. Başka bir oyuncunun bağlantısı koparsa onun yerine bot oynar.
+261§Çevrimiçi oyun için internet gerekir. Bağlantını kontrol et ve oyunu yeniden aç.
+262§Arkadaşlarla çevrimiçi
+263§Oda oluştur
+264§Ev sahibi olacaksın: bir kod alırsın, arkadaşların onu girer. Boş yerleri botlara verebilirsin.
+265§Kodla katıl
+266§KOD
+267§Oda kodu
+268§Katıl
+269§Kod 5 karakterdir
+270§Bu cihaz 3D desteklemiyor — düz tahta gösteriliyor.
+271§Evler ve arabalarla 3D tahta. Zayıf bir telefonda kapat.
+272§«Oto» — oyun telefonla birlikte döner.
+273§Telefonu çevir — tahta sola, oyuncular ve günlük sağa geçer. Yönü sabitlemek uygulamada çalışır.
+274§Ayarlar
+275§Dil
+276§<b>İpuçları</b><small>Tahtanın altında ve kararlarda öneriler: ne kârlı, nelere dikkat etmeli.</small>
+277§İpuçları
+278§<b>Olay pencereleri Tamam bekler</b><small>Botların ve rakiplerin yaptıkları — tek tek, en eskisinden. Bu sırada oyun devam eder.</small>
+279§Olay pencereleri Tamam bekler
+280§<b>3D tahta</b><small>{0}</small>
+281§3D tahta
+282§Ekran yönü
+283§Oto
+284§Dikey
+285§Yatay
+286§Kayıt
+287§Kayıtlı oyunu sil
+288§Kayıtlı oyun silinsin mi?
+289§<p>Artık devam ettiremezsin.</p>
+290§Sil
+291§İptal
+292§Kayıt silindi
+293§{0} <b>Seviye {1}: {2}.</b> {3}
+294§Kurallar
+295§🏁 Hedef
+296§Klasik modda — <b>{0} sermayeye</b> ilk ulaşan olmak — bu finansal özgürlüktür. Ya da oyunda son kalan olmak. {1} turda kimse başaramazsa en yüksek puan kazanır: sermaye + mutluluk×100 + sağlık×50.
+297§Başlangıç: <b>{0}</b> (yaratıcıda — ne ayarlarsan), 100 sağlık, 50 mutluluk ve rastgele bir iş.
+298§⭐ Seviyeler, avantajlar ve figürler
+299§Her oyun deneyim ve para verir: 1. sıra — 100 🪙, 2. — 60, 3. — 30, 4. — hiçbir şey. Paralarla figür alırsın (4 temel figür ücretsiz).
+300§🎮 Modlar
+301§Yaratıcıda değiştirebilirsin: tur sayısı ya da ∞, sermaye hedefi, kaybedene ne olacağı (elenir / N tur sonra döner / hemen sıfırdan başlar), vergi %0–40, başlangıç parası, maaş çarpanı, yaşam maliyeti; kartları, kötülükleri, saklama yerlerini, avantajları, kumarhaneyi ve kursları açıp kapatabilirsin.
+302§Sonsuz modda deneyim verilmez. «Eleme» modu oyun bonusuna +15 XP ekler.
+303§🎲 Tur
+304§İki zar atarsın ve 32 karelik bir çember üzerinde ilerlersin. <b>«Maaş günü»</b>nden her geçişte maaşını alır ve tüm kredileri otomatik ödersin. Mutluluk biraz düşer — hayat yorar.
+305§🏠 Mülk ve krediler
+306§Mülkü <b>krediyle</b> alırsın: şimdi %20 peşinat, kalanı (+%15 fazla ödeme) «Maaş günü»nde altı taksitte. Ya da peşin — fazla ödeme olmadan ve mutluluk bonusuyla. Mülküne duran sana kira öder.
+307§Mülk
+308§Fiyat
+309§Peşinat
+310§Taksit
+311§Kira
+312§🗺 Kareler
+313§🩺 Sağlık kartları
+314§Hastalık ve güçlendirmelerden oluşan bir deste. Hastalıklar sağlığı ve cüzdanı vurur, tur kaybettirebilir. Güçlendirmeler korur ve iyileştirir.
+315§<b>Soğuk algınlığı</b>−10 sağlık, tur bekleme
+316§<b>Tükenmişlik</b>maaş ×0,5, 2 tur boyunca
+317§<b>Bağışıklık</b>bir sonraki hastalık etki etmez
+318§<b>Sigorta</b>3 tedavi faturası bedava
+319§🎴 Kader kartları
+320§<b>Terfi</b>maaş +%20
+321§<b>İşten çıkarma</b>işsiz kalırsın
+322§<b>Banka faizi yükseltti</b>borçlar +%10
+323§<b>Doğum günü</b>herkes 500 ₴ verir
+324§😈 Başkasının mülkü: kötülükler ve iyilikler
+325§Kirayı ödedin — şimdi seçim senin. <b>Zarar ver</b> (daireyi su bastır, arabayı çiz, kötü yorum): sahip fiyatın %12'sini tamire öder; yakalanıp cezalandırılma riskin %25. <b>Soy</b>: nakdinin %15'ine kadarını alırsın (en fazla 2500 ₴); risk %35 — 2000 ₴ ceza ve bir tur bekleme. <b>Vergi dairesi</b>: sahip nakdinin %10'unu öder; %25 — iftira cezası sana. <b>İyilik</b>: sana +8 mutluluk, sahibine +10, işletmeye ayrıca +1000 ₴.
+326§<b>«Alarm»</b> kartı korur: sana yapılacak bir sonraki kötülük başarısız olur ve fail yakalanır.
+327§🕶 Saklama yerleri
+328§Rakiplerin parası, maaşı ve sağlığı görünmez — sadece mülkleri. «Offshore saklama yeri», «Kaynanamın üstüne yaptım», «Hekim gizliliği» kartları bir saklama yeri verir: istediğin mülkünü sakla. Saklanan mülke duran kira öder ve onu ortaya çıkarır. «Vergi istihbaratı» rakiplerin tüm saklama yerlerini açığa çıkarır.
+329§💀 Nasıl elenirsin
+330§Paran eksiye düşerse banka mülklerini kendisi satar (fiyatın %60'ı eksi borç). Yetmezse — <b>iflas</b>. Sağlık 0'a düşerse de elenirsin. Sıfır mutluluk her seferinde 10 sağlık götürür.
+331§Mülkünü kendin de satabilirsin: kendi turunda oyuncu kartına dokun.
+332§🌐 Çevrimiçi
+333§Ev sahibi bir oda kurar ve 5 karakterlik bir kod söyler. Herkes kendi telefonunda oynar. Bir oyuncunun bağlantısı koparsa onun yerine bot oynar.
+334§Herhangi bir kareye dokun — fiyatını, taksidini ve kirasını görürsün.
+335§Bir oyuncu kartına dokun — mülklerini ve borçlarını görürsün.
+336§Taksitlerin toplamını maaşın altında tut, yoksa krediler her şeyi yer.
+337§Peşin almak daha kârlı: %15 fazla ödeme yok ve mutluluk bonusu var.
+338§Ucuz mülk kirayla sandığından hızlı amorti olur.
+339§Sağlık destesinden çıkan sigorta seni tedavi faturalarından kurtarır.
+340§Sıfır mutluluk her tur sağlık götürür — bazen bir parti işe yarar.
+341§İş kurumu daha iyi bir maaş verebilir — ya da daha kötüsünü. Teklifi oku.
+342§Banka 5000 ₴'yi hemen verir, ama 6600 geri ödemen gerekir.
+343§Para mı azaldı? Kendin sat — banka daha ucuza almadan önce.
+344§Başkasının mülkünde kötülük yapabilirsin — ama yakalanma riski gerçek.
+345§Kader destesindeki alarm bir sonraki kötüyü yakalar.
+346§Başkasının mülkünde yapılan iyilik senin mutluluğunu da artırır.
+347§Saklanan mülkü, biri üstüne durana kadar rakipler görmez.
+348§Sağlık düşük: hastane (+40) ya da spor salonu (+15). 30'un altında maaş azalır.
+349§Mutluluk sıfıra yakın. Parti, gezi ya da kendi mülkün moralini düzeltir.
+350§Para az: «Maaş günü»nde şu kadar taksit kesilecek:
+351§. Eksiye düşersen banka mülkünü satar.
+352§Taksitler (
+353§) maaşından yüksek (
+354§). Yeni kredilere dikkat.
+355§Renkli bir kareye dur — %20 peşinatla krediye mülk alabilirsin.
+356§sana bir ipucu
+357§dokun — başka bir ipucu
+358§Oyuncu
+359§Öğrenci
+360§Stajyer
+361§Maaşlı çalışan
+362§Borçlu
+363§Konut kredili
+364§Girişimci
+365§Yatırımcı
+366§Rantiye
+367§Milyoner
+368§Finansal özgür
+369§Kendi evi
+370§Her ev için +5 mutluluk
+371§Kendi arabası
+372§Her araba için +5 mutluluk
+373§Kendi işletmesi
+374§Her işletme için +5 mutluluk
+375§· {0}. seviyeye: {1} XP
+376§· yeni seviye {0}: {1}!
+377§Yeni avantaj: {0} <b>{1}</b> — {2}
+378§Yeni avatar açıldı: {0}
+379§+{0} XP · {1}. sıra{2}{3}
+380§, şu seviyede açılır:
+381§sv. {0}
+382§Avatar {0}{1}
+383§Bir profil oluştur — her oyun deneyim verir, seviye atlarsın ve yeni avatarlar açarsın.
+384§Takma ad
+385§2 ile 14 karakter arası
+386§Avatar
+387§Hayalin
+388§Hayalin, o türden bir mülk aldığında mutluluk bonusu verir.
+389§Profil oluştur
+390§Takma ad — en az 2 karakter
+391§Hoş geldin, {0}!
+392§seçili
+393§seç
+394§← Profil
+395§Figürler
+396§<b>🪙 {0} para</b><small>1–3. sıralarla kazan. Figür, 3D tahtadaki piyonundur.</small>
+397§Modeller: Kenney (kenney.nl), CC0 lisansı. Bu bir beta — hatalar olabilir.
+398§{0} — senin figürün
+399§{0} para eksik
+400§«{0}» satın alınsın mı?
+401§Fiyat: 🪙 {0}. Kalan: {1}.
+402§Satın al
+403§Satın alındı: {0}
+404§· {0}. seviyeye {1} XP daha
+405§ · en yüksek seviye
+406§<b>{0} <small>· seviye {1}</small></b><small>{2}</small>
+407§Seviye {0} · {1}
+408§<b>🪙 Cüzdan: {0}</b><small>Sıralama paraları: 1. — 100, 2. — 60, 3. — 30, 4. — hiçbir şey.</small>
+409§Figürün:
+410§oyun
+411§galibiyet
+412§kazanma oranı
+413§<b>{0} bin ₴</b>
+414§sermaye rekoru
+415§çevrimiçi oyun
+416§hayal
+417§Kaydet
+418§Hayal
+419§1. seviye bir şey vermez. Sonraki her seviye bir güç açar — birikirler. Profilinle oynadığın her oyunda çalışırlar.
+420§Deneyim nasıl kazanılır
+421§Her oyun +40 XP · galibiyet +120 · ikincilik +60 · her 1000 ₴ sermaye için +1 XP (en fazla 60) · çevrimiçi +20.
+422§Kaydedildi
+423§Bağlanılamadı
+424§Oyun sunucusuna bağlantı yok.
+425§Oyun sunucusuna ulaşılamıyor. İnterneti kontrol edip tekrar dene.
+426§{0} odaya katıldı
+427§{0} ayrıldı
+428§{0} bağlantıyı kaybetti — yerine bot oynuyor.
+429§Oda yanıt vermiyor. Kodu ve interneti kontrol et.
+430§Şu kodlu oda
+431§ bulunamadı. Kodu kontrol et.
+432§Oda dolu ya da oyun çoktan başladı.
+433§🏆 Zafer!
+434§{0}. sıra
+435§Oyun bitti
+436§<p>Ev sahibi odayı kapattı ya da bağlantısı koptu.</p>
+437§Senin odan
+438§Oda
+439§Oda oluşturuluyor…
+440§Odaya bağlanılıyor:
+441§Kodu kopyala
+442§Arkadaşlar oyunu açar → «Arkadaşlarla çevrimiçi» → bu kodu girer.
+443§sv. {0}</small>
+444§bot
+445§ev sahibi
+446§ · sen
+447§{0} çıkar
+448§boş yer
+449§<p class="hint">En az 2 oyuncu gerekir. Arkadaşlarını bekle ya da bot ekle.</p>
+450§+ Bot
+451§Ev sahibinin oyunu başlatması bekleniyor…
+452§Mod: {0} — {1}
+453§Oyuncular · {0}/4
+454§Odayı kapat
+455§Çık
+456§Kod kopyalandı
+457§Kodu seçip kopyala
+458§bin
+459§Bot düşünüyor…
+460§Tur sürüyor…
+461§Sıra sende
+462§{0} bekleniyor…
+463§ /
+464§ · hedef
+465§oda
+466§tek telefon
+467§Menüye
+468§Yeni oyun
+469§📜 Oyun günlüğü
+470§Zar at
+471§{0} bin
+472§<b>Tur {0}{1}{2}</b>
+473§Tüm oyuncular nerede
+474§Herkes nerede
+475§Ayarlar
+476§Konut · kredi
+477§İşletme
+478§Neler oluyor
+479§{0}<small>dokun — başka bir ipucu</small>
+480§bekleme ×{0}
+481§tükenmişlik ×{0}
+482§bağışıklık
+483§sigorta ×{0}
+484§🕶 saklama yeri ×{0}
+485§🚨 alarm
+486§⭐ avantaj: {0}
+487§💰 soygun {0} tur sonra
+488§ · senin ekranın
+489§{0}<small>tur başına +{1}{2}</small>
+490§🏠 Mülklerim · {0}
+491§💰 Sermaye {0}
+492§ · bot
+493§elendi
+494§<span class="secret">görünen mülk yok</span>
+495§Rakipler
+496§ · oynuyor
+497§ · elendi
+498§sen
+499§yanında
+500§ kare ileride
+501§📍 Herkes nerede
+502§<p class="hint" style="margin-top:8px">Oyuncu piyonları tahtada da görünür. Mesafe oyun yönünde sayılır.</p>
+503§Kapat
+504§açık
+505§kapalı
+506§💡 İpuçları: {0}
+507§Tamam bekle
+508§kendiliğinden kapanır
+509§🪟 Olay pencereleri: {0}
+510§oto
+511§dikey
+512§yatay
+513§🔄 Ekran: {0}
+514§📖 Kurallar
+515§🚪 Çevrimiçi oyundan çık
+516§🚪 Menüye çık
+517§Oyuna dön
+518§⚙ Ayarlar
+519§<p class="hint">Ayarlar bu telefonda saklanır.</p>
+520§📖 Kısaca kurallar
+521§<b>Hedef:</b> {0}
+522§<b>«Maaş günü»:</b> maaşını alır ve tüm kredileri ödersin.
+523§<b>Mülk:</b> %20 peşinat + 6 taksit ya da peşin. Başkasının mülkü — kira ödersin.
+524§<b>Gizli:</b> rakiplerin parası, maaşı ve sağlığı görünmez, sadece mülkleri.
+525§Kartlardan gelen <b>saklama yerleri</b> mülkünü saklamanı sağlar. Üstüne duran kira öder ve saklama yerini açığa çıkarır. «Vergi istihbaratı» hepsini açığa çıkarır.
+526§<b>Eleme:</b> mülksüz borç ya da 0 sağlık.
+527§Geri
+528§Çevrimiçi oyundan çıkılsın mı?
+529§Menüye çıkılsın mı?
+530§<p>Ev sahibisin — oyun herkes için biter.</p>
+531§<p>Bundan sonra senin yerine bot oynayacak.</p>
+532§<p>Oyun kaydedilecek — sonra devam ettirebilirsin.</p>
+533§Kal
+534§tükenmişlik
+535§mülk: {0}
+536§Tamam
+537§olay
+538§olay
+539§olay
+540§{0} {1} daha
+541§Tüm olayları atla ({0})
+542§Bot seçiyor: {0}
+543§<p class="hint">Şimdilik boş.</p>
+544§Tur {0}
+545§ · başkalarının tutarları gizli
+546§{0} olay · baştan şimdiye{1}
+547§Mevcut oyun
+548§<b>{0} · tur {1}</b><small>{2}</small>
+549§günlük
+550§ kazanır
+551§Kimse hayatta kalmadı
+552§ · çevrimiçi
+553§<b>{0}</b><small>{1} · {2}{3} · {4} tur</small>
+554§<p class="hint">Son 5 biten oyunun tam günlükleriyle burada görünecek.</p>
+555§Oyun günlüğü
+556§Biten oyunlar
+557§📜 Mevcut oyun · tur {0}
+558§{0} olay · başkalarının tutarları gizli
+559§Oyuna devam et
+560§ puan
+561§{0} · {1} tur · {2} olay
+562§banka
+563§Tür
+564§%20 peşinat
+565§Tur başına taksit
+566§Fazla ödeme
+567§Başkaları için kira
+568§Alımda mutluluk
+569§Sahibi
+570§{0} {1}<small>{2} · kira {3}</small>
+571§<p class="hint">Görünen mülk yok.</p>
+572§Rakiplerin parası, maaşı ve sağlığı gizli. Mülklerinin bir kısmı da saklanmış olabilir.
+573§💳 Tüketici kredisi
+574§ <span class="achip hid">saklı</span>
+575§kalan borç
+576§ · taksit
+577§tamamen ödendi
+578§Sat {0}
+579§<p style="color:var(--muted)">Henüz mülk ya da kredi yok.</p>
+580§Saklama yerleri
+581§<p style="color:var(--muted);font-size:13px">Satış: banka fiyatın %60'ını eksi kalan krediyi öder.
+582§ 🕶 — rakiplerden sakla.
+583§Nerede
+584§İş
+585§Nakit
+586§Tur başına taksit
+587§Sermaye
+588§Mülk saklandı
+589§💧 Daireyi su bastır
+590§daireyi su bastırdı
+591§🔓 Kimse yokken soy
+592§🎁 Ev hediyesi ver
+593§🔨 Arabayı çiz
+594§arabayı çizdi
+595§🛞 Tekerlekleri sök ve sat
+596§🧽 Arabayı yıka
+597§⭐ Kötü yorum yaz
+598§şuna kötü yorum yazdı:
+599§💸 Kasayı soy
+600§📣 Arkadaşlara öner
+601§Kötülükler risklidir: yakalanıp ceza alabilirsin. İyilik ikinizin de mutluluğunu artırır.
+602§Şu oyuncunun mülkündesin:
+603§{0}</b>. Hayatını zorlaştırabilirsin — ya da iyilik yapabilirsin.
+604§{0} Ne yapıyoruz?
+605§ · risk %25
+606§ · risk %35
+607§🧾 Vergi dairesine şikâyet et
+608§Geç git
+609§ — alarm çaldı
+610§Yakalandın{0}! Ceza {1}, −5 mutluluk.
+611§ (alarm)
+612§{0}, {1} oyuncusuna kötülük yapmak istedi ama yakalandı{2}.
+613§{0}, «{1}» mülküne zarar vermek istedi ama yakalandı
+614§Başardın. {0} tamir için {1} öder ve 8 mutluluk kaybeder.
+615§{0} {1} — «{2}», sahibi {3}!
+616§Yakalandın{0}! 2000 ₴ ceza ve bir tur bekleme.
+617§{0}, {1} oyuncusunu soymaya çalıştı ama yakalandı{2}.
+618§{0} seni soymaya çalıştı — yakalandı
+619§Ganimet: {0}. Kimse görmedi.
+620§Alacak bir şey yok — sahibinin parası yok.
+621§{0}, {1} oyuncusunu soydu!
+622§{0}, {1} oyuncusunun evine girdi ama bir şey bulamadı.
+623§{0} seni soydu: −{1}
+624§Denetim bir şey bulamadı. İftiradan ceza aldın: −1000 ₴.
+625§{0}, {1} oyuncusunu vergi dairesine şikâyet etti — ve iftiradan ceza aldı.
+626§Vergi dairesi {0} oyuncusuna geldi ve ceza kesti.
+627§{0}, vergi dairesini {1} oyuncusunun başına sardı.
+628§{0} seni vergi dairesine şikâyet etti: −{1}
+629§Hediye verildi ({0}). Sana +8 mutluluk, sahibine +10.
+630§Arkadaşlar geldi — sahibine +1000 ₴ ciro. Sana +8 mutluluk, sahibine +10.
+631§Araba pırıl pırıl. Sana +8 mutluluk, sahibine +10.
+632§{0}, {1} için iyilik yapıyor: {2}.
+633§💛 İyilik
+634§😈 Sonuç
+635§{0} «{1}» mülkünü saklıyor.
+636§{0} offshore'da bir şey saklıyor…
+637§{0} saklama yerini sonraya bırakıyor.
+638§🕶 Mülk sakla
+639§<p>Rakiplerden neyi saklayacağını seç. Saklanan şey, biri üstüne durana kadar ne listede ne tahtada görünür.</p>
+640§{0} neyi saklayacağına karar veriyor…
+641§Sonra
+642§{0} «{1}» mülkünü bankaya sattı: {2}.
+643§{0} «{1}» mülkünü bankaya sattı.
+644§{0} tur bekliyor (hasta).
+645§{0} tur bekliyor
+646§{0} {1}+{2} attı.
+647§{0} bir kez daha oynuyor.
+648§hastalık izni
+649§kredi tatili
+650§temettü +
+651§, krediler −{0}
+652§, yaşam −{0}
+653§{0}: maaş +{1}{2}{3}{4}.
+654§ ve kredilerini ödüyor
+655§{0} maaşını alıyor{1}.
+656§ · krediler −
+657§ · yaşam −
+658§Maaş +{0}{1}{2}
+659§{0}: sakin bir gün.
+660§{0}: hiçbir şey olmadı.
+661§{0} vergi dairesine uğruyor — vergi yok.
+662§{0} {1} vergi ödüyor.
+663§{0} vergi ödüyor.
+664§🧾 Vergi dairesi
+665§Vergi: {0} (nakdin %{1}'i).
+666§Vergi nakdin %{0}'ıdır. Tam olarak ne kadar olduğunu sadece ödeyen bilir.
+667§🎉 Arkadaşlarda parti
+668§<p>Git: −1000 ₴, +20 mutluluk, −5 sağlık.</p>
+669§Git
+670§Evde kal
+671§{0} partide eğleniyor.
+672§🏋️ Spor salonu
+673§<p>Üyelik −1200 ₴: +15 sağlık, +5 mutluluk.</p>
+674§Üyelik al
+675§Geç git
+676§{0} spor salonu üyeliği alıyor.
+677§📋 İş ve işçi bulma kurumu
+678§Teklif: <b>{0}</b>, tur başına {1}.
+679§Şu an: {0}, {1}.
+680§<p>Bir iş teklifi aldı.</p>
+681§Kabul et
+682§Reddet
+683§{0} artık {1}.
+684§{0} iş değiştiriyor.
+685§💰 Gece soygunu
+686§ — {0} oyuncusunun kasasından
+687§2. seviye avantajı: «{0}» işletmesini soyabilirsin. %60 — +1500 ₴{1}, %40 — 1500 ₴ ceza ve bir tur bekleme.
+688§<p>Bir şeyler çeviriyor…</p>
+689§Soy
+690§Risk alma
+691§{0} «{1}» işletmesini soydu ve yakalandı.
+692§🚔 Yakalandın
+693§<p>1500 ₴ ceza ve bir tur bekleme.</p>
+694§{0} senin «{1}» işletmeni soydu: −{2}
+695§{0} «{1}» işletmesini soydu!
+696§💰 Başardın
+697§Ganimet: {0}. Sonraki soygun — 3 tur sonra.
+698§{0} kursların önünden geçiyor.
+699§🎓 Kurslar
+700§Mesleki kurslar: −2000 ₴, maaş +%15 ({0} → {1}).
+701§<p>Mesleki kurslar.</p>
+702§Kaydol · 2000 ₴
+703§Şimdi değil
+704§{0} kursları bitirdi: maaş {1}.
+705§{0} kursları bitirdi.
+706§{0} kumarhanenin önünden geçiyor.
+707§🎰 Kumarhane
+708§<p>%45 — bahis ikiye katlanır, %55 — yanar. Kazanmak +3 mutluluk, kaybetmek −5.</p>
+709§1000 ₴ yatır
+710§3000 ₴ yatır
+711§{0} kumarhanede kazanıyor!
+712§{0} kumarhanede kaybediyor.
+713§🎰 Kazandın!
+714§🎰 Şans yok
+715§kazanıyor
+716§kaybediyor
+717§{0} kumarhanede {1}.
+718§🏥 Hastane
+719§sigortayla ücretsiz
+720§ <span class="pick">🩺 doktor arkadaş</span>
+721§Tedavi: {0}, +{1} sağlık.{2}
+722§Tedavi ol
+723§Hayır, teşekkürler
+724§{0} tedavi oluyor.{1}
+725§🏦 Banka
+726§<p>Tüketici kredisi ya da erken ödeme — kararı sadece oyuncu görür.</p>
+727§tüketici kredisi
+728§Ya da erken öde: «{0}» — {1}.
+729§Tüketici kredisi: 5000 ₴ alırsın, altı taksitte 6600 ₴ geri ödersin.
+730§5000 ₴ al
+731§Öde
+732§Hiçbir şey yapma
+733§{0} 5000 ₴ tüketici kredisi alıyor.
+734§{0} bankaya gidiyor.
+735§{0} bir krediyi erken kapatıyor.
+736§ +5 hayal
+737§Dikkat: bu krediyle taksitlerin (
+738§) maaşını aşacak (
+739§Alımdan sonra taksitler:
+740§ tur başına, maaş
+741§. Kirayla geri dönüşü ~
+742§ ziyaret.
+743§{0}: peşinat
+744§Başkalarından kira
+745§Mutluluk
+746§{0} · peşinat {1}
+747§Peşin {0}
+748§Alma
+749§{0}, «{2}» için {1} çekiyor.
+750§{0} «{1}» mülkünü peşin alıyor.
+751§{0} kendi mülkünde dinleniyor: +3 mutluluk.
+752§ Saklama yeri açığa çıktı!
+753§{0}, {1} oyuncusuna {2} kira ödüyor.{3}
+754§<p class="pick">Sürpriz: bu mülk saklanmıştı!</p>
+755§Bu mülk {0} oyuncusuna ait. Kira: {1}.
+756§Bağışıklık seni korudu — hastalık etki etmedi.
+757§{0} «{1}» çekiyor.{2}
+758§Sağlık kartı
+759§Kader kartı
+760§ · güçlendirme
+761§ · hastalık
+762§Banka borç nedeniyle {0} oyuncusundan «{1}» mülkünü alıyor.
+763§İflas
+764§İflas: borçlar var ve satacak bir şey kalmadı.
+765§Sağlık sıfırda
+766§Sağlık sıfırda — yoğun bakım ve uzun hastalık izni.
+767§{0}: {1} — hayat sıfırdan başlıyor ({2}. kez).
+768§♾ Sıfırdan hayat
+769§{0}. Banka mülklerini aldı ama yeniden başlıyorsun: {1}, tam sağlık.
+770§{0}. turda geri dönecek.
+771§{0} elendi. {1}{2}
+772§bir süreliğine elendi
+773§{0} tur sonra dönüş — sıfırdan. Kalan geri dönüş: {1}.
+774§{0} oyuna sıfırdan geri dönüyor!
+775§{0} oyuna geri dönüyor
+776§Sermaye {0} — finansal özgürlük!
+777§Oyunda son kalan.
+778§{0} tur sonunda en yüksek puan.
+779§{0} kazandı! {1}
+780§Herkes elendi.
+781§Zafer: {0}
+782§Puan = sermaye + mutluluk×100 + sağlık×50.
+783§Tahtayı gör
