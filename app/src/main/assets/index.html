@@ -171,6 +171,7 @@ input[type=text]{width:100%;min-width:0;background:var(--table);border:1px solid
 .dock .roll-btn,.dock #again{grid-column:3;grid-row:1/3}
 .dock #seeLog{grid-column:1/-1}
 @media (orientation:landscape) and (min-width:620px){.b3slot{aspect-ratio:1/.9}}
+.beta{display:inline-block;vertical-align:top;margin-top:6px;font-family:var(--f-body);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--car);border-radius:6px;padding:3px 7px;-webkit-text-fill-color:var(--ink)}
 .qcount{margin-left:auto;font-size:11px;font-weight:700;color:var(--ink);background:var(--gold);border-radius:999px;padding:2px 8px}
 .sheet .acts{display:flex;flex-direction:column;gap:8px}
 .card{border-radius:14px;padding:16px;color:var(--ink);display:flex;flex-direction:column;gap:4px}
@@ -550,7 +551,7 @@ function viewMenu(){
   $('#app').innerHTML=`
   ${profChip()}
   <div class="menu-hero">
-    <h1>Життя<em>в кредит</em></h1>
+    <h1>Життя<em>в кредит</em><span class="beta">бета 3.0</span></h1>
     <div class="hero-dice" aria-hidden="true">${dieHTML(5)}${dieHTML(3)}</div>
     <p>Настільна гра про доросле життя: іпотека замість будинків, автокредит замість вулиць, а з колоди — застуда або премія.</p>
   </div>
@@ -781,7 +782,7 @@ function viewShop(){
   <div class="panel"><div class="switch"><div class="t"><b>🪙 ${PROF.coins||0} монет</b><small>Заробляй за 1–3 місця. Фігурка — це твоя фішка на 3D-полі.</small></div></div></div>
   <div class="figgrid">${FIGS.map(f=>{const has=owned.has(f.id),sel=PROF.fig===f.id;
     return `<button class="fig ${sel?'on':''} ${has?'':'locked'}" data-fig="${f.id}"><span class="fthumb" data-thumb="${f.id}">${figThumbHTML(f)}</span><b>${esc(f.n)}</b><span class="fprice">${sel?'обрано':has?'обрати':'🪙 '+f.price}</span></button>`}).join('')}</div>
-  <p class="tip">Моделі: Kenney (kenney.nl), ліцензія CC0.</p>`;
+  <p class="tip">Моделі: Kenney (kenney.nl), ліцензія CC0. Це бета-версія — можливі помилки.</p>`;
   $('#backProf').onclick=()=>goView('profile');
   document.querySelectorAll('[data-fig]').forEach(b=>b.onclick=async()=>{
     const f=figOf(b.dataset.fig);

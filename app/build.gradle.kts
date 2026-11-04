@@ -12,7 +12,7 @@ android {
         minSdk = 26
         targetSdk = 36
         versionCode = 6        // збільшуй на 1 перед кожним новим завантаженням у Play
-        versionName = "3.0"
+        versionName = "3.0-beta"
     }
 
     buildTypes {

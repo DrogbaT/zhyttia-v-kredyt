@@ -24,17 +24,18 @@ jobs:
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon
-          cp app/build/outputs/apk/debug/app-debug.apk Zhyttia-v-kredyt.apk
+          cp app/build/outputs/apk/debug/app-debug.apk Zhyttia-v-kredyt-beta.apk
 
       - uses: actions/upload-artifact@v4
         with:
           name: Zhyttia-v-kredyt-apk
-          path: Zhyttia-v-kredyt.apk
+          path: Zhyttia-v-kredyt-beta.apk
 
       - name: Опублікувати APK для скачування з телефону
         uses: softprops/action-gh-release@v2
         with:
           tag_name: build-${{ github.run_number }}
-          name: Життя в кредит — збірка ${{ github.run_number }}
-          files: Zhyttia-v-kredyt.apk
+          name: Життя в кредит — бета, збірка ${{ github.run_number }}
+          files: Zhyttia-v-kredyt-beta.apk
           make_latest: true
+          prerelease: true
