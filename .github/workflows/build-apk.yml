@@ -21,6 +21,7 @@ jobs:
 
       - name: Build APK
         run: |
+          echo "window.BUILD_INFO={build:${{ github.run_number }}};" > app/src/main/assets/build-info.js
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon
@@ -54,9 +55,11 @@ jobs:
         shell: bash
         run: |
           mkdir -p desktop/game
+          echo "window.BUILD_INFO={build:${{ github.run_number }}};" > app/src/main/assets/build-info.js
           cp app/src/main/assets/* desktop/game/
           cp play-store/icon-512.png desktop/icon.png
           cd desktop
+          npm pkg set version=3.3.${{ github.run_number }}
           npm install --no-audit --no-fund
           npx electron-builder --win nsis portable --publish never
 

@@ -362,6 +362,7 @@ body{background:
 <div id="sheetHost"></div>
 
 <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js" onerror="var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js';s.onload=function(){window.onPeerReady&&window.onPeerReady()};document.head.appendChild(s)"></script>
+<script src="build-info.js"></script>
 <script src="i18n.js"></script>
 <script>
 /* ---------- languages: T('український текст', ...args) -> current language ---------- */
@@ -583,6 +584,39 @@ function applyOrient(){
   try{if(SET.orient==='auto')screen.orientation.unlock();else screen.orientation.lock(SET.orient==='portrait'?'portrait':'landscape').catch(()=>{})}catch(e){}
 }
 
+/* ---------- updates: the GitHub releases of the repo are the update server ---------- */
+const UPD_REPO='DrogbaT/zhyttia-v-kredyt';
+const BUILD=(window.BUILD_INFO&&window.BUILD_INFO.build)|0;
+const PLATFORM=window.AndroidApp?'android':/Electron/i.test(navigator.userAgent||'')?'windows':null;
+let UPD=null, updChecked=false;
+async function checkUpdate(manual){
+  if(!PLATFORM||!BUILD){if(manual)toast(T('Оновлення перевіряються лише в застосунку для Android і Windows'));return null}
+  try{
+    const r=await fetch(`https://api.github.com/repos/${UPD_REPO}/releases?per_page=8`,{headers:{Accept:'application/vnd.github+json'},cache:'no-store'});
+    if(!r.ok)throw new Error(r.status);
+    const want=PLATFORM==='android'?/\.apk$/i:/Setup.*\.exe$/i;
+    UPD=null;
+    for(const rel of await r.json()){
+      const a=(rel.assets||[]).find(x=>want.test(x.name));if(!a)continue;
+      const b=parseInt(String(rel.tag_name).replace(/\D/g,''),10)||0;
+      if(b>BUILD)UPD={build:b,url:a.browser_download_url,size:a.size||0};
+      break;
+    }
+    updChecked=true;
+  }catch(e){if(manual)toast(T('Не вдалося перевірити оновлення. Перевір інтернет.'));return null}
+  if(manual&&!UPD)toast(T('У тебе остання версія'));
+  if(UPD&&!G&&(VIEW==='menu'||VIEW==='settings'))renderMenu();
+  return UPD;
+}
+async function openUpdate(){
+  if(!UPD)return;
+  const mb=UPD.size?` (${(UPD.size/1048576).toFixed(1)} MB)`:'';
+  const v=await sheet({title:T('⬆ Нова версія · збірка {0}',UPD.build),body:`<p>${PLATFORM==='android'?T('Завантажиться APK{0}. Відкрий його й натисни «Встановити» — гра оновиться, профіль і збереження залишаться.',mb):T('Завантажиться інсталятор{0}. Запусти його — він оновить гру, профіль і збереження залишаться.',mb)}</p><p class="hint">${T('Твоя збірка: {0}',BUILD)}</p>`,
+    buttons:[{l:T('Завантажити'),v:1,pri:1},{l:T('Пізніше'),v:0}],now:1});
+  if(!v)return;
+  if(window.AndroidApp&&window.AndroidApp.openUrl)window.AndroidApp.openUrl(UPD.url);
+  else window.open(UPD.url,'_blank');
+}
 /* ---------- menu ---------- */
 let setup=[{name:'Гравець',bot:false,on:true},{name:'Оля',bot:true,on:true},{name:'Макс',bot:true,on:true},{name:'Ірина',bot:true,on:false}];
 let VIEW='menu';
@@ -616,6 +650,7 @@ function viewMenu(){
     <button class="tile wide" id="tLog"><span class="gl" style="--tc:rgba(242,193,78,.2)">📜</span><b>Журнал ігор</b><span>${cont?'лог поточної гри і ':''}останні завершені ігри</span></button>
   </div>
   <div class="hintbar"><span class="bulb">i</span><span>${esc(rnd(TIPS))}</span></div>`;
+  if(UPD){const u=document.createElement('button');u.className='tile wide hot';u.id='tUpd';u.innerHTML=`<span class="gl">⬆</span><b>${T('Доступне оновлення')}</b><span>${T('збірка {0} · натисни, щоб завантажити',UPD.build)}</span>`;const tl=$('.tiles');if(tl)tl.prepend(u);u.onclick=openUpdate}
   if($('#tCont'))$('#tCont').onclick=()=>{G=saved;G.players.forEach(p=>{p.ctrl=p.ctrl||'local'});busy=false;renderGame();startTurn()};
   $('#tLocal').onclick=()=>goView('local');
   $('#tOnline').onclick=()=>goView('online');
@@ -737,10 +772,14 @@ function viewSettings(){
     </div>
     <p class="hint">${hasBridge()?'«Авто» — гра повертається разом із телефоном.':'Поверни телефон — поле стане зліва, а гравці й журнал справа. Фіксація орієнтації працює в застосунку.'}</p>
   </div>
+  ${PLATFORM?`<div class="panel"><div class="label">Оновлення</div>
+    <div class="switch"><div class="t"><b>${UPD?T('Доступна збірка {0}',UPD.build):T('Збірка {0}',BUILD||'—')}</b><small>${UPD?T('Натисни, щоб завантажити нову версію.'):T('Гра сама перевіряє оновлення при запуску.')}</small></div>
+      <button class="btn ${UPD?'pri':''}" id="updBtn" style="flex:none">${UPD?T('Оновити'):T('Перевірити')}</button></div></div>`:''}
   <div class="panel"><div class="label">Збереження</div>
     <button class="btn" id="wipe" ${loadSaved()?'':'disabled'}>Видалити збережену гру</button>
   </div>`;
   wireLang();
+  if($('#updBtn'))$('#updBtn').onclick=async()=>{if(UPD)return openUpdate();const b=$('#updBtn');b.disabled=true;await checkUpdate(true);renderMenu()};
   $('#tgHints').onclick=()=>{SET.hints=!SET.hints;saveSet();renderMenu()};
   $('#tg3d').onclick=()=>{SET.board3d=SET.board3d===false;saveSet();if(SET.board3d!==false)load3DLibs();renderMenu()};
   $('#tgWait').onclick=()=>{SET.waitOk=!SET.waitOk;saveSet();renderMenu()};
@@ -1917,4 +1956,5 @@ if(SET.orient!=='auto'||hasBridge())applyOrient();
 renderSetup();
 if(SET.board3d!==false)load3DLibs();
 document.title=T('Життя в кредит');
+if(PLATFORM)setTimeout(()=>checkUpdate(false),2000);
 </script>

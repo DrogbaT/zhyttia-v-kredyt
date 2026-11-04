@@ -10,3 +10,4 @@ desktop/node_modules/
 desktop/dist/
 desktop/game/
 desktop/icon.png
+app/src/main/assets/build-info.js

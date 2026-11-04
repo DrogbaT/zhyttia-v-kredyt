@@ -1,0 +1,144 @@
+en|0§Updates are checked only in the Android and Windows apps
+en|1§Couldn't check for updates. Check the internet.
+en|2§You have the latest version
+en|3§⬆ New version · build {0}
+en|4§An APK{0} will download. Open it and tap “Install” — the game updates, your profile and saves stay.
+en|5§An installer{0} will download. Run it — it updates the game, your profile and saves stay.
+en|6§Your build: {0}
+en|7§Download
+en|8§Update available
+en|9§build {0} · tap to download
+en|10§Build {0} available
+en|11§Build {0}
+en|12§Tap to download the new version.
+en|13§The game checks for updates itself at launch.
+en|14§Update
+en|15§Check
+en|16§Updates
+en|17§Life on Credit
+de|0§Updates werden nur in den Apps für Android und Windows geprüft
+de|1§Update-Prüfung fehlgeschlagen. Prüfe das Internet.
+de|2§Du hast die neueste Version
+de|3§⬆ Neue Version · Build {0}
+de|4§Eine APK{0} wird heruntergeladen. Öffne sie und tippe auf „Installieren“ — das Spiel wird aktualisiert, Profil und Spielstände bleiben.
+de|5§Ein Installer{0} wird heruntergeladen. Starte ihn — er aktualisiert das Spiel, Profil und Spielstände bleiben.
+de|6§Dein Build: {0}
+de|7§Herunterladen
+de|8§Update verfügbar
+de|9§Build {0} · tippen zum Herunterladen
+de|10§Build {0} verfügbar
+de|11§Build {0}
+de|12§Tippe, um die neue Version herunterzuladen.
+de|13§Das Spiel prüft beim Start selbst auf Updates.
+de|14§Aktualisieren
+de|15§Prüfen
+de|16§Updates
+de|17§Leben auf Kredit
+pl|0§Aktualizacje sprawdzane są tylko w aplikacji na Androida i Windows
+pl|1§Nie udało się sprawdzić aktualizacji. Sprawdź internet.
+pl|2§Masz najnowszą wersję
+pl|3§⬆ Nowa wersja · kompilacja {0}
+pl|4§Pobierze się APK{0}. Otwórz go i dotknij „Zainstaluj” — gra się zaktualizuje, profil i zapisy zostaną.
+pl|5§Pobierze się instalator{0}. Uruchom go — zaktualizuje grę, profil i zapisy zostaną.
+pl|6§Twoja kompilacja: {0}
+pl|7§Pobierz
+pl|8§Dostępna aktualizacja
+pl|9§kompilacja {0} · dotknij, aby pobrać
+pl|10§Dostępna kompilacja {0}
+pl|11§Kompilacja {0}
+pl|12§Dotknij, aby pobrać nową wersję.
+pl|13§Gra sama sprawdza aktualizacje przy starcie.
+pl|14§Aktualizuj
+pl|15§Sprawdź
+pl|16§Aktualizacje
+pl|17§Życie na kredyt
+es|0§Las actualizaciones solo se comprueban en la app para Android y Windows
+es|1§No se pudo comprobar si hay actualizaciones. Revisa internet.
+es|2§Tienes la última versión
+es|3§⬆ Nueva versión · compilación {0}
+es|4§Se descargará un APK{0}. Ábrelo y pulsa «Instalar» — el juego se actualiza y tu perfil y partidas se conservan.
+es|5§Se descargará un instalador{0}. Ejecútalo — actualiza el juego y tu perfil y partidas se conservan.
+es|6§Tu compilación: {0}
+es|7§Descargar
+es|8§Actualización disponible
+es|9§compilación {0} · toca para descargar
+es|10§Compilación {0} disponible
+es|11§Compilación {0}
+es|12§Toca para descargar la nueva versión.
+es|13§El juego busca actualizaciones solo al arrancar.
+es|14§Actualizar
+es|15§Comprobar
+es|16§Actualizaciones
+es|17§La vida a crédito
+fr|0§Les mises à jour ne sont vérifiées que dans l'appli Android et Windows
+fr|1§Impossible de vérifier les mises à jour. Vérifie internet.
+fr|2§Tu as la dernière version
+fr|3§⬆ Nouvelle version · build {0}
+fr|4§Un APK{0} va être téléchargé. Ouvre-le et touche « Installer » — le jeu se met à jour, ton profil et tes sauvegardes restent.
+fr|5§Un installateur{0} va être téléchargé. Lance-le — il met le jeu à jour, ton profil et tes sauvegardes restent.
+fr|6§Ton build : {0}
+fr|7§Télécharger
+fr|8§Mise à jour disponible
+fr|9§build {0} · touche pour télécharger
+fr|10§Build {0} disponible
+fr|11§Build {0}
+fr|12§Touche pour télécharger la nouvelle version.
+fr|13§Le jeu vérifie seul les mises à jour au lancement.
+fr|14§Mettre à jour
+fr|15§Vérifier
+fr|16§Mises à jour
+fr|17§La vie à crédit
+it|0§Gli aggiornamenti si controllano solo nell'app per Android e Windows
+it|1§Impossibile controllare gli aggiornamenti. Controlla internet.
+it|2§Hai l'ultima versione
+it|3§⬆ Nuova versione · build {0}
+it|4§Verrà scaricato un APK{0}. Aprilo e tocca «Installa» — il gioco si aggiorna, profilo e salvataggi restano.
+it|5§Verrà scaricato un installer{0}. Avvialo — aggiorna il gioco, profilo e salvataggi restano.
+it|6§La tua build: {0}
+it|7§Scarica
+it|8§Aggiornamento disponibile
+it|9§build {0} · tocca per scaricare
+it|10§Build {0} disponibile
+it|11§Build {0}
+it|12§Tocca per scaricare la nuova versione.
+it|13§Il gioco controlla da solo gli aggiornamenti all'avvio.
+it|14§Aggiorna
+it|15§Controlla
+it|16§Aggiornamenti
+it|17§La vita a rate
+pt|0§As atualizações só são verificadas na app para Android e Windows
+pt|1§Não foi possível verificar atualizações. Verifica a internet.
+pt|2§Tens a versão mais recente
+pt|3§⬆ Nova versão · compilação {0}
+pt|4§Vai ser descarregado um APK{0}. Abre-o e toca em «Instalar» — o jogo atualiza e o perfil e as gravações ficam.
+pt|5§Vai ser descarregado um instalador{0}. Executa-o — atualiza o jogo e o perfil e as gravações ficam.
+pt|6§A tua compilação: {0}
+pt|7§Descarregar
+pt|8§Atualização disponível
+pt|9§compilação {0} · toca para descarregar
+pt|10§Compilação {0} disponível
+pt|11§Compilação {0}
+pt|12§Toca para descarregar a nova versão.
+pt|13§O jogo verifica sozinho as atualizações ao arrancar.
+pt|14§Atualizar
+pt|15§Verificar
+pt|16§Atualizações
+pt|17§A vida a crédito
+tr|0§Güncellemeler yalnızca Android ve Windows uygulamasında denetlenir
+tr|1§Güncellemeler denetlenemedi. İnterneti kontrol et.
+tr|2§En son sürüme sahipsin
+tr|3§⬆ Yeni sürüm · derleme {0}
+tr|4§Bir APK{0} indirilecek. Aç ve «Yükle»ye dokun — oyun güncellenir, profilin ve kayıtların kalır.
+tr|5§Bir yükleyici{0} indirilecek. Çalıştır — oyunu günceller, profilin ve kayıtların kalır.
+tr|6§Senin derlemen: {0}
+tr|7§İndir
+tr|8§Güncelleme mevcut
+tr|9§derleme {0} · indirmek için dokun
+tr|10§Derleme {0} mevcut
+tr|11§Derleme {0}
+tr|12§Yeni sürümü indirmek için dokun.
+tr|13§Oyun açılışta güncellemeleri kendisi denetler.
+tr|14§Güncelle
+tr|15§Denetle
+tr|16§Güncellemeler
+tr|17§Kredili Hayat

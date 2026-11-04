@@ -2,6 +2,7 @@ package com.lifeincredit.game;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.Insets;
@@ -76,6 +77,15 @@ public class MainActivity extends Activity {
     }
 
     private class OrientationBridge {
+        // opens the update download (a GitHub release file) in the system browser
+        @JavascriptInterface
+        public void openUrl(String url) {
+            if (url == null || !url.startsWith("https://github.com/")) return;
+            runOnUiThread(() -> {
+                try { startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url))); } catch (Exception ignored) { }
+            });
+        }
+
         @JavascriptInterface
         public void setOrientation(String mode) {
             runOnUiThread(() -> {

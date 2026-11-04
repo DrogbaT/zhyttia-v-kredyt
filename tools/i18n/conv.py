@@ -26,9 +26,10 @@ def parse_code(p,end_on_brace=False):
                 j+=1
             lit=t[p.i:j+1];p.i=j+1
             body=lit[1:-1]
-            if CYR.search(body) and not prev_is_T(out):
+            if CYR.search(body):
                 val=json.loads('"'+body.replace('\\\'',"'").replace('"','\\"')+'"') if c=="'" else json.loads(lit)
-                addkey(val);out.append('T('+js_str(val)+')')
+                addkey(val)
+                out.append(lit if prev_is_T(out) else 'T('+js_str(val)+')')
             else:out.append(lit)
             continue
         if c=='`':
