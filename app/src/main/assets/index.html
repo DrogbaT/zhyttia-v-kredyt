@@ -790,13 +790,13 @@ function viewRules(){
     <p>${T("Гроші, зарплату і здоров’я суперників не видно — лише їхнє майно. Картки «Офшорна схованка», «Записав на тещу», «Конфіденційність лікаря» дають схованку: сховай будь-яке своє майно. Хто стане на сховане — платить оренду і розкриває його. «Податкова розвідка» розкриває всі схованки суперників.")}</p></div>
   <div class="panel rules-sec"><h3>${T("💀 Як вибувають")}</h3>
     <p>${T("Якщо гроші пішли в мінус — банк сам продає твоє майно (60% ціни мінус борг). Не вистачило — <b>банкрутство</b>. Здоров’я впало до 0 — теж вибуваєш. Щастя на нулі щоразу забирає 10 здоров’я.")}</p>
-    <p>${T("Своє майно можна продати й самостійно: натисни на свою картку гравця під час свого ходу.")}</p></div>
+    <p>${T("Своє майно можна продати й самостійно, під час свого ходу через свою картку гравця: <b>запропонувати іншому гравцю чи боту</b> за свою ціну (кредит закривається з виручки) або <b>продати державі</b> на 5% дешевше від державної вартості. Банк, який забирає майно за борги, платить лише 60%.")}</p></div>
   <div class="panel rules-sec"><h3>${T("🌐 Онлайн")}</h3>
     <p>${T("Хост створює кімнату і диктує 5-значний код. Кожен грає на своєму телефоні. Відключився гравець — за нього дограє бот.")}</p></div>`;
 }
 
 /* ---------- hints ---------- */
-const TIPS=[T("Натисни на будь-яку клітинку — побачиш ціну, платіж і оренду."),T("Натисни на картку гравця — побачиш його майно і борги."),T("Тримай суму платежів нижче за зарплату, інакше кредити з’їдять усе."),T("Готівкою вигідніше: без 15% переплати і з бонусом до щастя."),T("Дешеве майно окупається орендою швидше, ніж здається."),T("Медстраховка з колоди здоров’я рятує від рахунків за лікування."),T("Щастя на нулі щоколу забирає здоров’я — інколи вечірка корисна."),T("Біржа праці може дати кращу зарплату — але й гіршу. Читай пропозицію."),T("Банк дає 5000 ₴ швидко, але повертати доведеться 6600."),T("Сідаєш на мілину? Продай майно сам — поки банк не забрав його дешевше."),T("На чужому майні можна напакостити — але ризик бути спійманим реальний."),T("Сигналізація з колоди долі ловить наступного пакосника."),T("Добра справа на чужому майні піднімає щастя і тобі."),T("Сховане майно не видно суперникам, доки хтось на нього не стане.")];
+const TIPS=[T("Натисни на будь-яку клітинку — побачиш ціну, платіж і оренду."),T("Натисни на картку гравця — побачиш його майно і борги."),T("Тримай суму платежів нижче за зарплату, інакше кредити з’їдять усе."),T("Готівкою вигідніше: без 15% переплати і з бонусом до щастя."),T("Дешеве майно окупається орендою швидше, ніж здається."),T("Медстраховка з колоди здоров’я рятує від рахунків за лікування."),T("Щастя на нулі щоколу забирає здоров’я — інколи вечірка корисна."),T("Біржа праці може дати кращу зарплату — але й гіршу. Читай пропозицію."),T("Банк дає 5000 ₴ швидко, але повертати доведеться 6600."),T("Сідаєш на мілину? Продай майно сам — гравцю чи державі (−5%), поки банк не забрав його за 60%."),T("На чужому майні можна напакостити — але ризик бути спійманим реальний."),T("Сигналізація з колоди долі ловить наступного пакосника."),T("Добра справа на чужому майні піднімає щастя і тобі."),T("Сховане майно не видно суперникам, доки хтось на нього не стане.")];
 function contextHint(p){
   if(!isMine(p))return null;
   if(p.hp<35)return T("Здоров’я низьке: лікарня (+40) або спортзал (+15). Нижче 30 — зарплата менша.");
@@ -982,7 +982,8 @@ function onHostData(conn,m){
   if(m.t==='roll'){const p=P();if(!busy&&!G.over&&!p.bot&&p.ctrl===id)doTurn();return}
   if(m.t==='answer'){const x=pending.get(m.id);if(x&&x.ctrl===id){pending.delete(m.id);x.res(x.allowed.includes(m.v)?m.v:x.botChoice)}return}
   if(m.t==='hide'){const p=P();if(!busy&&!G.over&&p.ctrl===id&&!p.bot&&hideAsset(p,m.k))renderGame();return}
-  if(m.t==='sell'){const p=P();if(!busy&&!G.over&&p.ctrl===id&&!p.bot&&p.owned[m.k]&&p.owned[m.k].cell>=0){sellAsset(p,m.k);renderGame()}return}
+  if(m.t==='sellstate'||m.t==='sell'){const p=P();if(!busy&&!G.over&&p.ctrl===id&&!p.bot&&p.owned[m.k]&&p.owned[m.k].cell>=0){sellToState(p,m.k);renderGame()}return}
+  if(m.t==='offer'){const p=P();if(!busy&&!G.over&&p.ctrl===id&&!p.bot&&p.owned[m.k]&&p.owned[m.k].cell>=0)offerAsset(p,m.k,m.to|0,Math.round(+m.price||0));return}
 }
 function onHostClose(conn){
   if(!NET||!isHost())return;
@@ -1585,14 +1586,10 @@ function playerInfo(i){
   }
   const rows=q.owned.map((o,k)=>{const c=o.cell>=0?CELLS[o.cell]:null;const v=c?Math.round(c.price*.6)-o.left:0;
     return `<div class="asset-row"><div>${c?c.ic+' '+esc(c.name):T("💳 Споживчий кредит")}${o.hidden?T(" <span class=\"achip hid\">сховано</span>"):''}<small>${o.left>0?T("залишок боргу ")+fmt(o.left)+T(" · платіж ")+fmt(Math.min(o.pay,o.left)):T("виплачено повністю")}</small></div>
-      <div class="row" style="flex:0 0 auto">${c&&act&&q.ef.hide>0&&!o.hidden?`<button class="btn" data-hide="${k}">🕶</button>`:''}${c&&act?`<button class="btn" data-sell="${k}">${T("Продати {0}",fmt(v))}</button>`:''}</div></div>`}).join('')||T("<p style=\"color:var(--muted)\">Майна і кредитів поки немає.</p>");
-  sheet({title:`${q.av?q.av+' ':''}${esc(q.name)}`,body:`<div class="kv"><span>${T("Де")}</span><span>${loc.ic} ${esc(loc.name)}</span><span>${T("Робота")}</span><span>${esc(q.job.n)}</span><span>${T("Зарплата")}</span><span>${fmt(q.job.s)}</span><span>${T("Готівка")}</span><span>${fmt(q.money)}</span><span>${T("Платежі за коло")}</span><span>${fmt(payments(q))}</span><span>${T("Капітал")}</span><span>${fmt(worth(q))}${RU().goal?T(" з ")+fmt(RU().goal):''}</span>${q.ef.hide?`<span>${T("Схованки")}</span><span>${q.ef.hide}</span>`:''}</div><div style="margin-top:10px">${rows}</div>${act?T("<p style=\"color:var(--muted);font-size:13px\">Продаж: банк дає 60% ціни мінус залишок кредиту.")+(q.ef.hide?T(" 🕶 — сховати від суперників."):'')+'</p>':''}`,buttons:[{l:T("Закрити"),v:0}],now:1});
+      <div class="row" style="flex:0 0 auto">${c&&act&&q.ef.hide>0&&!o.hidden?`<button class="btn" data-hide="${k}">🕶</button>`:''}${c&&act?`<button class="btn" data-sell="${k}">${T("Продати")}</button>`:''}</div></div>`}).join('')||T("<p style=\"color:var(--muted)\">Майна і кредитів поки немає.</p>");
+  sheet({title:`${q.av?q.av+' ':''}${esc(q.name)}`,body:`<div class="kv"><span>${T("Де")}</span><span>${loc.ic} ${esc(loc.name)}</span><span>${T("Робота")}</span><span>${esc(q.job.n)}</span><span>${T("Зарплата")}</span><span>${fmt(q.job.s)}</span><span>${T("Готівка")}</span><span>${fmt(q.money)}</span><span>${T("Платежі за коло")}</span><span>${fmt(payments(q))}</span><span>${T("Капітал")}</span><span>${fmt(worth(q))}${RU().goal?T(" з ")+fmt(RU().goal):''}</span>${q.ef.hide?`<span>${T("Схованки")}</span><span>${q.ef.hide}</span>`:''}</div><div style="margin-top:10px">${rows}</div>${act?T("<p style=\"color:var(--muted);font-size:13px\">Продаж: гравцю за твою ціну або державі — на 5% дешевше від вартості.")+(q.ef.hide?T(" 🕶 — сховати від суперників."):'')+'</p>':''}`,buttons:[{l:T("Закрити"),v:0}],now:1});
   if(act){
-    document.querySelectorAll('[data-sell]').forEach(b=>b.onclick=()=>{
-      const k=+b.dataset.sell;closeSheet();
-      if(isClient()){send(NET.hostConn,{t:'sell',k});return}
-      sellAsset(q,k);renderGame();save();
-    });
+    document.querySelectorAll('[data-sell]').forEach(b=>b.onclick=()=>{const k=+b.dataset.sell;closeSheet();sellMenu(q,k)});
     document.querySelectorAll('[data-hide]').forEach(b=>b.onclick=()=>{
       const k=+b.dataset.hide;closeSheet();
       if(isClient()){send(NET.hostConn,{t:'hide',k});return}
@@ -1656,6 +1653,59 @@ async function useHide(p,fromCard){
     pub:`<p>${T("{0} вирішує, що сховати…",esc(p.name))}</p>`,pubBtns:1,
     buttons:[...cand.map(x=>({l:`${CELLS[x.o.cell].ic} ${esc(CELLS[x.o.cell].name)}`,v:x.k})),{l:T("Пізніше"),v:-1}]},best);
   if(v!=null&&v>=0)hideAsset(p,v);
+}
+/* ---------- selling property: to a player for an agreed price, or to the state at −5% ---------- */
+const stateValue=c=>Math.round(c.price*.95/50)*50;
+function sellToState(p,k){
+  const o=p.owned[k],c=CELLS[o.cell];const v=stateValue(c)-o.left;
+  p.money+=v;p.owned.splice(k,1);delete G.owners[o.cell];joy(p,-Math.round(c.happy/2));
+  plog(p,`${T("{0} продав «{1}» державі: {2}.",nm(p),esc(c.name),fmt(v))}`,`${T("{0} продав «{1}» державі.",nm(p),esc(c.name))}`);
+}
+async function sellMenu(q,k){
+  const o=q.owned[k];if(!o||o.cell<0)return;const c=CELLS[o.cell];
+  const sv=stateValue(c),net=sv-o.left;
+  const others=G.players.map((x,i)=>({x,i})).filter(({x})=>x!==q&&!x.out);
+  const v=await sheet({title:`${c.ic} ${esc(c.name)}`,body:`<div class="kv"><span>${T("Державна вартість")}</span><span>${fmt(c.price)}</span><span>${T("Держава купить за")}</span><span>${fmt(sv)}</span>${o.left?`<span>${T("Залишок кредиту")}</span><span>−${fmt(o.left)}</span>`:''}<span>${T("Тобі від держави")}</span><span>${fmt(net)}</span></div><p class="tip" style="margin-top:10px">${T("Гравцю чи боту можна запропонувати свою ціну. Покупець платить усю суму, а твій кредит закривається з неї.")}</p>`,
+    buttons:[{l:T("🤝 Запропонувати гравцю"),v:'offer',pri:1,dis:!others.length},{l:`${T("🏛 Продати державі · {0}",fmt(net))}`,v:'state'},{l:T("Скасувати"),v:0}],now:1});
+  if(v==='state'){
+    if(isClient()){send(NET.hostConn,{t:'sellstate',k});return}
+    if(busy||!q.owned[k])return;sellToState(q,k);renderGame();save();toast(T("Продано державі"));return;
+  }
+  if(v!=='offer')return;
+  const who=await sheet({title:T("🤝 Кому запропонувати?"),body:T("<p class=\"hint\">Гроші суперників приховані — чи вистачить у них, дізнаєшся з відповіді.</p>"),buttons:[...others.map(({x,i})=>({l:`${x.av?x.av+' ':''}${esc(x.name)}${x.bot?T(" · бот"):''}`,v:i})),{l:T("Скасувати"),v:-1}],now:1});
+  if(who==null||who<0)return;
+  const mults=[.8,.9,1,1.1,1.25,1.5];
+  const prices=[...new Set(mults.map(m=>Math.max(o.left,Math.round(c.price*m/100)*100)))];
+  const price=await sheet({title:`${T("💰 Ціна для {0}",esc(G.players[who].name))}`,body:`<p>${T("Державна вартість {0}{1}. Боти охочіше купують не дорожче за вартість.",fmt(c.price),o.left?`${T(", залишок кредиту {0}",fmt(o.left))}`:'')}</p>`,
+    buttons:[...prices.map(pr=>({l:`${fmt(pr)} · ${Math.round(pr/c.price*100)}%`,v:pr})),{l:T("Скасувати"),v:0}],now:1});
+  if(!price)return;
+  if(isClient()){send(NET.hostConn,{t:'offer',k,to:who,price});toast(T("Пропозицію надіслано"));return}
+  offerAsset(q,k,who,price);
+}
+async function offerAsset(p,k,to,price){
+  const o=p.owned[k],b=G.players[to];
+  if(!o||o.cell<0||!b||b===p||b.out||busy||G.over)return;
+  const c=CELLS[o.cell];price=Math.max(o.left,price);
+  busy=true;renderGame();
+  const fair=b.dream===c.g?1.25:1.1;
+  const botYes=price<=c.price*fair&&b.money-price>=2500&&payments(b)<=b.job.s*1.2?1:0;
+  log(`${T("{0} пропонує {1} купити «{2}».",nm(p),nm(b),esc(c.name))}`);
+  const yes=await ask(b,{title:T("🤝 Пропозиція купівлі"),body:`<p><b style="color:${p.color}">${T("{0}</b> пропонує тобі «{1} {2}» за <b>{3}</b>.",esc(p.name),c.ic,esc(c.name),fmt(price))}</p><div class="kv"><span>${T("Державна вартість")}</span><span>${fmt(c.price)}</span><span>${T("Оренда з інших")}</span><span>${fmt(c.rent)}</span><span>${T("Щастя")}</span><span>+${c.happy}</span></div><p class="hint" style="margin-top:8px">${T("Майно переходить без кредиту — платиш одразу всю суму.")}</p>`,
+    pub:`<p>${T("{0} пропонує {1} «{2}».",esc(p.name),esc(b.name),esc(c.name))}</p>`,
+    buttons:[{l:`${T("Купити за {0}",fmt(price))}`,v:1,pri:1,dis:b.money<price},{l:T("Відмовитись"),v:0}]},botYes);
+  if(!G){busy=false;return}
+  const still=p.owned[k]===o&&!b.out&&b.money>=price;
+  if(yes&&still){
+    b.money-=price;p.money+=price-o.left;
+    o.left=0;o.pay=0;o.hidden=false;p.owned.splice(k,1);b.owned.push(o);G.owners[o.cell]=to;
+    joy(p,-Math.round(c.happy/2));joy(b,c.happy+(b.dream===c.g?5:0));
+    log(`${T("{0} продав «{1}» гравцю {2}.",nm(p),esc(c.name),nm(b))}`);
+    sayTo(p,`${T("{0} купує «{1}» за {2}",b.name,c.name,fmt(price))}`);
+  }else{
+    log(`${T("{0} відмовляється від «{1}».",nm(b),esc(c.name))}`);
+    sayTo(p,`${T("{0} відмовився від «{1}»",b.name,c.name)}`);
+  }
+  busy=false;renderGame();save();
 }
 function sellAsset(p,k){
   const o=p.owned[k],c=CELLS[o.cell];const v=Math.round(c.price*.6)-o.left;

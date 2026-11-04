@@ -1,0 +1,240 @@
+en|0§You can also sell your property yourself during your turn via your player card: <b>offer it to another player or a bot</b> at your price (the loan is closed from the proceeds) or <b>sell it to the state</b> 5% below the state value. The bank, which seizes property for debts, pays only 60%.
+en|1§Running low? Sell property yourself — to a player or the state (−5%) — before the bank takes it for 60%.
+en|2§Sell
+en|3§<p style="color:var(--muted);font-size:13px">Selling: to a player at your price or to the state — 5% below value.
+en|4§{0} sold “{1}” to the state: {2}.
+en|5§{0} sold “{1}” to the state.
+en|6§Remaining loan
+en|7§State value
+en|8§The state pays
+en|9§You get from the state
+en|10§You can offer your own price to a player or bot. The buyer pays the full amount and your loan is closed from it.
+en|11§🤝 Offer to a player
+en|12§🏛 Sell to the state · {0}
+en|13§Sold to the state
+en|14§🤝 Who to offer it to?
+en|15§<p class="hint">Rivals' money is hidden — their answer will tell you if they can afford it.</p>
+en|16§💰 Price for {0}
+en|17§, remaining loan {0}
+en|18§State value {0}{1}. Bots prefer to buy at no more than the value.
+en|19§Offer sent
+en|20§{0} offers {1} to buy “{2}”.
+en|21§🤝 Purchase offer
+en|22§{0}</b> offers you “{1} {2}” for <b>{3}</b>.
+en|23§The property comes with no loan — you pay the full amount at once.
+en|24§{0} offers {1} “{2}”.
+en|25§Buy for {0}
+en|26§{0} sold “{1}” to {2}.
+en|27§{0} buys “{1}” for {2}
+en|28§{0} turns down “{1}”.
+en|29§{0} turned down “{1}”
+de|0§Du kannst dein Eigentum in deinem Zug auch selbst über deine Spielerkarte verkaufen: <b>einem anderen Spieler oder Bot anbieten</b> zu deinem Preis (der Kredit wird aus dem Erlös getilgt) oder <b>an den Staat verkaufen</b> 5% unter dem Staatswert. Die Bank, die Eigentum wegen Schulden einzieht, zahlt nur 60%.
+de|1§Knapp bei Kasse? Verkauf selbst — an einen Spieler oder den Staat (−5%) — bevor die Bank es für 60% nimmt.
+de|2§Verkaufen
+de|3§<p style="color:var(--muted);font-size:13px">Verkauf: an einen Spieler zu deinem Preis oder an den Staat — 5% unter Wert.
+de|4§{0} hat „{1}“ an den Staat verkauft: {2}.
+de|5§{0} hat „{1}“ an den Staat verkauft.
+de|6§Restkredit
+de|7§Staatswert
+de|8§Der Staat zahlt
+de|9§Du bekommst vom Staat
+de|10§Einem Spieler oder Bot kannst du deinen eigenen Preis anbieten. Der Käufer zahlt den vollen Betrag, dein Kredit wird daraus getilgt.
+de|11§🤝 Einem Spieler anbieten
+de|12§🏛 An den Staat verkaufen · {0}
+de|13§An den Staat verkauft
+de|14§🤝 Wem anbieten?
+de|15§<p class="hint">Das Geld der Gegner ist verborgen — ob es reicht, erfährst du aus der Antwort.</p>
+de|16§💰 Preis für {0}
+de|17§, Restkredit {0}
+de|18§Staatswert {0}{1}. Bots kaufen lieber nicht über dem Wert.
+de|19§Angebot gesendet
+de|20§{0} bietet {1} „{2}“ zum Kauf an.
+de|21§🤝 Kaufangebot
+de|22§{0}</b> bietet dir „{1} {2}“ für <b>{3}</b> an.
+de|23§Das Eigentum ist kreditfrei — du zahlst sofort den vollen Betrag.
+de|24§{0} bietet {1} „{2}“ an.
+de|25§Für {0} kaufen
+de|26§{0} hat „{1}“ an {2} verkauft.
+de|27§{0} kauft „{1}“ für {2}
+de|28§{0} lehnt „{1}“ ab.
+de|29§{0} hat „{1}“ abgelehnt
+pl|0§Majątek możesz sprzedać też sam, w swojej kolejce przez swoją kartę gracza: <b>zaproponować innemu graczowi lub botowi</b> za swoją cenę (kredyt spłaca się z utargu) albo <b>sprzedać państwu</b> 5% taniej od wartości państwowej. Bank, który zabiera majątek za długi, płaci tylko 60%.
+pl|1§Kończą się pieniądze? Sprzedaj sam — graczowi lub państwu (−5%), zanim bank weźmie to za 60%.
+pl|2§Sprzedaj
+pl|3§<p style="color:var(--muted);font-size:13px">Sprzedaż: graczowi za twoją cenę albo państwu — 5% poniżej wartości.
+pl|4§{0} sprzedał „{1}” państwu: {2}.
+pl|5§{0} sprzedał „{1}” państwu.
+pl|6§Pozostały kredyt
+pl|7§Wartość państwowa
+pl|8§Państwo zapłaci
+pl|9§Dostaniesz od państwa
+pl|10§Graczowi lub botowi możesz zaproponować własną cenę. Kupujący płaci całą kwotę, a twój kredyt spłaca się z niej.
+pl|11§🤝 Zaproponuj graczowi
+pl|12§🏛 Sprzedaj państwu · {0}
+pl|13§Sprzedano państwu
+pl|14§🤝 Komu zaproponować?
+pl|15§<p class="hint">Pieniądze rywali są ukryte — czy im wystarczy, dowiesz się z odpowiedzi.</p>
+pl|16§💰 Cena dla {0}
+pl|17§, pozostały kredyt {0}
+pl|18§Wartość państwowa {0}{1}. Boty chętniej kupują nie drożej niż wartość.
+pl|19§Propozycja wysłana
+pl|20§{0} proponuje graczowi {1} kupno „{2}”.
+pl|21§🤝 Propozycja zakupu
+pl|22§{0}</b> proponuje ci „{1} {2}” za <b>{3}</b>.
+pl|23§Majątek przechodzi bez kredytu — płacisz od razu całą kwotę.
+pl|24§{0} proponuje graczowi {1} „{2}”.
+pl|25§Kup za {0}
+pl|26§{0} sprzedał „{1}” graczowi {2}.
+pl|27§{0} kupuje „{1}” za {2}
+pl|28§{0} odmawia kupna „{1}”.
+pl|29§{0} odmówił kupna „{1}”
+es|0§También puedes vender tus propiedades tú mismo en tu turno desde tu tarjeta de jugador: <b>ofrecérsela a otro jugador o a un bot</b> a tu precio (el préstamo se cancela con lo cobrado) o <b>vendérsela al Estado</b> un 5% por debajo del valor oficial. El banco, que embarga por deudas, paga solo el 60%.
+es|1§¿Te quedas sin dinero? Vende tú — a un jugador o al Estado (−5%) — antes de que el banco se lo quede por el 60%.
+es|2§Vender
+es|3§<p style="color:var(--muted);font-size:13px">Venta: a un jugador a tu precio o al Estado — un 5% por debajo del valor.
+es|4§{0} vendió «{1}» al Estado: {2}.
+es|5§{0} vendió «{1}» al Estado.
+es|6§Préstamo pendiente
+es|7§Valor oficial
+es|8§El Estado paga
+es|9§Recibes del Estado
+es|10§A un jugador o bot puedes ofrecerle tu propio precio. El comprador paga el importe completo y tu préstamo se cancela con él.
+es|11§🤝 Ofrecer a un jugador
+es|12§🏛 Vender al Estado · {0}
+es|13§Vendido al Estado
+es|14§🤝 ¿A quién ofrecérselo?
+es|15§<p class="hint">El dinero de los rivales está oculto — sabrás si les alcanza por su respuesta.</p>
+es|16§💰 Precio para {0}
+es|17§, préstamo pendiente {0}
+es|18§Valor oficial {0}{1}. Los bots prefieren comprar sin pasar del valor.
+es|19§Oferta enviada
+es|20§{0} le ofrece a {1} comprar «{2}».
+es|21§🤝 Oferta de compra
+es|22§{0}</b> te ofrece «{1} {2}» por <b>{3}</b>.
+es|23§La propiedad pasa sin préstamo — pagas todo de una vez.
+es|24§{0} le ofrece a {1} «{2}».
+es|25§Comprar por {0}
+es|26§{0} vendió «{1}» a {2}.
+es|27§{0} compra «{1}» por {2}
+es|28§{0} rechaza «{1}».
+es|29§{0} rechazó «{1}»
+fr|0§Tu peux aussi vendre tes biens toi-même pendant ton tour via ta carte de joueur : <b>les proposer à un autre joueur ou à un bot</b> à ton prix (le prêt est soldé avec la recette) ou <b>les vendre à l'État</b> 5 % sous la valeur officielle. La banque, qui saisit pour dettes, ne paie que 60 %.
+fr|1§À sec ? Vends toi-même — à un joueur ou à l'État (−5 %) — avant que la banque ne le prenne à 60 %.
+fr|2§Vendre
+fr|3§<p style="color:var(--muted);font-size:13px">Vente : à un joueur à ton prix ou à l'État — 5 % sous la valeur.
+fr|4§{0} a vendu « {1} » à l'État : {2}.
+fr|5§{0} a vendu « {1} » à l'État.
+fr|6§Reste du prêt
+fr|7§Valeur officielle
+fr|8§L'État paie
+fr|9§Tu reçois de l'État
+fr|10§Tu peux proposer ton propre prix à un joueur ou à un bot. L'acheteur paie la totalité et ton prêt est soldé avec.
+fr|11§🤝 Proposer à un joueur
+fr|12§🏛 Vendre à l'État · {0}
+fr|13§Vendu à l'État
+fr|14§🤝 À qui le proposer ?
+fr|15§<p class="hint">L'argent des adversaires est caché — leur réponse te dira s'ils peuvent payer.</p>
+fr|16§💰 Prix pour {0}
+fr|17§, reste du prêt {0}
+fr|18§Valeur officielle {0}{1}. Les bots préfèrent ne pas payer plus que la valeur.
+fr|19§Proposition envoyée
+fr|20§{0} propose à {1} d'acheter « {2} ».
+fr|21§🤝 Proposition d'achat
+fr|22§{0}</b> te propose « {1} {2} » pour <b>{3}</b>.
+fr|23§Le bien passe sans prêt — tu paies tout d'un coup.
+fr|24§{0} propose « {2} » à {1}.
+fr|25§Acheter pour {0}
+fr|26§{0} a vendu « {1} » à {2}.
+fr|27§{0} achète « {1} » pour {2}
+fr|28§{0} refuse « {1} ».
+fr|29§{0} a refusé « {1} »
+it|0§Puoi anche vendere le tue proprietà da solo durante il tuo turno dalla scheda giocatore: <b>offrirle a un altro giocatore o a un bot</b> al tuo prezzo (il prestito si chiude con il ricavato) oppure <b>venderle allo Stato</b> al 5% in meno del valore ufficiale. La banca, che pignora per debiti, paga solo il 60%.
+it|1§A corto di soldi? Vendi tu — a un giocatore o allo Stato (−5%) — prima che la banca se la prenda al 60%.
+it|2§Vendi
+it|3§<p style="color:var(--muted);font-size:13px">Vendita: a un giocatore al tuo prezzo o allo Stato — il 5% in meno del valore.
+it|4§{0} ha venduto «{1}» allo Stato: {2}.
+it|5§{0} ha venduto «{1}» allo Stato.
+it|6§Prestito residuo
+it|7§Valore ufficiale
+it|8§Lo Stato paga
+it|9§Ricevi dallo Stato
+it|10§A un giocatore o bot puoi proporre il tuo prezzo. L'acquirente paga l'intera somma e il tuo prestito si chiude con essa.
+it|11§🤝 Offri a un giocatore
+it|12§🏛 Vendi allo Stato · {0}
+it|13§Venduto allo Stato
+it|14§🤝 A chi offrirla?
+it|15§<p class="hint">I soldi degli avversari sono nascosti — dalla risposta capirai se possono permetterselo.</p>
+it|16§💰 Prezzo per {0}
+it|17§, prestito residuo {0}
+it|18§Valore ufficiale {0}{1}. I bot preferiscono non pagare più del valore.
+it|19§Offerta inviata
+it|20§{0} propone a {1} di comprare «{2}».
+it|21§🤝 Offerta di acquisto
+it|22§{0}</b> ti offre «{1} {2}» per <b>{3}</b>.
+it|23§La proprietà passa senza prestito — paghi subito l'intera somma.
+it|24§{0} offre a {1} «{2}».
+it|25§Compra per {0}
+it|26§{0} ha venduto «{1}» a {2}.
+it|27§{0} compra «{1}» per {2}
+it|28§{0} rifiuta «{1}».
+it|29§{0} ha rifiutato «{1}»
+pt|0§Também podes vender as tuas propriedades na tua vez pelo teu cartão de jogador: <b>oferecê-las a outro jogador ou bot</b> pelo teu preço (o crédito fecha-se com a receita) ou <b>vendê-las ao Estado</b> 5% abaixo do valor oficial. O banco, que penhora por dívidas, paga só 60%.
+pt|1§Falta dinheiro? Vende tu — a um jogador ou ao Estado (−5%) — antes que o banco a leve por 60%.
+pt|2§Vender
+pt|3§<p style="color:var(--muted);font-size:13px">Venda: a um jogador pelo teu preço ou ao Estado — 5% abaixo do valor.
+pt|4§{0} vendeu «{1}» ao Estado: {2}.
+pt|5§{0} vendeu «{1}» ao Estado.
+pt|6§Crédito restante
+pt|7§Valor oficial
+pt|8§O Estado paga
+pt|9§Recebes do Estado
+pt|10§A um jogador ou bot podes propor o teu preço. O comprador paga o valor total e o teu crédito fecha-se com ele.
+pt|11§🤝 Oferecer a um jogador
+pt|12§🏛 Vender ao Estado · {0}
+pt|13§Vendido ao Estado
+pt|14§🤝 A quem oferecer?
+pt|15§<p class="hint">O dinheiro dos rivais está oculto — pela resposta saberás se chega.</p>
+pt|16§💰 Preço para {0}
+pt|17§, crédito restante {0}
+pt|18§Valor oficial {0}{1}. Os bots preferem não pagar mais do que o valor.
+pt|19§Proposta enviada
+pt|20§{0} propõe a {1} comprar «{2}».
+pt|21§🤝 Proposta de compra
+pt|22§{0}</b> propõe-te «{1} {2}» por <b>{3}</b>.
+pt|23§A propriedade passa sem crédito — pagas tudo de uma vez.
+pt|24§{0} propõe a {1} «{2}».
+pt|25§Comprar por {0}
+pt|26§{0} vendeu «{1}» a {2}.
+pt|27§{0} compra «{1}» por {2}
+pt|28§{0} recusa «{1}».
+pt|29§{0} recusou «{1}»
+tr|0§Mülkünü kendi turunda oyuncu kartından da satabilirsin: <b>başka bir oyuncuya ya da bota teklif et</b> kendi fiyatınla (kredi gelirden kapatılır) ya da <b>devlete sat</b> devlet değerinin %5 altına. Borç yüzünden mülke el koyan banka sadece %60 öder.
+tr|1§Para mı azaldı? Kendin sat — bir oyuncuya ya da devlete (−%5) — banka %60'a almadan önce.
+tr|2§Sat
+tr|3§<p style="color:var(--muted);font-size:13px">Satış: bir oyuncuya kendi fiyatınla ya da devlete — değerin %5 altına.
+tr|4§{0} «{1}» mülkünü devlete sattı: {2}.
+tr|5§{0} «{1}» mülkünü devlete sattı.
+tr|6§Kalan kredi
+tr|7§Devlet değeri
+tr|8§Devletin ödeyeceği
+tr|9§Devletten sana kalan
+tr|10§Bir oyuncuya ya da bota kendi fiyatını önerebilirsin. Alıcı tüm tutarı öder, kredin bundan kapatılır.
+tr|11§🤝 Bir oyuncuya teklif et
+tr|12§🏛 Devlete sat · {0}
+tr|13§Devlete satıldı
+tr|14§🤝 Kime teklif edilsin?
+tr|15§<p class="hint">Rakiplerin parası gizli — yetip yetmediğini cevaptan anlarsın.</p>
+tr|16§💰 {0} için fiyat
+tr|17§, kalan kredi {0}
+tr|18§Devlet değeri {0}{1}. Botlar değerinden pahalıya almamayı tercih eder.
+tr|19§Teklif gönderildi
+tr|20§{0}, {1} oyuncusuna «{2}» satın almayı teklif ediyor.
+tr|21§🤝 Satın alma teklifi
+tr|22§{0}</b> sana «{1} {2}» mülkünü <b>{3}</b> karşılığında teklif ediyor.
+tr|23§Mülk kredisiz devredilir — tüm tutarı hemen ödersin.
+tr|24§{0}, {1} oyuncusuna «{2}» teklif ediyor.
+tr|25§{0} karşılığında al
+tr|26§{0} «{1}» mülkünü {2} oyuncusuna sattı.
+tr|27§{0} «{1}» mülkünü {2} karşılığında alıyor
+tr|28§{0} «{1}» teklifini reddediyor.
+tr|29§{0} «{1}» teklifini reddetti
