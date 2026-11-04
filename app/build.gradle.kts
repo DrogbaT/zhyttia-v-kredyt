@@ -11,8 +11,8 @@ android {
         applicationId = "com.lifeincredit.game"
         minSdk = 26
         targetSdk = 36
-        versionCode = 2        // збільшуй на 1 перед кожним новим завантаженням у Play
-        versionName = "2.0"
+        versionCode = 3        // збільшуй на 1 перед кожним новим завантаженням у Play
+        versionName = "2.1"
     }
 
     buildTypes {
