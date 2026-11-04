@@ -2,6 +2,7 @@ package com.lifeincredit.game;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.Insets;
 import android.net.Uri;
@@ -9,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowInsets;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -38,7 +40,10 @@ public class MainActivity extends Activity {
         s.setAllowContentAccess(false);
         s.setTextZoom(100);                    // не ламати поле великим системним шрифтом
 
-        // Гра повністю локальна: будь-які зовнішні посилання не відкриваються всередині
+        // Перемикач орієнтації з налаштувань гри: auto / portrait / landscape
+        web.addJavascriptInterface(new OrientationBridge(), "AndroidApp");
+
+        // Гра локальна: будь-які зовнішні посилання не відкриваються всередині
         web.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest req) {
@@ -67,6 +72,21 @@ public class MainActivity extends Activity {
             web.restoreState(savedInstanceState);
         } else {
             web.loadUrl("file:///android_asset/index.html");
+        }
+    }
+
+    private class OrientationBridge {
+        @JavascriptInterface
+        public void setOrientation(String mode) {
+            runOnUiThread(() -> {
+                if ("portrait".equals(mode)) {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+                } else if ("landscape".equals(mode)) {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+                } else {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_USER);
+                }
+            });
         }
     }
 

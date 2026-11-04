@@ -1,14 +1,7 @@
-<!doctype html>
-<html lang="uk">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#141a2e">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
 <title>Життя в кредит</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Golos+Text:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: one phone column — board as a 7×7 ring with the dice table in its hollow centre, players and log below */
 :root{
@@ -21,7 +14,7 @@
   --gold:#f2c14e;       /* money accent */
   --home:#e8705a; --car:#3fb6b0; --biz:#e3a43a;
   --health:#f3c6cf; --fate:#cfc4f3; --corner:#c9d3e6;
-  --hp:#ef6f8a; --joy:#6fb5ef;
+  --hp:#ef6f8a; --joy:#6fb5ef; --ok:#7fd49a;
   --line:rgba(255,255,255,.09);
   --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
   --f-body:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -45,10 +38,14 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-o
 .hero p{margin:0;color:var(--muted);max-width:60ch}
 .panel{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px}
 .label{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:600}
+.hint{margin:0;color:var(--muted);font-size:13px}
 .prow{display:grid;grid-template-columns:22px 1fr auto;gap:10px;align-items:center}
 .prow.off{opacity:.45}
-.dot{width:14px;height:14px;border-radius:50%;background:var(--c);box-shadow:0 0 0 3px rgba(255,255,255,.08)}
-.prow input[type=text]{width:100%;min-width:0;background:var(--table);border:1px solid var(--line);color:var(--text);border-radius:9px;padding:9px 10px;font:inherit}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--c);box-shadow:0 0 0 3px rgba(255,255,255,.08);flex:none}
+input[type=text]{width:100%;min-width:0;background:var(--table);border:1px solid var(--line);color:var(--text);border-radius:9px;padding:10px 11px;font:inherit}
+.codein{font-family:var(--f-display);text-transform:uppercase;letter-spacing:.2em;text-align:center}
+.row{display:flex;gap:8px}
+.row>*{flex:1;min-width:0}
 .seg{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
 .seg button{background:none;border:0;padding:8px 10px;font-size:13px;color:var(--muted)}
 .seg button.on{background:var(--gold);color:var(--ink);font-weight:700}
@@ -58,11 +55,23 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-o
 .rules{margin:0;padding-left:18px;color:var(--muted);font-size:14px;display:grid;gap:4px}
 .rules b{color:var(--text);font-weight:600}
 
+/* ---------- lobby ---------- */
+.code{font-family:var(--f-display);font-weight:800;font-size:clamp(34px,11vw,52px);letter-spacing:.14em;color:var(--gold);text-align:center;line-height:1.1;user-select:all;-webkit-user-select:all}
+.seats{display:flex;flex-direction:column}
+.seat{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.seat:last-child{border-bottom:0}
+.seat .nm{flex:1;min-width:0;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.seat .tag{font-size:12px;color:var(--muted)}
+.seat .x{background:none;border:0;color:var(--muted);font-size:20px;line-height:1;padding:2px 6px}
+.seat.empty .nm{color:var(--muted);font-weight:400}
+.pulse{animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.4}}
+
 /* ---------- board ---------- */
 .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .top h2{font-size:17px}
-.top .round{color:var(--muted);font-size:13px}
-.linkbtn{background:none;border:0;color:var(--muted);font-size:13px;text-decoration:underline;padding:4px}
+.top .round{color:var(--muted);font-size:13px;text-align:right}
+.linkbtn{background:none;border:0;color:var(--muted);font-size:13px;text-decoration:underline;padding:4px;align-self:center}
 .board{display:grid;grid-template-columns:repeat(7,1fr);grid-template-rows:repeat(7,1fr);gap:3px;width:100%;aspect-ratio:1;max-width:100%}
 .cell{position:relative;background:var(--paper);color:var(--ink);border-radius:6px;overflow:hidden;border:0;padding:0;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;min-width:0}
@@ -80,8 +89,9 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-o
 .g-home{--g:var(--home)} .g-car{--g:var(--car)} .g-biz{--g:var(--biz)}
 
 .centre{grid-row:2/7;grid-column:2/7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(6px,2vw,12px);padding:6px;text-align:center}
-.turn-name{font-family:var(--f-display);font-weight:700;font-size:clamp(14px,4.4vw,20px);display:flex;align-items:center;gap:8px}
+.turn-name{font-family:var(--f-display);font-weight:700;font-size:clamp(14px,4.4vw,20px);display:flex;align-items:center;gap:8px;max-width:100%}
 .turn-sub{color:var(--muted);font-size:clamp(11px,3vw,13px);margin-top:-4px}
+.turn-sub.me{color:var(--ok);font-weight:600}
 .dice{display:flex;gap:10px}
 .die{width:clamp(38px,11vw,54px);aspect-ratio:1;background:var(--paper);border-radius:10px;display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);padding:16%;box-shadow:0 3px 0 rgba(0,0,0,.35)}
 .die i{width:72%;aspect-ratio:1;border-radius:50%;background:var(--ink);place-self:center;visibility:hidden}
@@ -102,11 +112,12 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-o
 .money.neg{color:var(--hp)}
 .bar{display:grid;grid-template-columns:14px 1fr 28px;gap:6px;align-items:center;font-size:11px;color:var(--muted)}
 .bar .tr{height:6px;border-radius:3px;background:rgba(255,255,255,.1);overflow:hidden}
-.bar .fl{height:100%;border-radius:3px}
+.bar .fl{display:block;height:100%;border-radius:3px}
 .chips{display:flex;flex-wrap:wrap;gap:4px}
 .chip{font-size:11px;padding:2px 7px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--text)}
 .chip.bad{background:rgba(239,111,138,.2)}
 .chip.good{background:rgba(111,181,239,.2)}
+.chip.you{background:rgba(127,212,154,.22)}
 
 .log{display:flex;flex-direction:column;gap:2px;font-size:13px;color:var(--muted);max-height:220px;overflow:auto}
 .log div{padding:5px 0;border-bottom:1px solid var(--line)}
@@ -126,6 +137,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-o
 .sheet .who{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
 .sheet .body{color:var(--text)}
 .sheet .body p{margin:0 0 6px}
+.sheet .pick{color:var(--gold)}
 .sheet .acts{display:flex;flex-direction:column;gap:8px}
 .card{border-radius:14px;padding:16px;color:var(--ink);display:flex;flex-direction:column;gap:4px}
 .card.health{background:var(--health)} .card.fate{background:var(--fate)}
@@ -138,24 +150,148 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-o
 .asset-row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
 .asset-row small{display:block;color:var(--muted)}
 .asset-row .btn{padding:8px 12px;font-size:13px}
-.toast{position:fixed;left:50%;top:calc(12px + env(safe-area-inset-top,0px));transform:translateX(-50%);background:var(--gold);color:var(--ink);font-weight:700;padding:9px 16px;border-radius:999px;z-index:30;font-size:14px;max-width:90vw;text-align:center;animation:up .2s}
-@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+.toast{position:fixed;left:50%;top:calc(12px + env(safe-area-inset-top,0px));transform:translateX(-50%);background:var(--gold);color:var(--ink);font-weight:700;padding:9px 16px;border-radius:999px;z-index:30;font-size:14px;max-width:90vw;text-align:center;animation:up .2s;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+/* ---------- v2: menu, rules, hints, profile, landscape ---------- */
+body{background:
+  radial-gradient(90% 55% at 15% -5%,rgba(242,193,78,.13),transparent 60%),
+  radial-gradient(80% 50% at 110% 10%,rgba(94,200,216,.12),transparent 60%),
+  radial-gradient(circle at 1px 1px,rgba(255,255,255,.045) 1px,transparent 0) 0 0/18px 18px,
+  var(--table)}
+.panel{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.back{display:inline-flex;align-items:center;gap:6px;background:none;border:0;color:var(--muted);font-weight:600;padding:6px 0;align-self:flex-start}
+.screen-title{font-size:clamp(22px,6vw,30px);font-weight:800}
+
+.menu-hero{position:relative;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;padding:4px 0}
+.menu-hero h1{font-size:clamp(34px,10vw,54px);font-weight:800;line-height:.95}
+.menu-hero h1 em{font-style:normal;display:block;background:linear-gradient(90deg,var(--gold),#ffd98a 50%,var(--home));-webkit-background-clip:text;background-clip:text;color:transparent}
+.menu-hero p{grid-column:1/-1;margin:0;color:var(--muted);max-width:46ch}
+.hero-dice{position:relative;width:clamp(78px,22vw,110px);aspect-ratio:1}
+.hero-dice .die{position:absolute;width:58%;box-shadow:0 8px 18px rgba(0,0,0,.45),0 3px 0 rgba(0,0,0,.35)}
+.hero-dice .die:first-child{left:0;top:0;transform:rotate(-14deg);animation:float1 4s ease-in-out infinite}
+.hero-dice .die:last-child{right:0;bottom:0;background:var(--gold);transform:rotate(12deg);animation:float2 4.6s ease-in-out infinite}
+@keyframes float1{50%{transform:rotate(-4deg) translateY(-6px)}}
+@keyframes float2{50%{transform:rotate(22deg) translateY(4px)}}
+
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{position:relative;text-align:left;border:1px solid var(--line);border-radius:18px;padding:14px;min-height:118px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;overflow:hidden;
+  background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));transition:transform .15s,border-color .15s}
+.tile:active{transform:scale(.97)}
+.tile:hover{border-color:rgba(255,255,255,.22)}
+.tile .gl{position:absolute;top:12px;left:12px;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:22px;background:var(--tc,rgba(255,255,255,.1))}
+.tile b{font-family:var(--f-display);font-size:15px;font-weight:700;line-height:1.15}
+.tile span{font-size:12px;color:var(--muted)}
+.tile.wide{grid-column:1/-1;min-height:84px;padding-left:66px;justify-content:center}
+.tile.wide .gl{top:50%;transform:translateY(-50%)}
+.tile.hot{background:linear-gradient(135deg,var(--gold),#f6d27a);color:var(--ink);border:0}
+.tile.hot span{color:rgba(21,26,43,.7)}
+.tile.hot .gl{background:rgba(21,26,43,.12)}
+
+.hintbar{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;background:rgba(242,193,78,.09);border:1px dashed rgba(242,193,78,.35);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--text)}
+.hintbar .bulb{flex:none;width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-weight:800;font-size:13px;font-family:var(--f-display)}
+.hintbar small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.tip{margin:0;font-size:13px;color:var(--muted);border-left:2px solid var(--gold);padding-left:10px}
+
+.switch{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.switch .t{display:flex;flex-direction:column}
+.switch .t small{color:var(--muted);font-size:12px}
+.toggle{width:50px;height:30px;border-radius:999px;border:0;background:rgba(255,255,255,.15);position:relative;flex:none;transition:background .2s}
+.toggle::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:var(--text);transition:transform .2s}
+.toggle[aria-checked=true]{background:var(--gold)}
+.toggle[aria-checked=true]::after{transform:translateX(20px);background:var(--ink)}
+
+.rules-sec{display:flex;flex-direction:column;gap:8px}
+.rules-sec h3{font-size:16px;display:flex;align-items:center;gap:8px}
+.rules-sec p{margin:0;color:var(--muted);font-size:14px;max-width:65ch}
+.rules-sec p b{color:var(--text)}
+.tbl-wrap{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+.tbl th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;padding:6px 6px 6px 0;border-bottom:1px solid var(--line)}
+.tbl td{padding:7px 6px 7px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl td:first-child{white-space:normal}
+.swatch{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;background:var(--c)}
+.celllist{display:grid;grid-template-columns:1fr;gap:6px}
+.celllist div{display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:start;font-size:14px}
+.celllist div>span:first-child{font-size:20px;line-height:1.2}
+.celllist b{display:block}
+.celllist small{color:var(--muted);font-size:13px}
+.cardgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mini{border-radius:12px;padding:10px;color:var(--ink);font-size:12px}
+.mini b{display:block;font-family:var(--f-display);font-size:13px;margin-bottom:2px}
+.mini.bad{background:var(--health)} .mini.good{background:#cfe6f7} .mini.fate{background:var(--fate)}
+
+/* profile */
+.pchip{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1px solid var(--line);border-radius:16px;padding:10px 12px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02))}
+.ava{flex:none;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:26px;background:linear-gradient(135deg,rgba(242,193,78,.3),rgba(94,200,216,.25));box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.ava.big{width:84px;height:84px;font-size:50px;border-radius:24px}
+.pchip .who2{flex:1;min-width:0}
+.pchip .who2 b{display:block;font-family:var(--f-display);font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pchip .who2 small{color:var(--muted);font-size:12px}
+.lvl{flex:none;font-family:var(--f-display);font-weight:800;font-size:13px;color:var(--ink);background:var(--gold);border-radius:10px;padding:5px 9px}
+.xpbar{height:6px;border-radius:3px;background:rgba(255,255,255,.1);overflow:hidden;margin-top:6px}
+.xpbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--home));border-radius:3px}
+.prof-head{display:flex;gap:16px;align-items:center}
+.prof-head .t b{display:block;font-family:var(--f-display);font-size:22px;line-height:1.1}
+.prof-head .t span{color:var(--gold);font-weight:600;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.stat b{font-family:var(--f-display);font-size:16px;font-variant-numeric:tabular-nums;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.stat span{font-size:11px;color:var(--muted)}
+.avgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.avbtn{aspect-ratio:1;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.05);font-size:24px;display:grid;place-items:center;position:relative;padding:0}
+.avbtn.on{border:2px solid var(--gold);background:rgba(242,193,78,.15)}
+.avbtn:disabled{opacity:1;filter:grayscale(1);cursor:default}
+.avbtn:disabled::after{content:attr(data-lv);position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,13,25,.72);border-radius:11px;font-size:11px;font-weight:700;color:var(--muted)}
+.dreams{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dream{border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.04);padding:10px;text-align:left;font-size:13px}
+.dream b{display:block;font-size:14px}
+.dream span{color:var(--muted);font-size:12px}
+.dream.on{border:2px solid var(--gold);background:rgba(242,193,78,.12)}
+.levels{display:flex;flex-direction:column}
+.levels div{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.levels div.done{color:var(--text)}
+.levels div.cur{color:var(--gold);font-weight:700}
+.pav{font-size:14px;margin-right:2px}
+
+.centre{background:radial-gradient(closest-side,rgba(242,193,78,.08),transparent);border-radius:16px}
+.tok.hop{animation:hop .3s ease-out}
+@keyframes hop{40%{transform:translateY(-6px) scale(1.25)}}
+.cell{transition:transform .12s}
+.cell:active{transform:scale(.94)}
+
+.game{display:flex;flex-direction:column;gap:14px}
+.boardcol,.side{display:flex;flex-direction:column;gap:12px;min-width:0}
+@media (orientation:landscape) and (min-width:620px){
+  .wrap.wide{max-width:1180px}
+  .game{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:start;gap:18px}
+  .boardcol{width:min(calc(100vh - 70px),58vw);width:min(calc(100dvh - 70px),58vw);position:sticky;top:10px}
+  .side .players{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+  .wrap:not(.wide){max-width:760px}
+  .tiles{grid-template-columns:repeat(3,1fr)}
+  .tile.wide{grid-column:1/-1}
+}
+@media (orientation:landscape) and (max-height:500px){
+  body{padding-block:8px 16px}
+  .legend{display:none}
+  .top h2{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
 </style>
 
-</head>
-<body>
 <div class="wrap" id="app"></div>
 <div id="sheetHost"></div>
 
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js" onerror="var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js';s.onload=function(){window.onPeerReady&&window.onPeerReady()};document.head.appendChild(s)"></script>
 <script>
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const rnd=a=>a[Math.floor(Math.random()*a.length)];
 const fmt=n=>(n<0?'−':'')+Math.abs(Math.round(n)).toLocaleString('uk-UA').replace(/,/g,' ')+' ₴';
-const SAVE='zhyttia_v_kredyt_v1', GOAL=60000, MAXR=25, START_MONEY=10000;
+const SAVE='zhyttia_v_kredyt_v1', NAMEKEY='zhyttia_v_kredyt_name', GOAL=60000, MAXR=25, START_MONEY=10000;
 const COLORS=['#f2c14e','#5ec8d8','#f07a9a','#9be07a'];
 const LOAN={home:'Іпотека',car:'Автокредит',biz:'Бізнес-кредит'};
+const BOT_NAMES=['Оля','Макс','Ірина','Тарас','Соля','Денис'];
 
 const JOBS=[{n:"Кур'єр",s:3000},{n:'Оператор кол-центру',s:3500},{n:'Офіціант',s:2800},{n:'Сисадмін',s:5000},{n:'Продавець',s:3200},{n:'Програміст',s:8000},{n:'Менеджер з продажу',s:6000},{n:'Водій таксі',s:4200}];
 const JOBLESS={n:'Безробітний',s:800};
@@ -237,25 +373,79 @@ const FATE=[
 
 /* ---------- state ---------- */
 let G=null, busy=false;
+let NET=null; // online session: {role:'host'|'client', peer, code, myId, conns, seats, started, hostConn}
 const P=()=>G.players[G.cur];
 const alive=()=>G.players.filter(p=>!p.out);
-function save(){try{localStorage.setItem(SAVE,JSON.stringify(G))}catch(e){}}
+const isClient=()=>NET&&NET.role==='client';
+const isHost=()=>NET&&NET.role==='host';
+const isMine=p=>!p.bot&&!p.out&&(NET?p.ctrl===NET.myId:true);
+function save(){if(!G||G.online)return;try{localStorage.setItem(SAVE,JSON.stringify(G))}catch(e){}}
 function loadSaved(){try{const s=localStorage.getItem(SAVE);return s?JSON.parse(s):null}catch(e){return null}}
 function clearSave(){try{localStorage.removeItem(SAVE)}catch(e){}}
+function getName(){return PROF?PROF.name:''}
 function log(html){G.log.unshift(html);G.log=G.log.slice(0,40)}
 const nm=p=>`<b style="color:${p.color}">${esc(p.name)}</b>`;
 function worth(p){return p.money+p.owned.reduce((s,o)=>s+(o.cell>=0?CELLS[o.cell].price*.8:0)-o.left,0)}
 function score(p){return Math.round(worth(p)+p.happy*100+p.hp*50)}
 function payments(p){return p.owned.reduce((s,o)=>s+(o.left>0?Math.min(o.pay,o.left):0),0)}
+function makePlayer(s,i,job){return {name:s.name,av:s.av||null,dream:s.dream||null,bot:!!s.bot,ctrl:s.ctrl||'local',color:COLORS[i],pos:0,money:START_MONEY,hp:100,happy:50,job:{...job},owned:[],ef:{skip:0,shield:0,ins:0,burn:0,extra:0},out:false,laps:0}}
+function freshGame(seats,online){
+  const jobs=[...JOBS.slice(0,5)].sort(()=>Math.random()-.5);
+  G={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),round:1,cur:0,owners:{},log:[],over:false,winner:null,online:!!online,players:seats.map((s,i)=>makePlayer(s,i,jobs[i%jobs.length]))};
+  log('Гра почалась. У кожного по '+fmt(START_MONEY)+' і робота.');
+}
 
-/* ---------- setup ---------- */
+/* ---------- settings ---------- */
+const SETKEY='zhyttia_v_kredyt_settings';
+let SET={hints:true,orient:'auto'};
+try{Object.assign(SET,JSON.parse(localStorage.getItem(SETKEY)||'{}'))}catch(e){}
+function saveSet(){try{localStorage.setItem(SETKEY,JSON.stringify(SET))}catch(e){}}
+const hasBridge=()=>!!(window.AndroidApp&&window.AndroidApp.setOrientation);
+function applyOrient(){
+  if(hasBridge()){try{window.AndroidApp.setOrientation(SET.orient)}catch(e){}return}
+  try{if(SET.orient==='auto')screen.orientation.unlock();else screen.orientation.lock(SET.orient==='portrait'?'portrait':'landscape').catch(()=>{})}catch(e){}
+}
+
+/* ---------- menu ---------- */
 let setup=[{name:'Гравець',bot:false,on:true},{name:'Оля',bot:true,on:true},{name:'Макс',bot:true,on:true},{name:'Ірина',bot:true,on:false}];
-function renderSetup(){
-  const saved=loadSaved();
+let VIEW='menu';
+const peerOk=()=>typeof window.Peer==='function';
+window.onPeerReady=()=>{if(!G&&!NET&&VIEW==='online')renderMenu()};
+function renderSetup(){VIEW='menu';renderMenu()}
+function goView(v){VIEW=v;renderMenu();window.scrollTo(0,0)}
+const backBtn=`<button class="back" id="back">← Меню</button>`;
+function renderMenu(){
+  $('#app').className='wrap';
+  if(!PROF&&VIEW!=='rules')VIEW='register';
+  ({menu:viewMenu,local:viewLocal,online:viewOnline,rules:viewRules,settings:viewSettings,register:viewRegister,profile:viewProfile}[VIEW]||viewMenu)();
+  const pc=$('#pchip');if(pc)pc.onclick=()=>goView('profile');
+  const b=$('#back');if(b)b.onclick=()=>goView('menu');
+}
+function viewMenu(){
+  const saved=loadSaved();const cont=saved&&!saved.over;
   $('#app').innerHTML=`
-  <div class="hero"><h1>Життя <em>в кредит</em></h1>
-  <p>Настільна гра про доросле життя: зарплата, іпотека, автокредит, застуди та премії. Хто перший вибереться у фінансову свободу?</p></div>
-  ${saved&&!saved.over?`<button class="btn pri" id="cont">Продовжити гру · коло ${saved.round}</button>`:''}
+  ${profChip()}
+  <div class="menu-hero">
+    <h1>Життя<em>в кредит</em></h1>
+    <div class="hero-dice" aria-hidden="true">${dieHTML(5)}${dieHTML(3)}</div>
+    <p>Настільна гра про доросле життя: іпотека замість будинків, автокредит замість вулиць, а з колоди — застуда або премія.</p>
+  </div>
+  <div class="tiles">
+    ${cont?`<button class="tile wide hot" id="tCont"><span class="gl">▶</span><b>Продовжити гру</b><span>коло ${saved.round} · ${saved.players.filter(p=>!p.out).map(p=>esc(p.name)).join(', ')}</span></button>`:''}
+    <button class="tile ${cont?'':'hot'}" id="tLocal"><span class="gl" style="--tc:rgba(232,112,90,.25)">🎲</span><b>Один телефон</b><span>2–4 гравці та боти</span></button>
+    <button class="tile" id="tOnline"><span class="gl" style="--tc:rgba(94,200,216,.22)">🌐</span><b>Онлайн</b><span>кімната за кодом</span></button>
+    <button class="tile" id="tRules"><span class="gl" style="--tc:rgba(207,196,243,.22)">📖</span><b>Правила</b><span>клітинки, картки, кредити</span></button>
+    <button class="tile" id="tSet"><span class="gl" style="--tc:rgba(127,212,154,.2)">⚙</span><b>Налаштування</b><span>підказки, екран</span></button>
+  </div>
+  <div class="hintbar"><span class="bulb">i</span><span>${esc(rnd(TIPS))}</span></div>`;
+  if($('#tCont'))$('#tCont').onclick=()=>{G=saved;G.players.forEach(p=>{p.ctrl=p.ctrl||'local'});busy=false;renderGame();startTurn()};
+  $('#tLocal').onclick=()=>goView('local');
+  $('#tOnline').onclick=()=>goView('online');
+  $('#tRules').onclick=()=>goView('rules');
+  $('#tSet').onclick=()=>goView('settings');
+}
+function viewLocal(){
+  $('#app').innerHTML=`${backBtn}<h2 class="screen-title">Гра на одному телефоні</h2>
   <div class="panel"><div class="label">Гравці (2–4)</div>
   ${setup.map((s,i)=>`<div class="prow ${s.on?'':'off'}">
     <span class="dot" style="--c:${COLORS[i]}"></span>
@@ -265,31 +455,342 @@ function renderSetup(){
       <button data-i="${i}" data-a="human" class="${s.on&&!s.bot?'on':''}">Людина</button>
       <button data-i="${i}" data-a="bot" class="${s.on&&s.bot?'on':''}">Бот</button>
     </div></div>`).join('')}
-  <button class="btn ${saved&&!saved.over?'':'pri'}" id="go">Нова гра</button>
+  <button class="btn pri" id="go">Почати гру</button>
   </div>
-  <div class="panel"><div class="label">Як грати</div>
-  <ul class="rules">
-    <li><b>Кидай кубики</b> і рухайся по колу. Кожне проходження «Зарплати» — отримуєш оклад і платиш усі кредити.</li>
-    <li><b>Майно не купують — його беруть у кредит:</b> 20% внеску, решта шістьма платежами. Або готівкою, якщо є.</li>
-    <li><b>Чуже майно — платиш оренду</b> власнику.</li>
-    <li><b>Картки здоров’я</b> — болячки (застуда, вигорання, перелом) і бафи (імунітет, страховка, енергія).</li>
-    <li>Немає грошей — банк забирає майно. Здоров’я 0 або борги без майна — вибуваєш.</li>
-    <li><b>Перемога:</b> капітал ${fmt(GOAL)}, або останній у грі, або найкращий рахунок після ${MAXR} кіл.</li>
-  </ul></div>`;
+  <p class="tip">Досвід у профіль отримує гравець з твоїм нікнеймом (${esc(PROF.name)}). Люди ходять по черзі, передаючи телефон. Боти ходять самі — зручно, щоб потренуватись.</p>`;
   document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{
     readNames();const s=setup[b.dataset.i];
     if(b.dataset.a==='off'){s.on=false}else{s.on=true;s.bot=b.dataset.a==='bot'}
-    renderSetup();
+    renderMenu();
   });
-  $('#go').onclick=()=>{readNames();newGame()};
-  if($('#cont'))$('#cont').onclick=()=>{G=saved;renderGame();resumeTurn()};
+  $('#go').onclick=()=>{readNames();freshGame(setup.filter(s=>s.on).map(s=>(!s.bot&&PROF&&s.name===PROF.name)?{...s,av:PROF.av,dream:PROF.dream}:s),false);renderGame();startTurn()};
 }
+function viewOnline(){
+  $('#app').innerHTML=`${backBtn}<h2 class="screen-title">Онлайн з друзями</h2>
+  ${profChip()}
+  <div class="panel"><div class="label">Створити кімнату</div>
+    <p class="hint">Ти станеш хостом: отримаєш код, друзі його вводять. Вільні місця можна віддати ботам.</p>
+    <button class="btn pri" id="mkRoom" ${peerOk()?'':'disabled'}>Створити кімнату</button>
+  </div>
+  <div class="panel"><div class="label">Увійти за кодом</div>
+    <div class="row"><input type="text" id="onCode" class="codein" maxlength="5" placeholder="КОД" aria-label="Код кімнати" autocomplete="off" autocapitalize="characters"><button class="btn" id="joinRoom" ${peerOk()?'':'disabled'}>Увійти</button></div>
+  </div>
+  <p class="tip">${peerOk()?'Хост тримає гру — якщо він вийде, гра закінчиться для всіх. Якщо відключиться інший гравець, за нього дограє бот.':'Для онлайн-гри потрібен інтернет. Перевір з’єднання і відкрий гру знову.'}</p>`;
+  const nameVal=()=>PROF.name;
+  $('#mkRoom').onclick=()=>{const n=nameVal();if(n)hostRoom(n)};
+  $('#joinRoom').onclick=()=>{const n=nameVal();if(!n)return;const c=($('#onCode').value||'').trim().toUpperCase();if(c.length!==5){toast('Код має 5 символів');$('#onCode').focus();return}joinRoom(n,c)};
+}
+function viewSettings(){
+  const o=SET.orient;
+  $('#app').innerHTML=`${backBtn}<h2 class="screen-title">Налаштування</h2>
+  <div class="panel">
+    <div class="switch"><div class="t"><b>Підказки</b><small>Поради під полем і в рішеннях: що вигідно, чого остерігатись.</small></div>
+      <button class="toggle" id="tgHints" role="switch" aria-checked="${SET.hints}" aria-label="Підказки"></button></div>
+  </div>
+  <div class="panel"><div class="label">Орієнтація екрана</div>
+    <div class="seg" role="radiogroup">
+      <button data-o="auto" class="${o==='auto'?'on':''}" style="flex:1">Авто</button>
+      <button data-o="portrait" class="${o==='portrait'?'on':''}" style="flex:1">Вертикально</button>
+      <button data-o="landscape" class="${o==='landscape'?'on':''}" style="flex:1">Горизонтально</button>
+    </div>
+    <p class="hint">${hasBridge()?'«Авто» — гра повертається разом із телефоном.':'Поверни телефон — поле стане зліва, а гравці й журнал справа. Фіксація орієнтації працює в застосунку.'}</p>
+  </div>
+  <div class="panel"><div class="label">Збереження</div>
+    <button class="btn" id="wipe" ${loadSaved()?'':'disabled'}>Видалити збережену гру</button>
+  </div>`;
+  $('#tgHints').onclick=()=>{SET.hints=!SET.hints;saveSet();renderMenu()};
+  document.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{SET.orient=b.dataset.o;saveSet();applyOrient();renderMenu()});
+  $('#wipe').onclick=async()=>{const v=await sheet({title:'Видалити збережену гру?',body:'<p>Продовжити її вже не вийде.</p>',buttons:[{l:'Видалити',v:1,pri:1},{l:'Скасувати',v:0}]});if(v){clearSave();renderMenu();toast('Збереження видалено')}};
+}
+function viewRules(){
+  const assets=CELLS.filter(c=>c.t==='asset').sort((a,b)=>a.price-b.price);
+  const cellTypes=[['start','💼','Зарплата'],['health','🩺','Здоров’я'],['fate','🎲','Доля'],['hospital','🏥','Лікарня'],['gym','🏋️','Спортзал'],['party','🎉','Вечірка'],['job','📋','Біржа праці'],['tax','🧾','Податкова'],['bank','🏦','Банк']];
+  $('#app').innerHTML=`${backBtn}<h2 class="screen-title">Правила</h2>
+  <div class="panel rules-sec"><h3>🏁 Мета</h3>
+    <p>Першим набрати <b>${fmt(GOAL)} капіталу</b> — це фінансова свобода. Або залишитись останнім у грі. Якщо за ${MAXR} кіл ніхто не дійшов — перемагає найкращий рахунок: капітал + щастя×100 + здоров’я×50.</p>
+    <p>Старт: <b>${fmt(START_MONEY)}</b>, 100 здоров’я, 50 щастя і випадкова робота.</p></div>
+  <div class="panel rules-sec"><h3>🎲 Хід</h3>
+    <p>Кидаєш два кубики і йдеш по колу з 24 клітинок. Щоразу, коли проходиш <b>«Зарплату»</b>, отримуєш оклад і автоматично платиш усі кредити. Щастя при цьому трохи падає — життя виснажує.</p></div>
+  <div class="panel rules-sec"><h3>🏠 Майно і кредити</h3>
+    <p>Майно береш <b>у кредит</b>: 20% внеску зараз, решта (+15% переплати) шістьма платежами на «Зарплаті». Можна і готівкою — без переплати й з бонусом до щастя. Хто стане на твоє майно — платить тобі оренду.</p>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Майно</th><th>Ціна</th><th>Внесок</th><th>Платіж</th><th>Оренда</th></tr></thead><tbody>
+    ${assets.map(c=>{const t=loanTerms(c);return `<tr><td><span class="swatch" style="--c:var(--${c.g})"></span>${c.ic} ${esc(c.name)}</td><td>${fmt(c.price)}</td><td>${fmt(t.down)}</td><td>${fmt(t.pay)}</td><td>${fmt(c.rent)}</td></tr>`}).join('')}
+    </tbody></table></div></div>
+  <div class="panel rules-sec"><h3>🗺 Клітинки</h3>
+    <div class="celllist">${cellTypes.map(([k,ic,n])=>`<div><span>${ic}</span><span><b>${n}</b><small>${DESC[k]}</small></span></div>`).join('')}</div></div>
+  <div class="panel rules-sec"><h3>🩺 Картки здоров’я</h3>
+    <p>Колода з болячками і бафами. Болячки б’ють по здоров’ю, гаманцю і можуть забрати ходи. Бафи захищають і лікують.</p>
+    <div class="cardgrid">
+      <div class="mini bad"><b>Застуда</b>−10 здоров’я, пропуск ходу</div>
+      <div class="mini bad"><b>Вигорання</b>зарплата ×0,5 на 2 кола</div>
+      <div class="mini good"><b>Імунітет</b>наступна болячка не діє</div>
+      <div class="mini good"><b>Страховка</b>3 рахунки за лікування — безкоштовно</div>
+    </div></div>
+  <div class="panel rules-sec"><h3>🎴 Картки долі</h3>
+    <div class="cardgrid">
+      <div class="mini fate"><b>Підвищення</b>зарплата +20%</div>
+      <div class="mini fate"><b>Скорочення</b>стаєш безробітним</div>
+      <div class="mini fate"><b>Банк підняв ставку</b>борги +10%</div>
+      <div class="mini fate"><b>День народження</b>кожен дарує 500 ₴</div>
+    </div></div>
+  <div class="panel rules-sec"><h3>💀 Як вибувають</h3>
+    <p>Якщо гроші пішли в мінус — банк сам продає твоє майно (60% ціни мінус борг). Не вистачило — <b>банкрутство</b>. Здоров’я впало до 0 — теж вибуваєш. Щастя на нулі щоразу забирає 10 здоров’я.</p>
+    <p>Своє майно можна продати й самостійно: натисни на свою картку гравця під час свого ходу.</p></div>
+  <div class="panel rules-sec"><h3>🌐 Онлайн</h3>
+    <p>Хост створює кімнату і диктує 5-значний код. Кожен грає на своєму телефоні. Відключився гравець — за нього дограє бот.</p></div>`;
+}
+
+/* ---------- hints ---------- */
+const TIPS=['Натисни на будь-яку клітинку — побачиш ціну, платіж і оренду.','Натисни на картку гравця — побачиш його майно і борги.','Тримай суму платежів нижче за зарплату, інакше кредити з’їдять усе.','Готівкою вигідніше: без 15% переплати і з бонусом до щастя.','Дешеве майно окупається орендою швидше, ніж здається.','Медстраховка з колоди здоров’я рятує від рахунків за лікування.','Щастя на нулі щоколу забирає здоров’я — інколи вечірка корисна.','Біржа праці може дати кращу зарплату — але й гіршу. Читай пропозицію.','Банк дає 5000 ₴ швидко, але повертати доведеться 6600.','Сідаєш на мілину? Продай майно сам — поки банк не забрав його дешевше.'];
+function contextHint(p){
+  if(!isMine(p))return null;
+  if(p.hp<35)return 'Здоров’я низьке: лікарня (+40) або спортзал (+15). Нижче 30 — зарплата менша.';
+  if(p.happy<20)return 'Щастя майже на нулі. Вечірка, поїздка чи власне майно піднімуть настрій.';
+  if(p.money<1500&&payments(p)>0)return 'Мало грошей: на «Зарплаті» знімуть платежі '+fmt(payments(p))+'. Якщо піде в мінус — банк продасть майно.';
+  if(payments(p)>p.job.s)return 'Платежі ('+fmt(payments(p))+') вищі за зарплату ('+fmt(p.job.s)+'). Обережно з новими кредитами.';
+  if(G.round===1&&p.owned.length===0)return 'Стань на кольорову клітинку — зможеш взяти майно в кредит за 20% внеску.';
+  return null;
+}
+function hintBar(p){
+  if(!SET.hints)return '';
+  const c=contextHint(p);
+  const t=c||TIPS[(G.round*7+G.cur*3)%TIPS.length];
+  return `<button class="hintbar" id="hint"><span class="bulb">i</span><span>${esc(t)}<small>${c?'порада для тебе':'торкнись — ще порада'}</small></span></button>`;
+}
+
 function readNames(){setup.forEach((s,i)=>{const el=$('#pn'+i);if(el)s.name=el.value.trim()||('Гравець '+(i+1))})}
-function newGame(){
-  const jobs=[...JOBS.slice(0,5)].sort(()=>Math.random()-.5);
-  G={round:1,cur:0,owners:{},log:[],over:false,players:setup.map((s,i)=>s.on?{name:s.name,bot:s.bot,color:COLORS[i],pos:0,money:START_MONEY,hp:100,happy:50,job:{...jobs[i%jobs.length]},owned:[],ef:{skip:0,shield:0,ins:0,burn:0,extra:0},out:false,laps:0}:null).filter(Boolean)};
-  log('Гра почалась. У кожного по '+fmt(START_MONEY)+' і робота.');
+
+/* ---------- profile & levels (stored on this phone) ---------- */
+const PROFKEY='zhyttia_v_kredyt_profile';
+const AVATARS=[['🦊',1],['🐻',1],['🐱',1],['🐼',1],['🐸',1],['🐧',1],['🦉',2],['🐺',3],['🦁',4],['🐯',5],['🦄',7],['🐲',9]];
+const TITLES=['Студент','Стажер','Найманий працівник','Позичальник','Іпотечник','Підприємець','Інвестор','Рантьє','Мільйонер','Фінансово вільний'];
+const DREAMS={home:['🏠','Своє житло','+5 щастя за кожне житло'],car:['🚗','Своє авто','+5 щастя за кожне авто'],biz:['☕','Свій бізнес','+5 щастя за кожен бізнес']};
+const lvlNeed=L=>60*L*(L-1);              // total XP to reach level L
+function levelOf(xp){let L=1;while(L<TITLES.length&&xp>=lvlNeed(L+1))L++;return L}
+let PROF=null;
+try{PROF=JSON.parse(localStorage.getItem(PROFKEY)||'null')}catch(e){}
+if(PROF)setup[0].name=PROF.name;
+function saveProf(){try{localStorage.setItem(PROFKEY,JSON.stringify(PROF))}catch(e){}}
+function profLevel(){return levelOf(PROF?PROF.xp:0)}
+function xpProgress(){const L=profLevel();if(L>=TITLES.length)return {L,pct:100,left:0};const a=lvlNeed(L),b=lvlNeed(L+1);return {L,pct:Math.round((PROF.xp-a)/(b-a)*100),left:b-PROF.xp}}
+function profChip(){
+  const {L,pct,left}=xpProgress();
+  return `<button class="pchip" id="pchip"><span class="ava">${PROF.av}</span><span class="who2"><b>${esc(PROF.name)}</b><small>${TITLES[L-1]}${left?` · до рівня ${L+1}: ${left} XP`:''}</small><span class="xpbar"><i style="width:${pct}%"></i></span></span><span class="lvl">${L}</span></button>`;
+}
+/* who on this device played the finished game */
+function myPlayer(){
+  if(!G||!PROF)return null;
+  if(NET)return G.players.find(p=>p.ctrl===NET.myId)||null;
+  return G.players.find(p=>p.ctrl==='local'&&!p.bot&&p.name===PROF.name)||G.players.find(p=>!p.bot)||null;
+}
+function awardXP(){
+  const me=myPlayer();
+  if(!me||!G.over||!G.id||PROF.lastGame===G.id)return null;
+  const rank=[...G.players].sort((a,b)=>(a.out-b.out)||score(b)-score(a));
+  const place=rank.indexOf(me)+1, won=G.winner===G.players.indexOf(me);
+  const before=profLevel();
+  let xp=40+(won?120:place===2?60:20)+Math.min(60,Math.max(0,Math.floor(worth(me)/1000)))+(G.online?20:0);
+  PROF.xp+=xp;PROF.games++;if(won)PROF.wins++;PROF.best=Math.max(PROF.best,Math.round(worth(me)));PROF.lastGame=G.id;
+  if(G.online)PROF.online++;
+  saveProf();
+  const after=profLevel();
+  return {xp,won,place,levelUp:after>before?after:0};
+}
+function xpLine(r){if(!r)return '';return `<p style="margin-top:8px;color:var(--gold);font-weight:700">+${r.xp} XP${r.levelUp?` · новий рівень ${r.levelUp}: ${TITLES[r.levelUp-1]}!`:''}</p>${r.levelUp&&AVATARS.some(a=>a[1]===r.levelUp)?`<p class="hint">Відкрито новий аватар: ${AVATARS.filter(a=>a[1]===r.levelUp).map(a=>a[0]).join(' ')}</p>`:''}`}
+
+function avatarGrid(sel){
+  const L=profLevel();
+  return `<div class="avgrid">${AVATARS.map(([a,lv])=>`<button class="avbtn ${a===sel?'on':''}" data-av="${a}" ${lv>L?'disabled':''} data-lv="рів. ${lv}" aria-label="Аватар ${a}${lv>L?', відкривається на рівні '+lv:''}">${a}</button>`).join('')}</div>`;
+}
+function dreamGrid(sel){return `<div class="dreams">${Object.entries(DREAMS).map(([k,[ic,n,d]])=>`<button class="dream ${k===sel?'on':''}" data-dream="${k}"><b>${ic} ${n}</b><span>${d}</span></button>`).join('')}</div>`}
+function viewRegister(){
+  const draft=viewRegister.d||(viewRegister.d={name:'',av:'🦊',dream:'home'});
+  $('#app').innerHTML=`
+  <div class="menu-hero"><h1>Життя<em>в кредит</em></h1><div class="hero-dice" aria-hidden="true">${dieHTML(6)}${dieHTML(2)}</div>
+  <p>Створи профіль — за кожну гру отримуєш досвід, піднімаєш рівень і відкриваєш нові аватари.</p></div>
+  <div class="panel"><div class="label">Нікнейм</div>
+    <input type="text" id="regName" maxlength="14" placeholder="Від 2 до 14 символів" value="${esc(draft.name)}" autocomplete="nickname">
+  </div>
+  <div class="panel"><div class="label">Аватар</div>${avatarGrid(draft.av)}</div>
+  <div class="panel"><div class="label">Твоя мрія</div>${dreamGrid(draft.dream)}<p class="hint">Мрія дає бонус до щастя, коли береш таке майно.</p></div>
+  <button class="btn pri" id="regGo">Створити профіль</button>`;
+  $('#regName').oninput=e=>{draft.name=e.target.value};
+  document.querySelectorAll('[data-av]').forEach(b=>b.onclick=()=>{draft.av=b.dataset.av;renderMenu()});
+  document.querySelectorAll('[data-dream]').forEach(b=>b.onclick=()=>{draft.dream=b.dataset.dream;renderMenu()});
+  $('#regGo').onclick=()=>{
+    const n=draft.name.trim();
+    if(n.length<2){toast('Нікнейм — щонайменше 2 символи');$('#regName').focus();return}
+    PROF={name:n,av:draft.av,dream:draft.dream,xp:0,games:0,wins:0,best:0,online:0,created:Date.now(),lastGame:null};
+    saveProf();setup[0].name=n;goView('menu');toast(`Вітаємо, ${n}!`);
+  };
+}
+function viewProfile(){
+  const {L,pct,left}=xpProgress();
+  const rate=PROF.games?Math.round(PROF.wins/PROF.games*100)+'%':'—';
+  $('#app').innerHTML=`${backBtn}
+  <div class="panel"><div class="prof-head"><span class="ava big">${PROF.av}</span><div class="t"><b>${esc(PROF.name)}</b><span>Рівень ${L} · ${TITLES[L-1]}</span></div></div>
+    <div><div class="xpbar"><i style="width:${pct}%"></i></div><p class="hint" style="margin-top:6px">${PROF.xp} XP${left?` · до рівня ${L+1} ще ${left} XP`:' · максимальний рівень'}</p></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>${PROF.games}</b><span>ігор</span></div>
+    <div class="stat"><b>${PROF.wins}</b><span>перемог</span></div>
+    <div class="stat"><b>${rate}</b><span>виграшів</span></div>
+    <div class="stat"><b>${(PROF.best/1000).toFixed(1)}к ₴</b><span>рекорд капіталу</span></div>
+    <div class="stat"><b>${PROF.online}</b><span>онлайн-ігор</span></div>
+    <div class="stat"><b>${DREAMS[PROF.dream][0]}</b><span>мрія</span></div>
+  </div>
+  <div class="panel"><div class="label">Нікнейм</div>
+    <div class="row"><input type="text" id="pfName" maxlength="14" value="${esc(PROF.name)}"><button class="btn" id="pfSave" style="flex:0 0 auto">Зберегти</button></div></div>
+  <div class="panel"><div class="label">Аватар</div>${avatarGrid(PROF.av)}</div>
+  <div class="panel"><div class="label">Мрія</div>${dreamGrid(PROF.dream)}</div>
+  <div class="panel"><div class="label">Як отримати досвід</div>
+    <p class="hint">Кожна гра +40 XP · перемога +120 · друге місце +60 · +1 XP за кожну 1000 ₴ капіталу (до 60) · онлайн +20.</p>
+    <div class="levels">${TITLES.map((t,i)=>`<div class="${i+1<L?'done':i+1===L?'cur':''}"><span>${i+1}. ${t}</span><span class="num">${lvlNeed(i+1)} XP</span></div>`).join('')}</div>
+  </div>`;
+  $('#pfSave').onclick=()=>{const n=$('#pfName').value.trim();if(n.length<2){toast('Нікнейм — щонайменше 2 символи');return}const old=PROF.name;PROF.name=n;saveProf();if(setup[0].name===old)setup[0].name=n;toast('Збережено')};
+  document.querySelectorAll('[data-av]').forEach(b=>b.onclick=()=>{PROF.av=b.dataset.av;saveProf();renderMenu()});
+  document.querySelectorAll('[data-dream]').forEach(b=>b.onclick=()=>{PROF.dream=b.dataset.dream;saveProf();renderMenu()});
+}
+
+/* ---------- online ---------- */
+const PREFIX='zhyttia-v-kredyt-', ALPH='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+const genCode=()=>Array.from({length:5},()=>ALPH[Math.floor(Math.random()*ALPH.length)]).join('');
+const send=(conn,m)=>{try{if(conn&&conn.open)conn.send(m)}catch(e){}};
+function netSend(m,except){if(!isHost())return;NET.conns.forEach((c,id)=>{if(id!==except)send(c,m)})}
+function netShow(view,except){netSend({t:'show',opts:view},except)}
+function say(text){toast(text);netSend({t:'toast',text})}
+function leaveNet(){if(NET){try{NET.peer.destroy()}catch(e){}}NET=null;pending.forEach(x=>x.res(x.botChoice));pending.clear()}
+function backToMenu(){leaveNet();G=null;busy=false;closeSheet();renderSetup()}
+function netFail(msg){leaveNet();G=null;closeSheet();renderSetup();sheet({title:'Не вдалося підключитись',body:`<p>${esc(msg)}</p>`})}
+
+function hostRoom(name){
+  leaveNet();
+  const code=genCode();
+  let peer;try{peer=new Peer(PREFIX+code,{debug:0})}catch(e){return netFail('Немає з’єднання з сервером гри.')}
+  NET={role:'host',peer,code,myId:'host',conns:new Map(),seats:[{name,ctrl:'host',bot:false,av:PROF.av,dream:PROF.dream}],started:false,ready:false};
+  renderLobby();
+  peer.on('open',()=>{if(NET&&NET.peer===peer){NET.ready=true;renderLobby()}});
+  peer.on('error',e=>{
+    if(!NET||NET.peer!==peer)return;
+    if(e.type==='unavailable-id'){try{peer.destroy()}catch(_){}NET=null;return hostRoom(name)}
+    if(e.type==='peer-unavailable')return;
+    if(!NET.started)netFail('Сервер гри недоступний. Перевір інтернет і спробуй ще раз.');
+  });
+  peer.on('disconnected',()=>{try{peer.reconnect()}catch(e){}});
+  peer.on('connection',conn=>{
+    conn.on('data',m=>onHostData(conn,m));
+    conn.on('close',()=>onHostClose(conn));
+    conn.on('error',()=>onHostClose(conn));
+  });
+}
+function lobbyMsg(){return {t:'lobby',code:NET.code,seats:NET.seats.map(s=>({name:s.name,bot:s.bot,ctrl:s.ctrl,av:s.av||null}))}}
+function onHostData(conn,m){
+  if(!NET||!m||typeof m!=='object')return;
+  const id=conn.peer;
+  if(m.t==='join'){
+    if(NET.started||NET.seats.length>=4){send(conn,{t:'full'});setTimeout(()=>{try{conn.close()}catch(e){}},500);return}
+    const name=String(m.name||'Гравець').trim().slice(0,14)||'Гравець';
+    const av=AVATARS.some(a=>a[0]===m.av)?m.av:null, dream=DREAMS[m.dream]?m.dream:null;
+    NET.conns.set(id,conn);NET.seats.push({name,ctrl:id,bot:false,av,dream});
+    netSend(lobbyMsg());renderLobby();toast(`${name} у кімнаті`);return;
+  }
+  if(!NET.started||!G)return;
+  if(m.t==='roll'){const p=P();if(!busy&&!G.over&&!p.bot&&p.ctrl===id)doTurn();return}
+  if(m.t==='answer'){const x=pending.get(m.id);if(x&&x.ctrl===id){pending.delete(m.id);x.res(x.allowed.includes(m.v)?m.v:x.botChoice)}return}
+  if(m.t==='sell'){const p=P();if(!busy&&!G.over&&p.ctrl===id&&!p.bot&&p.owned[m.k]&&p.owned[m.k].cell>=0){sellAsset(p,m.k);renderGame()}return}
+}
+function onHostClose(conn){
+  if(!NET||!isHost())return;
+  const id=conn.peer;if(!NET.conns.has(id))return;
+  NET.conns.delete(id);
+  if(!NET.started){const s=NET.seats.find(x=>x.ctrl===id);NET.seats=NET.seats.filter(x=>x.ctrl!==id);netSend(lobbyMsg());renderLobby();if(s)toast(`${s.name} вийшов`);return}
+  if(!G)return;
+  G.players.forEach(p=>{if(p.ctrl===id&&!p.out){p.bot=true;log(`${nm(p)} відключився — за нього грає бот.`)}});
+  pending.forEach((x,k)=>{if(x.ctrl===id){pending.delete(k);x.res(x.botChoice)}});
+  renderGame();
+  if(!busy&&!G.over&&P().ctrl===id)startTurn();
+}
+function hostAddBot(){
+  const used=NET.seats.map(s=>s.name);
+  const name=BOT_NAMES.find(n=>!used.includes(n))||'Бот';
+  NET.seats.push({name,ctrl:'bot-'+Math.random().toString(36).slice(2,7),bot:true});
+  netSend(lobbyMsg());renderLobby();
+}
+function hostStart(){
+  NET.started=true;
+  freshGame(NET.seats,true);
   renderGame();startTurn();
+}
+
+function joinRoom(name,code){
+  leaveNet();
+  let peer;try{peer=new Peer({debug:0})}catch(e){return netFail('Немає з’єднання з сервером гри.')}
+  NET={role:'client',peer,code,myId:null,seats:[],hostConn:null,joined:false};
+  renderLobby();
+  const timer=setTimeout(()=>{if(NET&&NET.peer===peer&&!NET.joined)netFail('Кімната не відповідає. Перевір код і інтернет.')},15000);
+  peer.on('open',id=>{
+    if(!NET||NET.peer!==peer)return;
+    NET.myId=id;
+    const conn=peer.connect(PREFIX+code,{reliable:true,serialization:'json'});
+    NET.hostConn=conn;
+    conn.on('open',()=>send(conn,{t:'join',name,av:PROF.av,dream:PROF.dream}));
+    conn.on('data',m=>{if(NET&&NET.peer===peer)onClientData(m,timer)});
+    conn.on('close',()=>{if(NET&&NET.peer===peer)hostGone()});
+  });
+  peer.on('error',e=>{
+    if(!NET||NET.peer!==peer)return;
+    clearTimeout(timer);
+    if(e.type==='peer-unavailable')netFail('Кімнату з кодом '+code+' не знайдено. Перевір код.');
+    else if(!G)netFail('Сервер гри недоступний. Перевір інтернет і спробуй ще раз.');
+  });
+}
+function onClientData(m,timer){
+  if(!m||typeof m!=='object')return;
+  if(m.t==='lobby'){NET.joined=true;clearTimeout(timer);NET.seats=m.seats;if(!G)renderLobby();return}
+  if(m.t==='full'){clearTimeout(timer);return netFail('Кімната заповнена або гра вже почалась.')}
+  if(m.t==='state'){NET.joined=true;G=m.G;lastDice=m.dice;rolling=m.rolling;busy=m.busy;renderGame();if(G.over){const r=awardXP();if(r)setTimeout(()=>toast(`+${r.xp} XP${r.levelUp?' · рівень '+r.levelUp+'!':''}`),2200)}return}
+  if(m.t==='toast'){toast(m.text);return}
+  if(m.t==='show'){sheet(m.opts);return}
+  if(m.t==='ask'){sheet(m.opts).then(v=>send(NET&&NET.hostConn,{t:'answer',id:m.id,v}));return}
+}
+function hostGone(){
+  if(G&&G.over){leaveNet();return}
+  leaveNet();G=null;closeSheet();renderSetup();
+  sheet({title:'Гру завершено',body:'<p>Хост закрив кімнату або втратив з’єднання.</p>'});
+}
+
+function renderLobby(){
+  const host=isHost();
+  const seats=NET.seats||[];
+  const waiting=host?!NET.ready:!NET.joined;
+  $('#app').innerHTML=`
+  <div class="top"><h2>${host?'Твоя кімната':'Кімната'}</h2></div>
+  <div class="panel">
+    <div class="label">Код кімнати</div>
+    ${waiting?`<div class="code pulse">· · · · ·</div><p class="hint" style="text-align:center">${host?'Створюю кімнату…':'Підключаюсь до кімнати '+esc(NET.code)+'…'}</p>`
+      :`<div class="code">${esc(NET.code)}</div>${host?`<button class="btn" id="copy">Скопіювати код</button><p class="hint">Друзі відкривають гру → «Онлайн з друзями» → вводять цей код.</p>`:''}`}
+  </div>
+  ${waiting?'':`<div class="panel"><div class="label">Гравці · ${seats.length} з 4</div>
+    <div class="seats">${seats.map((s,i)=>`<div class="seat"><span class="dot" style="--c:${COLORS[i]}"></span><span class="nm">${s.av?s.av+' ':''}${esc(s.name)}</span>
+      <span class="tag">${s.bot?'бот':s.ctrl==='host'?'хост':''}${s.ctrl===NET.myId?' · ти':''}</span>
+      ${host&&s.ctrl!=='host'?`<button class="x" data-kick="${i}" aria-label="Прибрати ${esc(s.name)}">×</button>`:''}</div>`).join('')}
+      ${Array.from({length:4-seats.length},()=>`<div class="seat empty"><span class="dot" style="--c:transparent"></span><span class="nm">вільне місце</span></div>`).join('')}
+    </div>
+    ${host?`<div class="row"><button class="btn" id="addBot" ${seats.length>=4?'disabled':''}>+ Бот</button><button class="btn pri" id="start" ${seats.length<2?'disabled':''}>Почати гру</button></div>
+      ${seats.length<2?'<p class="hint">Потрібно хоча б 2 гравці. Чекай друзів або додай бота.</p>':''}`
+      :`<p class="hint pulse">Чекаємо, поки хост почне гру…</p>`}
+  </div>`}
+  <button class="linkbtn" id="leave">${host?'Закрити кімнату':'Вийти'}</button>`;
+  $('#leave').onclick=backToMenu;
+  if($('#copy'))$('#copy').onclick=async()=>{try{await navigator.clipboard.writeText(NET.code);toast('Код скопійовано')}catch(e){const r=document.createRange();r.selectNodeContents($('.code'));const s=getSelection();s.removeAllRanges();s.addRange(r);toast('Виділи й скопіюй код')}};
+  if($('#addBot'))$('#addBot').onclick=hostAddBot;
+  if($('#start'))$('#start').onclick=hostStart;
+  document.querySelectorAll('[data-kick]').forEach(b=>b.onclick=()=>{
+    const s=NET.seats[+b.dataset.kick];if(!s)return;
+    NET.seats.splice(+b.dataset.kick,1);
+    if(!s.bot){const c=NET.conns.get(s.ctrl);NET.conns.delete(s.ctrl);send(c,{t:'full'});setTimeout(()=>{try{c.close()}catch(e){}},300)}
+    netSend(lobbyMsg());renderLobby();
+  });
 }
 
 /* ---------- board render ---------- */
@@ -299,45 +800,67 @@ const dieHTML=(n,cls='')=>`<div class="die ${cls}" aria-label="${n}">${[...Array
 let lastDice=[3,4], rolling=false;
 
 function renderGame(){
+  if(!G)return;
+  if(isHost())netSend({t:'state',G,dice:lastDice,rolling,busy});
   const p=P();
-  const human=!p.bot&&!busy&&!G.over;
+  const mine=isMine(p);
+  const canRoll=mine&&!busy&&!G.over;
+  const sub=G.over?'Гру завершено':p.bot?'Бот думає…':busy?'Хід триває…':mine?'Твій хід':`Чекаємо на ${esc(p.name)}…`;
+  const hopIdx=busy&&!rolling?G.cur:-1;
+  $('#app').className='wrap wide';
   $('#app').innerHTML=`
-  <div class="top"><h2>Життя в кредит</h2><span class="round num">коло ${G.round} з ${MAXR}</span></div>
+  <div class="game">
+  <div class="boardcol">
+  <div class="top"><h2>Життя в кредит</h2><span class="round num">${NET?'кімната '+esc(NET.code)+' · ':''}коло ${G.round} з ${MAXR}</span></div>
   <div class="board" id="board">
     ${CELLS.map((c,i)=>{const [r,col]=gridPos(i);const own=G.owners[i];const op=own!=null?G.players[own]:null;
-      const toks=G.players.filter(q=>!q.out&&q.pos===i).map(q=>`<span class="tok" style="--c:${q.color}"></span>`).join('');
+      const toks=G.players.map((q,qi)=>(!q.out&&q.pos===i)?`<span class="tok ${qi===hopIdx?'hop':''}" style="--c:${q.color}"></span>`:'').join('');
       return `<button class="cell t-${c.t} ${c.g?'g-'+c.g:''} ${CORNERS.includes(i)?'corner':''} ${op?'owned':''} ${p.pos===i?'here':''}" style="grid-row:${r};grid-column:${col};${op?'--own:'+op.color:''}" data-cell="${i}" aria-label="${esc(c.name)}">
         ${c.g?'<span class="stripe"></span>':''}<span class="ic">${c.ic}</span>${c.price?`<span class="pr">${c.price/1000}к</span>`:''}<span class="toks">${toks}</span></button>`}).join('')}
     <div class="centre">
-      <div class="turn-name"><span class="dot" style="--c:${p.color}"></span>${esc(p.name)}</div>
-      <div class="turn-sub">${G.over?'Гру завершено':p.bot?'Бот думає…':busy?'Хід триває…':'Твій хід'}</div>
+      <div class="turn-name">${p.av?`<span>${p.av}</span>`:`<span class="dot" style="--c:${p.color}"></span>`}${esc(p.name)}</div>
+      <div class="turn-sub ${canRoll?'me':''}">${sub}</div>
       <div class="dice">${dieHTML(lastDice[0],rolling?'roll':'')}${dieHTML(lastDice[1],rolling?'roll':'')}</div>
-      ${G.over?`<button class="btn pri roll-btn" id="again">Нова гра</button>`:`<button class="btn pri roll-btn" id="roll" ${human?'':'disabled'}>Кинути кубики</button>`}
+      ${G.over?`<button class="btn pri roll-btn" id="again">${NET?'У меню':'Нова гра'}</button>`:`<button class="btn pri roll-btn" id="roll" ${canRoll?'':'disabled'}>Кинути кубики</button>`}
     </div>
   </div>
   <div class="legend"><span><i style="--c:var(--home)"></i>Житло · іпотека</span><span><i style="--c:var(--car)"></i>Авто</span><span><i style="--c:var(--biz)"></i>Бізнес</span><span><i style="--c:var(--health)"></i>Здоров’я</span><span><i style="--c:var(--fate)"></i>Доля</span></div>
+  </div>
+  <div class="side">
+  ${G.over?'':hintBar(p)}
   <div class="players">${G.players.map((q,i)=>pcard(q,i)).join('')}</div>
   <div class="panel"><div class="label">Що відбувається</div><div class="log">${G.log.map(l=>`<div>${l}</div>`).join('')}</div></div>
-  <button class="linkbtn" id="quit">Головне меню</button>`;
+  <button class="linkbtn" id="quit">${NET?'Вийти з онлайн-гри':'Головне меню'}</button>
+  </div>
+  </div>`;
+  if($('#hint'))$('#hint').onclick=()=>{const sp=$('#hint span:last-child');if(sp)sp.innerHTML=`${esc(rnd(TIPS))}<small>торкнись — ще порада</small>`};
   document.querySelectorAll('[data-cell]').forEach(b=>b.onclick=()=>cellInfo(+b.dataset.cell));
   document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>playerInfo(+b.dataset.p));
-  if($('#roll'))$('#roll').onclick=()=>{if(!busy&&!P().bot)doTurn()};
-  if($('#again'))$('#again').onclick=()=>{clearSave();renderSetup()};
-  $('#quit').onclick=async()=>{const v=await sheet({title:'Вийти в меню?',body:'<p>Гра збережеться — її можна буде продовжити.</p>',buttons:[{l:'Вийти',v:1,pri:1},{l:'Залишитись',v:0}]});if(v){save();G=null;renderSetup()}};
+  if($('#roll'))$('#roll').onclick=()=>{
+    if(busy||!isMine(P())||G.over)return;
+    if(isClient()){send(NET.hostConn,{t:'roll'});const b=$('#roll');if(b)b.disabled=true;return}
+    doTurn();
+  };
+  if($('#again'))$('#again').onclick=()=>{clearSave();backToMenu()};
+  $('#quit').onclick=async()=>{
+    const v=await sheet({title:NET?'Вийти з онлайн-гри?':'Вийти в меню?',body:NET?(isHost()?'<p>Ти хост — гра закінчиться для всіх.</p>':'<p>За тебе далі гратиме бот.</p>'):'<p>Гра збережеться — її можна буде продовжити.</p>',buttons:[{l:'Вийти',v:1,pri:1},{l:'Залишитись',v:0}]});
+    if(v){save();backToMenu()}
+  };
 }
 function pcard(q,i){
   const ef=[];
+  if(NET&&q.ctrl===NET.myId&&!q.out)ef.push(`<span class="chip you">ти</span>`);
   if(q.ef.skip)ef.push(`<span class="chip bad">пропуск ×${q.ef.skip}</span>`);
   if(q.ef.burn)ef.push(`<span class="chip bad">вигорання</span>`);
   if(q.ef.shield)ef.push(`<span class="chip good">імунітет</span>`);
   if(q.ef.ins)ef.push(`<span class="chip good">страховка ×${q.ef.ins}</span>`);
   if(q.owned.length)ef.push(`<span class="chip">майно: ${q.owned.filter(o=>o.cell>=0).length}</span>`);
   return `<button class="pcard ${i===G.cur&&!G.over?'cur':''} ${q.out?'out':''}" data-p="${i}">
-    <div class="pname"><span class="dot" style="--c:${q.color}"></span><span>${esc(q.name)}${q.bot?' · бот':''}</span></div>
+    <div class="pname"><span class="dot" style="--c:${q.color}"></span><span>${q.av?`<span class="pav">${q.av}</span>`:''}${esc(q.name)}${q.bot?' · бот':''}</span></div>
     <div class="pjob">${q.out?'вибув':esc(q.job.n)+' · '+fmt(q.job.s)}</div>
     <div class="money ${q.money<0?'neg':''}">${fmt(q.money)}</div>
-    <div class="bar"><span>♥</span><span class="tr"><span class="fl" style="display:block;width:${q.hp}%;background:var(--hp)"></span></span><span class="num">${q.hp}</span></div>
-    <div class="bar"><span>☺</span><span class="tr"><span class="fl" style="display:block;width:${q.happy}%;background:var(--joy)"></span></span><span class="num">${q.happy}</span></div>
+    <div class="bar"><span>♥</span><span class="tr"><span class="fl" style="width:${q.hp}%;background:var(--hp)"></span></span><span class="num">${q.hp}</span></div>
+    <div class="bar"><span>☺</span><span class="tr"><span class="fl" style="width:${q.happy}%;background:var(--joy)"></span></span><span class="num">${q.happy}</span></div>
     ${ef.length?`<div class="chips">${ef.join('')}</div>`:''}
   </button>`;
 }
@@ -345,28 +868,45 @@ function pcard(q,i){
 /* ---------- sheets ---------- */
 let toastT;
 function toast(t){clearTimeout(toastT);let el=$('#toast');if(!el){el=document.createElement('div');el.id='toast';el.className='toast';document.body.appendChild(el)}el.textContent=t;toastT=setTimeout(()=>el.remove(),1800)}
+let curSheet=null;
+function closeSheet(){if(curSheet)curSheet.close(curSheet.def)}
 function sheet({title,who,body,buttons=[{l:'Добре',v:1,pri:1}],auto}){
+  closeSheet();
   return new Promise(res=>{
-    const host=$('#sheetHost');
-    host.innerHTML=`<div class="veil"><div class="sheet" role="dialog" aria-modal="true" aria-label="${esc(title)}">
+    const el=document.createElement('div');el.className='veil';
+    el.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-label="${esc(String(title).replace(/<[^>]*>/g,''))}">
       ${who?`<div class="who"><span class="dot" style="--c:${who.color}"></span>${esc(who.name)}</div>`:''}
       <h3>${title}</h3><div class="body">${body||''}</div>
       ${auto?'':`<div class="acts">${buttons.map((b,i)=>`<button class="btn ${b.pri?'pri':''}" data-k="${i}" ${b.dis?'disabled':''}>${b.l}</button>`).join('')}</div>`}
-    </div></div>`;
-    const done=v=>{host.innerHTML='';res(v)};
-    if(auto){setTimeout(()=>done(auto.v),auto.ms||1500);return}
-    host.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>done(buttons[+b.dataset.k].v));
-    const first=host.querySelector('.btn:not(:disabled)');if(first)first.focus({preventScroll:true});
+    </div>`;
+    $('#sheetHost').appendChild(el);
+    let closed=false;
+    const me={def:auto?auto.v:null,close(v){if(closed)return;closed=true;el.remove();if(curSheet===me)curSheet=null;res(v)}};
+    curSheet=me;
+    if(auto){setTimeout(()=>me.close(auto.v),auto.ms||1500);return}
+    el.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>me.close(buttons[+b.dataset.k].v));
+    const first=el.querySelector('.btn:not(:disabled)');if(first)first.focus({preventScroll:true});
   });
 }
-/* human gets buttons; bot gets the same sheet briefly with its choice already made */
-async function decide(p,opts,botChoice){
+/* One entry point for every on-turn sheet: bots answer themselves, this device's
+   players tap a button, remote players answer on their own phone; everyone else watches. */
+let askSeq=0;const pending=new Map();
+async function ask(p,opts,botChoice=1){
+  opts={buttons:[{l:'Добре',v:1,pri:1}],...opts,who:{name:p.name,color:p.color}};
+  const multi=opts.buttons.length>1;
   if(p.bot){
     const b=opts.buttons.find(x=>x.v===botChoice);
-    await sheet({...opts,who:p,body:(opts.body||'')+`<p style="color:var(--gold)">Бот обирає: ${b?b.l:'—'}</p>`,auto:{v:botChoice,ms:1700}});
-    return botChoice;
+    const view={...opts,body:(opts.body||'')+(multi&&b?`<p class="pick">Бот обирає: ${b.l}</p>`:''),auto:{v:botChoice,ms:multi?1700:1400}};
+    netShow(view);await sheet(view);return botChoice;
   }
-  return sheet({...opts,who:p});
+  const spect={...opts,body:(opts.body||'')+(multi?`<p class="pick">${esc(p.name)} вирішує…</p>`:''),auto:{v:null,ms:1600}};
+  if(isMine(p)){netShow(spect);return sheet(opts)}
+  netShow(spect,p.ctrl);sheet(spect);
+  const conn=NET&&NET.conns.get(p.ctrl);
+  if(!conn||!conn.open)return botChoice;
+  const id=++askSeq;
+  const allowed=opts.buttons.filter(b=>!b.dis).map(b=>b.v);
+  return new Promise(res=>{pending.set(id,{res,botChoice,ctrl:p.ctrl,allowed});send(conn,{t:'ask',id,opts})});
 }
 
 function cellInfo(i){
@@ -377,12 +917,16 @@ function cellInfo(i){
   sheet({title:`${c.ic} ${esc(c.name)}`,body});
 }
 function playerInfo(i){
-  const q=G.players[i];const canSell=!busy&&i===G.cur&&!q.bot&&!G.over;
+  const q=G.players[i];const canSell=!busy&&i===G.cur&&isMine(q)&&!G.over;
   const rows=q.owned.map((o,k)=>{const c=o.cell>=0?CELLS[o.cell]:null;const v=c?Math.round(c.price*.6)-o.left:0;
     return `<div class="asset-row"><div>${c?c.ic+' '+esc(c.name):'💳 Споживчий кредит'}<small>${o.left>0?'залишок боргу '+fmt(o.left)+' · платіж '+fmt(Math.min(o.pay,o.left)):'виплачено повністю'}</small></div>
       ${c&&canSell?`<button class="btn" data-sell="${k}">Продати ${fmt(v)}</button>`:''}</div>`}).join('')||'<p style="color:var(--muted)">Майна і кредитів поки немає.</p>';
   sheet({title:esc(q.name),body:`<div class="kv"><span>Робота</span><span>${esc(q.job.n)}</span><span>Готівка</span><span>${fmt(q.money)}</span><span>Платежі за коло</span><span>${fmt(payments(q))}</span><span>Капітал</span><span>${fmt(worth(q))}</span><span>Ціль</span><span>${fmt(GOAL)}</span></div><div style="margin-top:10px">${rows}</div>${canSell?'<p style="color:var(--muted);font-size:13px">Продаж: банк дає 60% ціни мінус залишок кредиту.</p>':''}`,buttons:[{l:'Закрити',v:0}]});
-  if(canSell)document.querySelectorAll('[data-sell]').forEach(b=>b.onclick=()=>{sellAsset(q,+b.dataset.sell);$('#sheetHost').innerHTML='';renderGame();save()});
+  if(canSell)document.querySelectorAll('[data-sell]').forEach(b=>b.onclick=()=>{
+    const k=+b.dataset.sell;closeSheet();
+    if(isClient()){send(NET.hostConn,{t:'sell',k});return}
+    sellAsset(q,k);renderGame();save();
+  });
 }
 function sellAsset(p,k){
   const o=p.owned[k],c=CELLS[o.cell];const v=Math.round(c.price*.6)-o.left;
@@ -390,14 +934,13 @@ function sellAsset(p,k){
   log(`${nm(p)} продав «${esc(c.name)}» банку: ${fmt(v)}.`);
 }
 
-/* ---------- turn flow ---------- */
-function resumeTurn(){busy=false;startTurn()}
+/* ---------- turn flow (runs on the host / this phone only) ---------- */
 async function startTurn(){
-  if(G.over)return;
+  if(!G||G.over||isClient())return;
   const p=P();renderGame();save();
   if(p.ef.skip>0){
-    p.ef.skip--;log(`${nm(p)} пропускає хід (хворіє).`);toast(`${p.name} пропускає хід`);
-    renderGame();await sleep(1100);return endTurn();
+    p.ef.skip--;log(`${nm(p)} пропускає хід (хворіє).`);say(`${p.name} пропускає хід`);
+    busy=true;renderGame();await sleep(1100);busy=false;return endTurn();
   }
   if(p.bot){await sleep(800);if(G&&P()===p&&!busy)doTurn()}
 }
@@ -414,6 +957,7 @@ async function doTurn(){
   }
   await land(p);
   await afterAction(p);
+  if(!G)return;
   if(p.out||G.over){busy=false;return endTurn()}
   if(p.ef.extra){p.ef.extra=0;log(`${nm(p)} ходить ще раз.`);busy=false;renderGame();if(p.bot){await sleep(700);return doTurn()}return}
   busy=false;endTurn();
@@ -428,7 +972,7 @@ function payday(p){
   p.money-=paid;
   joy(p,-3); if(p.happy===0)hurt(p,10);
   log(`${nm(p)}: зарплата +${fmt(sal)}${notes.length?' ('+notes.join(', ')+')':''}${paid?`, кредити −${fmt(paid)}`:''}.`);
-  toast(`${p.name}: зарплата +${fmt(sal)}${paid?' · кредити −'+fmt(paid):''}`);
+  say(`${p.name}: зарплата +${fmt(sal)}${paid?' · кредити −'+fmt(paid):''}`);
 }
 async function land(p){
   const c=CELLS[p.pos];
@@ -437,32 +981,32 @@ async function land(p){
     case 'asset': return landAsset(p,p.pos);
     case 'health': return drawCard(p,'health');
     case 'fate': return drawCard(p,'fate');
-    case 'tax':{const t=Math.max(500,Math.round(Math.max(p.money,0)*.1));p.money-=t;log(`${nm(p)} платить податок ${fmt(t)}.`);
-      return sheet({title:'🧾 Податкова',who:p,body:`<p>Податок: ${fmt(t)}.</p>`,auto:p.bot?{v:1,ms:1300}:null})}
+    case 'tax':{const t=Math.max(500,Math.round(Math.max(p.money,0)*.1));p.money-=t;log(`${nm(p)} платить податок ${fmt(t)}.`);renderGame();
+      return ask(p,{title:'🧾 Податкова',body:`<p>Податок: ${fmt(t)}.</p>`})}
     case 'hospital': return hospital(p);
-    case 'party':{const v=await decide(p,{title:'🎉 Вечірка у друзів',body:'<p>Піти: −1000 ₴, +20 щастя, −5 здоров’я.</p>',buttons:[{l:'Піти',v:1,pri:1,dis:p.money<1000},{l:'Залишитись вдома',v:0}]},p.happy<60&&p.money>3000?1:0);
+    case 'party':{const v=await ask(p,{title:'🎉 Вечірка у друзів',body:'<p>Піти: −1000 ₴, +20 щастя, −5 здоров’я.</p>',buttons:[{l:'Піти',v:1,pri:1,dis:p.money<1000},{l:'Залишитись вдома',v:0}]},p.happy<60&&p.money>3000?1:0);
       if(v){p.money-=1000;joy(p,20);hurt(p,5);log(`${nm(p)} гуляє на вечірці.`)}return}
-    case 'gym':{const v=await decide(p,{title:'🏋️ Спортзал',body:'<p>Абонемент −1200 ₴: +15 здоров’я, +5 щастя.</p>',buttons:[{l:'Купити абонемент',v:1,pri:1,dis:p.money<1200},{l:'Пройти повз',v:0}]},p.hp<85&&p.money>4000?1:0);
+    case 'gym':{const v=await ask(p,{title:'🏋️ Спортзал',body:'<p>Абонемент −1200 ₴: +15 здоров’я, +5 щастя.</p>',buttons:[{l:'Купити абонемент',v:1,pri:1,dis:p.money<1200},{l:'Пройти повз',v:0}]},p.hp<85&&p.money>4000?1:0);
       if(v){p.money-=1200;heal(p,15);joy(p,5);log(`${nm(p)} купує абонемент у зал.`)}return}
-    case 'job':{const offer=rnd([...JOBS,JOBLESS].filter(j=>j.n!==p.job.n&&j!==JOBLESS));
-      const v=await decide(p,{title:'📋 Біржа праці',body:`<p>Пропозиція: <b>${esc(offer.n)}</b>, ${fmt(offer.s)} за коло.</p><p style="color:var(--muted)">Зараз: ${esc(p.job.n)}, ${fmt(p.job.s)}.</p>`,buttons:[{l:'Погодитись',v:1,pri:1},{l:'Відмовитись',v:0}]},offer.s>p.job.s?1:0);
+    case 'job':{const offer=rnd(JOBS.filter(j=>j.n!==p.job.n));
+      const v=await ask(p,{title:'📋 Біржа праці',body:`<p>Пропозиція: <b>${esc(offer.n)}</b>, ${fmt(offer.s)} за коло.</p><p style="color:var(--muted)">Зараз: ${esc(p.job.n)}, ${fmt(p.job.s)}.</p>`,buttons:[{l:'Погодитись',v:1,pri:1},{l:'Відмовитись',v:0}]},offer.s>p.job.s?1:0);
       if(v){p.job={...offer};log(`${nm(p)} тепер ${esc(offer.n)}.`)}return}
     case 'bank': return bank(p);
   }
 }
 async function hospital(p){
   const free=p.ef.ins>0;
-  const v=await decide(p,{title:'🏥 Лікарня',body:`<p>Пройти лікування: ${free?'безкоштовно за страховкою':'−1500 ₴'}, +40 здоров’я.</p>`,buttons:[{l:'Лікуватись',v:1,pri:1,dis:p.hp>=100||(!free&&p.money<1500)},{l:'Ні, дякую',v:0}]},p.hp<70&&(free||p.money>2500)?1:0);
+  const v=await ask(p,{title:'🏥 Лікарня',body:`<p>Пройти лікування: ${free?'безкоштовно за страховкою':'−1500 ₴'}, +40 здоров’я.</p>`,buttons:[{l:'Лікуватись',v:1,pri:1,dis:p.hp>=100||(!free&&p.money<1500)},{l:'Ні, дякую',v:0}]},p.hp<70&&(free||p.money>2500)?1:0);
   if(v){const n=med(p,1500);heal(p,40);log(`${nm(p)} лікується.${n}`)}
 }
 async function bank(p){
   const debt=p.owned.filter(o=>o.left>0).sort((a,b)=>b.left-a.left);
   const payable=debt.find(o=>o.left<=p.money);
-  const v=await decide(p,{title:'🏦 Банк',body:`<p>Споживчий кредит: отримуєш 5000 ₴, повертаєш 6600 ₴ шістьма платежами.</p>${payable?`<p>Або погасити достроково: «${payable.cell>=0?esc(CELLS[payable.cell].name):'споживчий кредит'}» — ${fmt(payable.left)}.</p>`:''}`,
+  const v=await ask(p,{title:'🏦 Банк',body:`<p>Споживчий кредит: отримуєш 5000 ₴, повертаєш 6600 ₴ шістьма платежами.</p>${payable?`<p>Або погасити достроково: «${payable.cell>=0?esc(CELLS[payable.cell].name):'споживчий кредит'}» — ${fmt(payable.left)}.</p>`:''}`,
     buttons:[{l:'Взяти 5000 ₴',v:'take',pri:1},...(payable?[{l:'Погасити '+fmt(payable.left),v:'repay'}]:[]),{l:'Нічого не робити',v:0}]},
     p.money<1500?'take':(payable&&p.money-payable.left>6000?'repay':0));
   if(v==='take'){p.money+=5000;p.owned.push({cell:-1,left:6600,pay:1100});log(`${nm(p)} бере споживчий кредит 5000 ₴.`)}
-  if(v==='repay'){p.money-=payable.left;payable.left=0;joy(p,8);log(`${nm(p)} закриває кредит достроково.`)}
+  if(v==='repay'&&payable&&p.money>=payable.left){p.money-=payable.left;payable.left=0;joy(p,8);log(`${nm(p)} закриває кредит достроково.`)}
 }
 async function landAsset(p,i){
   const c=CELLS[i];const own=G.owners[i];
@@ -470,31 +1014,31 @@ async function landAsset(p,i){
     const t=loanTerms(c);
     const canLoan=p.money>=t.down, canCash=p.money>=c.price;
     const botPick=(p.money-c.price>=6000)?'cash':(canLoan&&p.money-t.down>=2500&&payments(p)+t.pay<=p.job.s*.9)?'loan':0;
-    const v=await decide(p,{title:`${c.ic} ${esc(c.name)}`,body:`<div class="kv"><span>Ціна</span><span>${fmt(c.price)}</span><span>${LOAN[c.g]}: внесок</span><span>${fmt(t.down)}</span><span>Платіж за коло</span><span>${fmt(t.pay)} × 6</span><span>Оренда з інших</span><span>${fmt(c.rent)}</span><span>Щастя</span><span>+${c.happy}</span></div>`,
+    const v=await ask(p,{title:`${c.ic} ${esc(c.name)}`,body:`<div class="kv"><span>Ціна</span><span>${fmt(c.price)}</span><span>${LOAN[c.g]}: внесок</span><span>${fmt(t.down)}</span><span>Платіж за коло</span><span>${fmt(t.pay)} × 6</span><span>Оренда з інших</span><span>${fmt(c.rent)}</span><span>Щастя</span><span>+${c.happy}${p.dream===c.g?' +5 мрія':''}</span></div>${SET.hints?`<p class="tip" style="margin-top:10px">${payments(p)+t.pay>p.job.s?'Обережно: з цим кредитом платежі ('+fmt(payments(p)+t.pay)+') будуть більші за зарплату ('+fmt(p.job.s)+').':'Платежі після покупки: '+fmt(payments(p)+t.pay)+' за коло при зарплаті '+fmt(p.job.s)+'. Окупиться орендою за ~'+Math.ceil(c.price/c.rent)+' відвідин.'}</p>`:''}`,
       buttons:[{l:`${LOAN[c.g]} · внесок ${fmt(t.down)}`,v:'loan',pri:1,dis:!canLoan},{l:`Готівкою ${fmt(c.price)}`,v:'cash',dis:!canCash},{l:'Не брати',v:0}]},botPick);
-    if(v==='loan'){p.money-=t.down;p.owned.push({cell:i,left:t.total,pay:t.pay});G.owners[i]=G.players.indexOf(p);joy(p,c.happy);log(`${nm(p)} оформлює ${LOAN[c.g].toLowerCase()} на «${esc(c.name)}».`)}
-    if(v==='cash'){p.money-=c.price;p.owned.push({cell:i,left:0,pay:0});G.owners[i]=G.players.indexOf(p);joy(p,c.happy+3);log(`${nm(p)} купує «${esc(c.name)}» за готівку.`)}
+    if(v==='loan'&&p.money>=t.down){p.money-=t.down;p.owned.push({cell:i,left:t.total,pay:t.pay});G.owners[i]=G.players.indexOf(p);joy(p,c.happy+(p.dream===c.g?5:0));log(`${nm(p)} оформлює ${LOAN[c.g].toLowerCase()} на «${esc(c.name)}».`)}
+    if(v==='cash'&&p.money>=c.price){p.money-=c.price;p.owned.push({cell:i,left:0,pay:0});G.owners[i]=G.players.indexOf(p);joy(p,c.happy+3+(p.dream===c.g?5:0));log(`${nm(p)} купує «${esc(c.name)}» за готівку.`)}
     return;
   }
   const o=G.players[own];
   if(o===p){joy(p,3);log(`${nm(p)} відпочиває на своєму: +3 щастя.`);return}
   p.money-=c.rent;o.money+=c.rent;
-  log(`${nm(p)} платить ${nm(o)} оренду ${fmt(c.rent)}.`);
-  await sheet({title:`${c.ic} ${esc(c.name)}`,who:p,body:`<p>Це майно належить ${esc(o.name)}. Оренда: ${fmt(c.rent)}.</p>`,auto:p.bot?{v:1,ms:1300}:null});
+  log(`${nm(p)} платить ${nm(o)} оренду ${fmt(c.rent)}.`);renderGame();
+  await ask(p,{title:`${c.ic} ${esc(c.name)}`,body:`<p>Це майно належить ${esc(o.name)}. Оренда: ${fmt(c.rent)}.</p>`});
 }
 async function drawCard(p,kind){
   const deck=kind==='health'?HEALTH:FATE;const card=rnd(deck);
-  let note='';
+  let note='',toHospital=false;
   if(kind==='health'&&card.neg&&p.ef.shield>0){p.ef.shield--;note='Імунітет захистив — болячка не подіяла.'}
-  else{const r=card.f(p);if(r&&r!=='@hospital')note=r.trim()}
-  log(`${nm(p)} тягне «${esc(card.t)}».${note?' '+note:''}`);
+  else{const r=card.f(p);if(r==='@hospital')toHospital=true;else if(r)note=r.trim()}
+  log(`${nm(p)} тягне «${esc(card.t)}».${note?' '+note:''}`);renderGame();
   const cls=kind==='health'?(card.neg?'bad':'good'):'';
-  await sheet({title:kind==='health'?'Картка здоров’я':'Картка долі',who:p,
-    body:`<div class="card ${kind} ${cls}"><span class="kind">${kind==='health'?'Здоров’я':'Доля'}</span><span class="ttl">${esc(card.t)}</span><span>${esc(card.d)}</span></div>${note?`<p style="margin-top:10px">${esc(note)}</p>`:''}`,
-    auto:p.bot?{v:1,ms:2000}:null});
-  if(card.t==='Швидка забрала в лікарню'&&!(note.startsWith('Імунітет'))){renderGame();await hospital(p)}
+  await ask(p,{title:kind==='health'?'Картка здоров’я':'Картка долі',
+    body:`<div class="card ${kind} ${cls}"><span class="kind">${kind==='health'?'Здоров’я':'Доля'}</span><span class="ttl">${esc(card.t)}</span><span>${esc(card.d)}</span></div>${note?`<p style="margin-top:10px">${esc(note)}</p>`:''}`});
+  if(toHospital){renderGame();await hospital(p)}
 }
 async function afterAction(p){
+  if(!G)return;
   if(p.money<0){
     const sellable=()=>p.owned.map((o,k)=>({k,v:o.cell>=0?Math.round(CELLS[o.cell].price*.6)-o.left:-1})).filter(x=>x.v>0).sort((a,b)=>b.v-a.v);
     let s;while(p.money<0&&(s=sellable()).length){const o=p.owned[s[0].k];log(`Банк забирає в ${nm(p)} «${esc(CELLS[o.cell].name)}» за борги.`);sellAsset(p,s[0].k)}
@@ -504,12 +1048,13 @@ async function afterAction(p){
   renderGame();
 }
 async function eliminate(p,why){
+  log(`${nm(p)} вибуває. ${why}`);
+  await ask(p,{title:`${esc(p.name)} вибуває`,body:`<p>${why}</p>`});
   p.out=true;p.owned.forEach(o=>{if(o.cell>=0)delete G.owners[o.cell]});p.owned=[];
-  log(`${nm(p)} вибуває. ${why}`);renderGame();
-  await sheet({title:`${esc(p.name)} вибуває`,body:`<p>${why}</p>`,auto:p.bot?{v:1,ms:1800}:null});
+  renderGame();
 }
 function endTurn(){
-  if(checkEnd())return;
+  if(!G||checkEnd())return;
   const n=G.players.length;let i=G.cur;
   do{i=(i+1)%n;if(i===0)G.round++}while(G.players[i].out);
   G.cur=i;
@@ -522,18 +1067,19 @@ function checkEnd(){
   if(rich){winner=rich;why=`Капітал ${fmt(worth(rich))} — фінансова свобода!`}
   else if(al.length<=1){winner=al[0]||null;why='Залишився останнім у грі.'}
   else if(G.round>MAXR){winner=[...al].sort((a,b)=>score(b)-score(a))[0];why=`Найкращий рахунок після ${MAXR} кіл.`}
-  if(!winner&&!(al.length===0))return false;
-  G.over=true;busy=false;save();
+  if(!winner&&al.length!==0)return false;
+  G.over=true;G.winner=winner?G.players.indexOf(winner):null;busy=false;save();
   const rank=[...G.players].sort((a,b)=>(a.out-b.out)||score(b)-score(a));
   log(winner?`${nm(winner)} перемагає! ${why}`:'Усі вибули.');
   renderGame();
-  sheet({title:winner?`Перемога: ${esc(winner.name)}`:'Ніхто не вижив',body:`<p>${why}</p><div class="kv" style="margin-top:8px">${rank.map(q=>`<span><span class="dot" style="--c:${q.color};display:inline-block;margin-right:6px"></span>${esc(q.name)}${q.out?' · вибув':''}</span><span>${q.out?'—':score(q).toLocaleString('uk-UA')+' оч.'}</span>`).join('')}</div><p style="color:var(--muted);font-size:13px;margin-top:8px">Очки = капітал + щастя×100 + здоров’я×50.</p>`,buttons:[{l:'Нова гра',v:1,pri:1},{l:'Подивитись поле',v:0}]})
-    .then(v=>{if(v){clearSave();renderSetup()}});
+  const view={title:winner?`Перемога: ${esc(winner.name)}`:'Ніхто не вижив',body:`<p>${why}</p><div class="kv" style="margin-top:8px">${rank.map(q=>`<span><span class="dot" style="--c:${q.color};display:inline-block;margin-right:6px"></span>${esc(q.name)}${q.out?' · вибув':''}</span><span>${q.out?'—':score(q).toLocaleString('uk-UA')+' оч.'}</span>`).join('')}</div><p style="color:var(--muted);font-size:13px;margin-top:8px">Очки = капітал + щастя×100 + здоров’я×50.</p>`};
+  netShow({...view,buttons:[{l:'Подивитись поле',v:0}]});
+  const xr=isClient()?null:awardXP();
+  sheet({...view,body:view.body+xpLine(xr),buttons:[{l:NET?'У меню':'Нова гра',v:1,pri:1},{l:'Подивитись поле',v:0}]})
+    .then(v=>{if(v){clearSave();backToMenu()}});
   return true;
 }
 
+if(SET.orient!=='auto'||hasBridge())applyOrient();
 renderSetup();
 </script>
-
-</body>
-</html>
