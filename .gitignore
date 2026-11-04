@@ -6,3 +6,7 @@ local.properties
 *.iml
 *.jks
 *.keystore
+desktop/node_modules/
+desktop/dist/
+desktop/game/
+desktop/icon.png

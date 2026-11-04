@@ -1,0 +1,37 @@
+{
+  "name": "zhyttia-v-kredyt",
+  "version": "3.3.0-beta",
+  "description": "Життя в кредит — настільна гра про доросле життя",
+  "main": "main.js",
+  "author": "DrogbaT",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.lifeincredit.game",
+    "productName": "Zhyttia v kredyt",
+    "files": ["main.js", "icon.png", "game/**/*"],
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Життя в кредит",
+      "artifactName": "Zhyttia-v-kredyt-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "Zhyttia-v-kredyt-Portable-${version}.${ext}"
+    }
+  }
+}

@@ -39,3 +39,35 @@ jobs:
           files: Zhyttia-v-kredyt-beta.apk
           make_latest: true
           prerelease: true
+
+  windows:
+    needs: build
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build Windows exe
+        shell: bash
+        run: |
+          mkdir -p desktop/game
+          cp app/src/main/assets/* desktop/game/
+          cp play-store/icon-512.png desktop/icon.png
+          cd desktop
+          npm install --no-audit --no-fund
+          npx electron-builder --win nsis portable --publish never
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Zhyttia-v-kredyt-windows
+          path: desktop/dist/*.exe
+
+      - name: Додати exe до релізу
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          files: desktop/dist/*.exe
+          prerelease: true
