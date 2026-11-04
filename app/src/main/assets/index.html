@@ -138,6 +138,13 @@ input[type=text]{width:100%;min-width:0;background:var(--table);border:1px solid
 .sheet .body{color:var(--text)}
 .sheet .body p{margin:0 0 6px}
 .sheet .pick{color:var(--gold)}
+.fulllog{display:flex;flex-direction:column;font-size:13px}
+.lround{position:sticky;top:-18px;background:var(--table-2);padding:8px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-weight:700}
+.lline{padding:4px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.lline b{color:var(--text)}
+.dream:disabled{opacity:.5}
+.sheet .who:empty{display:none}
+.qcount{margin-left:auto;font-size:11px;font-weight:700;color:var(--ink);background:var(--gold);border-radius:999px;padding:2px 8px}
 .sheet .acts{display:flex;flex-direction:column;gap:8px}
 .card{border-radius:14px;padding:16px;color:var(--ink);display:flex;flex-direction:column;gap:4px}
 .card.health{background:var(--health)} .card.fate{background:var(--fate)}
@@ -423,9 +430,10 @@ function save(){if(!G||G.online)return;try{localStorage.setItem(SAVE,JSON.string
 function loadSaved(){try{const s=localStorage.getItem(SAVE);return s?JSON.parse(s):null}catch(e){return null}}
 function clearSave(){try{localStorage.removeItem(SAVE)}catch(e){}}
 function getName(){return PROF?PROF.name:''}
-function log(html){G.log.unshift(html);G.log=G.log.slice(0,40)}
+function pushLog(e){e.n=G.logN=(G.logN||0)+1;e.r=G.round;G.log.unshift(e);G.log=G.log.slice(0,40);(G.hist=G.hist||[]).push(e);if(G.hist.length>2500)G.hist.shift()}
+function log(html){pushLog({t:html})}
 /* private log line: owner sees `mine`, everyone else sees `pub` */
-function plog(p,mine,pub){G.log.unshift({o:G.players.indexOf(p),a:mine,b:pub});G.log=G.log.slice(0,40)}
+function plog(p,mine,pub){pushLog({o:G.players.indexOf(p),a:mine,b:pub})}
 function viewerIdx(){
   if(!G)return -1;
   if(NET)return G.players.findIndex(p=>p.ctrl===NET.myId);
@@ -435,7 +443,8 @@ function viewerIdx(){
 }
 /* who may see this player's money, job, health and hidden assets */
 function canSee(q){if(!G)return false;if(G.over)return true;const v=viewerIdx();if(v<0&&!NET)return true;return G.players.indexOf(q)===v}
-const logText=e=>typeof e==='string'?e:(G.over||e.o===viewerIdx()||(viewerIdx()<0&&!NET)?e.a:e.b);
+const logText=e=>typeof e==='string'?e:e.t!=null?e.t:(G.over||e.o===viewerIdx()||(viewerIdx()<0&&!NET)?e.a:e.b);
+const logFor=(e,vi,over)=>typeof e==='string'?e:e.t!=null?e.t:(over||e.o===vi?e.a:e.b);
 /* toast only for the player concerned (on this phone, or on their own phone online) */
 function sayTo(p,text){if(canSee(p)&&!G.over)toast(text);if(isHost()){const c=NET.conns.get(p.ctrl);send(c,{t:'toast',text})}}
 const visibleAssets=q=>q.owned.filter(o=>o.cell>=0&&(!o.hidden||canSee(q)));
@@ -444,15 +453,17 @@ function worth(p){return p.money+p.owned.reduce((s,o)=>s+(o.cell>=0?CELLS[o.cell
 function score(p){return Math.round(worth(p)+p.happy*100+p.hp*50)}
 function payments(p){return p.owned.reduce((s,o)=>s+(o.left>0?Math.min(o.pay,o.left):0),0)}
 function makePlayer(s,i,job){return {name:s.name,av:s.av||null,dream:s.dream||null,bot:!!s.bot,ctrl:s.ctrl||'local',color:COLORS[i],pos:0,money:START_MONEY,hp:100,happy:50,job:{...job},owned:[],ef:{skip:0,shield:0,ins:0,burn:0,extra:0,hide:0,alarm:0},out:false,laps:0}}
-function freshGame(seats,online){
+const MODES={classic:['🏁 Класичний',`Ціль ${'60 000 ₴'} капіталу, або останній у грі, або найкращий рахунок після 25 кіл.`],elim:['💀 На вибування','Без цілі й ліміту кіл. Вартість життя росте щокола (250 ₴ × номер кола), а з 13-го кола втома б’є по здоров’ю. Перемагає останній, хто вижив.'],endless:['♾ Нескінченний','Гра не закінчується. Банкрут або виснажений починає життя з нуля. Вийти можна будь-коли.']};
+let gameMode='classic';
+function freshGame(seats,online,mode){
   const jobs=[...JOBS.slice(0,5)].sort(()=>Math.random()-.5);
-  G={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),round:1,cur:0,owners:{},log:[],over:false,winner:null,online:!!online,players:seats.map((s,i)=>makePlayer(s,i,jobs[i%jobs.length]))};
+  G={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),mode:mode||'classic',logN:0,hist:[],round:1,cur:0,owners:{},log:[],over:false,winner:null,online:!!online,players:seats.map((s,i)=>makePlayer(s,i,jobs[i%jobs.length]))};
   log('Гра почалась. У кожного по '+fmt(START_MONEY)+' і робота.');
 }
 
 /* ---------- settings ---------- */
 const SETKEY='zhyttia_v_kredyt_settings';
-let SET={hints:true,orient:'auto'};
+let SET={hints:true,orient:'auto',waitOk:true};
 try{Object.assign(SET,JSON.parse(localStorage.getItem(SETKEY)||'{}'))}catch(e){}
 function saveSet(){try{localStorage.setItem(SETKEY,JSON.stringify(SET))}catch(e){}}
 const hasBridge=()=>!!(window.AndroidApp&&window.AndroidApp.setOrientation);
@@ -472,7 +483,7 @@ const backBtn=`<button class="back" id="back">← Меню</button>`;
 function renderMenu(){
   $('#app').className='wrap';
   if(!PROF&&VIEW!=='rules')VIEW='register';
-  ({menu:viewMenu,local:viewLocal,online:viewOnline,rules:viewRules,settings:viewSettings,register:viewRegister,profile:viewProfile}[VIEW]||viewMenu)();
+  ({menu:viewMenu,local:viewLocal,online:viewOnline,rules:viewRules,settings:viewSettings,register:viewRegister,profile:viewProfile,journal:viewJournal}[VIEW]||viewMenu)();
   const pc=$('#pchip');if(pc)pc.onclick=()=>goView('profile');
   const b=$('#back');if(b)b.onclick=()=>goView('menu');
 }
@@ -491,6 +502,7 @@ function viewMenu(){
     <button class="tile" id="tOnline"><span class="gl" style="--tc:rgba(94,200,216,.22)">🌐</span><b>Онлайн</b><span>кімната за кодом</span></button>
     <button class="tile" id="tRules"><span class="gl" style="--tc:rgba(207,196,243,.22)">📖</span><b>Правила</b><span>клітинки, картки, кредити</span></button>
     <button class="tile" id="tSet"><span class="gl" style="--tc:rgba(127,212,154,.2)">⚙</span><b>Налаштування</b><span>підказки, екран</span></button>
+    <button class="tile wide" id="tLog"><span class="gl" style="--tc:rgba(242,193,78,.2)">📜</span><b>Журнал ігор</b><span>${cont?'лог поточної гри і ':''}останні завершені ігри</span></button>
   </div>
   <div class="hintbar"><span class="bulb">i</span><span>${esc(rnd(TIPS))}</span></div>`;
   if($('#tCont'))$('#tCont').onclick=()=>{G=saved;G.players.forEach(p=>{p.ctrl=p.ctrl||'local'});busy=false;renderGame();startTurn()};
@@ -498,7 +510,9 @@ function viewMenu(){
   $('#tOnline').onclick=()=>goView('online');
   $('#tRules').onclick=()=>goView('rules');
   $('#tSet').onclick=()=>goView('settings');
+  $('#tLog').onclick=()=>goView('journal');
 }
+function modePicker(sel,disabled){return `<div class="panel"><div class="label">Режим</div><div class="dreams" style="grid-template-columns:1fr">${Object.entries(MODES).map(([k,[n,d]])=>`<button class="dream ${k===sel?'on':''}" data-mode="${k}" ${disabled?'disabled':''}><b>${n}</b><span>${d}</span></button>`).join('')}</div></div>`}
 function viewLocal(){
   $('#app').innerHTML=`${backBtn}<h2 class="screen-title">Гра на одному телефоні</h2>
   <div class="panel"><div class="label">Гравці (2–4)</div>
@@ -510,15 +524,17 @@ function viewLocal(){
       <button data-i="${i}" data-a="human" class="${s.on&&!s.bot?'on':''}">Людина</button>
       <button data-i="${i}" data-a="bot" class="${s.on&&s.bot?'on':''}">Бот</button>
     </div></div>`).join('')}
-  <button class="btn pri" id="go">Почати гру</button>
   </div>
+  ${modePicker(gameMode)}
+  <button class="btn pri" id="go">Почати гру</button>
   <p class="tip">Досвід у профіль отримує гравець з твоїм нікнеймом (${esc(PROF.name)}). Люди ходять по черзі, передаючи телефон. Боти ходять самі — зручно, щоб потренуватись.</p>`;
   document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{
     readNames();const s=setup[b.dataset.i];
     if(b.dataset.a==='off'){s.on=false}else{s.on=true;s.bot=b.dataset.a==='bot'}
     renderMenu();
   });
-  $('#go').onclick=()=>{readNames();freshGame(setup.filter(s=>s.on).map(s=>(!s.bot&&PROF&&s.name===PROF.name)?{...s,av:PROF.av,dream:PROF.dream}:s),false);renderGame();startTurn()};
+  document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{readNames();gameMode=b.dataset.mode;renderMenu()});
+  $('#go').onclick=()=>{readNames();freshGame(setup.filter(s=>s.on).map(s=>(!s.bot&&PROF&&s.name===PROF.name)?{...s,av:PROF.av,dream:PROF.dream}:s),false,gameMode);renderGame();startTurn()};
 }
 function viewOnline(){
   $('#app').innerHTML=`${backBtn}<h2 class="screen-title">Онлайн з друзями</h2>
@@ -542,6 +558,10 @@ function viewSettings(){
     <div class="switch"><div class="t"><b>Підказки</b><small>Поради під полем і в рішеннях: що вигідно, чого остерігатись.</small></div>
       <button class="toggle" id="tgHints" role="switch" aria-checked="${SET.hints}" aria-label="Підказки"></button></div>
   </div>
+  <div class="panel">
+    <div class="switch"><div class="t"><b>Вікна подій чекають на OK</b><small>Що зробили боти й суперники — по черзі, від старішого. Гра при цьому йде далі.</small></div>
+      <button class="toggle" id="tgWait" role="switch" aria-checked="${SET.waitOk}" aria-label="Вікна подій чекають на OK"></button></div>
+  </div>
   <div class="panel"><div class="label">Орієнтація екрана</div>
     <div class="seg" role="radiogroup">
       <button data-o="auto" class="${o==='auto'?'on':''}" style="flex:1">Авто</button>
@@ -554,6 +574,7 @@ function viewSettings(){
     <button class="btn" id="wipe" ${loadSaved()?'':'disabled'}>Видалити збережену гру</button>
   </div>`;
   $('#tgHints').onclick=()=>{SET.hints=!SET.hints;saveSet();renderMenu()};
+  $('#tgWait').onclick=()=>{SET.waitOk=!SET.waitOk;saveSet();renderMenu()};
   document.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{SET.orient=b.dataset.o;saveSet();applyOrient();renderMenu()});
   $('#wipe').onclick=async()=>{const v=await sheet({title:'Видалити збережену гру?',body:'<p>Продовжити її вже не вийде.</p>',buttons:[{l:'Видалити',v:1,pri:1},{l:'Скасувати',v:0}]});if(v){clearSave();renderMenu();toast('Збереження видалено')}};
 }
@@ -564,6 +585,7 @@ function viewRules(){
   <div class="panel rules-sec"><h3>🏁 Мета</h3>
     <p>Першим набрати <b>${fmt(GOAL)} капіталу</b> — це фінансова свобода. Або залишитись останнім у грі. Якщо за ${MAXR} кіл ніхто не дійшов — перемагає найкращий рахунок: капітал + щастя×100 + здоров’я×50.</p>
     <p>Старт: <b>${fmt(START_MONEY)}</b>, 100 здоров’я, 50 щастя і випадкова робота.</p></div>
+  <div class="panel rules-sec"><h3>🎮 Режими</h3>${Object.values(MODES).map(([n,d])=>`<p><b>${n}.</b> ${d}</p>`).join('')}<p>У нескінченному режимі досвід не нараховується. За режим «На вибування» — +15 XP до бонусу за гру.</p></div>
   <div class="panel rules-sec"><h3>🎲 Хід</h3>
     <p>Кидаєш два кубики і йдеш по колу з 24 клітинок. Щоразу, коли проходиш <b>«Зарплату»</b>, отримуєш оклад і автоматично платиш усі кредити. Щастя при цьому трохи падає — життя виснажує.</p></div>
   <div class="panel rules-sec"><h3>🏠 Майно і кредити</h3>
@@ -648,8 +670,9 @@ function awardXP(){
   if(!me||!G.over||!G.id||PROF.lastGame===G.id)return null;
   const rank=[...G.players].sort((a,b)=>(a.out-b.out)||score(b)-score(a));
   const place=rank.indexOf(me)+1, won=G.winner===G.players.indexOf(me);
+  if(G.mode==='endless')return null;
   const before=profLevel();
-  let xp=40+(won?120:place===2?60:20)+Math.min(60,Math.max(0,Math.floor(worth(me)/1000)))+(G.online?20:0);
+  let xp=(G.mode==='elim'?55:40)+(won?120:place===2?60:20)+Math.min(60,Math.max(0,Math.floor(worth(me)/1000)))+(G.online?20:0);
   PROF.xp+=xp;PROF.games++;if(won)PROF.wins++;PROF.best=Math.max(PROF.best,Math.round(worth(me)));PROF.lastGame=G.id;
   if(G.online)PROF.online++;
   saveProf();
@@ -720,8 +743,8 @@ function netSend(m,except){if(!isHost())return;NET.conns.forEach((c,id)=>{if(id!
 function netShow(view,except){netSend({t:'show',opts:view},except)}
 function say(text){toast(text);netSend({t:'toast',text})}
 function leaveNet(){if(NET){try{NET.peer.destroy()}catch(e){}}NET=null;pending.forEach(x=>x.res(x.botChoice));pending.clear()}
-function backToMenu(){leaveNet();G=null;busy=false;closeSheet();renderSetup()}
-function netFail(msg){leaveNet();G=null;closeSheet();renderSetup();sheet({title:'Не вдалося підключитись',body:`<p>${esc(msg)}</p>`})}
+function backToMenu(){leaveNet();G=null;busy=false;clearSheets();renderSetup()}
+function netFail(msg){leaveNet();G=null;clearSheets();renderSetup();sheet({title:'Не вдалося підключитись',body:`<p>${esc(msg)}</p>`})}
 
 function hostRoom(name){
   leaveNet();
@@ -743,7 +766,7 @@ function hostRoom(name){
     conn.on('error',()=>onHostClose(conn));
   });
 }
-function lobbyMsg(){return {t:'lobby',code:NET.code,seats:NET.seats.map(s=>({name:s.name,bot:s.bot,ctrl:s.ctrl,av:s.av||null}))}}
+function lobbyMsg(){return {t:'lobby',code:NET.code,mode:NET.mode||'classic',seats:NET.seats.map(s=>({name:s.name,bot:s.bot,ctrl:s.ctrl,av:s.av||null}))}}
 function onHostData(conn,m){
   if(!NET||!m||typeof m!=='object')return;
   const id=conn.peer;
@@ -779,7 +802,7 @@ function hostAddBot(){
 }
 function hostStart(){
   NET.started=true;
-  freshGame(NET.seats,true);
+  freshGame(NET.seats,true,NET.mode||'classic');
   renderGame();startTurn();
 }
 
@@ -807,16 +830,16 @@ function joinRoom(name,code){
 }
 function onClientData(m,timer){
   if(!m||typeof m!=='object')return;
-  if(m.t==='lobby'){NET.joined=true;clearTimeout(timer);NET.seats=m.seats;if(!G)renderLobby();return}
+  if(m.t==='lobby'){NET.joined=true;clearTimeout(timer);NET.seats=m.seats;NET.mode=m.mode;if(!G)renderLobby();return}
   if(m.t==='full'){clearTimeout(timer);return netFail('Кімната заповнена або гра вже почалась.')}
-  if(m.t==='state'){NET.joined=true;G=m.G;lastDice=m.dice;rolling=m.rolling;busy=m.busy;renderGame();if(G.over){const r=awardXP();if(r)setTimeout(()=>toast(`+${r.xp} XP${r.levelUp?' · рівень '+r.levelUp+'!':''}`),2200)}return}
+  if(m.t==='state'){NET.joined=true;G=m.G;{NET.hist=NET.hist||[];const last=NET.lastN||0;const fresh=(G.log||[]).filter(e=>e&&e.n>last).sort((a,b)=>a.n-b.n);fresh.forEach(e=>NET.hist.push(e));if(fresh.length)NET.lastN=fresh[fresh.length-1].n;G.hist=NET.hist}lastDice=m.dice;rolling=m.rolling;busy=m.busy;renderGame();if(G.over){archiveGame();const r=awardXP();if(r)setTimeout(()=>toast(`+${r.xp} XP${r.levelUp?' · рівень '+r.levelUp+'!':''}`),2200)}return}
   if(m.t==='toast'){toast(m.text);return}
-  if(m.t==='show'){sheet(m.opts);return}
+  if(m.t==='show'){note(m.opts);return}
   if(m.t==='ask'){sheet(m.opts).then(v=>send(NET&&NET.hostConn,{t:'answer',id:m.id,v}));return}
 }
 function hostGone(){
   if(G&&G.over){leaveNet();return}
-  leaveNet();G=null;closeSheet();renderSetup();
+  leaveNet();G=null;clearSheets();renderSetup();
   sheet({title:'Гру завершено',body:'<p>Хост закрив кімнату або втратив з’єднання.</p>'});
 }
 
@@ -840,11 +863,13 @@ function renderLobby(){
     ${host?`<div class="row"><button class="btn" id="addBot" ${seats.length>=4?'disabled':''}>+ Бот</button><button class="btn pri" id="start" ${seats.length<2?'disabled':''}>Почати гру</button></div>
       ${seats.length<2?'<p class="hint">Потрібно хоча б 2 гравці. Чекай друзів або додай бота.</p>':''}`
       :`<p class="hint pulse">Чекаємо, поки хост почне гру…</p>`}
-  </div>`}
+  </div>
+  ${host?modePicker(NET.mode||'classic'):`<p class="tip">Режим: ${MODES[NET.mode||'classic'][0]} — ${MODES[NET.mode||'classic'][1]}</p>`}`}
   <button class="linkbtn" id="leave">${host?'Закрити кімнату':'Вийти'}</button>`;
   $('#leave').onclick=backToMenu;
   if($('#copy'))$('#copy').onclick=async()=>{try{await navigator.clipboard.writeText(NET.code);toast('Код скопійовано')}catch(e){const r=document.createRange();r.selectNodeContents($('.code'));const s=getSelection();s.removeAllRanges();s.addRange(r);toast('Виділи й скопіюй код')}};
   if($('#addBot'))$('#addBot').onclick=hostAddBot;
+  if(host)document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{NET.mode=b.dataset.mode;netSend(lobbyMsg());renderLobby()});
   if($('#start'))$('#start').onclick=hostStart;
   document.querySelectorAll('[data-kick]').forEach(b=>b.onclick=()=>{
     const s=NET.seats[+b.dataset.kick];if(!s)return;
@@ -862,7 +887,7 @@ let lastDice=[3,4], rolling=false;
 
 function renderGame(){
   if(!G)return;
-  if(isHost())netSend({t:'state',G,dice:lastDice,rolling,busy});
+  if(isHost())netSend({t:'state',G:{...G,hist:undefined},dice:lastDice,rolling,busy});
   const p=P();
   const mine=isMine(p);
   const canRoll=mine&&!busy&&!G.over;
@@ -873,7 +898,7 @@ function renderGame(){
   <div class="game">
   <div class="boardcol">
   <div class="hud">
-    <div class="ttl"><b>Коло ${G.round} з ${MAXR}</b><span>${NET?'Онлайн · кімната '+esc(NET.code):'Один телефон'}</span></div>
+    <div class="ttl"><b>Коло ${G.round}${(G.mode||'classic')==='classic'?' з '+MAXR:''}</b><span>${MODES[G.mode||'classic'][0]} · ${NET?'кімната '+esc(NET.code):'один телефон'}</span></div>
     <button class="hbtn" id="hudLoc" aria-label="Де всі гравці"><span class="i">📍</span>Де всі</button>
     <button class="hbtn" id="hudSet" aria-label="Параметри"><span class="i">⚙</span></button>
   </div>
@@ -886,7 +911,7 @@ function renderGame(){
       <div class="turn-name">${p.av?`<span>${p.av}</span>`:`<span class="dot" style="--c:${p.color}"></span>`}${esc(p.name)}</div>
       <div class="turn-sub ${canRoll?'me':''}">${sub}</div>
       <div class="dice">${dieHTML(lastDice[0],rolling?'roll':'')}${dieHTML(lastDice[1],rolling?'roll':'')}</div>
-      ${G.over?`<button class="btn pri roll-btn" id="again">${NET?'У меню':'Нова гра'}</button>`:`<button class="btn pri roll-btn" id="roll" ${canRoll?'':'disabled'}>Кинути кубики</button>`}
+      ${G.over?`<button class="btn pri roll-btn" id="again">${NET?'У меню':'Нова гра'}</button><button class="btn" id="seeLog" style="padding:8px 14px;font-size:13px">📜 Лог гри</button>`:`<button class="btn pri roll-btn" id="roll" ${canRoll?'':'disabled'}>Кинути кубики</button>`}
     </div>
   </div>
   <div class="legend"><span><i style="--c:var(--home)"></i>Житло · іпотека</span><span><i style="--c:var(--car)"></i>Авто</span><span><i style="--c:var(--biz)"></i>Бізнес</span><span><i style="--c:var(--health)"></i>Здоров’я</span><span><i style="--c:var(--fate)"></i>Доля</span></div>
@@ -907,6 +932,7 @@ function renderGame(){
     doTurn();
   };
   if($('#again'))$('#again').onclick=()=>{clearSave();backToMenu()};
+  if($('#seeLog'))$('#seeLog').onclick=showGameLog;
   $('#hudLoc').onclick=showLocations;
   $('#hudSet').onclick=showOptions;
   document.querySelectorAll('[data-me]').forEach(b=>b.onclick=()=>playerInfo(+b.dataset.me));
@@ -949,18 +975,22 @@ function showLocations(){
   const vi=viewerIdx();const me=vi>=0?G.players[vi]:null;
   const rows=G.players.map((q,i)=>{const c=CELLS[q.pos];const d=me&&q!==me?((q.pos-me.pos+CELLS.length)%CELLS.length):null;
     return `<div class="locrow"><span>${q.av||`<span class="dot" style="--c:${q.color}"></span>`}</span><span><b style="color:${q.color}">${esc(q.name)}</b>${i===G.cur?' · ходить':''}${q.out?' · вибув':''}<br><span class="hint">${c.ic} ${esc(c.name)}</span></span><span class="c">${d==null?(q===me?'ти':''):d===0?'поруч':d+' кл. попереду'}</span></div>`}).join('');
-  sheet({title:'📍 Де всі',body:rows+'<p class="hint" style="margin-top:8px">Фішки гравців також видно на полі. Відстань рахується по ходу гри.</p>',buttons:[{l:'Закрити',v:0}]});
+  sheet({title:'📍 Де всі',body:rows+'<p class="hint" style="margin-top:8px">Фішки гравців також видно на полі. Відстань рахується по ходу гри.</p>',buttons:[{l:'Закрити',v:0}],now:1});
 }
 async function showOptions(){
   while(true){
     const opts=[
       {l:`💡 Підказки: ${SET.hints?'увімкнено':'вимкнено'}`,v:'hints'},
+      {l:`🪟 Вікна подій: ${SET.waitOk?'чекати OK':'закриваються самі'}`,v:'waitok'},
       ...(hasBridge()?[{l:`🔄 Екран: ${({auto:'авто',portrait:'вертикально',landscape:'горизонтально'})[SET.orient]}`,v:'orient'}]:[]),
+      {l:'📜 Лог гри',v:'log'},
       {l:'📖 Правила',v:'rules'},
       {l:NET?'🚪 Вийти з онлайн-гри':'🚪 Вийти в меню',v:'quit'},
       {l:'Повернутись до гри',v:0,pri:1}];
-    const v=await sheet({title:'⚙ Параметри',body:'<p class="hint">Налаштування зберігаються на цьому телефоні.</p>',buttons:opts});
+    const v=await sheet({title:'⚙ Параметри',body:'<p class="hint">Налаштування зберігаються на цьому телефоні.</p>',buttons:opts,now:1});
     if(v==='hints'){SET.hints=!SET.hints;saveSet();if(G)renderGame();continue}
+    if(v==='waitok'){SET.waitOk=!SET.waitOk;saveSet();continue}
+    if(v==='log'){showGameLog();return}
     if(v==='orient'){SET.orient={auto:'portrait',portrait:'landscape',landscape:'auto'}[SET.orient];saveSet();applyOrient();continue}
     if(v==='rules'){await sheet({title:'📖 Коротко про правила',body:`<ul class="rules">
       <li><b>Мета:</b> ${fmt(GOAL)} капіталу, або останній у грі, або найкращий рахунок після ${MAXR} кіл.</li>
@@ -968,9 +998,9 @@ async function showOptions(){
       <li><b>Майно:</b> 20% внеску + 6 платежів, або готівкою. Чуже майно — платиш оренду.</li>
       <li><b>Приховане:</b> гроші, зарплату й здоров’я суперників не видно, лише їхнє майно.</li>
       <li><b>Схованки</b> з карток дозволяють сховати своє майно. Хто стане на нього — платить оренду і розкриває схованку. «Податкова розвідка» розкриває всі.</li>
-      <li><b>Вибування:</b> борги без майна або здоров’я 0.</li></ul>`,buttons:[{l:'Назад',v:0}]});continue}
+      <li><b>Вибування:</b> борги без майна або здоров’я 0.</li></ul>`,buttons:[{l:'Назад',v:0}],now:1});continue}
     if(v==='quit'){
-      const ok=await sheet({title:NET?'Вийти з онлайн-гри?':'Вийти в меню?',body:NET?(isHost()?'<p>Ти хост — гра закінчиться для всіх.</p>':'<p>За тебе далі гратиме бот.</p>'):'<p>Гра збережеться — її можна буде продовжити.</p>',buttons:[{l:'Вийти',v:1,pri:1},{l:'Залишитись',v:0}]});
+      const ok=await sheet({title:NET?'Вийти з онлайн-гри?':'Вийти в меню?',body:NET?(isHost()?'<p>Ти хост — гра закінчиться для всіх.</p>':'<p>За тебе далі гратиме бот.</p>'):'<p>Гра збережеться — її можна буде продовжити.</p>',buttons:[{l:'Вийти',v:1,pri:1},{l:'Залишитись',v:0}],now:1});
       if(ok){save();backToMenu();return}continue}
     return;
   }
@@ -996,25 +1026,44 @@ function pcard(q,i){
 /* ---------- sheets ---------- */
 let toastT;
 function toast(t){clearTimeout(toastT);let el=$('#toast');if(!el){el=document.createElement('div');el.id='toast';el.className='toast';document.body.appendChild(el)}el.textContent=t;toastT=setTimeout(()=>el.remove(),1800)}
-let curSheet=null;
+/* Sheet queue: every window waits its turn, oldest first.
+   note() = event window for the player to read; the game does not wait for it.
+   sheet() = window whose answer the code needs; it waits in the same line.
+   now:true = the player tapped something themselves, so it jumps to the front. */
+const SQ=[];let curSheet=null;
 function closeSheet(){if(curSheet)curSheet.close(curSheet.def)}
-function sheet({title,who,body,buttons=[{l:'Добре',v:1,pri:1}],auto}){
-  closeSheet();
-  return new Promise(res=>{
-    const el=document.createElement('div');el.className='veil';
-    el.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-label="${esc(String(title).replace(/<[^>]*>/g,''))}">
-      ${who?`<div class="who"><span class="dot" style="--c:${who.color}"></span>${esc(who.name)}</div>`:''}
-      <h3>${title}</h3><div class="body">${body||''}</div>
-      ${auto?'':`<div class="acts">${buttons.map((b,i)=>`<button class="btn ${b.pri?'pri':''}" data-k="${i}" ${b.dis?'disabled':''}>${b.l}</button>`).join('')}</div>`}
-    </div>`;
-    $('#sheetHost').appendChild(el);
-    let closed=false;
-    const me={def:auto?auto.v:null,close(v){if(closed)return;closed=true;el.remove();if(curSheet===me)curSheet=null;res(v)}};
-    curSheet=me;
-    if(auto){setTimeout(()=>me.close(auto.v),auto.ms||1500);return}
-    el.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>me.close(buttons[+b.dataset.k].v));
-    const first=el.querySelector('.btn:not(:disabled)');if(first)first.focus({preventScroll:true});
-  });
+function clearSheets(){while(SQ.length){const it=SQ.shift();it.res(null)}closeSheet()}
+function sheet(opts){return new Promise(res=>{const it={opts,res};opts.now?SQ.unshift(it):SQ.push(it);pumpSheets();if(curSheet&&curSheet.refresh)curSheet.refresh()})}
+function note(opts){
+  const o={...opts,auto:null,note:true,buttons:[{l:'OK',v:1,pri:1}]};
+  SQ.push({opts:o,res:()=>{}});pumpSheets();if(curSheet&&curSheet.refresh)curSheet.refresh();
+}
+function pumpSheets(){
+  if(curSheet||!SQ.length)return;
+  const it=SQ.shift();const {title,who,body,buttons=[{l:'Добре',v:1,pri:1}],note:isNote}=it.opts;
+  const el=document.createElement('div');el.className='veil';
+  el.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-label="${esc(String(title).replace(/<[^>]*>/g,''))}">
+    <div class="who">${who?`<span class="dot" style="--c:${who.color}"></span>${esc(who.name)}`:''}<span class="qslot" style="margin-left:auto"></span></div>
+    <h3>${title}</h3><div class="body">${body||''}</div>
+    <div class="acts">${buttons.map((b,i)=>`<button class="btn ${b.pri?'pri':''}" data-k="${i}" ${b.dis?'disabled':''}>${b.l}</button>`).join('')}
+    <span class="skipslot" style="display:contents"></span></div>
+  </div>`;
+  $('#sheetHost').appendChild(el);
+  let closed=false,timer=null;
+  const me={def:null,close(v){if(closed)return;closed=true;clearTimeout(timer);el.remove();if(curSheet===me)curSheet=null;it.res(v);pumpSheets()}};
+  curSheet=me;
+  if(isNote&&!SET.waitOk)timer=setTimeout(()=>me.close(1),1800);
+  el.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>me.close(buttons[+b.dataset.k].v));
+  /* live counter: events keep arriving while this window is open */
+  me.refresh=()=>{
+    const n=SQ.filter(x=>x.opts.note).length;
+    const q=el.querySelector('.qslot');if(q)q.innerHTML=n?`<span class="qcount">ще ${n} ${n===1?'подія':n<5?'події':'подій'}</span>`:'';
+    const sl=el.querySelector('.skipslot');
+    if(sl){sl.innerHTML=isNote&&n>0?`<button class="btn" data-skip="1">Пропустити всі події (${n+1})</button>`:'';
+      const sk=sl.querySelector('[data-skip]');if(sk)sk.onclick=()=>{for(let i=SQ.length-1;i>=0;i--)if(SQ[i].opts.note)SQ.splice(i,1);me.close(1)}}
+  };
+  me.refresh();
+  const first=el.querySelector('.btn:not(:disabled)');if(first)first.focus({preventScroll:true});
 }
 /* One entry point for every on-turn sheet: bots answer themselves, this device's
    players tap a button, remote players answer on their own phone; everyone else watches. */
@@ -1027,12 +1076,12 @@ async function ask(p,opts,botChoice=1){
   if(p.bot){
     const b=opts.buttons.find(x=>x.v===botChoice);
     const seeAll=viewerIdx()<0&&!NET;
-    const view={...opts,body:(seeAll?opts.body:pub)+(multi&&b&&!pubBtns?`<p class="pick">Бот обирає: ${b.l}</p>`:''),auto:{v:botChoice,ms:multi?1700:1400}};
-    netShow(view);await sheet(view);return botChoice;
+    const view={...opts,body:(seeAll?opts.body:pub)+(multi&&b&&!pubBtns?`<p class="pick">Бот обирає: ${b.l}</p>`:'')};
+    netShow(view);note(view);await sleep(multi?1100:800);return botChoice;
   }
-  const spect={...opts,body:(pub||'')+(multi?`<p class="pick">${esc(p.name)} вирішує…</p>`:''),auto:{v:null,ms:1600}};
-  if(isMine(p)){netShow(spect);return sheet(opts)}
-  netShow(spect,p.ctrl);sheet(spect);
+  const spect={...opts,body:pub||''};
+  if(isMine(p)){if(!multi)netShow(spect);return sheet(opts)}
+  if(!multi){netShow(spect,p.ctrl);note(spect)}
   const conn=NET&&NET.conns.get(p.ctrl);
   if(!conn||!conn.open)return botChoice;
   const id=++askSeq;
@@ -1040,13 +1089,61 @@ async function ask(p,opts,botChoice=1){
   return new Promise(res=>{pending.set(id,{res,botChoice,ctrl:p.ctrl,allowed});send(conn,{t:'ask',id,opts})});
 }
 
+/* ---------- game log & journal ---------- */
+const HISTKEY='zhyttia_v_kredyt_history';
+function loadHistory(){try{return JSON.parse(localStorage.getItem(HISTKEY)||'[]')}catch(e){return []}}
+function archiveGame(){
+  if(!G||!G.over)return;
+  const h=loadHistory();if(h.some(x=>x.id===G.id))return;
+  const rank=[...G.players].sort((a,b)=>(a.out-b.out)||score(b)-score(a));
+  h.unshift({id:G.id,date:Date.now(),mode:G.mode||'classic',online:!!G.online,rounds:G.round,
+    winner:G.winner!=null?G.players[G.winner].name:null,
+    players:rank.map(q=>({name:q.name,av:q.av,color:q.color,out:q.out,score:q.out?null:score(q)})),
+    lines:(G.hist||[]).map(e=>({r:e.r,t:logFor(e,-1,true)}))});
+  try{localStorage.setItem(HISTKEY,JSON.stringify(h.slice(0,5)))}catch(e){try{localStorage.setItem(HISTKEY,JSON.stringify(h.slice(0,2)))}catch(_){}}
+}
+function logHTML(lines){
+  if(!lines.length)return '<p class="hint">Поки що порожньо.</p>';
+  let out='',r=null;
+  lines.forEach(l=>{if(l.r!==r){r=l.r;out+=`<div class="lround">Коло ${r}</div>`}out+=`<div class="lline">${l.t}</div>`});
+  return `<div class="fulllog">${out}</div>`;
+}
+function showGameLog(){
+  if(!G)return;
+  const lines=(G.hist||[]).map(e=>({r:e.r,t:logText(e)}));
+  sheet({title:'📜 Лог гри',body:`<p class="hint">${lines.length} подій · від початку до зараз${G.over?'':' · чужі суми приховано'}</p>${logHTML(lines)}`,buttons:[{l:'Закрити',v:0}],now:1});
+}
+function viewJournal(){
+  const saved=loadSaved();const cur=saved&&!saved.over?saved:null;
+  const h=loadHistory();
+  const dt=t=>new Date(t).toLocaleString('uk-UA',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+  $('#app').innerHTML=`${backBtn}<h2 class="screen-title">Журнал ігор</h2>
+  ${cur?`<div class="panel"><div class="label">Поточна гра</div>
+    <button class="pchip" data-cur="1"><span class="ava">▶</span><span class="who2"><b>${MODES[cur.mode||'classic'][0]} · коло ${cur.round}</b><small>${cur.players.map(q=>esc(q.name)).join(', ')}</small></span><span class="lvl">лог</span></button></div>`:''}
+  <div class="panel"><div class="label">Завершені ігри</div>
+    ${h.length?h.map((g,i)=>`<button class="pchip" data-hist="${i}" style="margin-top:${i?'8px':'0'}"><span class="ava">${g.winner?'🏆':'💀'}</span><span class="who2"><b>${g.winner?esc(g.winner)+' перемагає':'Ніхто не вижив'}</b><small>${dt(g.date)} · ${MODES[g.mode][0]}${g.online?' · онлайн':''} · ${g.rounds} кіл</small></span><span class="lvl">лог</span></button>`).join('')
+    :'<p class="hint">Тут з’являться останні 5 завершених ігор із повним логом.</p>'}
+  </div>`;
+  const c=$('[data-cur]');
+  if(c)c.onclick=()=>{
+    const vi=(()=>{const i=cur.players.findIndex(p=>!p.bot&&PROF&&p.name===PROF.name);return i>=0?i:cur.players.findIndex(p=>!p.bot)})();
+    const lines=(cur.hist||[]).map(e=>({r:e.r,t:logFor(e,vi,false)}));
+    sheet({title:`📜 Поточна гра · коло ${cur.round}`,body:`<p class="hint">${lines.length} подій · чужі суми приховано</p>${logHTML(lines)}`,buttons:[{l:'Продовжити гру',v:1,pri:1},{l:'Закрити',v:0}],now:1})
+      .then(v=>{if(v){G=saved;G.players.forEach(p=>{p.ctrl=p.ctrl||'local'});busy=false;renderGame();startTurn()}});
+  };
+  document.querySelectorAll('[data-hist]').forEach(b=>b.onclick=()=>{
+    const g=h[+b.dataset.hist];
+    const table=`<div class="kv" style="margin-bottom:10px">${g.players.map(q=>`<span>${q.av?q.av+' ':''}${esc(q.name)}${q.out?' · вибув':''}</span><span>${q.score==null?'—':q.score.toLocaleString('uk-UA')+' оч.'}</span>`).join('')}</div>`;
+    sheet({title:`📜 ${dt(g.date)}`,body:`<p class="hint">${MODES[g.mode][0]} · ${g.rounds} кіл · ${g.lines.length} подій</p>${table}${logHTML(g.lines)}`,buttons:[{l:'Закрити',v:0}],now:1});
+  });
+}
 function isHiddenFor(owner,cell){const q=G.players[owner];const e=q&&q.owned.find(x=>x.cell===cell);return !!(e&&e.hidden&&!canSee(q))}
 function cellInfo(i){
   const c=CELLS[i];let body='';
   if(c.t==='asset'){const t=loanTerms(c);const o=G.owners[i];
     body=`<div class="kv"><span>Тип</span><span>${LOAN[c.g]}</span><span>Ціна</span><span>${fmt(c.price)}</span><span>Перший внесок 20%</span><span>${fmt(t.down)}</span><span>Платіж за коло</span><span>${fmt(t.pay)} × 6</span><span>Переплата</span><span>${fmt(t.total-(c.price-t.down))}</span><span>Оренда для інших</span><span>${fmt(c.rent)}</span><span>Щастя при покупці</span><span>+${c.happy}</span><span>Власник</span><span>${o!=null&&!isHiddenFor(o,i)?esc(G.players[o].name):'банк'}</span></div>`;
   } else body=`<p>${DESC[c.t]}</p>`;
-  sheet({title:`${c.ic} ${esc(c.name)}`,body});
+  sheet({title:`${c.ic} ${esc(c.name)}`,body,now:1});
 }
 function playerInfo(i){
   const q=G.players[i];const own=canSee(q);
@@ -1056,13 +1153,13 @@ function playerInfo(i){
     const vis=visibleAssets(q);
     sheet({title:`${q.av?q.av+' ':''}${esc(q.name)}`,body:`<p class="hint">📍 ${loc.ic} ${esc(loc.name)}${q.out?' · вибув':''}</p>
       <div style="margin-top:6px">${vis.map(o=>{const c=CELLS[o.cell];return `<div class="asset-row"><div>${c.ic} ${esc(c.name)}<small>${LOAN[c.g]} · оренда ${fmt(c.rent)}</small></div></div>`}).join('')||'<p class="hint">Майна не видно.</p>'}</div>
-      <p class="secret" style="margin-top:8px">Гроші, зарплата і здоров’я суперників приховані. Частину майна теж можуть ховати.</p>`,buttons:[{l:'Закрити',v:0}]});
+      <p class="secret" style="margin-top:8px">Гроші, зарплата і здоров’я суперників приховані. Частину майна теж можуть ховати.</p>`,buttons:[{l:'Закрити',v:0}],now:1});
     return;
   }
   const rows=q.owned.map((o,k)=>{const c=o.cell>=0?CELLS[o.cell]:null;const v=c?Math.round(c.price*.6)-o.left:0;
     return `<div class="asset-row"><div>${c?c.ic+' '+esc(c.name):'💳 Споживчий кредит'}${o.hidden?' <span class="achip hid">сховано</span>':''}<small>${o.left>0?'залишок боргу '+fmt(o.left)+' · платіж '+fmt(Math.min(o.pay,o.left)):'виплачено повністю'}</small></div>
       <div class="row" style="flex:0 0 auto">${c&&act&&q.ef.hide>0&&!o.hidden?`<button class="btn" data-hide="${k}">🕶</button>`:''}${c&&act?`<button class="btn" data-sell="${k}">Продати ${fmt(v)}</button>`:''}</div></div>`}).join('')||'<p style="color:var(--muted)">Майна і кредитів поки немає.</p>';
-  sheet({title:`${q.av?q.av+' ':''}${esc(q.name)}`,body:`<div class="kv"><span>Де</span><span>${loc.ic} ${esc(loc.name)}</span><span>Робота</span><span>${esc(q.job.n)}</span><span>Зарплата</span><span>${fmt(q.job.s)}</span><span>Готівка</span><span>${fmt(q.money)}</span><span>Платежі за коло</span><span>${fmt(payments(q))}</span><span>Капітал</span><span>${fmt(worth(q))} з ${fmt(GOAL)}</span>${q.ef.hide?`<span>Схованки</span><span>${q.ef.hide}</span>`:''}</div><div style="margin-top:10px">${rows}</div>${act?'<p style="color:var(--muted);font-size:13px">Продаж: банк дає 60% ціни мінус залишок кредиту.'+(q.ef.hide?' 🕶 — сховати від суперників.':'')+'</p>':''}`,buttons:[{l:'Закрити',v:0}]});
+  sheet({title:`${q.av?q.av+' ':''}${esc(q.name)}`,body:`<div class="kv"><span>Де</span><span>${loc.ic} ${esc(loc.name)}</span><span>Робота</span><span>${esc(q.job.n)}</span><span>Зарплата</span><span>${fmt(q.job.s)}</span><span>Готівка</span><span>${fmt(q.money)}</span><span>Платежі за коло</span><span>${fmt(payments(q))}</span><span>Капітал</span><span>${fmt(worth(q))} з ${fmt(GOAL)}</span>${q.ef.hide?`<span>Схованки</span><span>${q.ef.hide}</span>`:''}</div><div style="margin-top:10px">${rows}</div>${act?'<p style="color:var(--muted);font-size:13px">Продаж: банк дає 60% ціни мінус залишок кредиту.'+(q.ef.hide?' 🕶 — сховати від суперників.':'')+'</p>':''}`,buttons:[{l:'Закрити',v:0}],now:1});
   if(act){
     document.querySelectorAll('[data-sell]').forEach(b=>b.onclick=()=>{
       const k=+b.dataset.sell;closeSheet();
@@ -1175,9 +1272,10 @@ function payday(p){
   sal=Math.round(sal);p.money+=sal;
   let paid=0;p.owned.forEach(o=>{if(o.left>0){const x=Math.min(o.pay,o.left);o.left-=x;paid+=x;if(o.left===0){joy(p,5)}}});
   p.money-=paid;
+  let living=0;if(G.mode==='elim'){living=250*G.round;p.money-=living;if(G.round>12)hurt(p,Math.min(8,G.round-12))}
   joy(p,-3); if(p.happy===0)hurt(p,10);
-  plog(p,`${nm(p)}: зарплата +${fmt(sal)}${notes.length?' ('+notes.join(', ')+')':''}${paid?`, кредити −${fmt(paid)}`:''}.`,`${nm(p)} отримує зарплату${paid?' і платить кредити':''}.`);
-  sayTo(p,`Зарплата +${fmt(sal)}${paid?' · кредити −'+fmt(paid):''}`);
+  plog(p,`${nm(p)}: зарплата +${fmt(sal)}${notes.length?' ('+notes.join(', ')+')':''}${paid?`, кредити −${fmt(paid)}`:''}${living?`, життя −${fmt(living)}`:''}.`,`${nm(p)} отримує зарплату${paid?' і платить кредити':''}.`);
+  sayTo(p,`Зарплата +${fmt(sal)}${paid?' · кредити −'+fmt(paid):''}${living?' · життя −'+fmt(living):''}`);
 }
 async function land(p){
   const c=CELLS[p.pos];
@@ -1252,9 +1350,17 @@ async function afterAction(p){
   if(p.money<0){
     const sellable=()=>p.owned.map((o,k)=>({k,v:o.cell>=0?Math.round(CELLS[o.cell].price*.6)-o.left:-1})).filter(x=>x.v>0).sort((a,b)=>b.v-a.v);
     let s;while(p.money<0&&(s=sellable()).length){const o=p.owned[s[0].k];log(`Банк забирає в ${nm(p)} «${esc(CELLS[o.cell].name)}» за борги.`);sellAsset(p,s[0].k)}
-    if(p.money<0)return eliminate(p,'Банкрутство: борги, а продати вже нічого.');
+    if(p.money<0)return G.mode==='endless'?restartLife(p,'Банкрутство'):eliminate(p,'Банкрутство: борги, а продати вже нічого.');
   }
-  if(p.hp<=0)return eliminate(p,'Здоров’я на нулі — реанімація і довгий лікарняний.');
+  if(p.hp<=0)return G.mode==='endless'?restartLife(p,'Здоров’я на нулі'):eliminate(p,'Здоров’я на нулі — реанімація і довгий лікарняний.');
+  renderGame();
+}
+async function restartLife(p,why){
+  p.owned.forEach(o=>{if(o.cell>=0)delete G.owners[o.cell]});p.owned=[];
+  p.money=START_MONEY;p.hp=100;p.happy=40;p.ef={skip:0,shield:0,ins:0,burn:0,extra:0,hide:0,alarm:0};p.restarts=(p.restarts||0)+1;
+  log(`${nm(p)}: ${why.toLowerCase()} — життя починається з нуля (${p.restarts}-й раз).`);
+  renderGame();
+  await ask(p,{title:'♾ Життя з нуля',body:`<p>${why}. Майно забрав банк, але ти починаєш знову: ${fmt(START_MONEY)}, повне здоров’я.</p>`});
   renderGame();
 }
 async function eliminate(p,why){
@@ -1273,20 +1379,22 @@ function endTurn(){
 }
 function checkEnd(){
   const al=alive();let winner=null,why='';
-  const rich=al.find(p=>worth(p)>=GOAL);
+  const mode=G.mode||'classic';
+  if(mode==='endless')return false;
+  const rich=mode==='classic'?al.find(p=>worth(p)>=GOAL):null;
   if(rich){winner=rich;why=`Капітал ${fmt(worth(rich))} — фінансова свобода!`}
   else if(al.length<=1){winner=al[0]||null;why='Залишився останнім у грі.'}
-  else if(G.round>MAXR){winner=[...al].sort((a,b)=>score(b)-score(a))[0];why=`Найкращий рахунок після ${MAXR} кіл.`}
+  else if((G.mode||'classic')==='classic'&&G.round>MAXR){winner=[...al].sort((a,b)=>score(b)-score(a))[0];why=`Найкращий рахунок після ${MAXR} кіл.`}
   if(!winner&&al.length!==0)return false;
-  G.over=true;G.winner=winner?G.players.indexOf(winner):null;busy=false;save();
+  G.over=true;G.winner=winner?G.players.indexOf(winner):null;busy=false;save();archiveGame();
   const rank=[...G.players].sort((a,b)=>(a.out-b.out)||score(b)-score(a));
   log(winner?`${nm(winner)} перемагає! ${why}`:'Усі вибули.');
   renderGame();
   const view={title:winner?`Перемога: ${esc(winner.name)}`:'Ніхто не вижив',body:`<p>${why}</p><div class="kv" style="margin-top:8px">${rank.map(q=>`<span><span class="dot" style="--c:${q.color};display:inline-block;margin-right:6px"></span>${esc(q.name)}${q.out?' · вибув':''}</span><span>${q.out?'—':score(q).toLocaleString('uk-UA')+' оч.'}</span>`).join('')}</div><p style="color:var(--muted);font-size:13px;margin-top:8px">Очки = капітал + щастя×100 + здоров’я×50.</p>`};
   netShow({...view,buttons:[{l:'Подивитись поле',v:0}]});
   const xr=isClient()?null:awardXP();
-  sheet({...view,body:view.body+xpLine(xr),buttons:[{l:NET?'У меню':'Нова гра',v:1,pri:1},{l:'Подивитись поле',v:0}]})
-    .then(v=>{if(v){clearSave();backToMenu()}});
+  sheet({...view,body:view.body+xpLine(xr),buttons:[{l:NET?'У меню':'Нова гра',v:1,pri:1},{l:'📜 Лог гри',v:'log'},{l:'Подивитись поле',v:0}]})
+    .then(v=>{if(v==='log')showGameLog();else if(v){clearSave();backToMenu()}});
   return true;
 }
 
