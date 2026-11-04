@@ -1142,8 +1142,14 @@ function init3D(){
 function fit3D(){
   if(!B3.el)return;const w=B3.el.clientWidth,h=B3.el.clientHeight;if(!w||!h)return;
   B3.r.setSize(w,h,false);B3.cam.aspect=w/h;
-  const base=11.4*SIDE/7.2,d=w/h<1?base/(w/h)**.85:base;           // keep the whole board in view on narrow screens
-  B3.cam.position.set(0,d*.74,d*.68);B3.cam.lookAt(0,-.55,.45);B3.cam.updateProjectionMatrix();
+  /* move the tilted camera as close as possible while the whole ring (and the markers
+     above the far row) still fits the screen — works for any phone and orientation */
+  const cam=B3.cam,T=B3.T,e=SIDE/2+.05,pts=[[-e,0,-e],[e,0,-e],[-e,0,e],[e,0,e],[-e,1.15,-e],[e,1.15,-e],[0,1.15,-e]];
+  const place=d=>{cam.position.set(0,d*.74,d*.68);cam.lookAt(0,-.2,.3);cam.updateProjectionMatrix();cam.updateMatrixWorld(true)};
+  const fits=()=>pts.every(([x,y,z])=>{const v=new T.Vector3(x,y,z).project(cam);return Math.abs(v.x)<=.97&&v.y<=.97&&v.y>=-.97});
+  let lo=4,hi=60;
+  for(let k=0;k<24;k++){const mid=(lo+hi)/2;place(mid);if(fits())hi=mid;else lo=mid}
+  place(hi);
 }
 function loadModels(){
   const T=B3.T;const byKit={};
@@ -1207,18 +1213,26 @@ function drawTile(i,ownerColor,lock,here){
 }
 function makeToken(p){
   const T=B3.T,g=new T.Group();
-  const base=new T.Mesh(new T.CylinderGeometry(.15,.17,.05,28),new T.MeshStandardMaterial({color:p.color,roughness:.4,metalness:.2}));base.position.y=.025;base.castShadow=true;g.add(base);
+  const col=new T.Color(p.color);
+  const base=new T.Mesh(new T.CylinderGeometry(.2,.23,.07,32),new T.MeshStandardMaterial({color:col,roughness:.35,metalness:.25,emissive:col,emissiveIntensity:.25}));base.position.y=.035;base.castShadow=true;g.add(base);
   const f=figOf(p.fig);const isCar=/vehicle|fountain|block/.test(f.m);
-  const m=B3.ready?placeModel(f.m,isCar?.36:.4,!isCar):null;
-  if(m){m.position.y=.05;if(isCar)m.rotation.y=Math.PI*.85;g.add(m)}
-  else{const s=new T.Mesh(new T.CylinderGeometry(.07,.11,.32,20),new T.MeshStandardMaterial({color:p.color}));s.position.y=.21;s.castShadow=true;g.add(s)}
+  const body=new T.Group();g.add(body);
+  const m=B3.ready?placeModel(f.m,isCar?.5:.56,!isCar):null;
+  if(m){m.position.y=.07;if(isCar)m.rotation.y=Math.PI*.85;body.add(m)}
+  else{const s=new T.Mesh(new T.CylinderGeometry(.09,.14,.42,20),new T.MeshStandardMaterial({color:col}));s.position.y=.28;s.castShadow=true;body.add(s)}
+  /* floating marker in the player's colour: findable from across the board */
+  const pin=new T.Mesh(new T.ConeGeometry(.1,.2,4),new T.MeshBasicMaterial({color:col}));pin.rotation.x=Math.PI;pin.position.y=.95;g.add(pin);
+  const ring=new T.Mesh(new T.TorusGeometry(.07,.022,8,20),new T.MeshBasicMaterial({color:0xffffff}));ring.position.y=1.08;g.add(ring);
+  g.userData.pin=pin;g.userData.pinRing=ring;g.userData.body=body;
   g.userData.fig=p.fig+(B3.ready?'1':'0');
   return g;
 }
 function tokenSpot(p){
   const here=G.players.filter(q=>!q.out&&q.pos===p.pos),k=here.indexOf(p),n=here.length;
-  const {x,z}=tilePos(p.pos);const spread=n>1?(k-(n-1)/2)*.22:0;
-  return {x:x+spread,z:z+.24};
+  const {x,z}=tilePos(p.pos);
+  if(n<=1)return {x,z:z+.2,s:1};
+  if(n===2)return {x:x+(k?.22:-.22),z:z+.2,s:.85};
+  return {x:x+(k%2?.22:-.22),z:z+(k<2?-.02:.28),s:.72};   // 2×2 when 3–4 players share a cell
 }
 function sync3D(){
   if(!use3D()||!G)return;
@@ -1255,7 +1269,12 @@ function loop3D(ts){
     t.g.position.y=.08+(t.hop?Math.sin(Math.PI*k)*.32:0);
     if(k>=1)t.t0=null;
   });
-  if(G){const cur=B3.toks[G.cur];if(cur&&cur.t0==null&&!G.over){cur.g.rotation.y=Math.sin(now/600)*.35}}
+  Object.entries(B3.toks).forEach(([i,t])=>{
+    const s=t.to&&t.to.s||1,cur=G&&+i===G.cur&&!G.over,k=cur?s*1.12:s;
+    t.g.scale.setScalar(t.g.scale.x+(k-t.g.scale.x)*.2);
+    const u=t.g.userData;if(u.pin){u.pin.position.y=.95+Math.sin(now/350+ +i)*.06;u.pinRing.position.y=u.pin.position.y+.13;u.pinRing.rotation.y+=.04;u.pin.rotation.y+=.02;u.pinRing.visible=cur}
+  });
+  if(G){const cur=B3.toks[G.cur];if(cur&&cur.t0==null&&!G.over&&cur.g.userData.body){cur.g.userData.body.rotation.y=Math.sin(now/600)*.4}}
   B3.ring.material.opacity=.55+Math.sin(now/300)*.35;
   (B3.clouds||[]).forEach((c,k)=>{c.position.x+=Math.sin(now/4000+k)*.002});
   B3.r.render(B3.scene,B3.cam);
